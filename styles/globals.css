@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #f2f2ee;
+    --foreground: #272727;
+    --font-geist-sans: ui-sans-serif, system-ui, sans-serif;
+    --font-geist-mono: ui-monospace, SFMono-Regular, monospace;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-black: #272727;
+    --color-white: #f2f2ee;
+    --color-gray: #bcb5af;
+    --color-blue: #3a7df9;
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Dince, Helvetica, sans-serif;
+    line-height: 1 !important;
+}
+
+html {
+    overscroll-behavior: none;
+}
+
+.cta-button {
+    background: #3a7df9;
+    color: #f2f2ee;
+    padding: 4px 64px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    box-shadow: 0 0 8px 0 rgb(186, 210, 255) inset,
+        0 4px 10px 0 rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+}
+
+.karaoke-text .word {
+    color: #bcb5af;
+    transition: color 0.25s ease;
+}
+.karaoke-text .word.is-active {
+    color: #272727;
 }
