@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import BigCTA from "@/components/BigCTA";
 
-const about = () => {
+const About = () => {
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -145,4 +145,4 @@ const about = () => {
     );
 };
 
-export default about;
+export default About;
