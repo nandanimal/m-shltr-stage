@@ -6,7 +6,7 @@ import FAQ from "@/components/FAQ";
 import BigCTA from "@/components/BigCTA";
 import GetStartedCTA from "@/components/GetStartedCTA";
 
-const About = () => {
+const about = () => {
     return (
         <div>
             <section
@@ -107,4 +107,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default about;

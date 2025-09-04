@@ -21,7 +21,7 @@ const ModelDetail = ({
                     style={{ background: "rgba(216, 216, 216, 0.90)" }}
                 >
                     <div
-                        className="header-row w-full p-1 flex flex-row items-center leading-none text-xs justify-between
+                        className="header-row w-full h-4 p-1 flex flex-row items-center leading-none text-xs justify-between
             "
                     >
                         <div

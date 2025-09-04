@@ -16,7 +16,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="nav-container w-full p-4 items-center justify-center flex fixed z-100">
+        <div className="nav-container w-full p-2 items-center justify-center flex fixed z-100">
             <div
                 className={`navbar w-full max-w-xl rounded-sm backdrop-blur-md hover:shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)] transition ${
                     menuOpen

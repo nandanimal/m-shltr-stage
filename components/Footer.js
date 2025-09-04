@@ -10,7 +10,7 @@ const EmailCapture = () => {
                 <input
                     type="text"
                     placeholder="name@email.com"
-                    className="placeholder:text-gray border-b-1 border-gray"
+                    className="placeholder:text-gray border-b-1 border-gray focus:outline-none"
                 ></input>
                 <div className="cta-button">Submit</div>
             </div>
@@ -30,7 +30,14 @@ const Footer = () => {
                     Text CTA
                 </div>
             </div>
-            <img src="/images/chmbr_iso.png" className="w-full" />
+            <img
+                src="/images/chmbr_iso.png"
+                className="w-full hidden md:block"
+            />
+            <img
+                src="/images/chmbr_iso_mobile.png"
+                className="w-full  md:hidden"
+            />
             <div className="absolute w-full p-2 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end bottom-0">
                 {/* Left */}
                 <div className="text-gray text-xs font-mono flex flex-col gap-0 uppercase w-full">

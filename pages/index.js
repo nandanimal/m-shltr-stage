@@ -10,12 +10,18 @@ import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import Footer from "@/components/Footer";
+import ModalCTA from "@/components/ModalCTA";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
+    const [ctaOpen, setCTAOpen] = useState(false);
 
     const toggleModal = () => {
         setModalOpen(!modalOpen);
+    };
+
+    const toggleCTA = () => {
+        setCTAOpen(!ctaOpen);
     };
 
     return (
@@ -56,6 +62,7 @@ export default function Home() {
 
             <Footer />
 
+            {/* Model detail handler */}
             <AnimatePresence>
                 {modalOpen && (
                     <ModelDetail
@@ -70,6 +77,11 @@ export default function Home() {
                         }
                     />
                 )}
+            </AnimatePresence>
+
+            {/* CTA Handler */}
+            <AnimatePresence>
+                {ctaOpen && <ModalCTA toggleHandler={toggleCTA} />}
             </AnimatePresence>
         </>
     );

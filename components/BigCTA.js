@@ -24,7 +24,7 @@ export default function BigCTA() {
                 <div className="relative w-full max-w-6xl aspect-[16/9] rounded-sm overflow-hidden p-2">
                     {/* CONTENT */}
                     <div className="absolute inset-0 z-20 flex items-center justify-center flex-col">
-                        <div className="text-center text-3xl text-white p-4 md:max-w-[75%]">
+                        <div className="text-center md:text-3xl text-white p-4 md:max-w-[75%]">
                             Phasellus laoreet at enim sed malesuada. Fusce justo
                             sem, imperdiet non quam in.
                         </div>
