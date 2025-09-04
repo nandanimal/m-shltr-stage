@@ -26,7 +26,7 @@ const ModalCTA = ({ toggleHandler }) => {
                             className="bg-orange-600 hover:bg-red-500 cursor-pointer transition rounded-xs w-[36px] h-full"
                         ></div>
                         <div className="font-mono uppercase">
-                            let's get started
+                            let&apos;s get started
                         </div>
                     </div>
 
