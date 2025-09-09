@@ -34,7 +34,7 @@ const about = () => {
                         From first call to move-in, here’s what to expect when
                         working with /\\ SHLTR.
                     </div>
-                    <div className="mt-24 grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                    <div className="mt-24 grid grid-rows-4 grid-cols-1 md:grid-rows-2 sm:grid-cols-2 lg:grid-cols-4 gap-2">
                         <HowItWorksCard
                             step={1}
                             title={"Free Intro Call"}
@@ -44,13 +44,61 @@ const about = () => {
                                 "We start with a quick conversation to understand your site, goals, timeline, and budget. If it’s a good fit, we’ll walk you through the next steps."
                             }
                         />
+                        <HowItWorksCard
+                            step={2}
+                            title={"On-Site Feasibility Study"}
+                            iconSrc={"/icons/onsite.svg"}
+                            delay={0}
+                            desc={
+                                "We meet you at your property to explore your vision and gather everything we need to begin design."
+                            }
+                        />
+                        <HowItWorksCard
+                            step={3}
+                            title={"Custom Design Package"}
+                            iconSrc={"/icons/design.svg"}
+                            delay={0}
+                            desc={
+                                "Within days, we deliver tailored designs based on your site — including 3D visuals, floor plans, and transparent, fixed pricing."
+                            }
+                        />
+                        <HowItWorksCard
+                            step={4}
+                            title={"Permitting"}
+                            iconSrc={"/icons/permitting.svg"}
+                            delay={0}
+                            desc={
+                                "We handle all permitting on your behalf. If permits can’t be approved, you’ll receive a full refund."
+                            }
+                        />
+                        <HowItWorksCard
+                            step={5}
+                            title={"Site Prep & Manufacturing"}
+                            iconSrc={"/icons/prep.svg"}
+                            delay={0}
+                            desc={
+                                "We coordinate licensed contractors for site work while your home is built in a vetted factory. M-shltr manages the entire process — keeping everything on track. Most homes are ready in ~6 months."
+                            }
+                        />
+                        <HowItWorksCard
+                            step={6}
+                            title={"Onsite Installation"}
+                            iconSrc={"/icons/installation.svg"}
+                            delay={0}
+                            desc={
+                                "Installation typically takes just 1 to 7 days depending on how many modules are in your build."
+                            }
+                        />
+                        <HowItWorksCard
+                            step={7}
+                            title={"Move In!"}
+                            iconSrc={"/icons/phone.svg"}
+                            delay={0}
+                            desc={
+                                "Get the keys and start living — your new space is ready."
+                            }
+                        />
 
-                        <HowItWorksCard />
-                        <HowItWorksCard />
-                        <HowItWorksCard />
-                        <HowItWorksCard />
-                        <HowItWorksCard />
-                        <HowItWorksCard />
                         <GetStartedCTA />
                     </div>
                 </div>
@@ -61,10 +109,11 @@ const about = () => {
                     <div className="leading-none flex items-center justify-center">
                         <div className="p-0 lg:p-4">
                             <span className="font-bold ">
-                                We only partner with the best,
+                                We only partner with the best.
                             </span>{" "}
-                            lorem ipsum dolor sit amet, consectetur adipiscing
-                            lorem.
+                            A curated network of modular specialists who meet
+                            our standards and build to local codes - ensuring
+                            quality, safety, and timelines stay on track.
                         </div>
                     </div>
                     <div className="h-full rounded-md overflow-hidden object-cover">

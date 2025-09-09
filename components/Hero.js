@@ -61,7 +61,7 @@ const Hero = () => {
                         style={{ y: fgY }}
                     >
                         <Image
-                            src="/images/fg.png"
+                            src="/images/fg_slate.png"
                             className="object-cover h-full rounded-md"
                             fill
                         />
@@ -81,7 +81,7 @@ const Hero = () => {
                         style={{ y: bgY }}
                     >
                         <Image
-                            src="/images/bg.png"
+                            src="/images/sky_slate.png"
                             className="object-cover h-full rounded-md"
                             fill
                         />

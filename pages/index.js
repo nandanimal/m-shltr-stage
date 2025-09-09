@@ -41,8 +41,8 @@ export default function Home() {
                             className="rounded-sm"
                         />
                         <div className="text-3xl text-right max-w-xl leading-none">
-                            Luxury finishes + accessories laoreet at enim sed
-                            malesuada, laoreet at enim enim sed malesuada.{" "}
+                            Select from refined finishes chosen by our design
+                            team, or customize with your own.
                         </div>
                     </div>
                 </div>
