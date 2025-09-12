@@ -64,7 +64,11 @@ export default function BeforeCard({
                 className="absolute top-0 bottom-0 w-px bg-white/90"
                 style={{ left: `${split * 100}%` }}
                 transition={{ type: "tween", duration: 0.12, ease: "easeOut" }}
-            ></motion.div>
+            >
+                <div className="absolute h-full flex items-center justify-center -left-2">
+                    <div className="bg-white/90 w-4 h-2 rounded-xs"></div>
+                </div>
+            </motion.div>
         </div>
     );
 }

@@ -16,6 +16,7 @@
     --color-blue: #3a7df9;
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
+    --breakpoint-xs: 34rem;
 }
 /* 
 @media (prefers-color-scheme: dark) {

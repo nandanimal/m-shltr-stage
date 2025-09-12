@@ -9,10 +9,10 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay }) => {
                 opacity: 1,
                 transition: { duration: 1, delay: delay || 0 },
             }}
-            className="aspect-square bg-[#DADAD6] text-sm text-black uppercase rounded-md p-4 flex flex-col justify-start"
+            className="aspect-square bg-[#DADAD6] hover:bg-[#deded8] transition text-sm text-black uppercase rounded-md p-4 flex flex-col justify-between"
         >
             <div className="top-label font-mono">STEP {step}</div>
-            <div className="info flex flex-col gap-3 sm:h-full pt-[15%]">
+            <div className="info flex flex-col gap-3">
                 <img src={iconSrc} className="w-[24px]" />
                 <div className="font-mono md:text-[16px] text-xl leading-none">
                     {title}

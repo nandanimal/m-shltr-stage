@@ -63,7 +63,9 @@ const Hero = () => {
                         <Image
                             src="/images/fg_slate.png"
                             className="object-cover h-full rounded-md"
+                            priority
                             fill
+                            quality={100}
                         />
                     </motion.div>
                     <motion.div
@@ -84,6 +86,7 @@ const Hero = () => {
                             src="/images/sky_slate.png"
                             className="object-cover h-full rounded-md"
                             fill
+                            quality={100}
                         />
                     </motion.div>
                 </div>

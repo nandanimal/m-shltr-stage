@@ -34,14 +34,14 @@ const about = () => {
                         From first call to move-in, here’s what to expect when
                         working with /\\ SHLTR.
                     </div>
-                    <div className="mt-24 grid grid-rows-4 grid-cols-1 md:grid-rows-2 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+                    <div className="mt-24 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-2">
                         <HowItWorksCard
                             step={1}
                             title={"Free Intro Call"}
                             iconSrc={"/icons/phone.svg"}
                             delay={0}
                             desc={
-                                "We start with a quick conversation to understand your site, goals, timeline, and budget. If it’s a good fit, we’ll walk you through the next steps."
+                                "We start with a quick conversation to understand your site, goals, timeline, and budget."
                             }
                         />
                         <HowItWorksCard
@@ -59,7 +59,7 @@ const about = () => {
                             iconSrc={"/icons/design.svg"}
                             delay={0}
                             desc={
-                                "Within days, we deliver tailored designs based on your site — including 3D visuals, floor plans, and transparent, fixed pricing."
+                                "Within days, we deliver tailored designs based on your site — including 3D visuals, floor plans, and pricing."
                             }
                         />
                         <HowItWorksCard
@@ -98,7 +98,6 @@ const about = () => {
                                 "Get the keys and start living — your new space is ready."
                             }
                         />
-
                         <GetStartedCTA />
                     </div>
                 </div>

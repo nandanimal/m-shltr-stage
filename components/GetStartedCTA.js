@@ -8,9 +8,9 @@ const GetStartedCTA = () => {
 
     return (
         <a
-            className="aspect-square leading-none text-3xl text-white font-dince uppercase cursor-pointer rounded-md flex flex-col justify-end bg-cover bg-center relative overflow-hidden"
+            className="aspect-square leading-none text-3xl text-white font-dince cursor-pointer rounded-md flex flex-col justify-end bg-cover bg-center relative overflow-hidden"
             style={{
-                backgroundImage: 'url("/images/render1.png")',
+                backgroundImage: 'url("/images/4.jpeg")',
             }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}

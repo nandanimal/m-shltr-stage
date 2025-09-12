@@ -25,6 +25,8 @@ const CBN = () => {
         offset: ["start center", "end center"],
     });
 
+    const modelY = useTransform(scrollYProgress, [0, 1], ["0", "100%"]);
+
     // Split words on mount
     useEffect(() => {
         if (textRef.current) {
@@ -57,16 +59,16 @@ const CBN = () => {
             {/* Karoake text */}
 
             <motion.div
-                className="w-full p-2"
+                className="w-full p-2 flex items-center justify-center"
                 initial="hidden"
                 ref={scrollRef}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             >
-                <div className="row-container flex flex-col gap-8 sm:flex-row relative justify-center mt-[25vh]">
+                <div className="row-container flex flex-col gap-8 sm:flex-row relative justify-center py-48 items-start">
                     {/* Left column */}
-                    <div
-                        className="col-left sm:w-1/2 h-screen sm:sticky relative sm:top-24 w-full flex items-center flex-col"
-                        style={{ height: "fit-content" }}
+                    <motion.div
+                        className="col-left sm:w-1/2 h-screen sm:relative relative sm:top-24 w-full flex items-center flex-col hidden sm:block"
+                        style={{ height: "fit-content", y: modelY }}
                     >
                         <Image
                             src="/images/cbn_iso.png"
@@ -77,27 +79,25 @@ const CBN = () => {
                         <div className="text-center mt-4">
                             ****** 3d placeholder ******
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right column text */}
                     <div
                         ref={textRef}
-                        className="karaoke-text col-right sm:w-1/2 w-full text-3xl leading-[1.2] h-auto"
+                        className="karaoke-text col-right sm:w-1/2 w-full max-w-2xl lg:text-3xl text-2xl leading-[1.2] h-auto lg:translate-y-1/2"
                     >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Quisque ut ligula libero. Sed eu aliquet lacus. Sed
-                        vitae posuere sem. Praesent sagittis nec erat id
-                        ultrices. Maecenas tempor enim eu nisi ultrices finibus.
-                        Nullam vitae lorem a tellus suscipit imperdiet. Fusce
-                        dignissim condimentum iaculis.
+                        M-Shltr creates architect-designed modular homes that
+                        combine timeless design with modern efficiency. Every
+                        home is crafted with precision, built in weeks instead
+                        of years, and designed to stand for generations.
                         <br />
                         <br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Quisque ut ligula libero. Sed eu aliquet lacus. Sed
-                        vitae posuere sem. Praesent sagittis nec erat id
-                        ultrices. Maecenas tempor enim eu nisi ultrices finibus.
-                        Nullam vitae lorem a tellus suscipit imperdiet. Fusce
-                        dignissim condimentum iaculis.
+                        Our process blends the artistry of architecture with the
+                        intelligence of modular construction. From curated
+                        finishes to fully customizable options, we ensure every
+                        detail reflects your lifestyle and taste. With M-Shltr,
+                        you don’t compromise on design or durability, you gain a
+                        home that’s both exceptional and attainable.
                     </div>
                 </div>
             </motion.div>

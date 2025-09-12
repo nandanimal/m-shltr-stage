@@ -50,7 +50,7 @@ export default function Interior() {
                     >
                         <div className="p-2">
                             <Image
-                                src="/images/interior.png"
+                                src="/images/interior_render.jpeg"
                                 fill={true}
                                 alt="Interior"
                                 className="object-cover rounded-md overflow-hidden "
