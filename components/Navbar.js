@@ -17,7 +17,10 @@ const Navbar = () => {
 
     return (
         <div className="nav-container w-full p-2 items-center justify-center flex fixed z-100">
-            <div
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
                 className={`navbar w-full max-w-xl rounded-sm backdrop-blur-md hover:shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)] transition ${
                     menuOpen
                         ? "shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)]"
@@ -35,9 +38,12 @@ const Navbar = () => {
                         onClick={closeMenu}
                         className="logo-container leading-none ml-1"
                     >
-                        /\\ SHLTR
+                        <img
+                            src="/images/logo_black.svg"
+                            className="h-[16px]"
+                            alt="M-SHLTR"
+                        />
                     </Link>
-
                     <div
                         className="hamburger-menu p-2 rounded-sm w-[40px] h-[auto] gap-1 flex items-center flex-col justify-center cursor-pointer"
                         onClick={toggleMenu}
@@ -88,7 +94,7 @@ const Navbar = () => {
                         CTA Button
                     </div>
                 </motion.div>
-            </div>
+            </motion.div>
         </div>
     );
 };

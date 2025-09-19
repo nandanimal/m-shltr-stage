@@ -98,8 +98,8 @@ export default function SpecSection() {
             <div className="text-3xl py-1 border-t border-neutral-300 px-2 md:text-6xl text-black w-full leading-none font-light tracking-wide flex-1">
                 Residence & models
             </div>
-            <div className="w-full h-[50vh] aspect-[16/9] relative">
-                <Image
+            <div className="w-full h-auto aspect-[16/9] relative">
+                <img
                     className="w-full object-cover"
                     src="/images/outline.png"
                     fill={true}
@@ -108,10 +108,10 @@ export default function SpecSection() {
                     priority
                 />
             </div>
-            <div className="w-full py-1 px-2 text-3xl md:text-6xl leading-none">
+            {/* <div className="w-full py-1 px-2 text-3xl md:text-6xl leading-none">
                 Phasellus laoreet at enim sed malesuada, laoreet at enim sed
                 malesuada.{" "}
-            </div>
+            </div> */}
             {/* Models */}
         </section>
     );
