@@ -20,7 +20,7 @@ export default function HorizontalGallery() {
         <section ref={containerRef} className="relative h-[200vh] w-full">
             {/* sticky viewport */}
             <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
-                <div className="mono text-center mb-4">CBN IN VIVO</div>
+                <div className="mono text-center mb-4">FEATURES</div>
                 <motion.div
                     style={{ x }}
                     className="flex flex-row gap-2 md:gap-4 h-fit"

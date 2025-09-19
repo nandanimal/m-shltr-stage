@@ -27,12 +27,12 @@ export default function Home() {
     return (
         <>
             <Hero />
-            {/* <Introducing /> */}
+            <Introducing />
             <CBN />
 
             {/* Finishes */}
             <section className="md:p-4 p-2 flex flex-col items-center justify-center">
-                <div className="w-full">
+                {/* <div className="w-full">
                     <div className="luxury-finishes w-2/3 pb-48 md:w-1/2 flex flex-col justify-end items-end gap-4">
                         <Image
                             src="/images/tub.png"
@@ -45,7 +45,8 @@ export default function Home() {
                             team, or customize with your own.
                         </div>
                     </div>
-                </div>
+                </div> */}
+
                 <AttrCard
                     items={{
                         "Attr Name 1": "/images/render1.png",

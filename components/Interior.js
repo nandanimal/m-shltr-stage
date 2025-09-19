@@ -36,13 +36,13 @@ export default function Interior() {
                         style={{ opacity }}
                         className="fg-img-container w-full h-auto aspect-[16/9]  absolute z-10 "
                     >
-                        <Image
+                        {/* <Image
                             src="/images/facade.svg"
                             fill={true}
                             priority
                             alt="Facade"
                             className="object-contain p-2  "
-                        />
+                        /> */}
                     </motion.div>
                     <motion.div
                         className="bg-img-container absolute w-full rounded-md p-2 aspect-[24/9] "

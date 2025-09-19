@@ -23,22 +23,30 @@ const Footer = () => {
         <footer className="w-full relative">
             <div className="footer-top-row w-full flex flex-row justify-between items-center gap-8 p-2">
                 <div className="logo-container leading-none ml-1 whitespace-nowrap">
-                    /\\ SHLTR
+                    <img
+                        src="/images/wordmark_black.svg"
+                        className="h-[16px]"
+                        alt="logo"
+                    />
                 </div>
                 <div className="bg-gray h-[1px] w-full"></div>
-                <div className="whitespace-nowrap flex flex-row items-center justify-center leading-none">
+                {/* <div className="whitespace-nowrap flex flex-row items-center justify-center leading-none">
                     Text CTA
-                </div>
+                </div> */}
             </div>
-            <img
-                src="/images/chmbr_iso.png"
-                className="w-full hidden md:block"
-            />
-            <img
-                src="/images/chmbr_iso_mobile.png"
-                className="w-full  md:hidden"
-            />
-            <div className="absolute w-full p-2 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end bottom-0">
+            <div className="p-2">
+                <img
+                    src="/images/chmbr_iso.png"
+                    className="w-full hidden md:block rounded-md "
+                />
+            </div>
+            <div className="p-2">
+                <img
+                    src="/images/chmbr_iso_mobile.png"
+                    className="w-full  md:hidden rounded-sm"
+                />
+            </div>
+            <div className="absolute w-full p-4 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end sm:bottom-4 bottom-0">
                 {/* Left */}
                 <div className="text-gray text-xs font-mono flex flex-col gap-0 uppercase w-full">
                     <span>
@@ -67,7 +75,7 @@ const Footer = () => {
                     </span>
                 </div>
                 {/* Right */}
-                <EmailCapture />
+                {/* <EmailCapture /> */}
             </div>
         </footer>
     );
