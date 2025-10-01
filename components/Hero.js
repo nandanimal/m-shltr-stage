@@ -54,6 +54,21 @@ const Hero = () => {
                 }
                 className="h-screen w-full flex items-center justify-center p-2 overflow-hidden relative -z-10"
             >
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute z-30 left-10 text-white flex flex-col gap-1 text-sm leading-none bottom-40"
+                >
+                    <span>
+                        <strong>M-SHLTR</strong> /\\ CBN
+                    </span>
+                    <span>1 BED/1 BATH</span>
+                    <span className="text-xs">
+                        960<sup>2</sup> ft
+                    </span>
+                </motion.div>{" "}
+                <div className="cta-button absolute bottom-20">Order now</div>
                 {/* <motion.div
                     style={{ y: mgY }}
                     initial={{ opacity: 0 }}

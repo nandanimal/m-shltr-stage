@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { ScrollProvider } from "@/context/ScrollContext";
+import { CtaFlowProvider } from "@/context/CtaFlowProvider";
 import "@/styles/globals.css";
 
 import localFont from "next/font/local";
@@ -19,10 +20,12 @@ const dince = localFont({
 export default function App({ Component, pageProps }) {
     return (
         <main className={dince.className}>
-            <ScrollProvider>
-                <Navbar />
-                <Component {...pageProps} />
-            </ScrollProvider>
+            <CtaFlowProvider>
+                <ScrollProvider>
+                    <Navbar />
+                    <Component {...pageProps} />
+                </ScrollProvider>
+            </CtaFlowProvider>
         </main>
     );
 }
