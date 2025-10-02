@@ -1,6 +1,4 @@
-import Navbar from "@/components/Navbar";
 import { Html, Head, Main, NextScript } from "next/document";
-
 
 export default function Document() {
     return (
@@ -8,6 +6,7 @@ export default function Document() {
             <Head />
             <body className="antialiased overscroll-none">
                 <Main />
+                <div id="modal-root" />
                 <NextScript />
             </body>
         </Html>

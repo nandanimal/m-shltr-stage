@@ -3,8 +3,6 @@
 :root {
     --background: #f2f2ee;
     --foreground: #272727;
-    --font-geist-sans: ui-sans-serif, system-ui, sans-serif;
-    --font-geist-mono: ui-monospace, SFMono-Regular, monospace;
 }
 
 @theme inline {
@@ -14,8 +12,8 @@
     --color-white: #f2f2ee;
     --color-gray: #bcb5af;
     --color-blue: #3a7df9;
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+    --font-sans: var(--font-dince);
+    --font-mono: var(--font-ibmPlexMono);
     --breakpoint-xs: 34rem;
 }
 /* 

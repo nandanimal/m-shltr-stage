@@ -3,8 +3,10 @@ import Link from "next/link";
 import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useCtaFlow } from "@/context/CtaFlowProvider";
 
 const Navbar = () => {
+    const { openCta } = useCtaFlow();
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -83,14 +85,33 @@ const Navbar = () => {
                 >
                     <Link
                         className="menu-item hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        href="/"
+                        onClick={closeMenu}
+                    >
+                        {" "}
+                        Home
+                    </Link>
+                    <Link
+                        className="menu-item hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
                         href="/about"
                         onClick={closeMenu}
                     >
                         {" "}
                         About
                     </Link>
+                    <Link
+                        className="menu-item hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        href="/cbn"
+                        onClick={closeMenu}
+                    >
+                        {" "}
+                        CBN
+                    </Link>
 
-                    <div onClick={closeMenu} className="cta-button m-2">
+                    <div
+                        onClick={() => openCta({ source: "home_hero" })}
+                        className="cta-button m-2"
+                    >
                         CTA Button
                     </div>
                 </motion.div>
