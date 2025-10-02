@@ -27,7 +27,7 @@ export default function BeforeCard({
     return (
         <div
             ref={ref}
-            className={`relative overflow-hidden w-full max-w-[1600px] rounded-sm md:rounded-2xl cursor-col-resize ${className}`}
+            className={`relative overflow-hidden w-full max-w-[1600px] rounded-sm cursor-col-resize ${className}`}
             style={{ aspectRatio: "16 / 9" }}
             onMouseMove={(e) => move(e.clientX, e.clientY)}
             onTouchStart={(e) =>

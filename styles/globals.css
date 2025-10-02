@@ -36,10 +36,12 @@ html {
 }
 
 .cta-button {
-    background: #3a7df9;
+    background: rgba(58, 125, 249, 0.8);
+    backdrop-filter: blur(2px);
     color: #f2f2ee;
-    padding: 4px 64px;
-    border-radius: 2px;
+    padding: 6px 64px;
+
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -11,6 +11,10 @@ import Image from "next/image";
 import { useState } from "react";
 import Footer from "@/components/Footer";
 import ModalCTA from "@/components/ModalCTA";
+import HeroHome from "@/components/HeroHome";
+import MStudio from "@/components/MStudio";
+import ProductBanner from "@/components/ProductBanner";
+import BeforeCard from "@/components/BeforeCard";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -26,27 +30,13 @@ export default function Home() {
 
     return (
         <>
-            <Hero />
-            <Introducing />
-            <CBN />
-
-            {/* Finishes */}
-            <section className="md:p-4 p-2 flex flex-col items-center justify-center">
-                {/* <div className="w-full">
-                    <div className="luxury-finishes w-2/3 pb-48 md:w-1/2 flex flex-col justify-end items-end gap-4">
-                        <Image
-                            src="/images/tub.png"
-                            width={150}
-                            height={100}
-                            className="rounded-sm"
-                        />
-                        <div className="text-3xl text-right max-w-xl leading-none">
-                            Select from refined finishes chosen by our design
-                            team, or customize with your own.
-                        </div>
-                    </div>
-                </div> */}
-
+            <HeroHome />
+            <MStudio />
+            <section className="flex items-center flex-col min-h-screen justify-center pt-48">
+                <div className="font-mono uppercase text-xs">exteriors</div>
+                <h2 className="text-3xl text-center mt-2 mb-8">
+                    Designed by the goats, <strong>customized by you.</strong>
+                </h2>
                 <AttrCard
                     items={{
                         "Attr Name 1": "/images/render1.png",
@@ -57,8 +47,41 @@ export default function Home() {
                 />
             </section>
 
-            <SpecSection />
+            <section className="w-full min-h-screen flex items-center flex-col justify-center">
+                <h1 className="text-3xl text-center mb-32">
+                    Hero text + accessories laoreet at enim sed and malesuada,
+                    laoreet.
+                </h1>
+                <ProductBanner />
+            </section>
 
+            <section>
+                <h2 className="text-3xl text-center leading-none mb-2">
+                    Built fast meets <strong>built to last.</strong>
+                </h2>
+                <div className="mt-8 order-now flex flex-row gap-2 text-black cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
+                    OUR PROCESS
+                    <img className="mb-1" src="/icons/arrow-up-right.svg" />
+                </div>
+                <div className="w-full flex items-center justify-center mt-16 p-2">
+                    {" "}
+                    <BeforeCard
+                        leftSrc="/images/after.png"
+                        rightSrc="/images/before.png"
+                    />
+                </div>
+            </section>
+
+            <section className="min-h-screen py-16 flex flex-col items-center justify-center">
+                <h2 className="text-3xl text-center leading-none mb-2">
+                    Flexible layouts that grow with you.
+                </h2>
+                <div className="font-mono uppercase text-center">
+                    Every module is built to be modular; start with one and
+                    connect others as your needs grow
+                </div>
+                <sub className="mt-16">(TO DO)</sub>
+            </section>
             <BigCTA />
 
             <Footer />
