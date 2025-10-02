@@ -38,7 +38,7 @@ export default function StepZip() {
         e.preventDefault();
         // Client-only demo: simply log and close. Replace with your API later.
         console.log("Waitlist submitted:", { zip, email: waitlistEmail });
-        alert("Thanks! We'll let you know when we launch in your area.");
+        alert("Thanks! Well let you know when we launch in your area.");
         closeCta();
     }
 
@@ -83,8 +83,8 @@ export default function StepZip() {
             ) : (
                 <div>
                     <div className="bg-yellow-100 border border-yellow-300 p-3 rounded mt-3 mb-3">
-                        We don't serve <b>{zip}</b> yet. Leave your email and
-                        we'll notify you when we expand.
+                        We don&apos;t serve <b>{zip}</b> yet. Leave your email
+                        and we&apos;ll notify you when we expand.
                     </div>
                     <form onSubmit={handleWaitlistSubmit}>
                         <label
