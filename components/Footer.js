@@ -34,13 +34,13 @@ const Footer = () => {
                     Text CTA
                 </div> */}
             </div>
-            <div className="p-2">
+            <div className="">
                 <img
                     src="/images/chmbr_iso.png"
                     className="w-full hidden md:block rounded-md "
                 />
             </div>
-            <div className="p-2">
+            <div className="">
                 <img
                     src="/images/chmbr_iso_mobile.png"
                     className="w-full  md:hidden rounded-sm"

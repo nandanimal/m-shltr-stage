@@ -59,7 +59,7 @@ export default function SpecSection() {
                                 onClick={() => setOpenIndex(isOpen ? -1 : i)}
                                 className="w-full flex py-1 px-2 items-center gap-3  text-left cursor-pointer hover:bg-black/2"
                             >
-                                <span className="text-3xl md:text-6xl  leading-none font-light tracking-wide flex-1">
+                                <span className="text-3xl md:text-5xl  leading-none font-light tracking-wide flex-1">
                                     {item.title}
                                 </span>
                                 <span className="text-xl w-6 text-right">
@@ -95,7 +95,7 @@ export default function SpecSection() {
                     );
                 })}
             </div>
-            <div className="text-3xl py-1 border-t border-neutral-300 px-2 md:text-6xl text-black w-full leading-none font-light tracking-wide flex-1">
+            <div className="text-3xl py-1 border-t border-neutral-300 px-2 md:text-5xl text-black w-full leading-none font-light tracking-wide flex-1">
                 Residence & models
             </div>
             <div className="w-full h-auto aspect-[16/9] relative">

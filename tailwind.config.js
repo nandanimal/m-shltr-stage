@@ -13,8 +13,8 @@ module.exports = {
                 gray: "#BCB5AF",
             },
             fontFamily: {
-                sans: "var(--font-sans)",
-                mono: "var(--font-mono)",
+                dince: "var(--font-dince)",
+                mono: "var(--font-ibmPlexMono)",
             },
         },
     },
