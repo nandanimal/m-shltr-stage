@@ -15,6 +15,7 @@ import HeroHome from "@/components/HeroHome";
 import MStudio from "@/components/MStudio";
 import ProductBanner from "@/components/ProductBanner";
 import BeforeCard from "@/components/BeforeCard";
+import FlexibleLayouts from "@/components/FlexibleLayouts";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function Home() {
         <>
             <HeroHome />
             <MStudio />
-            <section className="flex items-center flex-col min-h-screen justify-center pt-48">
+            <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-1">
                 <div className="font-mono uppercase text-xs">exteriors</div>
                 <h2 className="text-3xl text-center mt-2 mb-8">
                     Designed by the goats, <strong>customized by you.</strong>
@@ -48,7 +49,7 @@ export default function Home() {
             </section>
 
             <section className="w-full min-h-screen flex items-center flex-col justify-center">
-                <h1 className="text-3xl text-center mb-32">
+                <h1 className="text-3xl text-center mb-32 p-1">
                     Hero text + accessories laoreet at enim sed and malesuada,
                     laoreet.
                 </h1>
@@ -72,16 +73,8 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="min-h-screen py-16 flex flex-col items-center justify-center">
-                <h2 className="text-3xl text-center leading-none mb-2">
-                    Flexible layouts that grow with you.
-                </h2>
-                <div className="font-mono uppercase text-center">
-                    Every module is built to be modular; start with one and
-                    connect others as your needs grow
-                </div>
-                <sub className="mt-16">(TO DO)</sub>
-            </section>
+            <FlexibleLayouts />
+
             <BigCTA />
 
             <Footer />

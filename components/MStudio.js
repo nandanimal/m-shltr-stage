@@ -17,7 +17,7 @@ const MStudio = () => {
 
     const opacity = useTransform(
         scrollYProgress,
-        [0.2, 0.3, 0.6, 0.7],
+        [0, 0.1, 0.6, 0.7],
         [0, 1, 1, 0]
     );
     const galleryOpacity = useTransform(scrollYProgress, [0.7, 0.8], [0, 1]);
@@ -49,17 +49,35 @@ const MStudio = () => {
                         <div className="font-mono w-full uppercase text-gray text-center mb-1 text-xs">
                             SOME TEXT THAT CONTEXTUALIZES M-STUDIO
                         </div>
-                        <img
-                            src="/images/logos.png"
-                            className="w-full max-w-4xl"
-                        />
+                        <div className="press-row w-full gap-8 flex-row flex items-center justify-center">
+                            <img
+                                src="/images/press-logos/cn.svg"
+                                alt="Conde Nast"
+                                className="h-[32px] w-auto object-contain"
+                            />
+                            <img
+                                src="/images/press-logos/ad.svg"
+                                alt="Architectural Digest"
+                                className="h-[32px] w-auto object-contain"
+                            />
+                            <img
+                                src="/images/press-logos/dez.svg"
+                                alt="Dezeen"
+                                className="h-[32px] w-auto object-contain"
+                            />
+                            <img
+                                src="/images/press-logos/gq.svg"
+                                alt="GQ"
+                                className="h-[32px] w-auto object-contain"
+                            />
+                        </div>
                     </div>
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0 }}
                     exit={{ opacity: 0 }}
                     style={{ opacity: galleryOpacity }}
-                    className="sticky top-0 "
+                    className="sticky top-0 min-h-screen flex items-center justify-center "
                 >
                     <CollageGallery />
                 </motion.div>
