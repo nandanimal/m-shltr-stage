@@ -4,6 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useCtaFlow } from "@/context/CtaFlowProvider";
+import CTAButton from "./CTAButton";
 
 const Navbar = () => {
     const { openCta } = useCtaFlow();
@@ -108,11 +109,8 @@ const Navbar = () => {
                         CBN
                     </Link>
 
-                    <div
-                        onClick={() => openCta({ source: "home_hero" })}
-                        className="cta-button m-2"
-                    >
-                        CTA Button
+                    <div className="m-2">
+                        <CTAButton />
                     </div>
                 </motion.div>
             </motion.div>

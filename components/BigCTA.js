@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import CTAButton from "./CTAButton";
 
 export default function BigCTA() {
     const ref = useRef(null);
@@ -27,7 +28,7 @@ export default function BigCTA() {
                         <div className="text-center sm:text-3xl text-xl text-white p-4 md:max-w-[75%]">
                             A seamless journey from concept to move-in.
                         </div>
-                        <div className="cta-button">Build with M-Shltr</div>
+                        <CTAButton />
                     </div>
 
                     {/* IMAGE (parallax) */}

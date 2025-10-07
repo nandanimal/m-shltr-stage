@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCtaFlow } from "@/context/CtaFlowProvider";
+import { motion } from "framer-motion";
 
 export default function StepForm() {
     const { data, update, next, prev } = useCtaFlow();
@@ -33,11 +34,17 @@ export default function StepForm() {
     }
 
     return (
-        <div>
-            <h2 className="m-0">Tell us about your project</h2>
-            <p className="text-gray-600">
-                ZIP {data.zip} — great, we serve your area.
-            </p>
+        <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+            transition={{ duration: 0.4 }}
+        >
+            <div className="text-sm font-mono">{data.zip}</div>
+            <h2 className="mt-2 text-3xl leading-none">
+                Great news! We service your area.
+            </h2>
+            <p className="mt-2">Tell us a bit more about your project.</p>
 
             <form onSubmit={onSubmit}>
                 <Field
@@ -69,14 +76,14 @@ export default function StepForm() {
                     onChange={onChange}
                 />
 
-                <label className="block font-semibold mt-3">
+                <label className="block font-semibold mt-8">
                     What are you looking to build?
                 </label>
                 <select
                     name="projectType"
                     value={form.projectType}
                     onChange={onChange}
-                    className="w-full mt-2 p-2 border border-gray-300 rounded"
+                    className="w-full mt-3 p-2 px-1 border border-gray-300 rounded bg-white cursor-pointer focus:outline-none"
                 >
                     <option value="ADU">ADU</option>
                     <option value="Single Family">Single Family</option>
@@ -90,7 +97,7 @@ export default function StepForm() {
                     onChange={onChange}
                 />
 
-                <label className="block font-semibold mt-3">
+                <label className="block font-semibold mt-6">
                     Anything else you&apos;d like to add?
                 </label>
                 <textarea
@@ -98,7 +105,7 @@ export default function StepForm() {
                     value={form.notes}
                     onChange={onChange}
                     rows={4}
-                    className="w-full mt-2 p-2 border border-gray-300 rounded"
+                    className="w-full mt-3 p-2 border border-gray-300 rounded bg-white resize-none focus:outline-none"
                     placeholder="Optional details…"
                 />
 
@@ -106,28 +113,24 @@ export default function StepForm() {
                     <button
                         type="button"
                         onClick={prev}
-                        className="px-4 py-2 rounded border border-gray-900 bg-gray-200 text-gray-900"
+                        className="px-4 py-2 rounded border border-gray-300 bg-gray text-white cursor-pointer"
                     >
                         Back
                     </button>
-                    <button
-                        type="submit"
-                        className="px-4 py-2 rounded border border-gray-900 bg-gray-900 text-white"
-                    >
+                    <button type="submit" className="cta-button">
                         Continue
                     </button>
                 </div>
             </form>
-        </div>
+        </motion.div>
     );
 }
 
 function Field({ label, name, type = "text", value, onChange, required }) {
     return (
-        <div className="mt-3">
-            <label className="block font-semibold" htmlFor={name}>
+        <div className="mt-6">
+            <label className="block text-xs" htmlFor={name}>
                 {label}
-                {required ? " *" : ""}
             </label>
             <input
                 id={name}
@@ -135,7 +138,7 @@ function Field({ label, name, type = "text", value, onChange, required }) {
                 type={type}
                 value={value}
                 onChange={onChange}
-                className="w-full mt-2 p-2 border border-gray-300 rounded"
+                className="w-full mt-2 p-2 border border-gray-300 rounded bg-white focus:outline-none"
                 required={required}
             />
         </div>

@@ -3,8 +3,12 @@ import Image from "next/image";
 import { React, useState, useEffect, useRef } from "react";
 import { useScroll } from "@/context/ScrollContext";
 import { motion, useTransform } from "framer-motion";
+import { useCtaFlow } from "@/context/CtaFlowProvider";
+import CTAButton from "./CTAButton";
 
 const HeroHome = () => {
+    const { openCta } = useCtaFlow();
+
     const { y, vh, progress, scrollYProgress } = useScroll();
     const ref = useRef(null);
 
@@ -29,8 +33,8 @@ const HeroHome = () => {
             ref={ref}
             className="flex items-center justify-center h-screen"
         >
-            <div className="cta-button z-100 absolute bottom-20 sm:bottom-40 mx-auto">
-                Order now
+            <div className=" z-100 absolute bottom-20 sm:bottom-40 mx-auto">
+                <CTAButton />
             </div>
             <div
                 onClick={() => {

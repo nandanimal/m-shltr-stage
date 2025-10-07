@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import StepZip from "../components/steps/StepZip";
 import StepForm from "../components/steps/StepForm";
 import StepCalendly from "../components/steps/StepCalendly";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CtaFlowContext = createContext(null);
 
@@ -96,20 +97,41 @@ function CtaFlowModal() {
     const Step = steps[step].Component;
 
     return ReactDOM.createPortal(
-        <div style={styles.backdrop} role="dialog" aria-modal="true">
-            <div style={styles.modal}>
-                <button
-                    style={styles.closeBtn}
-                    onClick={closeCta}
-                    aria-label="Close"
+        <>
+            <AnimatePresence>
+                <motion.div
+                    style={styles.backdrop}
+                    role="dialog"
+                    aria-modal="true"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                 >
-                    ×
-                </button>
-                <div style={{ padding: 24 }}>
-                    <Step />
-                </div>
-            </div>
-        </div>,
+                    <motion.div
+                        style={styles.modal}
+                        className="text-black rounded-sm backdrop-blur-md shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)] transition"
+                    >
+                        <button
+                            className="bg-orange-600  h-auto hover:bg-red-500 cursor-pointer transition rounded-xs w-[36px] h-full"
+                            onClick={closeCta}
+                            aria-label="Close"
+                            style={{ color: "rgba(255, 102, 0, 0.80)" }}
+                        >
+                            ×
+                        </button>
+                        <div style={{ padding: 24 }}>
+                            <motion.div
+                                initial={{ height: 0 }}
+                                animate={{ height: "auto" }}
+                                exit={{ height: 0 }}
+                            >
+                                <Step />
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                </motion.div>
+            </AnimatePresence>
+        </>,
         portalTarget
     );
 }
@@ -129,9 +151,9 @@ const styles = {
         width: "min(720px, 92vw)",
         maxHeight: "90vh",
         overflow: "auto",
-        background: "#fff",
-        borderRadius: 12,
-        boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+        border: "1px solid #F2F2EE",
+        background: "rgba(242, 242, 238, 0.8)",
+        // boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
         position: "relative",
     },
     closeBtn: {
@@ -142,7 +164,7 @@ const styles = {
         height: 36,
         borderRadius: 8,
         border: "1px solid #ddd",
-        background: "#fafafa",
+        //
         cursor: "pointer",
         fontSize: 20,
         lineHeight: "20px",

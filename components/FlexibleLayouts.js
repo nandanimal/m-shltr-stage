@@ -1,5 +1,6 @@
 import React from "react";
 import ModuleCard from "./ModuleCard";
+import CTAButton from "./CTAButton";
 
 const FlexibleLayouts = () => {
     const modules = [
@@ -56,7 +57,9 @@ const FlexibleLayouts = () => {
                 ))}
             </div>
             <div className="cta-container">
-                <div className="cta-button mx-auto mt-8">Request info</div>
+                <div className="mx-auto mt-8">
+                    <CTAButton text="Request Info" />
+                </div>
             </div>
         </section>
     );
