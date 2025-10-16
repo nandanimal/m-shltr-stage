@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import NavbarV2 from "@/components/NavbarV2";
 import { ScrollProvider } from "@/context/ScrollContext";
 import { CtaFlowProvider } from "@/context/CtaFlowProvider";
 import "@/styles/globals.css";
@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
         <main className={`${ibmPlexMono.variable} ${dince.variable}`}>
             <CtaFlowProvider>
                 <ScrollProvider>
-                    <Navbar />
+                    <NavbarV2 />
                     <Component {...pageProps} />
                 </ScrollProvider>
             </CtaFlowProvider>

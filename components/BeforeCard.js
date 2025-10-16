@@ -2,6 +2,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import FadeIn from "./FadeIn";
 
 export default function BeforeCard({
     leftSrc,
@@ -50,7 +51,11 @@ export default function BeforeCard({
                 className="absolute inset-0"
                 // clip-path: inset(top right bottom left)
                 animate={{ clipPath: `inset(0 0 0 ${split * 100}%)` }}
-                transition={{ type: "tween", duration: 0.12, ease: "easeOut" }}
+                transition={{
+                    type: "tween",
+                    duration: 0.12,
+                    ease: "easeOut",
+                }}
             >
                 <img
                     src={rightSrc}
@@ -63,7 +68,11 @@ export default function BeforeCard({
             <motion.div
                 className="absolute top-0 bottom-0 w-px bg-white/90"
                 style={{ left: `${split * 100}%` }}
-                transition={{ type: "tween", duration: 0.12, ease: "easeOut" }}
+                transition={{
+                    type: "tween",
+                    duration: 0.12,
+                    ease: "easeOut",
+                }}
             >
                 <div className="absolute h-full flex items-center justify-center -left-2">
                     <div className="bg-white/90 w-4 h-2 rounded-xs"></div>

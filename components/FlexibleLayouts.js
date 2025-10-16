@@ -1,6 +1,7 @@
 import React from "react";
 import ModuleCard from "./ModuleCard";
 import CTAButton from "./CTAButton";
+import FadeIn from "./FadeIn";
 
 const FlexibleLayouts = () => {
     const modules = [
@@ -39,29 +40,31 @@ const FlexibleLayouts = () => {
     ];
 
     return (
-        <section className="min-h-screen py-16 p-2 flex flex-col items-center justify-center">
-            <h2 className="text-3xl text-center leading-none mb-2">
-                Flexible layouts that grow with you.
-            </h2>
-            <div className="font-mono uppercase text-center text-xs">
-                Every module is built to be modular; start with one and connect
-                others as your needs grow
-            </div>
-            <div className="flex flew-row gap-1 overflow-x-scroll w-full mt-8 pb-3">
-                {modules.map((module, index) => (
-                    <ModuleCard
-                        title={module.title}
-                        src={module.src}
-                        key={index}
-                    />
-                ))}
-            </div>
-            <div className="cta-container">
-                <div className="mx-auto mt-8">
-                    <CTAButton text="Request Info" />
+        <FadeIn>
+            <section className="min-h-screen py-16 p-2 flex flex-col items-center justify-center">
+                <h2 className="text-3xl text-center leading-none mb-2">
+                    Flexible layouts that grow with you.
+                </h2>
+                <div className="font-mono uppercase text-center text-xs">
+                    Every module is built to be modular; start with one and
+                    connect others as your needs grow
                 </div>
-            </div>
-        </section>
+                <div className="flex flew-row gap-1 overflow-x-scroll w-full mt-8 pb-3">
+                    {modules.map((module, index) => (
+                        <ModuleCard
+                            title={module.title}
+                            src={module.src}
+                            key={index}
+                        />
+                    ))}
+                </div>
+                <div className="cta-container">
+                    <div className="mx-auto mt-8">
+                        <CTAButton text="Request Info" />
+                    </div>
+                </div>
+            </section>
+        </FadeIn>
     );
 };
 
