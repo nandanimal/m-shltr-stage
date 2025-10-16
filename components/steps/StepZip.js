@@ -46,7 +46,10 @@ export default function StepZip() {
         <div>
             {mode === "zip" ? (
                 <form onSubmit={handleZipSubmit}>
-                    <h2 className="m-0">Enter your ZIP code</h2>
+                    <div className="text-3xl">
+                        Where are you planning to build?
+                    </div>
+                    <h2 className="m-0 mt-8">Enter your ZIP code</h2>
 
                     <input
                         id="zip"
@@ -66,7 +69,7 @@ export default function StepZip() {
                         <div className="text-red-600 mt-2">{error}</div>
                     ) : null}
                     <div className="flex gap-2 mt-4 w-full items-end justify-end">
-                        <button type="submit" className="cta-button">
+                        <button type="submit" className="cta-button text-black">
                             Next
                         </button>
                     </div>

@@ -34,7 +34,7 @@ const HeroHome = () => {
             <FadeIn>
                 <div className="heroContainer p-2 pt-[40svh] pb-32">
                     <h1 className="text-4xl text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+                        Award-winning architecture. Built in weeks, not years.
                     </h1>
                     <div className="cta-row flex mt-6 flex-row gap-2 items-center justify-center">
                         <CTAButton />
