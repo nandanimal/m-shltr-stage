@@ -41,13 +41,12 @@ const MStudio = () => {
                             className="rounded-md w-full max-w-xl"
                         />
                         <h2 className="text-3xl text-center leading-none mt-8 max-w-[95%]">
-                            Hero text + accessories laoreet at enim sed and
-                            malesuada, laoreet.
+                            Award winning design made easy.
                         </h2>
                     </div>
                     <div className="featured-banner flex flex-col gap-4  0 p-4 sm:p-16 items-center justify-center absolute bottom-0">
                         <div className="font-mono w-full uppercase text-gray text-center mb-1 text-xs">
-                            SOME TEXT THAT CONTEXTUALIZES M-STUDIO
+                            FEATURED IN
                         </div>
                         <div className="press-row w-full gap-8 flex-row flex items-center justify-center">
                             <img

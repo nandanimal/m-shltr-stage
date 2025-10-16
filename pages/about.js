@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import BigCTA from "@/components/BigCTA";
 import GetStartedCTA from "@/components/GetStartedCTA";
+import MStudio from "@/components/MStudio";
 
 const about = () => {
     return (
@@ -32,7 +33,7 @@ const about = () => {
                 <div className="text-3xl leading-none">
                     <div className="text-center w-full">
                         From first call to move-in, here’s what to expect when
-                        working with /\\ SHLTR.
+                        working with SHLTR
                     </div>
                     <div className="mt-24 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-2">
                         <HowItWorksCard
@@ -124,25 +125,7 @@ const about = () => {
                 </div>
             </section>
 
-            <section className="mt-48 h-screen flex flex-col gap-4 p-2 items-center justify-center relative">
-                <div className="font-mono w-full text-center mb-1">
-                    M-STUDIO
-                </div>
-                <img
-                    src="/images/tent.png"
-                    alt="tent"
-                    className="rounded-md w-full max-w-6xl"
-                />
-                <h2 className="text-3xl text-center leading-none mt-8">
-                    Award winning design made easy.{" "}
-                </h2>
-                <div className="featured-banner flex flex-col gap-4 absolute bottom-0 p-4 sm:p-16 items-center justify-center">
-                    <div className="font-mono w-full uppercase text-gray text-center mb-1">
-                        Featured in{" "}
-                    </div>
-                    <img src="/images/logos.png" className="w-full max-w-4xl" />
-                </div>
-            </section>
+            <MStudio />
 
             <section className="mt-48 h-fit mb-48 flex flex-col gap-4 p-2 items-center justify-center relative">
                 <FAQ />
