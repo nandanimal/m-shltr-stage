@@ -52,7 +52,7 @@ html {
 }
 
 .cta-button:hover {
-    box-shadow: 0 0 8px 0 rgb(186, 210, 255) inset,
+    box-shadow: 0 0 8px 0 rgb(210, 210, 212) inset,
         0 4px 10px 0 rgba(0, 0, 0, 0.04);
     cursor: pointer;
 }

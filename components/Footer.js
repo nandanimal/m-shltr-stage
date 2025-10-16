@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React from "react";
+import CTAButton from "./CTAButton";
 
 const EmailCapture = () => {
     return (
@@ -12,7 +14,7 @@ const EmailCapture = () => {
                     placeholder="name@email.com"
                     className="placeholder:text-gray border-b-1 border-gray focus:outline-none"
                 ></input>
-                <div className="cta-button">Submit</div>
+                <CTAButton text="Signup" />
             </div>
         </div>
     );
@@ -20,32 +22,55 @@ const EmailCapture = () => {
 
 const Footer = () => {
     return (
-        <footer className="w-full relative">
+        <footer className="w-full relative bg-gray relative">
             <div className="footer-top-row w-full flex flex-row justify-between items-center gap-8 p-2">
-                <div className="logo-container leading-none ml-1 whitespace-nowrap">
-                    <img
-                        src="/images/wordmark_black.svg"
-                        className="h-[16px]"
-                        alt="logo"
-                    />
-                </div>
-                <div className="bg-gray h-[1px] w-full"></div>
                 {/* <div className="whitespace-nowrap flex flex-row items-center justify-center leading-none">
                     Text CTA
                 </div> */}
             </div>
-            <div className="">
+            <div className="flex flex-col md:flex-row md:justify-between">
+                <div className="footer-menu flex flex-col gap-4 px-3">
+                    <Link
+                        href="/about"
+                        className="text-3xl hover:opacity-70 transition"
+                    >
+                        Home
+                    </Link>
+                    <Link
+                        href="/about"
+                        className="text-3xl hover:opacity-70 transition"
+                    >
+                        About
+                    </Link>
+                    <Link
+                        href="/cbn"
+                        className="text-3xl hover:opacity-70 transition"
+                    >
+                        CBN
+                    </Link>
+                    <a
+                        href="https://www.malekalqadi.com/"
+                        className="text-3xl hover:opacity-70 transition"
+                    >
+                        M-Studio
+                    </a>
+                </div>
+                {/* <div className="px-3 mt-8 md:mt-0">
+                    <EmailCapture />
+                </div> */}
+            </div>
+            <div className="relative mt-8">
                 <img
                     src="/images/chmbr_iso.png"
-                    className="w-full hidden md:block rounded-md "
+                    className="w-full  block rounded-md "
                 />
             </div>
-            <div className="">
+            {/* <div className="absolute top- w-full">
                 <img
                     src="/images/chmbr_iso_mobile.png"
-                    className="w-full  md:hidden rounded-sm"
+                    className="w-full  sm:hidden rounded-sm"
                 />
-            </div>
+            </div> */}
             <div className="absolute w-full p-4 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end sm:bottom-2 bottom-0">
                 {/* Left */}
                 <div className="text-gray text-xs font-mono flex flex-col gap-0 uppercase w-full">
