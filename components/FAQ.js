@@ -7,7 +7,7 @@ const Question = ({ q, a, isOpen, onClick }) => {
             className="p-4 rounded-md bg-white cursor-pointer flex flex-col gap-2 text-md"
             onClick={onClick}
         >
-            <span className="font-medium">{q}</span>
+            <span className="font-bold">{q}</span>
             <AnimatePresence initial={false}>
                 {isOpen && (
                     <motion.div

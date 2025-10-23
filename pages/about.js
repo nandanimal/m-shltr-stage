@@ -127,11 +127,13 @@ const about = () => {
 
             <MStudio />
 
-            <section className="mt-48 h-fit mb-48 flex flex-col gap-4 p-2 items-center justify-center relative">
+            <section className="mt-48 h-fit flex flex-col gap-4 p-2 items-center justify-center relative">
                 <FAQ />
             </section>
 
-            <BigCTA />
+            <div className="my-48">
+                <BigCTA />
+            </div>
 
             <Footer />
         </div>
