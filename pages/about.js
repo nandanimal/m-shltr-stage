@@ -78,7 +78,7 @@ const about = () => {
                             iconSrc={"/icons/prep.svg"}
                             delay={0}
                             desc={
-                                "We coordinate licensed contractors for site work while your home is built in a vetted factory. M-shltr manages the entire process — keeping everything on track. Most homes are ready in ~6 months."
+                                "We coordinate licensed contractors for site work while your home is built in a vetted factory. Most homes are ready in ~6 months."
                             }
                         />
                         <HowItWorksCard

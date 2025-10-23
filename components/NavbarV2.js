@@ -24,7 +24,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                className={`navbar w-full rounded-sm  backdrop-blur-lg transition ${
+                className={`navbar w-full rounded-sm  backdrop-blur-lg sm:backdrop-blur-[none] transition ${
                     menuOpen
                         ? "bg-[rgba(242, 242, 238, 0.70)]  shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)]"
                         : ""
@@ -37,11 +37,11 @@ const Navbar = () => {
                 }
             >
                 {/* Top level contents */}
-                <div className="navbar-contents flex flex-row justify-between items-center p-1 w-full sm:max-w-[none]">
+                <div className="navbar-contents flex flex-row justify-between items-center p-1 sm:p-0 w-full sm:max-w-[none]">
                     <Link
                         href="/"
                         onClick={closeMenu}
-                        className="logo-container leading-none ml-1"
+                        className="logo-container leading-none ml-1 sm:ml-0 sm:backdrop-blur-lg sm:p-2 rounded-sm overflow-hidden hover:bg-white hover:bg-opacity-20"
                     >
                         <img
                             src="/images/wordmark_black.svg"
@@ -51,9 +51,9 @@ const Navbar = () => {
                     </Link>
 
                     {/* desktop contents */}
-                    <div className="desktop-link flex flex-row gap-4 items-center justify-center hidden sm:flex">
+                    <div className="desktop-link flex flex-row gap-1 items-center justify-center hidden sm:flex font-mono uppercase">
                         <Link
-                            className="menu-item hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1 pt-2"
+                            className="menu-item hover:bg-[#ffffff47] transition rounded-sm px-2 py-[6px] transition mx-1 backdrop-blur-lg "
                             href="/about"
                             onClick={closeMenu}
                         >
@@ -61,7 +61,7 @@ const Navbar = () => {
                             About
                         </Link>
                         <Link
-                            className="menu-item hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1 pt-2"
+                            className="menu-item hover:bg-[#ffffff47] transition rounded-sm px-2 py-[6px] backdrop-blur-lg transition mx-1"
                             href="/cbn"
                             onClick={closeMenu}
                         >
@@ -69,7 +69,7 @@ const Navbar = () => {
                             CBN
                         </Link>
 
-                        <div className="ml-8">
+                        <div className="">
                             <CTAButton />
                         </div>
                     </div>
