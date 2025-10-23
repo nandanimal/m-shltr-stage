@@ -59,21 +59,16 @@ const Footer = () => {
                     <EmailCapture />
                 </div> */}
             </div>
-            <div className="relative mt-8">
+            {/* <div className="relative mt-8 max-w-xl rounded-sm p-2">
                 <img
                     src="/images/chmbr_iso.png"
                     className="w-full  block rounded-md "
                 />
-            </div>
-            {/* <div className="absolute top- w-full">
-                <img
-                    src="/images/chmbr_iso_mobile.png"
-                    className="w-full  sm:hidden rounded-sm"
-                />
             </div> */}
-            <div className="absolute w-full p-4 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end sm:bottom-2 bottom-0">
+
+            <div className=" w-full p-4 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end sm:bottom-2 bottom-0">
                 {/* Left */}
-                <div className="text-gray text-xs font-mono flex flex-col gap-0 uppercase w-full">
+                <div className=" text-xs font-mono flex flex-col gap-0 uppercase w-full">
                     <span>
                         © 2025{" "}
                         <a className="hover:underline" href="">

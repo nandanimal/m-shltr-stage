@@ -55,7 +55,7 @@ const FlexibleLayouts = () => {
                     items={modules}
                     bend={0}
                     textColor={"#000"}
-                    scrollEase={0.02}
+                    scrollEase={0.2}
                 />
                 {/* <div className="flex flew-row gap-1 overflow-x-scroll w-full mt-8 pb-3">
                     {modules.map((module, index) => (
