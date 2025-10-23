@@ -10,7 +10,7 @@ const CTAButton = ({ text, source }) => {
                 onClick={() =>
                     openCta({ source: `${source || "source not set"}` })
                 }
-                className="cta-button bg-gray"
+                className="cta-button"
             >
                 {text || "Order now"}
             </div>
