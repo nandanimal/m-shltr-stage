@@ -33,7 +33,7 @@ export default function Home() {
     return (
         <>
             <HeroHome />
-            <MStudio />
+
             <FadeIn>
                 <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-1">
                     <div className="font-mono uppercase text-xs">exteriors</div>
