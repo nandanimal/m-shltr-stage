@@ -41,7 +41,7 @@ const Navbar = () => {
                     <Link
                         href="/"
                         onClick={closeMenu}
-                        className="logo-container leading-none ml-1 sm:ml-0 sm:backdrop-blur-lg sm:p-2 rounded-sm overflow-hidden hover:bg-white hover:bg-opacity-20"
+                        className="logo-container leading-none ml-1 sm:ml-0 sm:p-2 rounded-sm overflow-hidden hover:bg-white hover:bg-opacity-20"
                     >
                         <img
                             src="/images/wordmark_black.svg"
