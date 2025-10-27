@@ -42,7 +42,10 @@ const FlexibleLayouts = () => {
 
     return (
         <FadeIn>
-            <section className="min-h-screen py-16 flex flex-col items-center justify-center">
+            <section
+                className="min-h-screen py-16 flex flex-col items-center justify-center"
+                data-theme="dark"
+            >
                 <h2 className="text-3xl text-center leading-none mb-2 px-2">
                     Flexible layouts that grow with you.
                 </h2>

@@ -33,7 +33,7 @@ const ProductBanner = () => {
                         ullamcorper est.
                     </div>
                     {/* Description */}
-                    <div className="button-row flex flex-row gap-4 mt-8">
+                    <div className="button-row flex flex-row gap-4 mt-8 font-mono">
                         <div className="order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
                             ORDER NOW
                             <img
@@ -44,7 +44,7 @@ const ProductBanner = () => {
                         <div className="order-now flex flex-row gap-2 text-gray cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
                             EXPLORE FEATURES
                             <img
-                                className="mb-1"
+                                className=""
                                 src="/icons/arrow-down-gray.svg"
                             />
                         </div>
