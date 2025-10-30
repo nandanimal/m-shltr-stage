@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
 import ModuleCard from "./ModuleCard";
 import CTAButton from "./CTAButton";
 import FadeIn from "./FadeIn";
-import CircularGallery from "./CircularGallery";
+import TickerFM from "./TickerFM";
+import { motion, useAnimationFrame } from "framer-motion";
 
 const FlexibleLayouts = () => {
     const modules = [
@@ -40,39 +41,74 @@ const FlexibleLayouts = () => {
         },
     ];
 
+    const tickerRef = useRef(null);
+    const [tickerWidth, setTickerWidth] = useState(0);
+
+    // This is the measurement step we previously had
+    useLayoutEffect(() => {
+        if (tickerRef.current) {
+            setTickerWidth(tickerRef.current.scrollWidth / 2);
+        }
+    }, [modules]);
+
+    // Listen for window resize
+    useEffect(() => {
+        const handleResize = () => {
+            if (tickerRef.current) {
+                setTickerWidth(tickerRef.current.scrollWidth / 2);
+            }
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Infinite horizontal animation loop using framer-motion's useAnimationFrame
+    const [x, setX] = useState(0);
+    const speed = 60; // px per second
+
+    useAnimationFrame((t, delta) => {
+        if (tickerWidth > 0) {
+            setX((prev) => {
+                let next = prev - (speed * delta) / 1000;
+                if (next <= -tickerWidth) next += tickerWidth;
+                return next;
+            });
+        }
+    });
+
+    // Duplicate the images so it can scroll seamlessly
     return (
         <FadeIn>
             <section
-                className="min-h-screen py-16 flex flex-col items-center justify-center"
+                className="min-h-screen overflow-hidden py-16 flex flex-col items-center justify-center"
                 data-theme="dark"
             >
                 <h2 className="text-3xl text-center leading-none mb-2 px-2">
                     Flexible layouts that grow with you.
                 </h2>
-                <div className="font-mono uppercase text-center text-xs px-2 mb-8">
-                    Every module is built to be modular; start with one and
-                    connect others as your needs grow
-                </div>
 
-                <CircularGallery
-                    items={modules}
-                    bend={0}
-                    textColor={"#000"}
-                    scrollEase={0.2}
-                />
-                {/* <div className="flex flew-row gap-1 overflow-x-scroll w-full mt-8 pb-3">
-                    {modules.map((module, index) => (
-                        <ModuleCard
-                            text={module.text}
-                            image={module.image}
-                            key={index}
-                        />
-                    ))}
-                </div> */}
-                <div className="cta-container">
-                    <div className="mx-auto mt-8">
-                        <CTAButton text="Request Info" />
-                    </div>
+                <div
+                    className="track w-full"
+                    style={{ willChange: "transform", overflow: "hidden" }}
+                >
+                    <motion.div
+                        className="ticker flex flex-row gap-2 items-center justify-start"
+                        ref={tickerRef}
+                        style={{
+                            x,
+                        }}
+                    >
+                        {/* duplicate for seamless loop */}
+                        {[...modules, ...modules].map((module, idx) => (
+                            <img
+                                key={idx}
+                                className=" max-w-xl "
+                                src={module.image}
+                                alt={module.text}
+                                style={{ flexGrow: 0, flexShrink: 0 }}
+                            />
+                        ))}
+                    </motion.div>
                 </div>
             </section>
         </FadeIn>
