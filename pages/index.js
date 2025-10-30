@@ -17,6 +17,7 @@ import ProductBanner from "@/components/ProductBanner";
 import BeforeCard from "@/components/BeforeCard";
 import FlexibleLayouts from "@/components/FlexibleLayouts";
 import FadeIn from "@/components/FadeIn";
+import HeroMain from "@/components/HeroMain";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -32,10 +33,15 @@ export default function Home() {
 
     return (
         <>
-            <HeroHome />
+            <FadeIn>
+                <HeroMain />
+            </FadeIn>
 
             <FadeIn>
-                <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-1">
+                <section
+                    className="flex items-center flex-col min-h-screen justify-center pt-48 p-1"
+                    data-theme="dark"
+                >
                     <div className="font-mono uppercase text-xs">exteriors</div>
                     <h2 className="text-3xl text-center mt-2 mb-8">
                         Designed by the goats,{" "}
@@ -52,7 +58,10 @@ export default function Home() {
                 </section>
             </FadeIn>
 
-            <section className="w-full min-h-screen flex items-center flex-col justify-center">
+            <section
+                data-theme="light"
+                className="w-full min-h-screen flex items-center flex-col justify-center"
+            >
                 <h1 className="text-3xl text-center mb-32 p-1">
                     Hero text + accessories laoreet at enim sed and malesuada,
                     laoreet.
@@ -65,15 +74,16 @@ export default function Home() {
                     <h2 className="text-3xl text-center leading-none mb-2">
                         Built fast meets <strong>built to last.</strong>
                     </h2>
-                    <div className="mt-8 order-now flex flex-row gap-2 text-black cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
+                    <div className="mt-8 order-now flex font-mono flex-row gap-2 text-black cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
                         OUR PROCESS
-                        <img className="mb-1" src="/icons/arrow-up-right.svg" />
+                        <img className="" src="/icons/arrow-up-right.svg" />
                     </div>
                     <div className="w-full flex items-center justify-center mt-16 p-2">
                         {" "}
                         <BeforeCard
                             leftSrc="/images/after.png"
                             rightSrc="/images/before.png"
+                            data-theme="light"
                         />
                     </div>
                 </section>
