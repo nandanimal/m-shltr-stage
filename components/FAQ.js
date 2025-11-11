@@ -27,16 +27,16 @@ const Question = ({ q, a, isOpen, onClick }) => {
 
 const questions = [
     {
-        question: "Why doesn’t M-shltr have its own factory?",
-        answer: "Because we’re not a factory—we’re a design studio. We focus on high-end architectural design and client experience, and we partner with expert builders to construct the homes. This model keeps quality high, timelines predictable, and the process fully managed.",
+        question: "Who builds M-SHLTR homes?",
+        answer: "We collaborate with a select group of licensed modular builders, experts who specialize in high-precision fabrication and installation. Each is carefully vetted to ensure they meet M-SHLTR's exacting standards for quality, safety, and finish.",
     },
     {
-        question: "If M-shltr doesn’t build the homes, who does?",
-        answer: "We work with a select group of trusted modular builders who fabricate and install our homes to our exact specifications. These partners are licensed professionals with deep experience in modular construction—and every one of them meets the standards we’ve built our name on.",
+        question: "Will I be working with multiple companies?",
+        answer: "No. M-Shltr remains your single point of contact throughout design, permitting, manufacturing, and delivery. We coordinate every step behind the scenes to keep your project effortless and on track.",
     },
     {
-        question: "Will I be dealing with multiple companies?",
-        answer: "No. M-shltr remains your single point of contact throughout your project. We manage the design, permitting, builder coordination, and delivery—so you never have to juggle vendors or chase down updates.",
+        question: "Can I visit the factory or meet the build team?",
+        answer: "Absolutely. Transparency is part of our process. If you’d like to see where your home is being built or meet the team handling it, we’ll make the introductions and arrange a tour when possible.",
     },
     {
         question: "Can I meet the builder or visit the factory?",
@@ -44,31 +44,31 @@ const questions = [
     },
     {
         question: "Is the builder local to my site?",
-        answer: "That depends on your location. Some homes are built nearby, while others are built in centralized factories and delivered to your site. We match each project with the most qualified builder based on permitting needs, logistics, and schedule.",
+        answer: "It depends on your project location. Some homes are built regionally, while others are fabricated in centralized facilities and delivered to your site. We always match your project with the builder best suited to your permitting needs, logistics, and timeline.",
     },
     {
-        question: "Do I get to customize my home?",
-        answer: "Yes—within a smart framework. Our homes are pre-designed for efficiency and cost savings, but they’re tailored to your site, your needs, and your style. We offer a curated set of design options and upgrades to personalize your home without adding friction.",
+        question: "Can I customize my home?",
+        answer: "Yes, within a smart and streamlined framework. Each M-Shltr home designed by Malek Alqadi is created for efficiency but can be tailored to your site, lifestyle, and aesthetic. You can choose from our curated palette of finishes and fixtures or request custom materials to make your home distinctly yours. For clients seeking something truly unique, we also design fully custom homes and larger projects—reach out with any ideas or requests, and our team will help bring them to life.",
     },
     {
-        question: "How do I know the quality will be good?",
-        answer: "We’ve done the hard work of vetting our builder partners, and we oversee every step of your project to ensure it meets our standards. Our builders are licensed, insured, and experienced with the unique challenges of prefab.",
+        question: "What happens if the M-SHLTR is not permitted?",
+        answer: "If your local building department does not approve your M-Shltr during the permitting process, we will refund the remaining balance of your 10% reservation deposit in full. Our goal is to make the process transparent and low-risk from the start, ensuring you only move forward once your site and home are fully cleared for approval.",
     },
     {
-        question: "What if something goes wrong during construction?",
-        answer: "We’ve got your back. As your project manager, M-shltr is responsible for keeping everything on track and holding all partners accountable. You’ll never be left managing issues on your own.",
+        question: "How do you ensure quality?",
+        answer: "Our team oversees every step of fabrication and installation, verifying that each detail meets our design and performance standards. All builders are licensed, insured, and experienced in modern modular construction.",
     },
     {
         question: "Is there a warranty?",
-        answer: "Yes. Every M-shltr home includes structural and workmanship warranties—backed by both the builder and us. We’ll walk you through the details before your project begins.",
+        answer: "Every M-Shltr home includes a 1-year workmanship warranty covering materials and finishes, a 2-year systems warranty covering mechanical, electrical, plumbing, and HVAC systems, and a 5-year structural warranty covering load-bearing components of the module. Coverage is clearly defined and transferable during the term. Exclusions apply for modifications not approved by M-Shltr, owner-site-responsible items (foundation, soil movement) and normal wear & tear. M-Shltr manages all claims as your single point of contact.",
     },
     {
-        question: "Who do I pay—M-shltr or the builder?",
-        answer: "All payments go through M-shltr. We coordinate contracts and billing with our partners so you don’t have to manage multiple invoices or relationships.",
+        question: "How do payments work?",
+        answer: "All payments go through M-Shltr. We streamline contracts and billing so you have one clear, transparent process from start to finish.",
     },
     {
         question: "Does this approach save me money?",
-        answer: "Our model reduces overhead and avoids the costs of owning and operating a factory. More importantly, it saves you time, lowers risk, and makes the entire process smoother—from design to delivery.",
+        answer: "It saves what matters most: time, clarity, and peace of mind. By partnering with top modular builders instead of operating our own facility, we reduce overhead, minimize risk, and deliver a faster, higher-quality build for every client.",
     },
 ];
 
