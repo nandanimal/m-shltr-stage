@@ -28,7 +28,7 @@ const EmailCapture = () => {
 
 const Footer = () => {
     return (
-        <footer className="w-full relative relative">
+        <footer className="w-full relative relative max-w-[1440px] m-auto">
             <div className="flex flex-col gap-y-12 px-3">
                 <div className="logo-row">
                     <img src="images/logo_black.svg" className="max-w-[48px]" />

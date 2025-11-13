@@ -24,7 +24,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                className={`navbar w-full rounded-sm  backdrop-blur-lg sm:backdrop-blur-[none] transition ${
+                className={`navbar w-full rounded-sm  backdrop-blur-lg sm:backdrop-blur-[none] max-w-[1440px] transition ${
                     menuOpen ? "bg-[rgba(242, 242, 238, 0.70)]  " : ""
                 }`}
                 style={
@@ -107,12 +107,12 @@ const Navbar = () => {
                         damping: "10",
                     }}
                     layout
-                    className={`menu-contents flex flex-col gap-0 sm:hidden ${
+                    className={`menu-contents flex flex-col gap-0  sm:hidden ${
                         menuOpen ? "pointer-events-auto" : "pointer-events-none"
                     }`}
                 >
                     <Link
-                        className="menu-item hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        className="menu-item text-2xl hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
                         href="/"
                         onClick={closeMenu}
                     >
@@ -120,7 +120,7 @@ const Navbar = () => {
                         Home
                     </Link>
                     <Link
-                        className="menu-item hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        className="menu-item text-2xl hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
                         href="/about"
                         onClick={closeMenu}
                     >
@@ -128,7 +128,7 @@ const Navbar = () => {
                         About
                     </Link>
                     <Link
-                        className="menu-item hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        className="menu-item  text-2xl hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
                         href="/cbn"
                         onClick={closeMenu}
                     >
