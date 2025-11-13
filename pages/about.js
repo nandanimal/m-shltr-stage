@@ -14,7 +14,7 @@ const about = () => {
                 id="about-hero"
                 className="w-full min-h-screen py-[40%] md:py-[25%] lg:py-[15%]"
             >
-                <div className="font-mono w-full text-center mb-1">
+                <div className="font-mono w-full text-center mb-3 uppercase text-sm">
                     How it works
                 </div>
                 <h1 className="text-3xl text-center leading-none mb-2">
