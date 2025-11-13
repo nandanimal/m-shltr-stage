@@ -26,6 +26,12 @@ const HeroMain = () => {
 
     return (
         <section ref={ref} data-theme="light">
+            <div className="text-center  px-8 py-16 flex flex-col gap-4 justify-center items-center">
+                <div className="text-xl">
+                    2026 build slots are limited. Apply now for early access
+                </div>
+                <CTAButton text="APPLY FOR EARLY ACCESS" width="w-fit" />
+            </div>
             <motion.div
                 layout
                 initial={false}
