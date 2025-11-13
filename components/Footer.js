@@ -111,7 +111,7 @@ const Footer = () => {
                         <div className="text-gray text-xl">Socials</div>
                         <div className="footer-menu-links flex flex-col gap-3 text-2xl">
                             <a
-                                href="https://www.instagram.com/alqadi.malek/?hl=en"
+                                href="https://www.instagram.com/m_shltr/?hl=en"
                                 className=" hover:opacity-70 transition"
                             >
                                 Instagram

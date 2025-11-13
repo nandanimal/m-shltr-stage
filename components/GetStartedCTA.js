@@ -17,12 +17,12 @@ const GetStartedCTA = () => {
         >
             <div className="flex flex-row w-full justify-between items-center px-4 py-2 z-30 ">
                 <span>Get started</span>
-                <div className="">
+                {/* <div className="">
                     <img
                         src="/icons/arrow-up-right.svg"
                         className="max-w-[48px] aspect-square text-white"
                     />
-                </div>
+                </div> */}
             </div>
             <div
                 className="absolute w-full h-full z-10"
@@ -32,8 +32,8 @@ const GetStartedCTA = () => {
                 }}
             ></div>
             <motion.div
-                animate={{ height: hovered ? "100%" : "0%" }}
-                initial={{ height: "0%" }}
+                animate={{ height: hovered ? "100%" : "0%", opacity: 100 }}
+                initial={{ height: "0%", opacity: 0 }}
                 transition={{
                     duration: 0.3,
                     type: "spring",

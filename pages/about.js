@@ -38,7 +38,7 @@ const about = () => {
                     <div className="mt-24 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-2">
                         <HowItWorksCard
                             step={1}
-                            title={"Free Intro Call"}
+                            title={"Intro Call"}
                             iconSrc={"/icons/phone.svg"}
                             delay={0}
                             desc={
@@ -51,7 +51,7 @@ const about = () => {
                             iconSrc={"/icons/onsite.svg"}
                             delay={0}
                             desc={
-                                "We meet you at your property to explore your vision and gather everything we need to begin design."
+                                "We meet you at your property to explore your vision, confirm access and utilities, and gather everything needed to begin design."
                             }
                         />
                         <HowItWorksCard
@@ -60,17 +60,19 @@ const about = () => {
                             iconSrc={"/icons/design.svg"}
                             delay={0}
                             desc={
-                                "Within days, we deliver tailored designs based on your site — including 3D visuals, floor plans, and pricing."
+                                "Your design package is tailored to your site, including 3D visuals, floor plans, and pricing, and finalized for submission to local authorities. Because requirements vary, we may partner with a local architect to coordinate with building officials and ensure compliance."
                             }
+                            chips={["10% Reservation Deposit"]}
                         />
                         <HowItWorksCard
                             step={4}
-                            title={"Permitting"}
+                            title={"Permitting & Final Order"}
                             iconSrc={"/icons/permitting.svg"}
                             delay={0}
                             desc={
-                                "We handle all permitting on your behalf. If permits can’t be approved, you’ll receive a full refund."
+                                "We handle all permitting on your behalf and finalize your order for production. Before fabrication begins, any special requests or custom features are integrated into the engineered package that will produce your CBN home."
                             }
+                            chips={["40% Payment upon Contract Signing"]}
                         />
                         <HowItWorksCard
                             step={5}
@@ -78,17 +80,21 @@ const about = () => {
                             iconSrc={"/icons/prep.svg"}
                             delay={0}
                             desc={
-                                "We coordinate licensed contractors for site work while your home is built in a vetted factory. Most homes are ready in ~6 months."
+                                "We coordinate licensed contractors for site work while your home is built in a vetted factory. Most homes are ready in roughly six months."
                             }
                         />
                         <HowItWorksCard
                             step={6}
-                            title={"Onsite Installation"}
+                            title={"Shipping & Installation"}
                             iconSrc={"/icons/installation.svg"}
                             delay={0}
                             desc={
-                                "Installation typically takes just 1 to 7 days depending on how many modules are in your build."
+                                "With production complete, we confirm shipment and coordinate logistics. Installation typically takes one to seven days, depending on your home’s configuration."
                             }
+                            chips={[
+                                "30% Payment three weeks before shipping",
+                                "20% Final Payment upon delivery",
+                            ]}
                         />
                         <HowItWorksCard
                             step={7}

@@ -12,11 +12,11 @@ const ProductBanner = () => {
                 <div className="col-right flex flex-col gap-1 w-full xl:w-1/2 sm:w-4/10">
                     {/* Top level header */}
                     <div className="flex flex-row justify-between">
-                        <div className="col-left flex flex-col gap-1">
-                            <h2 className="text-xl">/\\ CBN</h2>
-                            <span>2 BED/2 BATH</span>
+                        <div className="col-left flex flex-col gap-1 ">
+                            <h2 className="text-xl">CBN</h2>
+                            <span>2 BED / 2.5 BATH</span>
                             <div className="text-sm">
-                                680 ft<sup>2</sup>
+                                1,172 ft<sup>2</sup>
                             </div>
                         </div>
                         <div className="col-right">
@@ -27,10 +27,12 @@ const ProductBanner = () => {
                             />
                         </div>
                     </div>
-                    <div className="mt-4 uppercase font-mono">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis sit amet ex scelerisque, convallis risus sodales,
-                        ullamcorper est.
+                    <div className="mt-4 uppercase text-xs font-mono">
+                        CBN brings warmth and precision to modular living.
+                        Inside, custom wood cabinetry, integrated Pitt cooktops,
+                        and a central skylight define a bright, crafted
+                        interior. Two ensuite bedrooms and multiple layout
+                        orientations create space to live comfortably, anywhere.
                     </div>
                     {/* Description */}
                     <div className="button-row flex flex-row gap-4 mt-8 font-mono">
@@ -41,13 +43,13 @@ const ProductBanner = () => {
                                 src="/icons/arrow-up-right.svg"
                             />
                         </div>
-                        <div className="order-now flex flex-row gap-2 text-gray cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
+                        {/* <div className="order-now flex flex-row gap-2 text-gray cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
                             EXPLORE FEATURES
                             <img
                                 className=""
                                 src="/icons/arrow-down-gray.svg"
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
