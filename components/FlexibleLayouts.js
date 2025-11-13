@@ -83,10 +83,12 @@ const FlexibleLayouts = () => {
                 className="min-h-screen overflow-hidden py-16 flex flex-col items-center justify-center"
                 data-theme="dark"
             >
+                <div className="font-mono w-full text-center mb-3 uppercase text-sm">
+                    coming soon{" "}
+                </div>{" "}
                 <h2 className="text-3xl text-center leading-none mb-2 px-2">
                     Flexible layouts that grow with you.
                 </h2>
-
                 <div
                     className="track w-full"
                     style={{ willChange: "transform", overflow: "hidden" }}
