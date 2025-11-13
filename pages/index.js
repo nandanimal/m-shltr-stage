@@ -58,16 +58,19 @@ export default function Home() {
                 </section>
             </FadeIn>
 
-            <section
-                data-theme="light"
-                className="w-full min-h-screen flex items-center flex-col justify-center"
-            >
-                <h1 className="text-3xl text-center mb-32 p-1">
-                    Hero text + accessories laoreet at enim sed and malesuada,
-                    laoreet.
-                </h1>
-                <ProductBanner />
-            </section>
+            <FadeIn>
+                <section
+                    data-theme="light"
+                    className="w-full min-h-screen flex items-center flex-col justify-center"
+                >
+                    <h1 className="text-3xl text-center mb-32 p-1">
+                        <strong>Introducing CBN.</strong> Perfect as an ADU or a
+                        standalone residence, CBN adapts effortlessly from dense
+                        urban lots to open landscapes.
+                    </h1>
+                    <ProductBanner />
+                </section>
+            </FadeIn>
 
             <FadeIn>
                 <section>
