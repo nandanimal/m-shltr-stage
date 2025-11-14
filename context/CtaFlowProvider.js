@@ -115,7 +115,7 @@ function CtaFlowModal() {
                             className="bg-orange-600  h-auto hover:bg-red-500 cursor-pointer transition rounded-xs w-[36px] h-full"
                             onClick={closeCta}
                             aria-label="Close"
-                            style={{ color: "rgba(255, 102, 0, 0.80)" }}
+                            style={{ color: "rgba(255, 196, 157, 0.8)" }}
                         >
                             ×
                         </button>
