@@ -69,9 +69,9 @@ const HeroMain = () => {
                     <span>
                         <strong>M-SHLTR</strong> /\\ CBN
                     </span>
-                    <span>1 BED/1 BATH</span>
+                    <span>2 BED/2.5 BATH</span>
                     <span className="text-xs">
-                        960<sup>2</sup> ft
+                        1,172<sup>2</sup> ft
                     </span>
                 </motion.div>{" "}
                 <div className="absolute bottom-20 z-100">
@@ -81,12 +81,12 @@ const HeroMain = () => {
                     <motion.div
                         className="absolute w-full h-[110vh] bg-cover bg-center -z-10"
                         style={{
-                            backgroundImage: "url('/images/new-fg.png')",
+                            backgroundImage: "url('/images/hero_cropped.jpg')",
                             y: fgY,
                         }}
                         initial={{ scale: 1 }}
                         animate={{
-                            scale: 1,
+                            scale: 1.1,
                             transition: {
                                 type: "spring",
                                 stiffness: 100,

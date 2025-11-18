@@ -23,8 +23,8 @@ const about = () => {
                 <div className="w-full flex items-center justify-center mt-16 p-2">
                     {" "}
                     <BeforeCard
-                        leftSrc="/images/after.png"
-                        rightSrc="/images/before.png"
+                        rightSrc="/images/xray-shltr-1.webp"
+                        leftSrc="/images/xray-shltr-2.webp"
                     />
                 </div>
             </section>

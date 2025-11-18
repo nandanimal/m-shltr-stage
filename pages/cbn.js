@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Topdown from "@/components/Topdown";
 import { AnimatePresence, motion } from "framer-motion";
 import { React, useEffect, useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 const CBN = () => {
     const [loading, setLoading] = useState(true);
@@ -34,16 +35,18 @@ const CBN = () => {
                 <Hero />
             </section>
             <section className="w-full min-h-screen flex items-center flex-col justify-center">
-                <h1 className="text-3xl text-center mb-32">
+                {/* <h1 className="text-3xl text-center mb-32">
                     Hero text + accessories laoreet at enim sed and malesuada,
                     laoreet.
-                </h1>
+                </h1> */}
                 <ProductBanner />
             </section>
             <section>
-                <CollageGallery />
+                <FadeIn>
+                    <CollageGallery />
+                </FadeIn>
             </section>
-            <section className="flex items-center flex-col min-h-screen justify-center pt-48">
+            <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-2">
                 <div className="font-mono uppercase text-xs">exteriors</div>
                 <h2 className="text-3xl text-center mt-2 mb-8">
                     Designed by the goats, <strong>customized by you.</strong>
@@ -61,7 +64,28 @@ const CBN = () => {
                 <Topdown />
             </section>
             <section>
-                <CollageGallery />
+                <FadeIn>
+                    <CollageGallery
+                        images={[
+                            {
+                                src: "/images/Bath.webp",
+                                alt: "Bathroom details",
+                            },
+                            {
+                                src: "/images/Bedroom 2 V2.webp",
+                                alt: "View from bedroom",
+                            },
+                            {
+                                src: "/images/Living 4k.webp",
+                                alt: "Living Room",
+                            },
+                            {
+                                src: "/images/Kitchen 2 4k.webp",
+                                alt: "Kitchen",
+                            },
+                        ]}
+                    />
+                </FadeIn>
             </section>
             <SpecSection />
 

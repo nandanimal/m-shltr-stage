@@ -41,7 +41,7 @@ export default function BigCTA() {
                             src="/images/render3.png"
                             alt=""
                             fill
-                            className="object-cover rounded-md scale-[1.1]"
+                            className="object-cover rounded-md scale-[1.2]"
                             priority
                         />
                     </motion.div>

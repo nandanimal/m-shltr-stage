@@ -1,11 +1,48 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Tooltip from "./Tooltip";
+import FadeIn from "./FadeIn";
 
 export default function Topdown() {
     const containerRef = useRef(null);
+    const imageRef = useRef(null);
+
+    // Tooltip will now get image dimensions
+    const [imgDims, setImgDims] = useState({ width: 0, height: 0 });
+
+    // Helper to update imageRef values
+    const updateImgDims = () => {
+        if (imageRef.current) {
+            const rect = imageRef.current.getBoundingClientRect();
+            setImgDims({
+                width: rect.width,
+                height: rect.height,
+            });
+        }
+    };
+
+    useEffect(() => {
+        // Call at mount
+        updateImgDims();
+
+        // Update on resize
+        window.addEventListener("resize", updateImgDims);
+
+        // Optionally update on image load as well
+        if (imageRef.current) {
+            imageRef.current.addEventListener("load", updateImgDims);
+        }
+
+        return () => {
+            window.removeEventListener("resize", updateImgDims);
+            if (imageRef.current) {
+                imageRef.current.removeEventListener("load", updateImgDims);
+            }
+        };
+        // Note: if you expect the image to ever change, you could include src as a dependency
+    }, []);
 
     // track scroll progress relative to container
     const { scrollYProgress } = useScroll({
@@ -24,22 +61,20 @@ export default function Topdown() {
     return (
         <section ref={containerRef} className="relative h-[200vh] w-full">
             {/* sticky viewport */}
-            <div className="flex items-center flex-col">
-                <div className="font-mono uppercase text-xs">interiors</div>
-                <h2 className="text-3xl text-center mt-2 mb-8 max-w-xl">
-                    Tastefully designed interiors that make you say mama,{" "}
-                    <strong>we’re not in an ADU anymore.</strong>
-                </h2>
-            </div>
+            <FadeIn>
+                <div className="flex items-center flex-col">
+                    <div className="font-mono uppercase text-xs">interiors</div>
+                    <h2 className="text-3xl text-center mt-2 mb-8 max-w-xl">
+                        Tastefully designed interiors that make you say mama,{" "}
+                        <strong>we’re not in an ADU anymore.</strong>
+                    </h2>
+                </div>
+            </FadeIn>
             <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
                 <motion.div
                     style={{ scale }}
                     className="flex items-center justify-center w-full h-screen relative "
                 >
-                    <motion.div className="text-xl absolute z-20 opacity-1">
-                        Some info about the home
-                    </motion.div>
-
                     <motion.div
                         style={{ opacity }}
                         className="fg-img-container w-full h-auto absolute z-10 "
@@ -53,53 +88,62 @@ export default function Topdown() {
                         /> */}
                     </motion.div>
                     <motion.div
-                        className="bg-img-container absolute w-full rounded-md p-2  "
+                        className="bg-img-container absolute w-full rounded-md p-2 flex items-center"
                         style={{ height }}
                     >
-                        <div className="p-2">
-                            <Image
-                                src="/images/topdown.png"
+                        <div className="p-2 imageContainer relative">
+                            <img
+                                ref={imageRef}
+                                src="/images/floorplan.png"
                                 fill={true}
                                 alt="Interior"
-                                className="object-cover rounded-md overflow-hidden transition opacity-30"
+                                className="object-cover rounded-md overflow-hidden transition opacity"
                             />
+                            <motion.div
+                                style={{ opacity: labelOpacity }}
+                                className="absolute w-full top-0 h-full text-white flex flex-col gap-1 text-sm leading-none z-[120] transition"
+                            >
+                                <Tooltip
+                                    textBody={"Custom king bed and headboard"}
+                                    leftPct={22} //
+                                    bottomPct={25}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={"White oak couch"}
+                                    leftPct={38} //
+                                    bottomPct={20}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={"Barnstyle doors"}
+                                    leftPct={20} //
+                                    bottomPct={75}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        '3-burner Pitt stove top;  Fisher & Paykel 30" electric stove'
+                                    }
+                                    leftPct={52} //
+                                    bottomPct={55}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        'Standard 24" dishwasher with white oak facade'
+                                    }
+                                    leftPct={40} //
+                                    bottomPct={68}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                            </motion.div>
                         </div>
-                    </motion.div>
-                    <motion.div
-                        style={{ opacity: labelOpacity }}
-                        className="absolute w-full h-full text-white flex flex-col gap-1 text-sm leading-none z-[120] transition"
-                    >
-                        <div className="absolute left-20 bottom-20">
-                            <span>
-                                <strong>M-SHLTR</strong> /\\ CBN
-                            </span>
-                            <span>1 BED/1 BATH</span>
-                            <span className="text-xs">
-                                960<sup>2</sup> ft
-                            </span>
-                        </div>
-
-                        <Tooltip
-                            textBody={
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet ex scelerisque, convallis risus sodales, ullamcorper est."
-                            }
-                            leftPct={58} // 58% from the left of the viewport
-                            bottomPct={32}
-                        />
-                        <Tooltip
-                            textBody={
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet ex scelerisque, convallis risus sodales, ullamcorper est."
-                            }
-                            leftPct={24} // 58% from the left of the viewport
-                            bottomPct={20}
-                        />
-                        <Tooltip
-                            textBody={
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet ex scelerisque, convallis risus sodales, ullamcorper est."
-                            }
-                            leftPct={80} // 58% from the left of the viewport
-                            bottomPct={70}
-                        />
                     </motion.div>
                 </motion.div>
             </div>
