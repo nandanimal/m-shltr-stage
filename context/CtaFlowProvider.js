@@ -119,6 +119,7 @@ function CtaFlowModal() {
                         >
                             ×
                         </button>
+
                         <div style={{ padding: 24 }}>
                             <motion.div
                                 initial={{ height: 0 }}

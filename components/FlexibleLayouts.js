@@ -43,6 +43,11 @@ const FlexibleLayouts = () => {
 
     const tickerRef = useRef(null);
     const [tickerWidth, setTickerWidth] = useState(0);
+    const [overlayOpen, setOverlayOpen] = useState(false);
+
+    const toggleOverlay = () => {
+        setOverlayOpen(!overlayOpen);
+    };
 
     // This is the measurement step we previously had
     useLayoutEffect(() => {
@@ -80,7 +85,7 @@ const FlexibleLayouts = () => {
     return (
         <FadeIn>
             <section
-                className="min-h-screen overflow-hidden py-16 flex flex-col items-center justify-center"
+                className="min-h-screen overflow-hidden py-16 flex flex-col items-center justify-center relative"
                 data-theme="dark"
             >
                 <div className="font-mono w-full text-center mb-3 uppercase text-sm">
@@ -112,6 +117,45 @@ const FlexibleLayouts = () => {
                         ))}
                     </motion.div>
                 </div>
+                {/* Full screen overlay */}
+                <FadeIn>
+                    <motion.div
+                        className="aspect-[16/9]  absolute bottom-0 left-0 p-2 cursor-pointer "
+                        style={{
+                            width: overlayOpen ? "100vw" : 96,
+                            zIndex: 10,
+                        }}
+                        whileHover={!overlayOpen ? { width: 144 } : {}}
+                        transition={{ type: "tween", duration: 0.25 }}
+                        onClick={toggleOverlay}
+                    >
+                        <div
+                            className="bg-cover w-full h-full rounded-sm"
+                            style={{
+                                backgroundImage: "url(/images/fall_hero.webp)",
+                            }}
+                        >
+                            {overlayOpen && (
+                                <button
+                                    className="bg-orange-600  h-auto hover:bg-red-500 cursor-pointer transition rounded-xs w-[36px] h-auto"
+                                    onClick={toggleOverlay}
+                                    aria-label="Close"
+                                    style={{
+                                        color: "rgba(255, 196, 157, 0.8)",
+                                    }}
+                                >
+                                    ×
+                                </button>
+                            )}
+
+                            {!overlayOpen && (
+                                <div className="text-3xl text-white w-full h-full flex items-center justify-center">
+                                    +
+                                </div>
+                            )}
+                        </div>
+                    </motion.div>
+                </FadeIn>
             </section>
         </FadeIn>
     );
