@@ -60,7 +60,7 @@ export default function BeforeCard({
                 <img
                     src={rightSrc}
                     alt={altRight}
-                    className="absolute inset-0 w-full blur-xs h-full object-cover pointer-events-none select-none"
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
                 />
             </motion.div>
 

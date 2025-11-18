@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Tooltip from "./Tooltip";
+import FadeIn from "./FadeIn";
 
 export default function Topdown() {
     const containerRef = useRef(null);
@@ -60,13 +61,15 @@ export default function Topdown() {
     return (
         <section ref={containerRef} className="relative h-[200vh] w-full">
             {/* sticky viewport */}
-            <div className="flex items-center flex-col">
-                <div className="font-mono uppercase text-xs">interiors</div>
-                <h2 className="text-3xl text-center mt-2 mb-8 max-w-xl">
-                    Tastefully designed interiors that make you say mama,{" "}
-                    <strong>we’re not in an ADU anymore.</strong>
-                </h2>
-            </div>
+            <FadeIn>
+                <div className="flex items-center flex-col">
+                    <div className="font-mono uppercase text-xs">interiors</div>
+                    <h2 className="text-3xl text-center mt-2 mb-8 max-w-xl">
+                        Tastefully designed interiors that make you say mama,{" "}
+                        <strong>we’re not in an ADU anymore.</strong>
+                    </h2>
+                </div>
+            </FadeIn>
             <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
                 <motion.div
                     style={{ scale }}
@@ -101,11 +104,41 @@ export default function Topdown() {
                                 className="absolute w-full top-0 h-full text-white flex flex-col gap-1 text-sm leading-none z-[120] transition"
                             >
                                 <Tooltip
-                                    textBody={
-                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet ex scelerisque, convallis risus sodales, ullamcorper est."
-                                    }
-                                    leftPct={24} // 58% from the left of the viewport
+                                    textBody={"Custom king bed and headboard"}
+                                    leftPct={22} //
+                                    bottomPct={25}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={"White oak couch"}
+                                    leftPct={38} //
                                     bottomPct={20}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={"Barnstyle doors"}
+                                    leftPct={20} //
+                                    bottomPct={75}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        '3-burner Pitt stove top;  Fisher & Paykel 30" electric stove'
+                                    }
+                                    leftPct={52} //
+                                    bottomPct={55}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        'Standard 24" dishwasher with white oak facade'
+                                    }
+                                    leftPct={40} //
+                                    bottomPct={68}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />

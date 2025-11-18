@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const ProductBanner = () => {
@@ -38,18 +39,18 @@ const ProductBanner = () => {
                     <div className="button-row flex flex-row gap-4 mt-8 font-mono">
                         <div className="order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
                             ORDER NOW
-                            <img
-                                className="mb-1"
-                                src="/icons/arrow-up-right.svg"
-                            />
+                            <img className="" src="/icons/arrow-up-right.svg" />
                         </div>
-                        {/* <div className="order-now flex flex-row gap-2 text-gray cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
+                        <Link
+                            href="/cbn"
+                            className="order-now flex flex-row gap-2 text-gray cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition"
+                        >
                             EXPLORE FEATURES
-                            <img
+                            {/* <img
                                 className=""
                                 src="/icons/arrow-down-gray.svg"
-                            />
-                        </div> */}
+                            /> */}
+                        </Link>
                     </div>
                 </div>
             </div>

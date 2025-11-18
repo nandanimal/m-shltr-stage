@@ -56,7 +56,7 @@ export default function Tooltip({
                         hover:shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)] transition"
                         style={{
                             left: leftPx,
-                            bottom: bottomPx - 80, // Offset tooltip above the trigger
+                            bottom: bottomPx + 30, // Offset tooltip above the trigger
                         }}
                         onMouseEnter={handleEnter}
                         onMouseLeave={handleLeave}

@@ -18,6 +18,7 @@ import BeforeCard from "@/components/BeforeCard";
 import FlexibleLayouts from "@/components/FlexibleLayouts";
 import FadeIn from "@/components/FadeIn";
 import HeroMain from "@/components/HeroMain";
+import Link from "next/link";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -39,7 +40,7 @@ export default function Home() {
 
             <FadeIn>
                 <section
-                    className="flex items-center flex-col min-h-screen justify-center pt-48 p-1"
+                    className="flex items-center flex-col min-h-screen justify-center pt-48 p-2"
                     data-theme="dark"
                 >
                     <div className="font-mono uppercase text-xs">exteriors</div>
@@ -63,11 +64,14 @@ export default function Home() {
                     data-theme="light"
                     className="w-full min-h-screen flex items-center flex-col justify-center"
                 >
-                    <h1 className="text-3xl text-center mb-32 p-1">
-                        <strong>Introducing CBN.</strong> Perfect as an ADU or a
-                        standalone residence, CBN adapts effortlessly from dense
-                        urban lots to open landscapes.
+                    <h1 className="text-3xl text-center ">
+                        <strong>Introducing CBN.</strong>
                     </h1>
+                    <div className="text-xl text-center mb-32 p-1 text-pretty sm:max-w-[80%]">
+                        {" "}
+                        Perfect as an ADU or a standalone residence, CBN adapts
+                        effortlessly from dense urban lots to open landscapes.
+                    </div>
                     <ProductBanner />
                 </section>
             </FadeIn>
@@ -77,16 +81,18 @@ export default function Home() {
                     <h2 className="text-3xl text-center leading-none mb-2">
                         Built fast meets <strong>built to last.</strong>
                     </h2>
-                    <div className="mt-8 order-now flex font-mono flex-row gap-2 text-black cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
+                    <Link
+                        href="about"
+                        className="mt-8 order-now flex font-mono flex-row gap-2 text-black cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition"
+                    >
                         OUR PROCESS
                         <img className="" src="/icons/arrow-up-right.svg" />
-                    </div>
+                    </Link>
                     <div className="w-full flex items-center justify-center mt-16 p-2">
                         {" "}
                         <BeforeCard
-                            leftSrc="/images/after.png"
-                            rightSrc="/images/before.png"
-                            data-theme="light"
+                            rightSrc="/images/xray-shltr-1.webp"
+                            leftSrc="/images/xray-shltr-2.webp"
                         />
                     </div>
                 </section>
