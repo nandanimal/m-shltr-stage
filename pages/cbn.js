@@ -72,15 +72,15 @@ const CBN = () => {
                                 alt: "Bathroom details",
                             },
                             {
-                                src: "/images/Bedroom 2 V2.webp",
+                                src: "/images/Bedroom2V2.webp",
                                 alt: "View from bedroom",
                             },
                             {
-                                src: "/images/Living 4k.webp",
+                                src: "/images/Living4k.webp",
                                 alt: "Living Room",
                             },
                             {
-                                src: "/images/Kitchen 2 4k.webp",
+                                src: "/images/Kitchen24k.webp",
                                 alt: "Kitchen",
                             },
                         ]}
