@@ -64,7 +64,7 @@ export default function Topdown() {
             <FadeIn>
                 <div className="flex items-center flex-col">
                     <div className="font-mono uppercase text-xs">interiors</div>
-                    <h2 className="text-3xl text-center mt-2 mb-8 max-w-xl">
+                    <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%]">
                         Tastefully designed interiors that make you say mama,{" "}
                         <strong>we’re not in an ADU anymore.</strong>
                     </h2>
@@ -87,6 +87,8 @@ export default function Topdown() {
                             className="object-contain p-2  "
                         /> */}
                     </motion.div>
+
+                    {/* DESKTOP VERSION */}
                     <motion.div
                         className="bg-img-container absolute w-full rounded-md p-2 flex items-center"
                         style={{ height }}
@@ -139,6 +141,24 @@ export default function Topdown() {
                                     }
                                     leftPct={40} //
                                     bottomPct={68}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        'Spa ensuite with a 63" × 56" shower and soaking tub. Optional steam shower upgrade.'
+                                    }
+                                    leftPct={85} //
+                                    bottomPct={68}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        "Built-in wardrobe with 11' × 8' × 2' of total space"
+                                    }
+                                    leftPct={87} //
+                                    bottomPct={45}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />

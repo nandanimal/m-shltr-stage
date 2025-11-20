@@ -11,6 +11,7 @@ import Topdown from "@/components/Topdown";
 import { AnimatePresence, motion } from "framer-motion";
 import { React, useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn";
+import TopdownMobile from "@/components/TopdownMobile";
 
 const CBN = () => {
     const [loading, setLoading] = useState(true);
@@ -46,7 +47,7 @@ const CBN = () => {
                     <CollageGallery />
                 </FadeIn>
             </section>
-            <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-2">
+            {/* <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-2">
                 <div className="font-mono uppercase text-xs">exteriors</div>
                 <h2 className="text-3xl text-center mt-2 mb-8">
                     Designed by the goats, <strong>customized by you.</strong>
@@ -59,11 +60,20 @@ const CBN = () => {
                     }}
                     initialKey="Attr Name 1"
                 />
-            </section>
+            </section> */}
+
             <section className="flex items-center flex-col min-h-screen justify-center pt-48">
-                <Topdown />
+                
+                {/* Show Topdown only on desktop, TopdownMobile only on mobile */}
+                <div className="hidden sm:block w-full">
+                    <Topdown />
+                </div>
+                <div className="block sm:hidden w-full">
+                    <TopdownMobile />
+                </div>
             </section>
-            <section>
+
+            <section className="lg:mt-48">
                 <FadeIn>
                     <CollageGallery
                         images={[

@@ -22,10 +22,10 @@ export default function BigCTA() {
             className="w-full min-h-[100vh] grid place-items-center"
         >
             <div className="w-full max-w-6xl p-2 rounded-sm">
-                <div className="relative w-full max-w-6xl aspect-[16/9] rounded-sm overflow-hidden p-2">
+                <div className="relative w-full max-w-6xl sm:aspect-[16/9] aspect-[9/16] rounded-sm overflow-hidden p-2">
                     {/* CONTENT */}
                     <div className="absolute inset-0 z-20 flex items-center justify-center flex-col">
-                        <div className="text-center sm:text-3xl text-xl text-white p-4 md:max-w-[60ch] mx-auto leading-relaxed">
+                        <div className="text-center sm:text-3xl text-xl text-white p-4 md:max-w-[60ch] mx-auto leading-none">
                             A seamless journey from concept to move-in.
                         </div>
                         <CTAButton text="BUILD WITH M-SHLTR" />

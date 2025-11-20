@@ -38,7 +38,7 @@ export default function Home() {
                 <HeroMain />
             </FadeIn>
 
-            <FadeIn>
+            {/* <FadeIn>
                 <section
                     className="flex items-center flex-col min-h-screen justify-center pt-48 p-2"
                     data-theme="dark"
@@ -57,17 +57,17 @@ export default function Home() {
                         initialKey="Attr Name 1"
                     />
                 </section>
-            </FadeIn>
+            </FadeIn> */}
 
             <FadeIn>
                 <section
                     data-theme="light"
-                    className="w-full min-h-screen flex items-center flex-col justify-center"
+                    className="w-full min-h-screen flex items-center flex-col justify-center mt-32"
                 >
                     <h1 className="text-3xl text-center ">
                         <strong>Introducing CBN.</strong>
                     </h1>
-                    <div className="text-xl text-center mb-32 p-1 text-pretty sm:max-w-[80%]">
+                    <div className="text-xl text-center mb-32 p-1 text-pretty sm:max-w-[80%] max-w-[90%]">
                         {" "}
                         Perfect as an ADU or a standalone residence, CBN adapts
                         effortlessly from dense urban lots to open landscapes.
@@ -77,8 +77,8 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn>
-                <section>
-                    <h2 className="text-3xl text-center leading-none mb-2">
+                <section className="h-screen flex items-center flex-col justify-center">
+                    <h2 className="text-3xl text-center leading-none mb-2 max-w-[90%] text-pretty">
                         Built fast meets <strong>built to last.</strong>
                     </h2>
                     <Link

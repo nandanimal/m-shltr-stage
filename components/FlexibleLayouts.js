@@ -118,7 +118,7 @@ const FlexibleLayouts = () => {
                     </motion.div>
                 </div>
                 {/* Full screen overlay */}
-                <FadeIn>
+                {/* <FadeIn>
                     <motion.div
                         className="aspect-[16/9]  absolute bottom-0 left-0 p-2 cursor-pointer "
                         style={{
@@ -155,7 +155,7 @@ const FlexibleLayouts = () => {
                             )}
                         </div>
                     </motion.div>
-                </FadeIn>
+                </FadeIn> */}
             </section>
         </FadeIn>
     );
