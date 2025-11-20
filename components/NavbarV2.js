@@ -35,12 +35,12 @@ const Navbar = () => {
                 }
             >
                 {/* Top level contents */}
-                <div className="navbar-contents flex flex-row justify-between items-center p-1 sm:p-0 w-full gap-1 sm:max-w-[none]">
+                <div className="navbar-contents h-9 sm:h-7 items-stretch min-h-0 items-stretch flex flex-row justify-between items-center p-1 sm:p-0 w-full gap-1 sm:max-w-[none] min-h-0">
                     <Link
                         href="/"
                         onClick={closeMenu}
-                        style={{ height: "-webkit-fill-available" }}
-                        className="w-full flex items-center sm:backdrop-blur-lg sm:hover:bg-[#ffffff60] transition sm:bg-[#ffffff40] leading-none ml-1 sm:ml-0 sm:px-2 h-full rounded-sm overflow-hidden"
+                        // style={{ height: "-webkit-fill-available" }}
+                        className="w-full h-full flex items-center sm:backdrop-blur-lg sm:hover:bg-[#ffffff60] transition sm:bg-[#ffffff40] leading-none ml-1 sm:ml-0 sm:px-2 h-full rounded-sm overflow-hidden"
                     >
                         <img
                             src="/images/wordmark_black.svg"
