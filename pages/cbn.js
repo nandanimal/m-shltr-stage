@@ -63,7 +63,6 @@ const CBN = () => {
             </section> */}
 
             <section className="flex items-center flex-col min-h-screen justify-center pt-48">
-                
                 {/* Show Topdown only on desktop, TopdownMobile only on mobile */}
                 <div className="hidden sm:block w-full">
                     <Topdown />

@@ -20,9 +20,9 @@ const Hero = () => {
 
     // Parallax mappings (tweak to taste)
     // Background moves less (slower)
-    const bgY = useTransform(scrollYProgress, [0, 1], ["0", "-10%"]);
+    const bgY = useTransform(scrollYProgress, [0, 1], ["0", "-80%"]);
     const mgY = useTransform(scrollYProgress, [0, 1], ["-5%", "-12%"]);
-    const fgY = useTransform(scrollYProgress, [0, 1], ["0", "-60%"]);
+    const fgY = useTransform(scrollYProgress, [0, 1], ["0", "-80%"]);
 
     return (
         <section ref={ref}>
@@ -112,15 +112,15 @@ const Hero = () => {
                         }}
                         style={{ y: fgY }}
                     >
-                        <Image
-                            src="/images/fg_2.png"
+                        <img
+                            src="/images/kitchen1_fg.webp"
                             className="object-cover h-full rounded-md"
                             priority
                             fill
                             quality={100}
                         />
                     </motion.div>
-                    <motion.div
+                    {/* <motion.div
                         className="absolute w-full -z-20 h-[110vh] flex items-center justify-center object-cover overflow-hidden"
                         style={{ y: mgY }}
                         initial={{ scale: 1 }}
@@ -143,13 +143,13 @@ const Hero = () => {
                             className="object-cover rounded-md"
                             fill
                         />
-                    </motion.div>
+                    </motion.div> */}
                     <motion.div
                         className="absolute w-full -z-30 h-[110vh] object-cover overflow-hidden"
                         style={{ y: bgY }}
                     >
-                        <Image
-                            src="/images/bg_2.png"
+                        <img
+                            src="/images/kitchen1_bg.webp"
                             className="object-cover h-full rounded-md"
                             fill
                             quality={100}
