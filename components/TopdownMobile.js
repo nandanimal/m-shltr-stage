@@ -56,7 +56,7 @@ export default function TopdownMobile() {
     const height = useTransform(scrollYProgress, [0.3, 0.7], ["100%", "100%"]);
 
     // Determine label visibility based on scroll progress
-    const labelOpacity = useTransform(scrollYProgress, [0.5, 0.8], [0, 1]);
+    const labelOpacity = useTransform(scrollYProgress, [0.5, 0.65], [0, 1]);
 
     return (
         <section ref={containerRef} className="relative h-[200vh] w-full">

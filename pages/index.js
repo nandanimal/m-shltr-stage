@@ -19,6 +19,7 @@ import FlexibleLayouts from "@/components/FlexibleLayouts";
 import FadeIn from "@/components/FadeIn";
 import HeroMain from "@/components/HeroMain";
 import Link from "next/link";
+import Object3DViewer from "@/components/Object3DViewer";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -59,6 +60,10 @@ export default function Home() {
                 </section>
             </FadeIn> */}
 
+            <section className="mt-32">
+                <Object3DViewer />
+            </section>
+
             <FadeIn>
                 <section
                     data-theme="light"
@@ -72,6 +77,8 @@ export default function Home() {
                         Perfect as an ADU or a standalone residence, CBN adapts
                         effortlessly from dense urban lots to open landscapes.
                     </div>
+                    <Object3DViewer />
+
                     <ProductBanner />
                 </section>
             </FadeIn>

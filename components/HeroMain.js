@@ -38,8 +38,8 @@ const HeroMain = () => {
                 animate={
                     hero
                         ? {
-                              padding: "0.5rem",
-                              borderRadius: "0.375rem",
+                              padding: "0",
+                              borderRadius: "0",
                               transition: {
                                   type: "spring",
                                   stiffness: 100,
@@ -48,8 +48,8 @@ const HeroMain = () => {
                               },
                           }
                         : {
-                              padding: "0",
-                              borderRadius: "0",
+                              padding: "0.5rem",
+                              borderRadius: "0.375rem",
                               transition: {
                                   type: "spring",
                                   stiffness: 100,

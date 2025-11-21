@@ -63,9 +63,9 @@ const Hero = () => {
                     <span>
                         <strong>M-SHLTR</strong> /\\ CBN
                     </span>
-                    <span>1 BED/1 BATH</span>
+                    <span>2 BED/2.5 BATH</span>
                     <span className="text-xs">
-                        960<sup>2</sup> ft
+                        1172 ft<sup>2</sup>
                     </span>
                 </motion.div>{" "}
                 <div className="cta-button absolute bottom-20">Order now</div>
