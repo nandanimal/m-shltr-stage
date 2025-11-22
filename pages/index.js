@@ -77,6 +77,8 @@ export default function Home() {
                         </div>
                     </div>
 
+                    <Object3DViewer />
+
                     <ProductBanner is3d={true} />
                 </section>
             </FadeIn>
