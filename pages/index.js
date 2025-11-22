@@ -20,6 +20,7 @@ import FadeIn from "@/components/FadeIn";
 import HeroMain from "@/components/HeroMain";
 import Link from "next/link";
 import Object3DViewer from "@/components/Object3DViewer";
+import AttrCardLg from "@/components/AttrCardLg";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -60,31 +61,33 @@ export default function Home() {
                 </section>
             </FadeIn> */}
 
-            <section className="mt-32">
-                <Object3DViewer />
-            </section>
-
             <FadeIn>
                 <section
                     data-theme="light"
-                    className="w-full min-h-screen flex items-center flex-col justify-center mt-32"
+                    className="w-full min-h-screen flex  flex-col justify-center mt-32 p-2"
                 >
-                    <h1 className="text-3xl text-center ">
-                        <strong>Introducing CBN.</strong>
-                    </h1>
-                    <div className="text-xl text-center mb-32 p-1 text-pretty sm:max-w-[80%] max-w-[90%]">
-                        {" "}
-                        Perfect as an ADU or a standalone residence, CBN adapts
-                        effortlessly from dense urban lots to open landscapes.
+                    <div className="max-w-6xl m-auto">
+                        <h1 className="text-3xl text-regular text-gray mb-4">
+                            Introducing CBN
+                        </h1>
+                        <div className="sm:text-6xl text-3xl mb-32 text-pretty ">
+                            Perfect as an ADU or a standalone residence, CBN
+                            adapts effortlessly from dense urban lots to open
+                            landscapes.
+                        </div>
                     </div>
-                    <Object3DViewer />
 
-                    <ProductBanner />
+                    <ProductBanner is3d={true} />
                 </section>
             </FadeIn>
 
+            <section className="my-32">
+                <AttrCardLg />
+                <img src="/images/Bedroom2V2.webp" />
+            </section>
+
             <FadeIn>
-                <section className="h-screen flex items-center flex-col justify-center">
+                <section className="min-h-screen flex items-center flex-col justify-center mt-32">
                     <h2 className="text-3xl text-center leading-none mb-2 max-w-[90%] text-pretty">
                         Built fast meets <strong>built to last.</strong>
                     </h2>

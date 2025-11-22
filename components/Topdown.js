@@ -51,7 +51,7 @@ export default function Topdown() {
     });
 
     // scale across scroll progress
-    const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+    const scale = useTransform(scrollYProgress, [0, 0.7], [0.9, 1]);
     const opacity = useTransform(scrollYProgress, [0.3, 0.7], [0.9, 0]);
     const height = useTransform(scrollYProgress, [0.3, 0.7], ["100%", "100%"]);
 
@@ -65,8 +65,8 @@ export default function Topdown() {
                 <div className="flex items-center flex-col">
                     <div className="font-mono uppercase text-xs">interiors</div>
                     <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%]">
-                        Tastefully designed interiors that make you say mama,{" "}
-                        <strong>we’re not in an ADU anymore.</strong>
+                        Tastefully designed interiors{" "}
+                        <strong>never before seen in an ADU</strong>
                     </h2>
                 </div>
             </FadeIn>

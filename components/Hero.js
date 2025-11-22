@@ -3,8 +3,11 @@ import Image from "next/image";
 import { React, useState, useEffect, useRef } from "react";
 import { useScroll } from "@/context/ScrollContext";
 import { motion, useTransform } from "framer-motion";
+import { useCtaFlow } from "@/context/CtaFlowProvider";
+import CTAButton from "./CTAButton";
 
 const Hero = () => {
+    const { openCta } = useCtaFlow();
     const { y, vh, progress, scrollYProgress } = useScroll();
     const ref = useRef(null);
 
@@ -18,8 +21,6 @@ const Hero = () => {
         }
     }, [y, hero]);
 
-    // Parallax mappings (tweak to taste)
-    // Background moves less (slower)
     const bgY = useTransform(scrollYProgress, [0, 1], ["0", "-80%"]);
     const mgY = useTransform(scrollYProgress, [0, 1], ["-5%", "-12%"]);
     const fgY = useTransform(scrollYProgress, [0, 1], ["0", "-80%"]);
@@ -52,7 +53,7 @@ const Hero = () => {
                               },
                           }
                 }
-                className="h-screen w-full flex items-center justify-center p-2 overflow-hidden relative -z-10"
+                className="h-screen w-full flex items-center justify-center p-2 overflow-hidden relative z-10"
             >
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -68,40 +69,14 @@ const Hero = () => {
                         1172 ft<sup>2</sup>
                     </span>
                 </motion.div>{" "}
-                <div className="cta-button absolute bottom-20">Order now</div>
-                {/* <motion.div
-                    style={{ y: mgY }}
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        opacity: 1,
-                        transition: { duration: 1, delay: 1 },
-                    }}
-                    className="absolute z-30 left-10 bottom-10 text-white flex flex-col gap-1 text-sm leading-none"
-                >
-                    <span>
-                        <strong>M-SHLTR</strong> /\\ CBN
-                    </span>
-                    <span>1 BED/1 BATH</span>
-                    <span className="text-xs">
-                        960<sup>2</sup> ft
-                    </span>
-                </motion.div> */}
-                {/* <motion.div
-                    className="cta-button absolute right-4 bottom-4"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        opacity: 1,
-                        transition: { duration: 1, delay: 1 },
-                    }}
-                    style={{ y: mgY }}
-                >
-                    Get started
-                </motion.div> */}
+                <div className="absolute bottom-20 z-80">
+                    <CTAButton />
+                </div>
                 <div className="image-container w-full h-full relative flex items-center justify-center overflow-hidden rounded-md">
                     <motion.div
                         className="absolute w-full -z-10 h-[110vh] object-cover overflow-hidden"
                         priority
-                        initial={{ scale: 1.1 }}
+                        initial={{ scale: 1 }}
                         animate={{
                             scale: 1,
                             transition: {
@@ -120,30 +95,7 @@ const Hero = () => {
                             quality={100}
                         />
                     </motion.div>
-                    {/* <motion.div
-                        className="absolute w-full -z-20 h-[110vh] flex items-center justify-center object-cover overflow-hidden"
-                        style={{ y: mgY }}
-                        initial={{ scale: 1 }}
-                        animate={{
-                            scale: 1.1,
-                            transition: {
-                                type: "spring",
-                                stiffness: 100,
-                                damping: 100,
-                            },
-                        }}
-                    >
-                        <Image
-                            src="/images/mg.svg"
-                            className="object-contain rounded-md p-4 opacity-70 -translate-y-16 sm:block hidden"
-                            fill
-                        />
-                        <Image
-                            src="/images/mg_2.png"
-                            className="object-cover rounded-md"
-                            fill
-                        />
-                    </motion.div> */}
+
                     <motion.div
                         className="absolute w-full -z-30 h-[110vh] object-cover overflow-hidden"
                         style={{ y: bgY }}

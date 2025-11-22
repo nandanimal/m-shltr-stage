@@ -40,7 +40,7 @@ const CBN = () => {
                     Hero text + accessories laoreet at enim sed and malesuada,
                     laoreet.
                 </h1> */}
-                <ProductBanner />
+                <ProductBanner explore={false} />
             </section>
             <section>
                 <FadeIn>

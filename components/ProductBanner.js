@@ -1,15 +1,24 @@
 import Link from "next/link";
 import React from "react";
+import { useCtaFlow } from "@/context/CtaFlowProvider";
+import Object3DViewer from "./Object3DViewer";
 
-const ProductBanner = () => {
+const ProductBanner = ({ is3d = false, explore = true }) => {
+    const { openCta } = useCtaFlow();
+
     return (
         <div className="w-full flex items-center justify-center">
             <div className="content max-w-7xl flex flex-col sm:flex-row gap-4 p-4 items-center justify-center">
-                <img
-                    src="/images/cbn_shadow.png"
-                    className="w-full xl:w-3/4 sm:w-1/2 h-auto object-contain"
-                    alt="CBN isolated"
-                />
+                {is3d ? (
+                    <Object3DViewer />
+                ) : (
+                    <img
+                        src="/images/cbn_shadow.png"
+                        className="w-full xl:w-3/4 sm:w-1/2 h-auto object-contain"
+                        alt="CBN isolated"
+                    />
+                )}
+
                 <div className="col-right flex flex-col gap-1 w-full xl:w-1/2 sm:w-4/10">
                     {/* Top level header */}
                     <div className="flex flex-row justify-between">
@@ -37,20 +46,25 @@ const ProductBanner = () => {
                     </div>
                     {/* Description */}
                     <div className="button-row flex flex-row gap-4 mt-8 font-mono">
-                        <div className="order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition">
+                        <div
+                            onClick={openCta}
+                            className="order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition"
+                        >
                             ORDER NOW
                             <img className="" src="/icons/arrow-up-right.svg" />
                         </div>
-                        <Link
-                            href="/cbn"
-                            className="order-now flex flex-row gap-2 text-gray cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition"
-                        >
-                            EXPLORE FEATURES
-                            {/* <img
+                        {explore && (
+                            <Link
+                                href="/cbn"
+                                className="order-now flex flex-row gap-2 text-gray cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition"
+                            >
+                                EXPLORE FEATURES
+                                {/* <img
                                 className=""
                                 src="/icons/arrow-down-gray.svg"
                             /> */}
-                        </Link>
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>

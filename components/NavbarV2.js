@@ -67,6 +67,14 @@ const Navbar = () => {
                             {" "}
                             CBN
                         </Link>
+                        <Link
+                            className="menu-item hover:bg-[#ffffff60] bg-[#ffffff40] transition rounded-sm px-2 py-[6px] backdrop-blur-lg transition "
+                            href="/custom"
+                            onClick={closeMenu}
+                        >
+                            {" "}
+                            Custom
+                        </Link>
 
                         <div className="">
                             <CTAButton />
@@ -134,6 +142,14 @@ const Navbar = () => {
                     >
                         {" "}
                         CBN
+                    </Link>
+                    <Link
+                        className="menu-item  text-2xl hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        href="/custom"
+                        onClick={closeMenu}
+                    >
+                        {" "}
+                        Custom
                     </Link>
 
                     <div className="m-2">

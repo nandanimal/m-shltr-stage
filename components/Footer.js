@@ -20,7 +20,9 @@ const EmailCapture = () => {
                     placeholder="name@email.com"
                     className="placeholder:text-gray border-b-1 border-gray focus:outline-none"
                 ></input>
-                <div className="cta-button uppercase mt-8">sign up</div>
+                <div className="cta-button uppercase mt-8 font-mono">
+                    sign up
+                </div>
             </div>
         </div>
     );
@@ -28,7 +30,7 @@ const EmailCapture = () => {
 
 const Footer = () => {
     return (
-        <footer className="w-full relative relative max-w-[1440px] m-auto">
+        <footer className="w-full relative relative max-w-[1440px] m-auto pt-8">
             <div className="flex flex-col gap-y-12 px-3">
                 <div className="logo-row">
                     <img src="images/logo_black.svg" className="max-w-[48px]" />
@@ -36,14 +38,13 @@ const Footer = () => {
                 <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2 gap-y-12">
                     {/* M SHLTR */}
                     <div className="flex flex-col gap-4 ">
-                        <div className="text-gray text-xl">M-SHLTR</div>
+                        <Link
+                            href="/"
+                            className="text-gray text-xl hover:opacity-70 transition"
+                        >
+                            M-SHLTR
+                        </Link>
                         <div className="footer-menu-links flex flex-col gap-3 text-2xl">
-                            <Link
-                                href="/about"
-                                className=" hover:opacity-70 transition"
-                            >
-                                Home
-                            </Link>
                             <Link
                                 href="/about"
                                 className=" hover:opacity-70 transition"
@@ -55,6 +56,12 @@ const Footer = () => {
                                 className=" hover:opacity-70 transition"
                             >
                                 CBN
+                            </Link>
+                            <Link
+                                href="/custom"
+                                className=" hover:opacity-70 transition"
+                            >
+                                Custom
                             </Link>
                             <Link
                                 href="https://www.malekalqadi.com/"

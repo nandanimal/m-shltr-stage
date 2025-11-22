@@ -81,7 +81,7 @@ const HeroMain = () => {
                     <motion.div
                         className="absolute w-full h-[110vh] bg-cover bg-center -z-10"
                         style={{
-                            backgroundImage: "url('/images/hero_cropped.jpg')",
+                            backgroundImage: "url('/images/CBN.webp')",
                             y: fgY,
                         }}
                         initial={{ scale: 1 }}

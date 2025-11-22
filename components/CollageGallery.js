@@ -12,7 +12,7 @@ export default function CollageGallery({
 
     return (
         <section className={`w-full ${className}`}>
-            <div className="mx-auto max-w-7xl p-1 space-y-1">
+            <div className="mx-auto max-w-[1440px]  space-y-1">
                 {/* Row height controls equal height across rows */}
                 <Row>
                     <Figure
