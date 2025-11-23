@@ -18,7 +18,9 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay, chips }) => {
             <div className="top-label font-mono">STEP {step}</div>
             <div className="info flex flex-col gap-3">
                 <img src={iconSrc} className="w-[24px]" />
-                <div className="text-3xl md:text-xl leading-none">{title}</div>
+                <div className="xl:text-4xl text-3xl md:text-xl leading-none">
+                    {title}
+                </div>
                 <AnimatePresence>
                     {hovered && (
                         <motion.div
@@ -27,7 +29,7 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay, chips }) => {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="font-mono text-xs leading-none overflow-hidden"
+                            className="font-mono xl:text-sm text-xs leading-none overflow-hidden"
                         >
                             {desc}
                             {chips && Array.isArray(chips) ? (
@@ -35,7 +37,7 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay, chips }) => {
                                     {chips.map((chip, idx) => (
                                         <div
                                             key={idx}
-                                            className="inline-block bg-gray-200 rounded-sm px-2 py-0.5 text-[10px] font-mono text-gray-700"
+                                            className="inline-block bg-gray-200 rounded-sm px-2 py-0.5 xl:text-xs text-[10px] font-mono text-gray-700"
                                         >
                                             {chip}
                                         </div>

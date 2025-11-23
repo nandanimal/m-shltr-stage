@@ -64,6 +64,12 @@ const Footer = () => {
                                 Custom
                             </Link>
                             <Link
+                                href="/faq"
+                                className=" hover:opacity-70 transition"
+                            >
+                                FAQ
+                            </Link>
+                            <Link
                                 href="https://www.malekalqadi.com/"
                                 className=" hover:opacity-70 transition flex flex-row items-center gap-2"
                             >
