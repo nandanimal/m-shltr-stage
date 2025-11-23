@@ -89,7 +89,7 @@ const Hero = () => {
                     >
                         <img
                             src="/images/kitchen1_fg.webp"
-                            className="object-cover h-full rounded-md"
+                            className="object-cover h-full w-full rounded-md"
                             priority
                             fill
                             quality={100}
@@ -102,7 +102,7 @@ const Hero = () => {
                     >
                         <img
                             src="/images/kitchen1_bg.webp"
-                            className="object-cover h-full rounded-md"
+                            className="object-cover h-full w-full rounded-md"
                             fill
                             quality={100}
                         />

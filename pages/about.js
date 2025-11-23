@@ -123,7 +123,7 @@ const about = () => {
                     </div>
                 </section>
             </FadeIn>
-            <section className="w-full h-screen flex items-center justify-center p-2 mt-48">
+            {/* <section className="w-full h-screen flex items-center justify-center p-2 mt-48">
                 <div className="flex flex-col-reverse gap-8 lg:grid lg:grid-cols-2 w-full text-3xl h-full">
                     <div className="leading-none flex items-center justify-center">
                         <div className="p-0 lg:p-4">
@@ -142,7 +142,7 @@ const about = () => {
                         />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* <MStudio /> */}
 

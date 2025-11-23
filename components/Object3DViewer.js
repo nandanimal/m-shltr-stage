@@ -5,12 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const TOTAL_FRAMES = 100;
 const BASE_PATH = "/images/CBN3D/";
-const BASE_NAME = "CBN"; // Filenames: CBN1.webp, CBN2.webp...
+const BASE_NAME = "CBN";
 const EXT = ".webp";
-const INITIAL_FRAME_NUMBER = 20; // 1-indexed to match filenames
+const INITIAL_FRAME_NUMBER = 20;
 const ASPECT_RATIO = 16 / 9;
-const FRAME_SENSITIVITY = -0.18; // negative to reverse drag direction (frames per pixel)
-const ZOOM_MULTIPLIER = 0.5; // bleed outside canvas by ~12.5%
+const FRAME_SENSITIVITY = -0.18;
+const ZOOM_MULTIPLIER = 0.5;
+const LOG_PREFIX = "[Object3DViewer]";
 
 export default function Object3DViewer() {
     const canvasRef = useRef(null);
@@ -29,18 +30,23 @@ export default function Object3DViewer() {
     const momentumRafRef = useRef(null);
     const resizeObserverRef = useRef(null);
     const rafRef = useRef(null);
+    const loadedRef = useRef(false);
 
     const [loaded, setLoaded] = useState(false);
 
-    // Imperative draw helper, scheduled through rAF to avoid layout shift and rerenders.
     const drawFrame = useCallback(() => {
+        console.log("loadedRef.current >>>", loadedRef.current);
+
+        if (!loadedRef.current) return;
+
+        console.log("drawing frame");
+
         const canvas = canvasRef.current;
         const img = imagesRef.current[frameIndexRef.current];
         if (!canvas || !img) return;
 
         const ctx = canvas.getContext("2d");
-        const dpr =
-            typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
+        const dpr = window.devicePixelRatio || 1;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
         const width = canvas.clientWidth;
@@ -64,10 +70,17 @@ export default function Object3DViewer() {
             drawWidth,
             drawHeight
         );
+
+        if (process.env.NODE_ENV !== "production") {
+            if (canvas.__lastLoggedIndex !== frameIndexRef.current) {
+                canvas.__lastLoggedIndex = frameIndexRef.current;
+            }
+        }
     }, []);
 
     const scheduleDraw = useCallback(() => {
-        if (drawRequestedRef.current) return;
+        console.log("drawRequestedRef >>>", drawRequestedRef.current);
+        // if (drawRequestedRef.current) return;
         drawRequestedRef.current = true;
         rafRef.current = requestAnimationFrame(() => {
             drawRequestedRef.current = false;
@@ -75,7 +88,6 @@ export default function Object3DViewer() {
         });
     }, [drawFrame]);
 
-    // Keep canvas sized responsively while honoring aspect ratio (prevents layout shift).
     const resizeCanvas = useCallback(() => {
         const canvas = canvasRef.current;
         const container = containerRef.current;
@@ -83,8 +95,7 @@ export default function Object3DViewer() {
 
         const width = container.clientWidth;
         const height = width / ASPECT_RATIO;
-        const dpr =
-            typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
+        const dpr = window.devicePixelRatio || 1;
 
         canvas.style.width = `${width}px`;
         canvas.style.height = `${height}px`;
@@ -94,53 +105,88 @@ export default function Object3DViewer() {
         scheduleDraw();
     }, [scheduleDraw]);
 
-    // Preload all frames once.
-    useEffect(() => {
-        let isCancelled = false;
-        const loaders = Array.from({ length: TOTAL_FRAMES }, (_, idx) => {
-            const img = new Image();
-            img.src = `${BASE_PATH}${BASE_NAME}${idx + 1}${EXT}`;
-            return new Promise((resolve) => {
-                img.onload = () => resolve(img);
-                img.onerror = () => resolve(null);
-            });
+    /**
+     * 🔥 FIXED PRELOAD FUNCTION
+     * Always forces decode, even when cached.
+     * Does NOT filter out missing frames (keeps index alignment).
+     */
+    async function loadFrame(src) {
+        const img = new Image();
+        img.src = src;
+
+        await new Promise((resolve) => {
+            const done = () => resolve();
+
+            if (img.complete) {
+                if (img.decode) img.decode().then(done).catch(done);
+                else done();
+            } else {
+                img.onload = () => {
+                    if (img.decode) img.decode().then(done).catch(done);
+                    else done();
+                };
+                img.onerror = done;
+            }
         });
 
-        Promise.all(loaders).then((frames) => {
-            if (isCancelled) return;
-            const validFrames = frames.filter(Boolean);
-            imagesRef.current = validFrames;
-            frameCountRef.current = validFrames.length || TOTAL_FRAMES;
-            frameIndexRef.current = Math.min(
-                frameIndexRef.current,
-                Math.max(0, frameCountRef.current - 1)
+        return img;
+    }
+
+    useEffect(() => {
+        let isCancelled = false;
+
+        // Reset state on mount to avoid stale refs after client-side navigation.
+        imagesRef.current = [];
+        frameCountRef.current = TOTAL_FRAMES;
+        frameIndexRef.current = Math.max(
+            0,
+            Math.min(TOTAL_FRAMES - 1, INITIAL_FRAME_NUMBER - 1)
+        );
+        frameRemainderRef.current = 0;
+        setLoaded(false);
+        loadedRef.current = false;
+
+        (async () => {
+            const cacheBust = Date.now();
+
+            const frames = await Promise.all(
+                Array.from({ length: TOTAL_FRAMES }, (_, idx) =>
+                    loadFrame(
+                        `${BASE_PATH}${BASE_NAME}${
+                            idx + 1
+                        }${EXT}?reload=${performance.now()}`
+                    )
+                )
             );
-            setLoaded(true);
-            scheduleDraw();
-        });
+
+            if (isCancelled) return;
+
+            imagesRef.current = frames;
+            frameCountRef.current = frames.length;
+
+            // Force a redraw once frames decode
+            requestAnimationFrame(() => {
+                loadedRef.current = true;
+                setLoaded(true);
+                scheduleDraw();
+            });
+        })();
 
         return () => {
             isCancelled = true;
         };
     }, [scheduleDraw]);
 
-    // Setup responsive canvas sizing.
     useEffect(() => {
-        if (!containerRef.current) return undefined;
+        if (!containerRef.current) return;
         resizeCanvas();
 
-        resizeObserverRef.current = new ResizeObserver(() => {
-            resizeCanvas();
-        });
-
+        resizeObserverRef.current = new ResizeObserver(resizeCanvas);
         resizeObserverRef.current.observe(containerRef.current);
 
-        return () => {
-            resizeObserverRef.current?.disconnect();
-        };
+        return () => resizeObserverRef.current?.disconnect();
     }, [resizeCanvas]);
 
-    // Cleanup any pending rAF (draw + momentum).
     useEffect(() => {
         return () => {
             if (rafRef.current) cancelAnimationFrame(rafRef.current);
@@ -152,14 +198,14 @@ export default function Object3DViewer() {
     const applyFrameDelta = useCallback(
         (deltaFrames) => {
             frameRemainderRef.current += deltaFrames;
-            const wholeFrames = Math.trunc(frameRemainderRef.current);
-            if (wholeFrames === 0) return;
+            const whole = Math.trunc(frameRemainderRef.current);
+            if (whole === 0) return;
+            frameRemainderRef.current -= whole;
 
-            frameRemainderRef.current -= wholeFrames;
-            const nextIndex =
-                (frameIndexRef.current + wholeFrames + frameCountRef.current) %
-                Math.max(frameCountRef.current, 1);
-            frameIndexRef.current = nextIndex;
+            frameIndexRef.current =
+                (frameIndexRef.current + whole + frameCountRef.current) %
+                frameCountRef.current;
+
             scheduleDraw();
         },
         [scheduleDraw]
@@ -173,20 +219,20 @@ export default function Object3DViewer() {
     }, []);
 
     const startMomentum = useCallback(
-        (initialVelocityPxPerMs) => {
+        (velocity) => {
             stopMomentum();
-            let velocity = initialVelocityPxPerMs;
-            let lastTs = performance.now();
+            let v = velocity;
+            let last = performance.now();
 
             const tick = () => {
                 const now = performance.now();
-                const deltaMs = now - lastTs;
-                lastTs = now;
+                const dt = now - last;
+                last = now;
 
-                applyFrameDelta(velocity * FRAME_SENSITIVITY * deltaMs);
-                velocity *= 0.94; // friction
+                applyFrameDelta(v * FRAME_SENSITIVITY * dt);
+                v *= 0.94;
 
-                if (Math.abs(velocity) < 0.01) {
+                if (Math.abs(v) < 0.01) {
                     momentumRafRef.current = null;
                     return;
                 }
@@ -199,55 +245,44 @@ export default function Object3DViewer() {
         [applyFrameDelta, stopMomentum]
     );
 
-    const handlePointerDown = useCallback(
-        (event) => {
-            if (!loaded) return;
-            stopMomentum();
-            isDraggingRef.current = true;
-            lastXRef.current = event.clientX;
-            lastTimeRef.current = performance.now();
-            event.currentTarget.setPointerCapture(event.pointerId);
-        },
-        [loaded, stopMomentum]
-    );
+    const handlePointerDown = (e) => {
+        if (!loaded) return;
+        stopMomentum();
+        isDraggingRef.current = true;
+        lastXRef.current = e.clientX;
+        lastTimeRef.current = performance.now();
+        e.currentTarget.setPointerCapture(e.pointerId);
+    };
 
-    const handlePointerMove = useCallback(
-        (event) => {
-            if (!isDraggingRef.current || !loaded) return;
-            const now = performance.now();
-            const deltaX = event.clientX - lastXRef.current;
-            const deltaTime = now - lastTimeRef.current || 1;
+    const handlePointerMove = (e) => {
+        if (!isDraggingRef.current || !loaded) return;
 
-            lastXRef.current = event.clientX;
-            lastTimeRef.current = now;
-            velocityRef.current = deltaX / deltaTime;
+        const now = performance.now();
+        const dx = e.clientX - lastXRef.current;
+        const dt = now - lastTimeRef.current || 1;
 
-            applyFrameDelta(deltaX * FRAME_SENSITIVITY);
-        },
-        [applyFrameDelta, loaded]
-    );
+        lastXRef.current = e.clientX;
+        lastTimeRef.current = now;
+        velocityRef.current = dx / dt;
 
-    const handlePointerUp = useCallback(
-        (event) => {
-            if (!isDraggingRef.current || !loaded) return;
-            isDraggingRef.current = false;
-            event.currentTarget.releasePointerCapture(event.pointerId);
+        applyFrameDelta(dx * FRAME_SENSITIVITY);
+    };
 
-            if (Math.abs(velocityRef.current) > 0.01) {
-                startMomentum(velocityRef.current);
-            }
-        },
-        [loaded, startMomentum]
-    );
+    const handlePointerUp = (e) => {
+        if (!isDraggingRef.current || !loaded) return;
+        isDraggingRef.current = false;
+        e.currentTarget.releasePointerCapture(e.pointerId);
 
-    const handlePointerLeave = useCallback(
-        (event) => {
-            if (!isDraggingRef.current || !loaded) return;
-            isDraggingRef.current = false;
-            event.currentTarget.releasePointerCapture(event.pointerId);
-        },
-        [loaded]
-    );
+        if (Math.abs(velocityRef.current) > 0.01) {
+            startMomentum(velocityRef.current);
+        }
+    };
+
+    const handlePointerLeave = (e) => {
+        if (!isDraggingRef.current || !loaded) return;
+        isDraggingRef.current = false;
+        e.currentTarget.releasePointerCapture(e.pointerId);
+    };
 
     return (
         <div className="w-full flex flex-col items-center gap-4">

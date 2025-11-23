@@ -94,35 +94,6 @@ const HeroMain = () => {
                             },
                         }}
                     ></motion.div>
-                    <motion.div
-                        className="absolute w-full h-[110vh] bg-cover bg-center -z-20 flex items-center justify-center"
-                        style={{
-                            backgroundImage: "url('/images/new-mg.png')",
-                            y: mgY,
-                        }}
-                        initial={{ scale: 1 }}
-                        animate={{
-                            scale: 1,
-                            transition: {
-                                type: "spring",
-                                stiffness: 100,
-                                damping: 100,
-                            },
-                        }}
-                    >
-                        {" "}
-                        <img
-                            src="/images/mg.svg"
-                            className="mb-48 opacity-100 hidden sm:block"
-                        />
-                    </motion.div>
-                    <motion.div
-                        className="absolute w-full h-[110vh] bg-cover bg-center -z-30"
-                        style={{
-                            backgroundImage: "url('/images/new-bg.png')",
-                            y: bgY,
-                        }}
-                    ></motion.div>
                 </div>
             </motion.div>
         </section>

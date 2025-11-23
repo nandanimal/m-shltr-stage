@@ -87,8 +87,9 @@ export default function Home() {
                 <AttrCardLg />
                 <img src="/images/Bedroom2V2.webp" />
             </section>
-
-            <FadeIn>
+            
+            {/* Built fast section */}
+            {/* <FadeIn>
                 <section className="min-h-screen flex items-center flex-col justify-center mt-32">
                     <h2 className="text-3xl text-center leading-none mb-2 max-w-[90%] text-pretty">
                         Built fast meets <strong>built to last.</strong>
@@ -108,7 +109,7 @@ export default function Home() {
                         />
                     </div>
                 </section>
-            </FadeIn>
+            </FadeIn> */}
 
             <FlexibleLayouts />
 
