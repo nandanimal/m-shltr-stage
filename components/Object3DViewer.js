@@ -7,19 +7,19 @@ const TOTAL_FRAMES = 100;
 const BASE_PATH = "/images/CBN3D/";
 const BASE_NAME = "CBN";
 const EXT = ".webp";
-const INITIAL_FRAME_NUMBER = 20;
+const INITIAL_FRAME_NUMBER = 34;
 const ASPECT_RATIO = 16 / 9;
 const FRAME_SENSITIVITY = -0.18;
 const ZOOM_MULTIPLIER = 0.5;
 const LOG_PREFIX = "[Object3DViewer]";
 
-export default function Object3DViewer() {
+export default function Object3DViewer({ initial = 34 }) {
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
     const imagesRef = useRef([]);
     const frameCountRef = useRef(TOTAL_FRAMES);
     const frameIndexRef = useRef(
-        Math.max(0, Math.min(TOTAL_FRAMES - 1, INITIAL_FRAME_NUMBER - 1))
+        Math.max(0, Math.min(TOTAL_FRAMES - 1, initial - 1))
     );
     const frameRemainderRef = useRef(0);
     const drawRequestedRef = useRef(false);
@@ -140,7 +140,7 @@ export default function Object3DViewer() {
         frameCountRef.current = TOTAL_FRAMES;
         frameIndexRef.current = Math.max(
             0,
-            Math.min(TOTAL_FRAMES - 1, INITIAL_FRAME_NUMBER - 1)
+            Math.min(TOTAL_FRAMES - 1, initial - 1)
         );
         frameRemainderRef.current = 0;
         setLoaded(false);
@@ -288,7 +288,7 @@ export default function Object3DViewer() {
         <div className="w-full flex flex-col items-center gap-4">
             <div
                 ref={containerRef}
-                className="relative w-full aspect-[16/9] overflow-hidden rounded-md bg-[#e4e4e4]"
+                className="relative w-full aspect-[16/9] overflow-hidden rounded-md"
             >
                 <AnimatePresence>
                     {!loaded && (

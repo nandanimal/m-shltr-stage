@@ -1,40 +1,11 @@
 import React from "react";
-import BeforeCard from "@/components/BeforeCard";
-import HowItWorksCard from "@/components/HowItWorksCard";
-import Footer from "@/components/Footer";
-import FAQ from "@/components/FAQ";
-import BigCTA from "@/components/BigCTA";
-import GetStartedCTA from "@/components/GetStartedCTA";
-import MStudio from "@/components/MStudio";
-import MStudioStatic from "@/components/MStudioStatic";
-import FadeIn from "@/components/FadeIn";
+import FadeIn from "./FadeIn";
+import HowItWorksCard from "./HowItWorksCard";
+import GetStartedCTA from "./GetStartedCTA";
 
-const about = () => {
+const ProcessCards = () => {
     return (
         <div>
-            <section>
-                {" "}
-                <MStudioStatic />
-            </section>
-            {/* <section
-                id="about-hero"
-                className="w-full min-h-screen py-[40%] md:py-[25%] lg:py-[15%]"
-            >
-                <div className="font-mono w-full text-center mb-3 uppercase text-sm">
-                    How it works
-                </div>
-                <h1 className="text-3xl text-center leading-none mb-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing.
-                </h1>
-                <div className="w-full flex items-center justify-center mt-16 p-2">
-                    {" "}
-                    <BeforeCard
-                        rightSrc="/images/xray-shltr-1.webp"
-                        leftSrc="/images/xray-shltr-2.webp"
-                    />
-                </div>
-            </section> */}
-
             <FadeIn>
                 <section className="p-2">
                     <div className="text-3xl leading-none">
@@ -48,7 +19,7 @@ const about = () => {
                             </div>
                         </div>
                         <div className="text-center w-full"></div>
-                        <div className="mt-24 grid grid-cols-1 xs:grid-cols-2  lg:grid-cols-4 gap-2">
+                        <div className="mt-24 grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-2">
                             <HowItWorksCard
                                 step={1}
                                 title={"Intro Call"}
@@ -73,7 +44,7 @@ const about = () => {
                                 iconSrc={"/icons/design.svg"}
                                 delay={0}
                                 desc={
-                                    "Your design package is tailored to your site, including 3D visuals, floor plans, and pricing, and finalized for submission to local authorities. Because requirements vary, we may partner with a local architect to coordinate with building officials and ensure compliance."
+                                    "Your design package is tailored to your site, including 3D visuals, floor plans, and pricing, and finalized for submission to local authorities. "
                                 }
                                 chips={["10% Reservation Deposit"]}
                             />
@@ -83,7 +54,7 @@ const about = () => {
                                 iconSrc={"/icons/permitting.svg"}
                                 delay={0}
                                 desc={
-                                    "We handle all permitting on your behalf and finalize your order for production. Before fabrication begins, any special requests or custom features are integrated into the engineered package that will produce your CBN home."
+                                    "We handle all permitting on your behalf and finalize your order for production. "
                                 }
                                 chips={["40% Payment upon Contract Signing"]}
                             />
@@ -123,40 +94,8 @@ const about = () => {
                     </div>
                 </section>
             </FadeIn>
-            {/* <section className="w-full h-screen flex items-center justify-center p-2 mt-48">
-                <div className="flex flex-col-reverse gap-8 lg:grid lg:grid-cols-2 w-full text-3xl h-full">
-                    <div className="leading-none flex items-center justify-center">
-                        <div className="p-0 lg:p-4">
-                            <span className="font-bold ">
-                                We only partner with the best.
-                            </span>{" "}
-                            A curated network of modular specialists who meet
-                            our standards and build to local codes - ensuring
-                            quality, safety, and timelines stay on track.
-                        </div>
-                    </div>
-                    <div className="h-full rounded-md overflow-hidden object-cover">
-                        <img
-                            src="/images/partners.png"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-                </div>
-            </section> */}
-
-            {/* <MStudio /> */}
-
-            <section className="mt-48 h-fit flex flex-col gap-4 p-2 items-center justify-center relative">
-                <FAQ />
-            </section>
-
-            <div className="my-48">
-                <BigCTA />
-            </div>
-
-            <Footer />
         </div>
     );
 };
 
-export default about;
+export default ProcessCards;
