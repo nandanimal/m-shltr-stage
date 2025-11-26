@@ -13,9 +13,13 @@ const CTAButton = ({ text, source, width }) => {
                 onClick={() =>
                     openCta({ source: `${source || "source not set"}` })
                 }
-                className={`cta-button uppercase z-20 font-mono ${widthClass}`}
+                className={`cta-button uppercase z-20 font-mono ${widthClass} flex flex-row gap-2`}
             >
-                {text || "Order now"}
+                {text || "Pre-Order"}
+                <img
+                    className="w-[12px]"
+                    src="/icons/arrow-up-right-white.svg"
+                />
             </div>
         </div>
     );

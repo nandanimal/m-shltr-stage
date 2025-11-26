@@ -11,14 +11,14 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay, chips }) => {
                 opacity: 1,
                 transition: { duration: 1, delay: delay || 0 },
             }}
-            className="aspect-square bg-[#DADAD6] hover:bg-[#deded8] transition text-sm text-black rounded-md p-4 flex flex-col justify-between"
+            className="sm:aspect-square bg-[#DADAD6] hover:bg-[#deded8] transition text-sm text-black rounded-md p-4 flex flex-col justify-between"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
             <div className="top-label font-mono">STEP {step}</div>
-            <div className="info flex flex-col gap-3">
+            <div className="info flex flex-col gap-3 mt-8 sm:mt-0">
                 <img src={iconSrc} className="w-[24px]" />
-                <div className="xl:text-4xl text-3xl md:text-xl leading-none">
+                <div className=" xl:text-2xl md:text-xl text-xl leading-none">
                     {title}
                 </div>
                 <AnimatePresence>
@@ -29,7 +29,7 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay, chips }) => {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="font-mono xl:text-sm text-xs leading-none overflow-hidden"
+                            className="font-mono xl:text-sm text-xs sm:text-xs leading-none overflow-hidden"
                         >
                             {desc}
                             {chips && Array.isArray(chips) ? (
@@ -37,7 +37,7 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay, chips }) => {
                                     {chips.map((chip, idx) => (
                                         <div
                                             key={idx}
-                                            className="inline-block bg-gray-200 rounded-sm px-2 py-0.5 xl:text-xs text-[10px] font-mono text-gray-700"
+                                            className="inline-block bg-gray-200 rounded-sm px-2 py-0.5 text-[10px]  font-mono text-gray-700"
                                         >
                                             {chip}
                                         </div>

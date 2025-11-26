@@ -8,9 +8,9 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
 
     return (
         <div className="w-full flex items-center justify-center">
-            <div className="content max-w-7xl flex flex-col sm:flex-row gap-4 p-4 items-center justify-center">
+            <div className="content max-w-7xl flex flex-col sm:flex-row p-0 items-center justify-center">
                 {is3d ? (
-                    <Object3DViewer />
+                    <Object3DViewer initial={74} />
                 ) : (
                     <img
                         src="/images/cbn_shadow.png"
@@ -19,7 +19,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
                     />
                 )}
 
-                <div className="col-right flex flex-col gap-1 w-full xl:w-1/2 sm:w-4/10">
+                <div className="col-right flex flex-col gap-1 w-full xl:w-1/2 sm:w-4/10 p-2">
                     {/* Top level header */}
                     <div className="flex flex-row justify-between">
                         <div className="col-left flex flex-col gap-1 ">
@@ -50,7 +50,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
                             onClick={openCta}
                             className="order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition"
                         >
-                            ORDER NOW
+                            PRE-ORDER
                             <img className="" src="/icons/arrow-up-right.svg" />
                         </div>
                         {explore && (

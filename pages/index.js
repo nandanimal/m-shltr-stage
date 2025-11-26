@@ -21,6 +21,10 @@ import HeroMain from "@/components/HeroMain";
 import Link from "next/link";
 import Object3DViewer from "@/components/Object3DViewer";
 import AttrCardLg from "@/components/AttrCardLg";
+import CTAButton from "@/components/CTAButton";
+import ProcessCards from "@/components/ProcessCards";
+import Livingroom from "@/components/Livingroom";
+import UnlistedSection from "@/components/UnlistedSection";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -64,30 +68,78 @@ export default function Home() {
             <FadeIn>
                 <section
                     data-theme="light"
-                    className="w-full min-h-screen flex  flex-col justify-center mt-32 p-2"
+                    className="w-full min-h-screen flex  flex-col justify-center mt-32"
                 >
-                    <div className="max-w-6xl m-auto">
+                    <div className="max-w-6xl m-auto mb-16 p-2">
                         <h1 className="text-3xl text-regular text-gray mb-4">
-                            Introducing CBN
+                            Discover M-SHLTR
                         </h1>
-                        <div className="sm:text-6xl text-3xl mb-32 text-pretty ">
-                            Perfect as an ADU or a standalone residence, CBN
-                            adapts effortlessly from dense urban lots to open
-                            landscapes.
+                        <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty ">
+                            A liberating way to integrate with your spatial
+                            environment as a standalone residence or Accessory
+                            Dwelling Unit. M-SHLTR integrates innovation,
+                            design, sustainability, and scalability for urban
+                            residential and rural applications.
                         </div>
                     </div>
 
                     <Object3DViewer />
 
-                    <ProductBanner is3d={true} />
+                    <Livingroom />
+                    <div className="min-h-[100svh] flex items-center justify-center flex-col">
+                        <div className="text-xl text-gray text-pretty ">
+                            Introducing CBN.
+                        </div>
+                        <ProductBanner is3d={true} />
+                    </div>
                 </section>
             </FadeIn>
 
             <section className="my-32">
                 <AttrCardLg />
-                <img src="/images/Bedroom2V2.webp" />
+                <div className="p-2">
+                    <img src="/images/Bedroom2V2.webp" className="rounded-sm" />
+                    <div className="grid grid-cols-5 mt-2">
+                        <div className="col-span-5 lg:col-span-3">
+                            <img
+                                src="/images/Kitchen24k.webp"
+                                className="rounded-sm"
+                            />
+                        </div>
+                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-between lg:px-4 py-4">
+                            <div className="">
+                                <h2 className="text-sm font-mono text-regular text-gray mb-4 uppercase">
+                                    The M-SHLTR Ecosystem
+                                </h2>
+                                <div className="font-mono text-sm leading-[105%]">
+                                    The M-SHLTR explores innovations and filters
+                                    integrated to establish a framework that
+                                    leverages the site specific surroundings
+                                    with orientation and views. Integrated space
+                                    program and efficient circulation infuse the
+                                    dwellers experience with intuitive
+                                    technology within assembled spaces and
+                                    modules.
+                                </div>
+                            </div>
+                            <div className="pricing-container flex flex-col gap-0">
+                                <span className="text-gray font-mono uppercase text-sm">
+                                    Starting at
+                                </span>
+                                <span className="text-3xl text-gray mb-8 mt-2">
+                                    $289,000
+                                </span>
+                                <CTAButton />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-            
+
+            <section>
+                <ProcessCards />
+            </section>
+
             {/* Built fast section */}
             {/* <FadeIn>
                 <section className="min-h-screen flex items-center flex-col justify-center mt-32">
@@ -111,7 +163,10 @@ export default function Home() {
                 </section>
             </FadeIn> */}
 
-            <FlexibleLayouts />
+            {/* Custom section */}
+            <section>
+                <UnlistedSection />
+            </section>
 
             <BigCTA />
 

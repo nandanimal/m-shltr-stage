@@ -26,20 +26,20 @@ const HeroMain = () => {
 
     return (
         <section ref={ref} data-theme="light">
-            <div className="text-center  px-8 py-16 flex flex-col gap-4 justify-center items-center">
+            {/* <div className="text-center  px-8 py-16 flex flex-col gap-4 justify-center items-center">
                 <div className="text-xl">
                     2026 build slots are limited. Apply now for early access.
                 </div>
                 <CTAButton text="APPLY FOR EARLY ACCESS" width="w-fit" />
-            </div>
+            </div> */}
             <motion.div
                 layout
                 initial={false}
                 animate={
                     hero
                         ? {
-                              padding: "0",
-                              borderRadius: "0",
+                              padding: "0.5rem",
+                              borderRadius: "0.375rem",
                               transition: {
                                   type: "spring",
                                   stiffness: 100,
@@ -48,8 +48,8 @@ const HeroMain = () => {
                               },
                           }
                         : {
-                              padding: "0.5rem",
-                              borderRadius: "0.375rem",
+                              padding: "0",
+                              borderRadius: "0",
                               transition: {
                                   type: "spring",
                                   stiffness: 100,
@@ -63,7 +63,7 @@ const HeroMain = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.2, delay: 0.1 }}
                     className="absolute z-30 left-10 text-white flex flex-col gap-1 text-sm leading-none bottom-40"
                 >
                     <span>
