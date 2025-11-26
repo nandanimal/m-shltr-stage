@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { React, useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import TopdownMobile from "@/components/TopdownMobile";
+import SizeToggleCard from "@/components/SizeToggleCard";
 
 const CBN = () => {
     const [loading, setLoading] = useState(true);
@@ -32,15 +33,36 @@ const CBN = () => {
                             <Introducing />
                         </motion.div>
                     )}
+                    {!loading && <Hero />}
                 </AnimatePresence>
-                <Hero />
             </section>
-            <section className="w-full min-h-screen flex items-center flex-col justify-center">
+            <section
+                data-theme="light"
+                className="w-full flex  flex-col justify-center mt-32"
+            >
+                <div className="max-w-6xl m-auto mb-16 p-2">
+                    <h1 className="text-3xl text-regular text-gray mb-4">
+                        CBN - MODULE NO. 1172{" "}
+                    </h1>
+                    <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty ">
+                        Introducing the CBN-MODULE, an integrated approach to
+                        your house or hotel.
+                    </div>
+                    <div className="text-xs font-mono uppercase mt-4">
+                        Designed by Studio Malek Alqadi
+                    </div>
+                </div>
+            </section>
+            <section className="w-full flex items-center flex-col justify-center">
                 {/* <h1 className="text-3xl text-center mb-32">
                     Hero text + accessories laoreet at enim sed and malesuada,
                     laoreet.
                 </h1> */}
-                <ProductBanner explore={false} />
+                <ProductBanner is3d={true} />
+            </section>
+
+            <section>
+                <SizeToggleCard />
             </section>
             <section>
                 <FadeIn>

@@ -84,6 +84,7 @@ export default function Home() {
                     </div>
 
                     <Object3DViewer />
+                    
 
                     <Livingroom />
                     <div className="min-h-[100svh] flex items-center justify-center flex-col">
