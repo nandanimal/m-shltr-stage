@@ -14,7 +14,7 @@ export default function SizeToggleCard({ views }) {
                 subtitle: "2 bed / 2.5 bath",
                 description:
                     "Full two-bedroom layout with generous storage, spa ensuite, and an open living/kitchen core.",
-                image: "/images/CBN_outline.png",
+                image: "/images/cbn_outline.png",
                 stats: ["1174 ft²", "2 bed", "2.5 bath"],
             },
             {

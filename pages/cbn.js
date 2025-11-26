@@ -33,8 +33,8 @@ const CBN = () => {
                             <Introducing />
                         </motion.div>
                     )}
-                    {!loading && <Hero />}
                 </AnimatePresence>
+                <Hero />
             </section>
             <section
                 data-theme="light"
