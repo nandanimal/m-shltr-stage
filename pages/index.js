@@ -102,7 +102,7 @@ export default function Home() {
                     <div className="grid grid-cols-5 mt-2">
                         <div className="col-span-5 lg:col-span-3">
                             <img
-                                src="/images/Kitchen24k.webp"
+                                src="/images/Kitchen24K.webp"
                                 className="rounded-sm"
                             />
                         </div>
