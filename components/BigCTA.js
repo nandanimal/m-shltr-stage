@@ -17,37 +17,26 @@ export default function BigCTA() {
     const bgY = useTransform(scrollYProgress, [0, 1], [50, -50]); // px
 
     return (
-        <section
-            ref={ref}
-            className="w-full min-h-[100vh] grid place-items-center"
-        >
-            <div className="w-full max-w-6xl p-2 rounded-sm">
-                <div className="relative w-full max-w-6xl sm:aspect-[16/9] aspect-[9/16] rounded-sm overflow-hidden p-2">
-                    {/* CONTENT */}
-                    <div className="absolute inset-0 z-20 flex items-center justify-center flex-col">
-                        <div className="text-center sm:text-3xl text-xl text-white p-4 md:max-w-[60ch] mx-auto leading-none">
-                            A seamless journey from concept to move-in.
-                        </div>
-                        <CTAButton text="BUILD WITH M-SHLTR" />
+        <section ref={ref} className="w-full grid place-items-center p-2">
+            <div className="max-w-[1440px] rounded-sm bg-white shadow-sm grid grid-cols-8 overflow-hidden">
+                <div className="md:col-span-4 col-span-8 p-16 flex flex-col ">
+                    <span className="text-5xl text-gray">Lorem ipsum.</span>
+                    <span className="text-5xl text-pretty">
+                        Dolor seek amit sapien quis.
+                    </span>
+                    <span className="font-mono uppercase text-xs mt-4">
+                        Sed eleifend sapien eget velit elementum.
+                    </span>
+                    <div className="mt-8">
+                        <CTAButton />
                     </div>
-
-                    {/* IMAGE (parallax) */}
-
-                    <motion.div
-                        className="absolute inset-0 z-0"
-                        style={{ y: bgY, willChange: "transform" }}
-                    >
-                        <Image
-                            src="/images/render3.png"
-                            alt=""
-                            fill
-                            className="object-cover rounded-md scale-[1.2]"
-                            priority
-                        />
-                    </motion.div>
-
-                    {/* OVERLAY ON TOP OF IMAGE */}
-                    <div className="absolute inset-0 bg-black/50 z-10 rounded-sm pointer-events-none" />
+                </div>
+                <div className="md:col-span-4 col-span-8 mt-8 sm:mt-0">
+                    <img
+                        src="/images/cbn_detail.webp"
+                        className="w-full h-full object-cover"
+                        alt="CBN detail shot"
+                    />
                 </div>
             </div>
         </section>

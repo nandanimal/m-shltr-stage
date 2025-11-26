@@ -51,7 +51,7 @@ const UnlistedSection = () => {
             }
             className=""
         >
-            <div className="bg-[#000] rounded-sm">
+            <div className="bg-[#000] rounded-sm mt-48">
                 <img
                     src="/images/m_black_gradient.webp"
                     alt="m-shltr catalog"
@@ -70,7 +70,14 @@ const UnlistedSection = () => {
                 <div className="p-2">
                     {/* <img src="/images/tent.png" className="rounded-sm" /> */}
                     <div className="grid grid-cols-5 mt-2">
-                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center lg:px-4 py-4">
+                        {/* Image first on mobile; details first on lg */}
+                        <div className="col-span-5 lg:col-span-3 order-1 lg:order-2">
+                            <img
+                                src="/images/tentlg.avif"
+                                className="rounded-sm"
+                            />
+                        </div>
+                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center lg:px-4 py-4 order-2 lg:order-1">
                             <div className="">
                                 <h2 className="text-xl text-regular text-white mb-4">
                                     unlisted dept.
@@ -96,13 +103,6 @@ const UnlistedSection = () => {
                             <div className="pricing-container flex flex-col gap-0 mt-8">
                                 <CTAButton text={"inquire"} />
                             </div>
-                        </div>
-
-                        <div className="col-span-5 lg:col-span-3">
-                            <img
-                                src="/images/tentlg.avif"
-                                className="rounded-sm"
-                            />
                         </div>
                     </div>
                     {/* Press row */}
