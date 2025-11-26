@@ -20,9 +20,9 @@ const HeroMain = () => {
         }
     }, [y, hero]);
 
-    const bgY = useTransform(scrollYProgress, [0, 1], ["0", "-5%"]);
-    const mgY = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
-    const fgY = useTransform(scrollYProgress, [0, 1], ["0", "-50%"]);
+    const bgY = useTransform(scrollYProgress, [0, 1], ["0", "50%"]);
+    const mgY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+    const fgY = useTransform(scrollYProgress, [0, 1], ["0", "-100%"]);
 
     return (
         <section ref={ref} data-theme="light">
@@ -81,8 +81,40 @@ const HeroMain = () => {
                     <motion.div
                         className="absolute w-full h-[110vh] bg-cover bg-center -z-10"
                         style={{
-                            backgroundImage: "url('/images/CBN.webp')",
+                            backgroundImage: "url('/images/hero_bush.webp')",
                             y: fgY,
+                        }}
+                        initial={{ scale: 1 }}
+                        animate={{
+                            scale: 1.1,
+                            transition: {
+                                type: "spring",
+                                stiffness: 100,
+                                damping: 100,
+                            },
+                        }}
+                    ></motion.div>
+                    <motion.div
+                        className="absolute w-full h-[110vh] bg-cover bg-center -z-20"
+                        style={{
+                            backgroundImage: "url('/images/hero_main.webp')",
+                            y: mgY,
+                        }}
+                        initial={{ scale: 1 }}
+                        animate={{
+                            scale: 1.1,
+                            transition: {
+                                type: "spring",
+                                stiffness: 100,
+                                damping: 100,
+                            },
+                        }}
+                    ></motion.div>
+                    <motion.div
+                        className="absolute w-full h-[110vh] bg-cover bg-center -z-30"
+                        style={{
+                            backgroundImage: "url('/images/hero_sky.webp')",
+                            y: bgY,
                         }}
                         initial={{ scale: 1 }}
                         animate={{
