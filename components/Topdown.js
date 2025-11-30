@@ -61,15 +61,16 @@ export default function Topdown() {
     return (
         <section ref={containerRef} className="relative h-[200vh] w-full">
             {/* sticky viewport */}
-            <FadeIn>
-                <div className="flex items-center flex-col">
-                    <div className="font-mono uppercase text-xs">interiors</div>
-                    <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%]">
-                        Tastefully designed interiors{" "}
-                        <strong>never before seen in an ADU</strong>
-                    </h2>
-                </div>
-            </FadeIn>
+
+            <div className="flex items-center flex-col">
+                <div className="font-mono uppercase text-xs">interiors</div>
+                <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%]">
+                    Thoughtfully considered interiors{" "}
+                    <strong>
+                        from premium finishes to integrated millwork
+                    </strong>
+                </h2>
+            </div>
             <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
                 <motion.div
                     style={{ scale }}

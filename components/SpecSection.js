@@ -48,7 +48,10 @@ export default function SpecSection() {
     const [openIndex, setOpenIndex] = React.useState(-1);
 
     return (
-        <section className="flex items-center justify-center mt-48 flex-col">
+        <section className="flex items-center justify-center mt-48 mb-48 flex-col">
+            <div className="font-mono uppercase w-full text-gray mb-4 px-2">
+                Additional specifications
+            </div>
             <div className="w-full  divide-y divide-neutral-300 text-black">
                 {items.map((item, i) => {
                     const isOpen = openIndex === i;
@@ -95,7 +98,7 @@ export default function SpecSection() {
                     );
                 })}
             </div>
-            <div className="text-3xl py-1 border-t border-neutral-300 px-2 md:text-5xl text-black w-full leading-none font-light tracking-wide flex-1">
+            {/* <div className="text-3xl py-1 border-t border-neutral-300 px-2 md:text-5xl text-black w-full leading-none font-light tracking-wide flex-1">
                 Residence & models
             </div>
             <div className="w-full h-auto aspect-[16/9] relative">
@@ -107,7 +110,7 @@ export default function SpecSection() {
                     quality={95}
                     priority
                 />
-            </div>
+            </div> */}
             {/* <div className="w-full py-1 px-2 text-3xl md:text-6xl leading-none">
                 Phasellus laoreet at enim sed malesuada, laoreet at enim sed
                 malesuada.{" "}

@@ -125,7 +125,12 @@ const HeroMain = () => {
                                 damping: 100,
                             },
                         }}
-                    ></motion.div>
+                    >
+                        <img
+                            src="/images/wordmark-white.svg"
+                            className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 max-w-[120px]"
+                        />
+                    </motion.div>
                 </div>
             </motion.div>
         </section>

@@ -65,8 +65,10 @@ export default function TopdownMobile() {
                 <div className="flex items-center flex-col">
                     <div className="font-mono uppercase text-xs">interiors</div>
                     <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%]">
-                        Tastefully designed interiors that make you say mama,{" "}
-                        <strong>we’re not in an ADU anymore.</strong>
+                        Thoughtfully considered interiors{" "}
+                        <strong>
+                            from premium finishes to integrated millwork
+                        </strong>
                     </h2>
                 </div>
             </FadeIn>

@@ -13,6 +13,8 @@ import { React, useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import TopdownMobile from "@/components/TopdownMobile";
 import SizeToggleCard from "@/components/SizeToggleCard";
+import InteriorTrims from "@/components/InteriorTrims";
+import ExteriorTrims from "@/components/ExteriorTrims";
 
 const CBN = () => {
     const [loading, setLoading] = useState(true);
@@ -64,11 +66,7 @@ const CBN = () => {
             <section>
                 <SizeToggleCard />
             </section>
-            <section>
-                <FadeIn>
-                    <CollageGallery />
-                </FadeIn>
-            </section>
+
             {/* <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-2">
                 <div className="font-mono uppercase text-xs">exteriors</div>
                 <h2 className="text-3xl text-center mt-2 mb-8">
@@ -94,30 +92,151 @@ const CBN = () => {
                 </div>
             </section>
 
-            <section className="lg:mt-48">
-                <FadeIn>
-                    <CollageGallery
-                        images={[
-                            {
-                                src: "/images/Bath.webp",
-                                alt: "Bathroom details",
-                            },
-                            {
-                                src: "/images/Bedroom2V2.webp",
-                                alt: "View from bedroom",
-                            },
-                            {
-                                src: "/images/Living4k.webp",
-                                alt: "Living Room",
-                            },
-                            {
-                                src: "/images/Kitchen24k.webp",
-                                alt: "Kitchen",
-                            },
-                        ]}
+            <section>
+                <div className="img-container px-2 mb-1">
+                    <img
+                        src="images/Bedroom1.webp"
+                        alt="bedroom view"
+                        className="rounded-sm"
                     />
-                </FadeIn>
+                </div>
+                <div className="grid grid-rows-1 px-2 my-24">
+                    <div className="grid grid-cols-3 gap-1">
+                        <div className="img-container aspect-[4/3]">
+                            <img
+                                src="/images/Kitchen24K.webp"
+                                alt="kitchen"
+                                className="rounded-sm aspect-[4/3] object-cover"
+                            />
+                            <div className="p-4 text-center">
+                                A full kitchen loaded with built-in appliances
+                                and pantry wall.
+                            </div>
+                        </div>
+                        <div className="img-container aspect-[4/3]">
+                            <img
+                                src="/images/Bedroom2V2.webp"
+                                alt="Bedroom"
+                                className="rounded-sm aspect-[4/3] object-cover"
+                            />
+                            <div className="p-4 text-center">
+                                Each suite comes with an exterior view for
+                                natural light, access and privacy.
+                            </div>
+                        </div>
+                        <div className="img-container aspect-[4/3]">
+                            <img
+                                src="/images/Bath.webp"
+                                alt="Bathroom"
+                                className="rounded-sm aspect-[4/3] object-cover"
+                            />
+                            <div className="p-4 text-center">
+                                A wet room shower with bathtub, shower head and
+                                rain head fixtures.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="img-container my-24">
+                        <img
+                            src="images/kitchen1.webp"
+                            alt="Kitchen"
+                            className="rounded-sm w-full"
+                        />
+                    </div>
+                </div>
+                <InteriorTrims />
+                <div className="img-container px-2 ">
+                    <img
+                        src="images/Living4K.webp"
+                        alt="Living room"
+                        className="rounded-sm w-full"
+                    />
+                </div>
             </section>
+
+            {/* Exterior trims section */}
+            <section>
+                <div className="grid grid-rows-1 px-2 my-24">
+                    <div className="grid grid-cols-3 gap-1">
+                        <div className="img-container aspect-[4/3]">
+                            <img
+                                src="/images/smartlock.jpg"
+                                alt="Smart lock"
+                                className="rounded-sm aspect-[4/3] object-cover"
+                            />
+                            <div className="p-4 text-center">
+                                Smart lock entry system & camera
+                            </div>
+                        </div>
+                        <div className="img-container aspect-[4/3]">
+                            <img
+                                src="/images/edge.avif"
+                                alt="Hot rolled steel edge"
+                                className="rounded-sm aspect-[4/3] object-cover"
+                            />
+                            <div className="p-4 text-center">
+                                Hot rolled black steel edge trim details
+                            </div>
+                        </div>
+                        <div className="img-container aspect-[4/3]">
+                            <img
+                                src="/images/entrylighting.jpg"
+                                alt="Entry lighting"
+                                className="rounded-sm aspect-[4/3] object-cover "
+                            />
+                            <div className="p-4 text-center">
+                                Thoughtfully integrated entry lighting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="img-container w-full p-2 flex items-start justify-center">
+                    <img
+                        src="/images/CBN3D/CBN25.webp"
+                        alt="CBN"
+                        className="w-auto max-w-full h-auto max-h-[66vh]"
+                        style={{
+                            transform: "scale(1.5)",
+                            transformOrigin: "top center",
+                            objectFit: "contain",
+                            objectPosition: "top",
+                            display: "block",
+                        }}
+                    />
+                </div>
+                <ExteriorTrims />
+            </section>
+
+            {/* <section className="lg:mt-48">
+                <FadeIn>
+                    <div className="sm:text-4xl lg:text-6xl text-3xl p-2 mt-48 text-pretty ">
+                        Thoughtfully considered interiors from premium finishes
+                        to integrated millwork
+                    </div>
+                    <div className="w-full p-2">
+                        <CollageGallery
+                            images={[
+                                {
+                                    src: "/images/Bath.webp",
+                                    alt: "Bathroom details",
+                                },
+                                {
+                                    src: "/images/Bedroom2V2.webp",
+                                    alt: "View from bedroom",
+                                },
+                                {
+                                    src: "/images/Living4k.webp",
+                                    alt: "Living Room",
+                                },
+                                {
+                                    src: "/images/Kitchen24k.webp",
+                                    alt: "Kitchen",
+                                },
+                            ]}
+                        />
+                    </div>
+                </FadeIn>
+            </section> */}
             <SpecSection />
 
             <BigCTA />
