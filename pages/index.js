@@ -74,7 +74,7 @@ export default function Home() {
                         <h1 className="text-2xl md:text-3xl text-regular text-gray mb-2 md:mb-4 text-pretty">
                             Introducing SHLTR, designed by Malek Alqadi.{" "}
                         </h1>
-                        <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty ">
+                        <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] ">
                             A precision-built home for any setting, shaped with
                             intention, sustainably crafted, and delivered
                             turnkey to your land.

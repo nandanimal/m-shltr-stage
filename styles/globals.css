@@ -28,7 +28,7 @@ body {
     background: var(--background);
     color: var(--foreground);
     font-family: Dince, Helvetica, sans-serif;
-    line-height: 1 !important;
+    line-height: 1.1 !important;
 }
 
 html {
