@@ -190,20 +190,19 @@ const CBN = () => {
                         </div>
                     </div>
                 </div>
-                <div className="img-container w-full p-2 flex items-start justify-center">
+                <div className="relative w-full lg:h-[50svh] h-[30svh] overflow-hidden p-2">
                     <img
                         src="/images/CBN3D/CBN25.webp"
                         alt="CBN"
-                        className="w-auto max-w-full h-auto max-h-[66vh]"
-                        style={{
-                            transform: "scale(1.5)",
-                            transformOrigin: "top center",
-                            objectFit: "contain",
-                            objectPosition: "top",
-                            display: "block",
-                        }}
+                        className="
+      absolute top-1/2 left-1/2
+      sm:w-[150%] max-w-none w-[300%]
+      -translate-x-1/2 -translate-y-1/2
+      h-auto block
+    "
                     />
                 </div>
+
                 <ExteriorTrims />
             </section>
 

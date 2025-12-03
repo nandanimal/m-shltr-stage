@@ -19,7 +19,7 @@ const Card = ({ title, desc, url }) => {
 const ExteriorTrims = () => {
     return (
         <div className="p-2">
-            <h2 className="sm:text-4xl lg:text-6xl text-3xl mt-48 mb-8 text-pretty ">
+            <h2 className="sm:text-4xl lg:text-6xl text-3xl  mb-8 text-pretty ">
                 Exterior trims and finishes
             </h2>
             <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-4 auto-rows-fr">
