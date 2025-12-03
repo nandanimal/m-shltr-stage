@@ -70,21 +70,18 @@ export default function Home() {
                     data-theme="light"
                     className="w-full min-h-screen flex  flex-col justify-center mt-32"
                 >
-                    <div className="max-w-6xl m-auto mb-16 p-2">
-                        <h1 className="text-3xl text-regular text-gray mb-4">
-                            Discover M-SHLTR
+                    <div className="max-w-6xl m-auto mb-16 p-2 ">
+                        <h1 className="text-2xl md:text-3xl text-regular text-gray mb-2 md:mb-4 text-pretty">
+                            Introducing SHLTR, designed by Malek Alqadi.{" "}
                         </h1>
                         <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty ">
-                            A liberating way to integrate with your spatial
-                            environment as a standalone residence or Accessory
-                            Dwelling Unit. M-SHLTR integrates innovation,
-                            design, sustainability, and scalability for urban
-                            residential and rural applications.
+                            A precision-built home for any setting, shaped with
+                            intention, sustainably crafted, and delivered
+                            turnkey to your land.
                         </div>
                     </div>
 
                     <Object3DViewer />
-                    
 
                     <Livingroom />
                     <div className="min-h-[100svh] flex items-center justify-center flex-col">
@@ -96,7 +93,7 @@ export default function Home() {
                 </section>
             </FadeIn>
 
-            <section className="my-32">
+            <section className="mb-32">
                 <AttrCardLg />
                 <div className="p-2">
                     <img src="/images/Bedroom2V2.webp" className="rounded-sm" />
@@ -112,7 +109,7 @@ export default function Home() {
                                 <h2 className="text-sm font-mono text-regular text-gray mb-4 uppercase">
                                     The M-SHLTR Ecosystem
                                 </h2>
-                                <div className="font-mono text-sm leading-[105%]">
+                                <div className="font-mono text-sm sm:text-base leading-[105%]">
                                     The M-SHLTR explores innovations and filters
                                     integrated to establish a framework that
                                     leverages the site specific surroundings

@@ -20,9 +20,9 @@ const HeroMain = () => {
         }
     }, [y, hero]);
 
-    const bgY = useTransform(scrollYProgress, [0, 1], ["0", "50%"]);
-    const mgY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
-    const fgY = useTransform(scrollYProgress, [0, 1], ["0", "-100%"]);
+    const bgY = useTransform(scrollYProgress, [0, 1], ["0", "80%"]);
+    const mgY = useTransform(scrollYProgress, [0, 1], ["0%", "-110%"]);
+    const fgY = useTransform(scrollYProgress, [0, 1], ["0", "-120%"]);
 
     return (
         <section ref={ref} data-theme="light">
@@ -126,10 +126,31 @@ const HeroMain = () => {
                             },
                         }}
                     >
-                        <img
-                            src="/images/wordmark-white.svg"
-                            className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 max-w-[120px]"
-                        />
+                        <div className="absolute w-full h-[80svh] top-0 left-0 flex items-center p-2 justify-center flex-col gap-2">
+                            {/* <img
+                                src="/images/wordmark-white.svg"
+                                className=" max-w-[78px]"
+                            /> */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{
+                                    opacity: 1,
+                                    transition: { delay: 0.4 },
+                                }}
+                                className="img-container w-[70%] sm:w-[60%] md:w-[50%] md:mb-16"
+                            >
+                                <img
+                                    src="/images/hero-message.svg"
+                                    className="w-full"
+                                />
+                            </motion.div>
+                            {/* <h1 className="text-pretty text-2xl md:text-4xl leading-[103%] max-w-[80%] lg:text-5xl text-center text-white md:max-w-[55%] lg:mb-16 mx-auto px-2">
+                                Precision-built designer homes,{" "}
+                                <span className="font-bold">
+                                    installed in less than a week.
+                                </span>
+                            </h1> */}
+                        </div>
                     </motion.div>
                 </div>
             </motion.div>

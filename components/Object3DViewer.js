@@ -317,6 +317,14 @@ export default function Object3DViewer({ initial = 34 }) {
                     onPointerLeave={handlePointerLeave}
                     style={{ touchAction: "none" }}
                 />
+                <div className="absolute bottom-0 w-full flex items-center justify-center mb-16 lg:mb-32">
+                    <div className="flex flex-row gap-4 justify-center items-center">
+                        <img src="icons/rotate-gray.svg" />
+                        <div className="font-mono text-xs text-gray uppercase">
+                            drag to rotate
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

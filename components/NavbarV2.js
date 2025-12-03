@@ -19,13 +19,13 @@ const Navbar = () => {
     };
 
     return (
-        <div className="nav-container w-full p-2 items-center justify-center flex fixed z-100">
+        <div className="nav-container w-full p-2 items-center justify-center flex fixed z-[999]">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
                 className={`navbar w-full rounded-sm  backdrop-blur-lg sm:backdrop-blur-[none] max-w-[1440px] transition ${
-                    menuOpen ? "bg-[rgba(242, 242, 238, 0.70)]  " : ""
+                    menuOpen ? "bg-[rgba(255, 255, 255, 0.90)]  " : ""
                 }`}
                 style={
                     {
