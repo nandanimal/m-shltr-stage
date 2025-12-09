@@ -23,7 +23,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
                     {/* Top level header */}
                     <div className="flex flex-row justify-between">
                         <div className="col-left flex flex-col gap-1 ">
-                            <h2 className="text-xl">CBN</h2>
+                            <h2 className="text-xl font-bold">CBN NO. 1172</h2>
                             <span>2 BED / 2.5 BATH</span>
                             <div className="text-sm">
                                 1,172 ft<sup>2</sup>

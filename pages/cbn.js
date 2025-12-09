@@ -196,7 +196,7 @@ const CBN = () => {
                         alt="CBN"
                         className="
       absolute top-1/2 left-1/2
-      sm:w-[150%] max-w-none w-[300%]
+      sm:w-[150%] max-w-none w-[150%]
       -translate-x-1/2 -translate-y-1/2
       h-auto block
     "

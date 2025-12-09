@@ -73,7 +73,7 @@ const UnlistedSection = () => {
                         {/* Image first on mobile; details first on lg */}
                         <div className="col-span-5 lg:col-span-3 order-1 lg:order-2">
                             <img
-                                src="/images/tentlg.avif"
+                                src="/images/tent.png"
                                 className="rounded-sm"
                             />
                         </div>
@@ -107,7 +107,7 @@ const UnlistedSection = () => {
                     </div>
                     {/* Press row */}
 
-                    <div className="featured-banner flex flex-col gap-4 p-4 sm:p-16 items-center justify-center w-full">
+                    <div className="featured-banner flex flex-col gap-4 p-4 sm:p-16 items-center justify-center w-full my-24">
                         <div className="font-mono w-full uppercase text-gray text-center mb-1 text-xs">
                             FEATURED IN
                         </div>

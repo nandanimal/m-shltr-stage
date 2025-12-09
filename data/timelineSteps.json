@@ -1,0 +1,50 @@
+[
+    {
+        "id": "step-1",
+        "title": "Intro Call",
+        "description": "We start with a quick conversation to understand your site, goals, timeline, and budget.",
+        "image": "/images/hero_cropped.jpg"
+    },
+    {
+        "id": "step-2",
+        "title": "On-Site Feasibility Study",
+        "description": "We meet you at your property to explore your vision, confirm access and utilities, and gather everything needed to begin design.",
+        "image": "/images/topdown.png"
+    },
+    {
+        "id": "step-3",
+        "title": "Custom Design Package",
+        "description": "Your design package is tailored to your site, including 3D visuals, floor plans, and pricing, and finalized for submission to local authorities.",
+        "image": "/images/living.jpg",
+        "chips": ["10% Reservation Deposit"]
+    },
+    {
+        "id": "step-4",
+        "title": "Permitting & Final Order",
+        "description": "We handle all permitting on your behalf and finalize your order for production.",
+        "image": "/images/steel.jpg",
+        "chips": ["40% Payment upon Contract Signing"]
+    },
+    {
+        "id": "step-5",
+        "title": "Site Prep & Manufacturing",
+        "description": "We coordinate licensed contractors for site work while your home is built in a vetted factory. Most homes are ready in roughly six months.",
+        "image": "/images/cbn_shadow.png"
+    },
+    {
+        "id": "step-6",
+        "title": "Shipping & Installation",
+        "description": "With production complete, we confirm shipment and coordinate logistics. Installation typically takes one to seven days, depending on your home’s configuration.",
+        "image": "/images/render1.png",
+        "chips": [
+            "30% Payment three weeks before shipping",
+            "20% Final Payment upon delivery"
+        ]
+    },
+    {
+        "id": "step-7",
+        "title": "Move In!",
+        "description": "Get the keys and start living — your new space is ready.",
+        "image": "/images/hero_main.webp"
+    }
+]
