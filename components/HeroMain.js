@@ -127,10 +127,10 @@ const HeroMain = () => {
                         }}
                     >
                         <div className="absolute w-full h-[80svh] top-0 left-0 flex items-center p-2 justify-center flex-col gap-2">
-                            {/* <img
+                            <img
                                 src="/images/wordmark-white.svg"
                                 className=" max-w-[78px]"
-                            /> */}
+                            />
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{
@@ -139,17 +139,15 @@ const HeroMain = () => {
                                 }}
                                 className="img-container w-[70%] sm:w-[60%] md:w-[50%] md:mb-16"
                             >
-                                <img
+                                {/* <img
                                     src="/images/hero-message.svg"
                                     className="w-full"
-                                />
+                                /> */}
                             </motion.div>
-                            {/* <h1 className="text-pretty text-2xl md:text-4xl leading-[103%] max-w-[80%] lg:text-5xl text-center text-white md:max-w-[55%] lg:mb-16 mx-auto px-2">
-                                Precision-built designer homes,{" "}
-                                <span className="font-bold">
-                                    installed in less than a week.
-                                </span>
-                            </h1> */}
+                            <h1 className="text-pretty text-2xl md:text-4xl leading-[103%] max-w-[80%] lg:text-5xl text-center text-white md:max-w-[55%] lg:mb-16 mx-auto px-2">
+                                Considered. Crafted.{" "}
+                                <span className="font-bold">Complete.</span>
+                            </h1>
                         </div>
                     </motion.div>
                 </div>

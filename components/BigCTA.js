@@ -18,13 +18,13 @@ export default function BigCTA() {
 
     return (
         <section ref={ref} className="w-full grid place-items-center p-2">
-            <div className="max-w-[1440px] rounded-sm bg-white shadow-sm grid grid-cols-8 overflow-hidden">
+            <div className="max-w-[1440px] rounded-sm bg-[#000] shadow-sm grid grid-cols-8 overflow-hidden">
                 <div className="md:col-span-4 col-span-8 p-16 flex flex-col ">
                     <span className="text-5xl text-gray">Lorem ipsum.</span>
-                    <span className="text-5xl text-pretty">
+                    <span className="text-5xl text-pretty text-white">
                         Dolor seek amit sapien quis.
                     </span>
-                    <span className="font-mono uppercase text-xs mt-4">
+                    <span className="font-mono uppercase text-xs mt-4 text-white">
                         Sed eleifend sapien eget velit elementum.
                     </span>
                     <div className="mt-8">

@@ -17,6 +17,7 @@ import ProductBanner from "@/components/ProductBanner";
 import BeforeCard from "@/components/BeforeCard";
 import FlexibleLayouts from "@/components/FlexibleLayouts";
 import FadeIn from "@/components/FadeIn";
+import { useCtaFlow } from "@/context/CtaFlowProvider";
 import HeroMain from "@/components/HeroMain";
 import Link from "next/link";
 import Object3DViewer from "@/components/Object3DViewer";
@@ -25,10 +26,12 @@ import CTAButton from "@/components/CTAButton";
 import ProcessCards from "@/components/ProcessCards";
 import Livingroom from "@/components/Livingroom";
 import UnlistedSection from "@/components/UnlistedSection";
+import AnimatedTimeline from "@/components/AnimatedTimeline";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
     const [ctaOpen, setCTAOpen] = useState(false);
+    const { openCta } = useCtaFlow();
 
     const toggleModal = () => {
         setModalOpen(!modalOpen);
@@ -96,7 +99,7 @@ export default function Home() {
             <section className="mb-32">
                 <AttrCardLg />
                 <div className="p-2">
-                    <img src="/images/Bedroom2V2.webp" className="rounded-sm" />
+                    <img src="/images/kitchen1.webp" className="rounded-sm" />
                     <div className="grid grid-cols-5 mt-2">
                         <div className="col-span-5 lg:col-span-3">
                             <img
@@ -104,20 +107,20 @@ export default function Home() {
                                 className="rounded-sm"
                             />
                         </div>
-                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-between lg:px-4 py-4">
+                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-between lg:px-2 py-2">
                             <div className="">
                                 <h2 className="text-sm font-mono text-regular text-gray mb-4 uppercase">
                                     The M-SHLTR Ecosystem
                                 </h2>
-                                <div className="font-mono text-sm sm:text-base leading-[105%]">
-                                    The M-SHLTR explores innovations and filters
-                                    integrated to establish a framework that
-                                    leverages the site specific surroundings
-                                    with orientation and views. Integrated space
-                                    program and efficient circulation infuse the
-                                    dwellers experience with intuitive
-                                    technology within assembled spaces and
-                                    modules.
+                                <div className="font-mono text-sm sm:text-base leading-[105%] uppercase">
+                                    Each M-SHLTR home begins with the site: its
+                                    orientation, natural light, and views. Using
+                                    a modular framework, we organize spaces and
+                                    circulation to maximize efficiency and
+                                    comfort. Technology and building systems are
+                                    integrated from the start, creating a
+                                    cohesive, high-performance living
+                                    environment.
                                 </div>
                             </div>
                             <div className="pricing-container flex flex-col gap-0">
@@ -127,7 +130,16 @@ export default function Home() {
                                 <span className="text-3xl text-gray mb-8 mt-2">
                                     $289,000
                                 </span>
-                                <CTAButton />
+                                <div
+                                    onClick={openCta}
+                                    className="w-[fit-content] order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition font-mono"
+                                >
+                                    PRE-ORDER
+                                    <img
+                                        className=""
+                                        src="/icons/arrow-up-right.svg"
+                                    />
+                                </div>{" "}
                             </div>
                         </div>
                     </div>
