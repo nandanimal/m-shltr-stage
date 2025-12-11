@@ -1,0 +1,4 @@
+Frame 0: Default
+Frame 37: Menu Open (=)
+Frame 62: Close (x)
+Frame 119: Default again ()

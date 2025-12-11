@@ -75,3 +75,9 @@ html {
 .circular-gallery:active {
     cursor: grabbing;
 }
+
+/* Navbar */
+
+.menu-item {
+    font-size: 5rem;
+}

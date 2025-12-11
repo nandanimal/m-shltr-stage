@@ -44,7 +44,9 @@ export default function Home() {
     return (
         <>
             <FadeIn>
-                <HeroMain />
+                <section data-nav-theme="dark">
+                    <HeroMain />
+                </section>
             </FadeIn>
 
             {/* <FadeIn>
@@ -70,7 +72,7 @@ export default function Home() {
 
             <FadeIn>
                 <section
-                    data-theme="light"
+                    data-nav-theme="light"
                     className="w-full min-h-screen flex  flex-col justify-center mt-32"
                 >
                     <div className="max-w-6xl m-auto mb-16 p-2 ">
@@ -96,7 +98,7 @@ export default function Home() {
                 </section>
             </FadeIn>
 
-            <section className="mb-32">
+            <section className="mb-32" data-nav-theme="light">
                 <AttrCardLg />
                 <div className="p-2">
                     <img src="/images/kitchen1.webp" className="rounded-sm" />
@@ -146,7 +148,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section>
+            <section data-nav-theme="light">
                 <ProcessCards />
             </section>
 
@@ -174,7 +176,7 @@ export default function Home() {
             </FadeIn> */}
 
             {/* Custom section */}
-            <div className="bg-[#000]">
+            <section className="bg-[#000]" data-nav-theme="dark">
                 <section>
                     <UnlistedSection />
                 </section>
@@ -182,7 +184,7 @@ export default function Home() {
                 <BigCTA theme={"dark"} />
 
                 <Footer theme={"dark"} />
-            </div>
+            </section>
 
             {/* Model detail handler */}
             <AnimatePresence>

@@ -8,10 +8,10 @@ const CTAMinimal = ({ text, source, width }) => {
     const widthClass = width ? width : "";
 
     return (
-        <div>
+        <div className={widthClass}>
             <div
                 onClick={openCta}
-                className="order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition"
+                className="order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition font-mono"
             >
                 PRE-ORDER
                 <img className="" src="/icons/arrow-up-right.svg" />
