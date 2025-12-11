@@ -98,7 +98,7 @@ export default function TopdownMobile() {
                         <div className="p-2 imageContainer relative">
                             <img
                                 ref={imageRef}
-                                src="/images/floorplan_rotated.png"
+                                src="/images/floorplan_updated_rotated.webp"
                                 fill={true}
                                 alt="Interior"
                                 className="object-cover rounded-md overflow-hidden transition opacity"

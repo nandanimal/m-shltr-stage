@@ -174,13 +174,15 @@ export default function Home() {
             </FadeIn> */}
 
             {/* Custom section */}
-            <section>
-                <UnlistedSection />
-            </section>
+            <div className="bg-[#000]">
+                <section>
+                    <UnlistedSection />
+                </section>
 
-            <BigCTA />
+                <BigCTA theme={"dark"} />
 
-            <Footer />
+                <Footer theme={"dark"} />
+            </div>
 
             {/* Model detail handler */}
             <AnimatePresence>

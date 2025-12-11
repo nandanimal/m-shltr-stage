@@ -29,8 +29,8 @@ const UnlistedSection = () => {
             animate={
                 compact
                     ? {
-                          padding: "0.5rem",
-                          borderRadius: "0.375rem",
+                          padding: "0rem",
+                          borderRadius: "0rem",
                           transition: {
                               type: "spring",
                               stiffness: 100,
@@ -80,7 +80,7 @@ const UnlistedSection = () => {
                         <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center lg:px-4 py-4 order-2 lg:order-1">
                             <div className="">
                                 <h2 className="text-xl text-regular text-white mb-4">
-                                    unlisted dept.
+                                    Studio Malek Alqadi
                                 </h2>
                                 <div className="font-mono text-sm leading-[105%] text-white">
                                     M-SHLTR designed by Studio Malek Alqadi has
@@ -111,7 +111,7 @@ const UnlistedSection = () => {
                         <div className="font-mono w-full uppercase text-gray text-center mb-1 text-xs">
                             FEATURED IN
                         </div>
-                        <div className="press-row w-full gap-8 flex-row flex items-center justify-center">
+                        <div className="press-row w-full gap-8 flex-row flex items-center justify-center flex-wrap">
                             <img
                                 src="/images/press-logos/cn.svg"
                                 alt="Conde Nast"
@@ -130,6 +130,11 @@ const UnlistedSection = () => {
                             <img
                                 src="/images/press-logos/gq.svg"
                                 alt="GQ"
+                                className="h-[32px] w-auto object-contain"
+                            />
+                            <img
+                                src="/images/press-logos/wallpaper.svg"
+                                alt="wallpaper"
                                 className="h-[32px] w-auto object-contain"
                             />
                         </div>

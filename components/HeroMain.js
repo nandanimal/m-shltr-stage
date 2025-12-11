@@ -60,7 +60,8 @@ const HeroMain = () => {
                 }
                 className="h-screen w-full flex items-center justify-center p-2 overflow-hidden relative "
             >
-                <motion.div
+                {/* Specs */}
+                {/* <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.2, delay: 0.1 }}
@@ -73,7 +74,7 @@ const HeroMain = () => {
                     <span className="text-xs">
                         1,172<sup>2</sup> ft
                     </span>
-                </motion.div>{" "}
+                </motion.div>{" "} */}
                 <div className="absolute bottom-20 z-100">
                     <CTAButton />
                 </div>
@@ -127,10 +128,10 @@ const HeroMain = () => {
                         }}
                     >
                         <div className="absolute w-full h-[80svh] top-0 left-0 flex items-center p-2 justify-center flex-col gap-2">
-                            <img
+                            {/* <img
                                 src="/images/wordmark-white.svg"
                                 className=" max-w-[78px]"
-                            />
+                            /> */}
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{

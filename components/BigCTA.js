@@ -4,8 +4,17 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import CTAButton from "./CTAButton";
 
-export default function BigCTA() {
+export default function BigCTA({ theme }) {
     const ref = useRef(null);
+
+    let fg, bg;
+    if (theme === "dark") {
+        fg = "white";
+        bg = "black";
+    } else {
+        fg = "black";
+        bg = "white";
+    }
 
     // progress: 0 when section enters, 1 when it leaves
     const { scrollYProgress } = useScroll({
@@ -18,13 +27,21 @@ export default function BigCTA() {
 
     return (
         <section ref={ref} className="w-full grid place-items-center p-2">
-            <div className="max-w-[1440px] rounded-sm bg-[#000] shadow-sm grid grid-cols-8 overflow-hidden">
+            <div
+                className={`max-w-[1440px] rounded-sm bg-${bg} shadow-sm grid grid-cols-8 overflow-hidden`}
+            >
                 <div className="md:col-span-4 col-span-8 p-16 flex flex-col ">
-                    <span className="text-5xl text-gray">Lorem ipsum.</span>
-                    <span className="text-5xl text-pretty text-white">
+                    <span className="md:text-5xl text-4xl text-gray">
+                        Lorem ipsum.
+                    </span>
+                    <span
+                        className={`md:text-5xl text-4xl  text-pretty text-${fg}`}
+                    >
                         Dolor seek amit sapien quis.
                     </span>
-                    <span className="font-mono uppercase text-xs mt-4 text-white">
+                    <span
+                        className={`font-mono uppercase text-xs mt-4 text-${fg}`}
+                    >
                         Sed eleifend sapien eget velit elementum.
                     </span>
                     <div className="mt-8">
@@ -33,9 +50,9 @@ export default function BigCTA() {
                 </div>
                 <div className="md:col-span-4 col-span-8 mt-8 sm:mt-0">
                     <img
-                        src="/images/cbn_detail.webp"
+                        src="/images/kitchen_detail.webp"
                         className="w-full h-full object-cover"
-                        alt="CBN detail shot"
+                        alt="CBN kitchen detail shot"
                     />
                 </div>
             </div>

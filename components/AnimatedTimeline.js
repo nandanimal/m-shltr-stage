@@ -56,7 +56,7 @@ const AnimatedTimeline = () => {
                             return (
                                 <motion.div
                                     key={step.id}
-                                    className={`absolute inset-0 flex flex-col lg:flex-row items-center gap-10 sm:gap-0 ${
+                                    className={`absolute inset-0 flex flex-col justify-center lg:flex-row items-center gap-10 sm:gap-0 ${
                                         isLeft ? "" : "lg:flex-row-reverse"
                                     }`}
                                     initial={{ opacity: 0, y: 32 }}
@@ -77,7 +77,7 @@ const AnimatedTimeline = () => {
                                     <div className="w-full lg:w-1/2 flex justify-center">
                                         <div
                                             className={`overflow-hidden bg-white  w-full max-w-[560px] aspect-[4/3] ${
-                                                isLeft ? "pr-8" : "pl-8"
+                                                isLeft ? "sm:pr-8" : "sm:pl-8"
                                             }`}
                                         >
                                             <Image

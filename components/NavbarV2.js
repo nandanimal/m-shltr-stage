@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useCtaFlow } from "@/context/CtaFlowProvider";
 import CTAButton from "./CTAButton";
+import CTAMinimal from "./CTAMinimal";
 
 const Navbar = () => {
     const { openCta } = useCtaFlow();
@@ -24,7 +25,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                className={`navbar w-full rounded-sm  backdrop-blur-lg sm:backdrop-blur-[none] max-w-[1440px] transition ${
+                className={`navbar w-full rounded-sm  sm:backdrop-blur-[none] max-w-[1440px] transition ${
                     menuOpen ? "bg-[rgba(255, 255, 255, 0.90)]  " : ""
                 }`}
                 style={
@@ -34,67 +35,46 @@ const Navbar = () => {
                     }
                 }
             >
-                {/* Top level contents */}
-                <div className="navbar-contents h-9 sm:h-7 items-stretch min-h-0 items-stretch flex flex-row justify-between items-center p-1 sm:p-0 w-full gap-1 sm:max-w-[none] min-h-0">
+                {/* Desktop contents */}
+                <div className="navbar-contents h-9 sm:h-7 items-stretch min-h-0 items-stretch grid grid-cols-4 w-full items-center p-1 sm:p-0 w-full gap-1 sm:max-w-[none] min-h-0">
+                    <div
+                        href="/"
+                        onClick={toggleMenu}
+                        // style={{ height: "-webkit-fill-available" }}
+                        className="hamburger-menu h-full flex items-center gap-2 leading-none  sm:ml-0 sm:px-2 h-full rounded-sm overflow-hidden "
+                    >
+                        <img
+                            src="/images/icon_black.svg"
+                            className="h-[16px]"
+                            alt="M-SHLTR"
+                        />
+                        <div className="font-mono uppercase">MENU</div>
+                    </div>
+
                     <Link
                         href="/"
                         onClick={closeMenu}
                         // style={{ height: "-webkit-fill-available" }}
-                        className="w-full h-full flex items-center sm:backdrop-blur-lg sm:hover:bg-[#ffffff60] transition sm:bg-[#ffffff40] leading-none ml-1 sm:ml-0 sm:px-2 h-full rounded-sm overflow-hidden"
+                        className=" h-full flex items-center leading-none ml-1 sm:ml-0 sm:px-2 h-full rounded-sm overflow-hidden col-span-2 justify-center hover:opacity-50 transition"
                     >
                         <img
-                            src="/images/wordmark_black.svg"
+                            src="/images/SHLTR.svg"
                             className="h-[16px]"
                             alt="M-SHLTR"
                         />
                     </Link>
 
                     {/* desktop contents */}
-                    <div className="desktop-link flex flex-row gap-1 items-center justify-center hidden sm:flex font-mono uppercase">
-                        <Link
-                            className="menu-item hover:bg-[#ffffff60] bg-[#ffffff40] transition rounded-sm px-2 py-[6px] transition  backdrop-blur-lg "
-                            href="/about"
-                            onClick={closeMenu}
-                        >
-                            {" "}
-                            About
-                        </Link>
-                        <Link
-                            className="menu-item hover:bg-[#ffffff60] bg-[#ffffff40] transition rounded-sm px-2 py-[6px] backdrop-blur-lg transition "
-                            href="/cbn"
-                            onClick={closeMenu}
-                        >
-                            {" "}
-                            CBN
-                        </Link>
-                        <Link
-                            className="menu-item hover:bg-[#ffffff60] bg-[#ffffff40] transition rounded-sm px-2 py-[6px] backdrop-blur-lg transition "
-                            href="/custom"
-                            onClick={closeMenu}
-                        >
-                            {" "}
-                            Custom
-                        </Link>
-
+                    <div className="desktop-link flex flex-row gap-1 items-center justify-center  flex font-mono uppercase justify-end">
                         <div className="">
-                            <CTAButton />
-                        </div>
-                    </div>
+                            <div className="block sm:hidden">
+                                <CTAMinimal />
+                            </div>
 
-                    {/* Hamburger menu */}
-                    <div
-                        className="hamburger-menu p-2 rounded-sm w-[40px] h-[auto] gap-1 flex items-center flex-col justify-center cursor-pointer sm:hidden"
-                        onClick={toggleMenu}
-                    >
-                        <motion.div
-                            animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                            className="w-full h-[1px] bg-black"
-                        ></motion.div>
-                        <div className="w-full h-[1px] bg-black"></div>
-                        <motion.div
-                            animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                            className="w-full h-[1px] bg-black"
-                        ></motion.div>
+                            <div className="hidden sm:block">
+                                <CTAButton />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
