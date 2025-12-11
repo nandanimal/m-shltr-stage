@@ -13,7 +13,7 @@ const ProcessCards = () => {
                             <h1 className="text-3xl text-regular text-gray mb-4">
                                 Our Process
                             </h1>
-                            <div className="sm:text-6xl text-3xl mb-32 text-pretty ">
+                            <div className="sm:text-6xl text-3xl mb-32 text-pretty font-dince ">
                                 From first call to move-in, here’s what to
                                 expect when working with SHLTR.
                             </div>

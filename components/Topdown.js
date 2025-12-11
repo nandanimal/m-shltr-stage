@@ -63,7 +63,7 @@ export default function Topdown() {
             {/* sticky viewport */}
 
             <div className="flex items-center flex-col">
-                <div className="font-mono uppercase text-xs">interiors</div>
+                <div className="font-roboto text-xs">Interiors</div>
                 <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%]">
                     Thoughtfully considered interiors{" "}
                     <strong>
@@ -110,6 +110,15 @@ export default function Topdown() {
                                     textBody={"Custom king bed and headboard"}
                                     leftPct={22} //
                                     bottomPct={25}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        "Utility cabinet + tankless water heater"
+                                    }
+                                    leftPct={32} //
+                                    bottomPct={64}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />

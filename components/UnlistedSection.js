@@ -62,7 +62,7 @@ const UnlistedSection = () => {
                     <span className="font-mono text-sm uppercase ">
                         launching 2026
                     </span>
-                    <span className="text-3xl">
+                    <span className="text-3xl font-dince">
                         Module lineup for your house or hotel
                     </span>
                 </div>
@@ -80,10 +80,10 @@ const UnlistedSection = () => {
                         </div>
                         <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center lg:px-4 py-4 order-2 lg:order-1">
                             <div className="">
-                                <h2 className="text-xl text-regular text-white mb-4">
+                                <h2 className="text-xl text-regular text-white mb-4 font-dince">
                                     Studio Malek Alqadi
                                 </h2>
-                                <div className="font-mono text-sm leading-[105%] text-white">
+                                <div className="font-roboto text-base leading-[105%] text-white">
                                     M-SHLTR designed by Studio Malek Alqadi has
                                     a variety of modules, floor plans,
                                     assemblies and options available. Reach out

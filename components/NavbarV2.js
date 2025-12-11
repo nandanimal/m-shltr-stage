@@ -182,7 +182,7 @@ const Navbar = () => {
                         <div
                             className={`font-mono uppercase transition-colors duration-300 ${navTextClass}`}
                         >
-                            MENU
+                            Menu
                         </div>
                     </button>
 
@@ -201,7 +201,7 @@ const Navbar = () => {
                     </Link>
 
                     {/* desktop contents */}
-                    <div className="desktop-link flex flex-row gap-1 items-center justify-center  flex font-mono uppercase justify-end">
+                    <div className="desktop-link flex flex-row gap-1 items-center justify-center  flex font-roboto justify-end">
                         <div className="">
                             <div className="block sm:hidden">
                                 <CTAMinimal />
@@ -252,20 +252,20 @@ const Navbar = () => {
                         About
                     </Link>
                     <Link
+                        className="menu-item text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
+                        href="/faq"
+                        onClick={closeMenu}
+                    >
+                        {" "}
+                        FAQ
+                    </Link>
+                    <Link
                         className="menu-item  text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
                         href="/cbn"
                         onClick={closeMenu}
                     >
                         {" "}
                         CBN
-                    </Link>
-                    <Link
-                        className="menu-item  text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
-                        href="/custom"
-                        onClick={closeMenu}
-                    >
-                        {" "}
-                        Custom
                     </Link>
 
                     <div className="m-2">

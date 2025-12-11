@@ -50,7 +50,7 @@ const CBN = () => {
                         Introducing the CBN-MODULE, an integrated approach to
                         your house or hotel.
                     </div>
-                    <div className="text-xs font-mono uppercase mt-4">
+                    <div className="text-xs font-roboto mt-4">
                         Designed by Studio Malek Alqadi
                     </div>
                 </div>
@@ -68,7 +68,7 @@ const CBN = () => {
             </section>
 
             {/* <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-2">
-                <div className="font-mono uppercase text-xs">exteriors</div>
+                <div className="font-roboto text-xs">Exteriors</div>
                 <h2 className="text-3xl text-center mt-2 mb-8">
                     Designed by the goats, <strong>customized by you.</strong>
                 </h2>

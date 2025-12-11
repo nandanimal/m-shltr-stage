@@ -37,7 +37,7 @@ const AnimatedTimeline = () => {
                     style={{ height: `${totalHeightVh}vh` }}
                 >
                     <div className="sticky top-0 h-screen flex items-center justify-center relative">
-                        <div className="flex items-center justify-between absolute bottom-0 w-full text-gray font-mono uppercase text-xs tracking-[0.18em] mb-6">
+                        <div className="flex items-center justify-between absolute bottom-0 w-full text-gray font-roboto text-xs tracking-[0.18em] mb-6">
                             <span>Process Timeline</span>
                             <span className="text-[11px]">
                                 {String(activeIndex + 1).padStart(2, "0")} /{" "}
@@ -125,7 +125,7 @@ const AnimatedTimeline = () => {
                                             <h3 className="text-2xl sm:text-3xl mt-8 font-semibold text-[#272727] leading-tight">
                                                 {step.title}
                                             </h3>
-                                            <p className="font-mono text-xs sm:text-sm uppercase text-[#272727] leading-relaxed tracking-wide">
+                                            <p className="font-roboto text-xs sm:text-sm text-[#272727] leading-relaxed tracking-wide">
                                                 {step.description}
                                             </p>
                                             {Array.isArray(step.chips) &&

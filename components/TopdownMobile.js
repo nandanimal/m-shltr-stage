@@ -63,7 +63,7 @@ export default function TopdownMobile() {
             {/* sticky viewport */}
             <FadeIn>
                 <div className="flex items-center flex-col">
-                    <div className="font-mono uppercase text-xs">interiors</div>
+                    <div className="font-roboto text-xs">Interiors</div>
                     <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%]">
                         Thoughtfully considered interiors{" "}
                         <strong>

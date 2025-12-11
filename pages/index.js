@@ -79,7 +79,7 @@ export default function Home() {
                         <h1 className="text-2xl md:text-3xl text-regular text-gray mb-2 md:mb-4 text-pretty">
                             Introducing SHLTR, designed by Malek Alqadi.{" "}
                         </h1>
-                        <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] ">
+                        <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] font-dince">
                             A precision-built home for any setting, shaped with
                             intention, sustainably crafted, and delivered
                             turnkey to your land.
@@ -120,7 +120,7 @@ export default function Home() {
                                 <h2 className="text-sm font-mono text-regular text-gray mb-4 uppercase">
                                     The M-SHLTR Ecosystem
                                 </h2>
-                                <div className="font-mono text-sm sm:text-base leading-[105%] uppercase">
+                                <div className="font-roboto text-lg sm:text-xl leading-[105%]">
                                     Each M-SHLTR home begins with the site: its
                                     orientation, natural light, and views. Using
                                     a modular framework, we organize spaces and

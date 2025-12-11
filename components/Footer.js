@@ -16,8 +16,8 @@ const EmailCapture = ({ theme }) => {
                 alt="interior living space"
             />
             <div className="text-xl leading-none mt-4">Newsletter</div>
-            <div className="font-mono uppercase text-sm">
-                stay up to date with the latest from m-shltr
+            <div className="font-roboto text-base">
+                Stay up to date with the latest from M-SHLTR
             </div>
             <div className="contents flex flex-col gap-1">
                 <input
@@ -25,9 +25,7 @@ const EmailCapture = ({ theme }) => {
                     placeholder="name@email.com"
                     className={`placeholder:text-gray border-b-1 focus:outline-none bg-transparent ${borderTone}`}
                 ></input>
-                <div className="cta-button uppercase mt-8 font-mono">
-                    sign up
-                </div>
+                <div className="cta-button mt-8 font-roboto">Sign up</div>
             </div>
         </div>
     );
@@ -50,7 +48,9 @@ const Footer = ({ theme = "light" }) => {
                     <div className="logo-row">
                         <img
                             src="images/logo_black.svg"
-                            className={`max-w-[48px] ${theme === "dark" ? "invert" : ""}`}
+                            className={`max-w-[48px] ${
+                                theme === "dark" ? "invert" : ""
+                            }`}
                         />
                     </div>
                     <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2 gap-y-12">
@@ -75,12 +75,7 @@ const Footer = ({ theme = "light" }) => {
                                 >
                                     CBN
                                 </Link>
-                                <Link
-                                    href="/custom"
-                                    className=" hover:opacity-70 transition"
-                                >
-                                    Custom
-                                </Link>
+
                                 <Link
                                     href="/faq"
                                     className=" hover:opacity-70 transition"
@@ -102,7 +97,9 @@ const Footer = ({ theme = "light" }) => {
 
                         {/* M STUDIO */}
                         <div className="flex flex-col gap-4">
-                            <div className="text-gray text-xl">M-STUDIO</div>
+                            <div className="text-gray text-xl font-dince">
+                                M-STUDIO
+                            </div>
                             <div className="footer-menu-links flex flex-col gap-3 text-2xl">
                                 <a
                                     href="https://www.malekalqadi.com/journal"
@@ -139,7 +136,9 @@ const Footer = ({ theme = "light" }) => {
 
                         {/* Socials */}
                         <div className="flex flex-col gap-4">
-                            <div className="text-gray text-xl">Socials</div>
+                            <div className="text-gray text-xl font-dince">
+                                Socials
+                            </div>
                             <div className="footer-menu-links flex flex-col gap-3 text-2xl">
                                 <a
                                     href="https://www.instagram.com/m_shltr/?hl=en"
@@ -177,19 +176,19 @@ const Footer = ({ theme = "light" }) => {
 
                 <div className=" w-full mt-16 p-4 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end">
                     {/* Left */}
-                    <div className=" text-xs font-mono flex flex-col gap-0 uppercase w-full">
+                    <div className=" text-xs font-roboto flex flex-col gap-0 w-full">
                         <span>
                             © 2025{" "}
-                            <a className="hover:underline" href="">
-                                m-shltr
+                            <a className="hover:underline font-dince" href="">
+                                M-SHLTR
                             </a>{" "}
                             /{" "}
                             <a className="hover:underline" href="">
-                                privacy policy
+                                Privacy policy
                             </a>{" "}
                             /{" "}
                             <a className="hover:underline" href="">
-                                terms of service
+                                Terms of service
                             </a>
                         </span>
                         <span>

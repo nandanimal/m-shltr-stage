@@ -31,17 +31,15 @@ export default function BigCTA({ theme }) {
                 className={`max-w-[1440px] rounded-sm bg-${bg} shadow-sm grid grid-cols-8 overflow-hidden`}
             >
                 <div className="md:col-span-4 col-span-8 p-16 flex flex-col ">
-                    <span className="md:text-5xl text-4xl text-gray">
+                    <span className="md:text-5xl text-4xl text-gray font-dince">
                         Lorem ipsum.
                     </span>
                     <span
-                        className={`md:text-5xl text-4xl  text-pretty text-${fg}`}
+                        className={`md:text-5xl text-4xl  text-pretty text-${fg} font-dince`}
                     >
                         Dolor seek amit sapien quis.
                     </span>
-                    <span
-                        className={`font-mono uppercase text-xs mt-4 text-${fg}`}
-                    >
+                    <span className={`font-roboto text-lg mt-4 text-${fg} `}>
                         Sed eleifend sapien eget velit elementum.
                     </span>
                     <div className="mt-8">

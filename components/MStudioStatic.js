@@ -45,8 +45,8 @@ const MStudioStatic = () => {
                         </h2>
                     </div>
                     <div className="featured-banner flex flex-col gap-4  0 p-4 sm:p-16 items-center justify-center absolute bottom-0">
-                        <div className="font-mono w-full uppercase text-gray text-center mb-1 text-xs">
-                            FEATURED IN
+                        <div className="font-roboto w-full text-gray text-center mb-1 text-xs">
+                            Featured in
                         </div>
                         <div className="press-row w-full gap-8 flex-row flex items-center justify-center">
                             <img

@@ -24,7 +24,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
                     <div className="flex flex-row justify-between">
                         <div className="col-left flex flex-col gap-1 ">
                             <h2 className="text-xl font-bold">CBN NO. 1172</h2>
-                            <span>2 BED / 2.5 BATH</span>
+                            <span className="font-dince">2 BED / 2.5 BATH</span>
                             <div className="text-sm">
                                 1,172 ft<sup>2</sup>
                             </div>
@@ -37,7 +37,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
                             />
                         </div>
                     </div>
-                    <div className="mt-4 uppercase text-xs font-mono">
+                    <div className="mt-4 text-base font-roboto">
                         CBN brings warmth and precision to modular living.
                         Inside, custom wood cabinetry, integrated Pitt cooktops,
                         and a central skylight define a bright, crafted
