@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import CTAButton from "./CTAButton";
 import { useScroll } from "@/context/ScrollContext";
+import CTAMinimal from "./CTAMinimal";
 
 const UnlistedSection = () => {
     const { y, vh, progress, scrollYProgress } = useScroll();
@@ -100,8 +101,12 @@ const UnlistedSection = () => {
                                     compromising design.
                                 </div>
                             </div>
-                            <div className="pricing-container flex flex-col gap-0 mt-8">
-                                <CTAButton text={"inquire"} />
+                            <div className="pricing-container text-white flex flex-col gap-0 mt-8">
+                                <CTAMinimal
+                                    text={"inquire"}
+                                    className=""
+                                    width={"w-fit"}
+                                />
                             </div>
                         </div>
                     </div>

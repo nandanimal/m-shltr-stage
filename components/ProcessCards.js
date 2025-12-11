@@ -9,7 +9,7 @@ const ProcessCards = () => {
             <FadeIn>
                 <section className="p-2">
                     <div className="text-3xl leading-none">
-                        <div className="max-w-6xl m-auto">
+                        <div className="max-w-6xl m-auto px-2">
                             <h1 className="text-3xl text-regular text-gray mb-4">
                                 Our Process
                             </h1>

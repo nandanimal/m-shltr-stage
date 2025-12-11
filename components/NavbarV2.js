@@ -172,6 +172,7 @@ const Navbar = () => {
                                 lottieRef={menuLottieRef}
                                 animationData={menuAnimation}
                                 loop={false}
+                                style={logoStyle}
                                 autoplay={false}
                                 rendererSettings={{
                                     preserveAspectRatio: "xMidYMid meet",
@@ -235,7 +236,7 @@ const Navbar = () => {
                     }`}
                 >
                     <Link
-                        className="menu-item text-2xl hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        className="menu-item text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
                         href="/"
                         onClick={closeMenu}
                     >
@@ -243,7 +244,7 @@ const Navbar = () => {
                         Home
                     </Link>
                     <Link
-                        className="menu-item text-2xl hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        className="menu-item text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
                         href="/about"
                         onClick={closeMenu}
                     >
@@ -251,7 +252,7 @@ const Navbar = () => {
                         About
                     </Link>
                     <Link
-                        className="menu-item  text-2xl hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        className="menu-item  text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
                         href="/cbn"
                         onClick={closeMenu}
                     >
@@ -259,7 +260,7 @@ const Navbar = () => {
                         CBN
                     </Link>
                     <Link
-                        className="menu-item  text-2xl hover:bg-[#ffffff47] transition rounded-sm p-1 transition mx-1"
+                        className="menu-item  text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
                         href="/custom"
                         onClick={closeMenu}
                     >

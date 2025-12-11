@@ -71,11 +71,11 @@ export default function Home() {
             </FadeIn> */}
 
             <FadeIn>
-                <section
-                    data-nav-theme="light"
-                    className="w-full min-h-screen flex  flex-col justify-center mt-32"
-                >
-                    <div className="max-w-6xl m-auto mb-16 p-2 ">
+                <section className="w-full min-h-screen flex  flex-col justify-center mt-32">
+                    <div
+                        className="max-w-6xl m-auto mb-16 p-2 "
+                        data-nav-theme="light"
+                    >
                         <h1 className="text-2xl md:text-3xl text-regular text-gray mb-2 md:mb-4 text-pretty">
                             Introducing SHLTR, designed by Malek Alqadi.{" "}
                         </h1>
@@ -86,10 +86,16 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <Object3DViewer />
-
-                    <Livingroom />
-                    <div className="min-h-[100svh] flex items-center justify-center flex-col">
+                    <div className="" data-nav-theme="light">
+                        <Object3DViewer />
+                    </div>
+                    <div className="" data-nav-theme="dark">
+                        <Livingroom />
+                    </div>
+                    <div
+                        className="min-h-[100svh] flex items-center justify-center flex-col"
+                        data-nav-theme="light"
+                    >
                         <div className="text-xl text-gray text-pretty ">
                             Introducing CBN.
                         </div>
@@ -98,7 +104,7 @@ export default function Home() {
                 </section>
             </FadeIn>
 
-            <section className="mb-32" data-nav-theme="light">
+            <section className="mb-32" data-nav-theme="dark">
                 <AttrCardLg />
                 <div className="p-2">
                     <img src="/images/kitchen1.webp" className="rounded-sm" />
