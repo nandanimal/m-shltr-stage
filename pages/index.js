@@ -27,6 +27,7 @@ import ProcessCards from "@/components/ProcessCards";
 import Livingroom from "@/components/Livingroom";
 import UnlistedSection from "@/components/UnlistedSection";
 import AnimatedTimeline from "@/components/AnimatedTimeline";
+import ProcessOverview from "@/components/ProcessOverview";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -71,38 +72,45 @@ export default function Home() {
             </FadeIn> */}
 
             <FadeIn>
-                <section className="w-full min-h-screen flex  flex-col justify-center mt-32">
-                    <div
-                        className="max-w-6xl m-auto mb-16 p-2 "
-                        data-nav-theme="light"
-                    >
-                        <h1 className="text-2xl md:text-3xl text-regular text-gray mb-2 md:mb-4 text-pretty">
-                            Introducing SHLTR, designed by Malek Alqadi.{" "}
-                        </h1>
-                        <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] font-dince">
-                            A precision-built home for any setting, shaped with
-                            intention, sustainably crafted, and delivered
-                            turnkey to your land.
-                        </div>
+                <section className="w-full min-h-screen flex  flex-col justify-center mt-32 relative">
+                    <div className="">
+                        <FadeIn>
+                            <div
+                                className="max-w-6xl m-auto mb-16 p-2 "
+                                data-nav-theme="light"
+                            >
+                                <h1 className="text-2xl md:text-3xl text-regular text-gray mb-2 md:mb-4 text-pretty">
+                                    Introducing SHLTR, designed by Malek Alqadi
+                                </h1>
+                                <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] font-dince">
+                                    A precision-built home for any setting,
+                                    shaped with intention, sustainably crafted,
+                                    and delivered turnkey to your land.
+                                </div>
+                            </div>
+                        </FadeIn>
                     </div>
 
                     <div className="" data-nav-theme="light">
                         <Object3DViewer />
                     </div>
-                    <div className="" data-nav-theme="dark">
-                        <Livingroom />
-                    </div>
-                    <div
-                        className="min-h-[100svh] flex items-center justify-center flex-col"
-                        data-nav-theme="light"
-                    >
-                        <div className="text-xl text-gray text-pretty font-dince ">
-                            Introducing CBN
-                        </div>
-                        <ProductBanner is3d={true} />
-                    </div>
                 </section>
             </FadeIn>
+
+            <section>
+                <div className="" data-nav-theme="dark">
+                    <Livingroom />
+                </div>
+                <div
+                    className="min-h-[100svh] flex items-center justify-center flex-col"
+                    data-nav-theme="light"
+                >
+                    <div className="text-xl text-gray text-pretty font-dince ">
+                        Introducing CBN
+                    </div>
+                    <ProductBanner is3d={true} />
+                </div>
+            </section>
 
             <section className="mb-32" data-nav-theme="dark">
                 <AttrCardLg />
@@ -155,7 +163,7 @@ export default function Home() {
             </section>
 
             <section data-nav-theme="light">
-                <ProcessCards />
+                <ProcessOverview />
             </section>
 
             {/* Built fast section */}

@@ -74,7 +74,10 @@ const Hero = () => {
                     <div className="absolute bottom-20 z-80">
                         <CTAButton />
                     </div>
-                    <div className="image-container w-full h-full relative flex items-center justify-center overflow-hidden rounded-md">
+                    <div
+                        className="image-container w-full h-full relative flex items-center justify-center overflow-hidden rounded-md"
+                        data-nav-theme="dark"
+                    >
                         <motion.div
                             className="absolute w-full -z-10 h-[110vh] object-cover overflow-hidden"
                             priority
@@ -90,7 +93,7 @@ const Hero = () => {
                             style={{ y: fgY }}
                         >
                             <img
-                                src="/images/cbn_alt.avif"
+                                src="/images/cbn_alt.webp"
                                 className="object-cover h-[110vh] w-full rounded-md scale-[1.05]"
                                 priority
                                 fill
@@ -102,12 +105,12 @@ const Hero = () => {
                             className="absolute w-full -z-30 h-[110vh] object-cover overflow-hidden"
                             style={{ y: bgY }}
                         >
-                            <img
+                            {/* <img
                                 src="/images/kitchen1_bg.webp"
                                 className="object-cover h-full w-full rounded-md"
                                 fill
                                 quality={100}
-                            />
+                            /> */}
                         </motion.div>
                     </div>
                 </motion.div>

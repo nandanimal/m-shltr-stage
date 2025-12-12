@@ -12,33 +12,75 @@ export default function TopdownMobile() {
     // Tooltip will now get image dimensions
     const [imgDims, setImgDims] = useState({ width: 0, height: 0 });
 
-    // Helper to update imageRef values
+    // Helper to update imageRef values using layout (untransformed) size
     const updateImgDims = () => {
-        if (imageRef.current) {
-            const rect = imageRef.current.getBoundingClientRect();
-            setImgDims({
-                width: rect.width,
-                height: rect.height,
-            });
-        }
+        const el = imageRef.current;
+        if (!el) return;
+        const width = el.offsetWidth;
+        const height = el.offsetHeight;
+        if (!width || !height) return;
+        setImgDims({ width, height });
     };
 
+    // Tooltips were misaligned because we measured before the image decoded (width/height read as 0) and while transforms were settling; we now wait for decode + a frame before measuring and use layout sizes.
     useEffect(() => {
-        // Call at mount
-        updateImgDims();
+        let cancelled = false;
+        const imgEl = imageRef.current;
 
-        // Update on resize
-        window.addEventListener("resize", updateImgDims);
+        const measure = () => {
+            if (cancelled) return;
+            updateImgDims();
+        };
 
-        // Optionally update on image load as well
-        if (imageRef.current) {
-            imageRef.current.addEventListener("load", updateImgDims);
+        const measureAfterDecode = async () => {
+            if (!imgEl || cancelled) return;
+            try {
+                if (imgEl.decode) {
+                    await imgEl.decode();
+                } else if (!imgEl.complete) {
+                    await new Promise((resolve) => {
+                        imgEl.addEventListener("load", resolve, {
+                            once: true,
+                        });
+                    });
+                }
+            } catch (_) {
+                // decode can reject if the image is already in flight; safe to ignore
+            }
+            if (cancelled) return;
+            // Wait a frame so transforms/scroll-based scaling settle before measuring
+            requestAnimationFrame(measure);
+        };
+
+        // Resize observer picks up layout shifts without a full window resize
+        const resizeObserver =
+            typeof ResizeObserver !== "undefined"
+                ? new ResizeObserver(measure)
+                : null;
+        if (resizeObserver && imgEl) {
+            resizeObserver.observe(imgEl);
+        }
+
+        // Run once after decode instead of on mount to avoid zero-sized reads
+        measureAfterDecode();
+
+        // Update on resize and when the image loads
+        window.addEventListener("resize", measure);
+        window.addEventListener("load", measureAfterDecode);
+
+        if (imgEl) {
+            imgEl.addEventListener("load", measureAfterDecode);
         }
 
         return () => {
-            window.removeEventListener("resize", updateImgDims);
-            if (imageRef.current) {
-                imageRef.current.removeEventListener("load", updateImgDims);
+            cancelled = true;
+            window.removeEventListener("resize", measure);
+            window.removeEventListener("load", measureAfterDecode);
+            if (imgEl) {
+                imgEl.removeEventListener("load", measureAfterDecode);
+            }
+            if (resizeObserver && imgEl) {
+                resizeObserver.disconnect();
             }
         };
         // Note: if you expect the image to ever change, you could include src as a dependency
@@ -99,9 +141,8 @@ export default function TopdownMobile() {
                             <img
                                 ref={imageRef}
                                 src="/images/floorplan_updated_rotated.webp"
-                                fill={true}
                                 alt="Interior"
-                                className="object-cover rounded-md overflow-hidden transition opacity"
+                                className="w-full h-auto object-cover rounded-md overflow-hidden transition opacity"
                             />
                             <motion.div
                                 style={{ opacity: labelOpacity }}

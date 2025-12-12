@@ -46,11 +46,11 @@ const CBN = () => {
                     <h1 className="text-3xl text-regular text-gray mb-4">
                         CBN - MODULE NO. 1172{" "}
                     </h1>
-                    <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty ">
+                    <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty font-dince">
                         Introducing the CBN-MODULE, an integrated approach to
                         your house or hotel.
                     </div>
-                    <div className="text-xs font-roboto mt-4">
+                    <div className="text-xs font-mono uppercase mt-4">
                         Designed by Studio Malek Alqadi
                     </div>
                 </div>
@@ -63,9 +63,9 @@ const CBN = () => {
                 <ProductBanner is3d={true} />
             </section>
 
-            <section>
+            {/* <section>
                 <SizeToggleCard />
-            </section>
+            </section> */}
 
             {/* <section className="flex items-center flex-col min-h-screen justify-center pt-48 p-2">
                 <div className="font-roboto text-xs">Exteriors</div>

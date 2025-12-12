@@ -75,7 +75,13 @@ const HeroMain = () => {
                         1,172<sup>2</sup> ft
                     </span>
                 </motion.div>{" "} */}
-                <div className="absolute bottom-20 z-100">
+                <div className="absolute bottom-20 z-100 text-white text-center">
+                    {/* <div className="mb-4 text-xl">
+                        Precision built designer homes, <br />
+                        <span className="font-bold">
+                            installed in less than a week.
+                        </span>
+                    </div> */}
                     <CTAButton />
                 </div>
                 <div className="image-container w-full h-full relative flex items-center justify-center overflow-hidden rounded-md">

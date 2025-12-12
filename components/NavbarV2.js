@@ -24,6 +24,10 @@ const Navbar = () => {
         navTheme === "light"
             ? { filter: "brightness(0)", color: "black" }
             : { filter: "brightness(0) invert(1)", color: "white" };
+    const arrowStyle =
+        navTheme === "light"
+            ? { filter: "brightness(0)" }
+            : { filter: "brightness(0) invert(1)" };
     const { scrollY } = useScroll();
 
     const toggleMenu = () => {
@@ -157,7 +161,7 @@ const Navbar = () => {
                 }
             >
                 {/* Desktop contents */}
-                <div className="navbar-contents h-9 sm:h-7 items-stretch min-h-0 items-stretch grid grid-cols-4 w-full items-center p-1 sm:p-0 w-full gap-1 sm:max-w-[none] min-h-0">
+                <div className="navbar-contents h-9 sm:h-7 items-stretch min-h-0 items-stretch grid grid-cols-3 sm:grid-cols-4 w-full items-center p-1 sm:p-0 w-full gap-1 sm:max-w-[none] min-h-0">
                     <button
                         onClick={toggleMenu}
                         type="button"
@@ -190,7 +194,7 @@ const Navbar = () => {
                         href="/"
                         onClick={closeMenu}
                         // style={{ height: "-webkit-fill-available" }}
-                        className=" h-full flex items-center leading-none ml-1 sm:ml-0 sm:px-2 h-full rounded-sm overflow-hidden col-span-2 justify-center hover:opacity-50 transition"
+                        className=" h-full flex items-center leading-none ml-1 sm:ml-0 sm:px-2 h-full rounded-sm overflow-hidden sm:col-span-2 justify-center hover:opacity-50 transition"
                     >
                         <img
                             src="/images/SHLTR.svg"
@@ -204,7 +208,7 @@ const Navbar = () => {
                     <div className="desktop-link flex flex-row gap-1 items-center justify-center  flex font-roboto justify-end">
                         <div className="">
                             <div className="block sm:hidden">
-                                <CTAMinimal />
+                                <CTAMinimal iconStyle={arrowStyle} />
                             </div>
 
                             <div className="hidden sm:block">
@@ -269,7 +273,7 @@ const Navbar = () => {
                     </Link>
 
                     <div className="m-2">
-                        <CTAMinimal width={"w-fit"} />
+                        <CTAMinimal width={"w-fit"} iconStyle={arrowStyle} />
                     </div>
                 </motion.div>
             </motion.div>
