@@ -146,7 +146,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                className={`navbar w-full rounded-sm  sm:backdrop-blur-[none] max-w-[1440px] transition transition-colors duration-300 ${navTextClass} ${
+                className={`navbar w-full rounded-sm  sm:backdrop-blur-[none] transition transition-colors duration-300 ${navTextClass} ${
                     menuOpen ? "bg-[rgba(255, 255, 255, 0.90)]  " : ""
                 }`}
                 style={

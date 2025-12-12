@@ -8,7 +8,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
 
     return (
         <div className="w-full flex items-center justify-center">
-            <div className="content max-w-7xl flex flex-col sm:flex-row p-0 items-center justify-center">
+            <div className="contentmax-w-7xl flex flex-col sm:flex-row p-0 items-center justify-center">
                 {is3d ? (
                     <Object3DViewer initial={74} />
                 ) : (

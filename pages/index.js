@@ -96,8 +96,8 @@ export default function Home() {
                         className="min-h-[100svh] flex items-center justify-center flex-col"
                         data-nav-theme="light"
                     >
-                        <div className="text-xl text-gray text-pretty ">
-                            Introducing CBN.
+                        <div className="text-xl text-gray text-pretty font-dince ">
+                            Introducing CBN
                         </div>
                         <ProductBanner is3d={true} />
                     </div>

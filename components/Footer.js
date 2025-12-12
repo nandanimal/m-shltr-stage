@@ -25,7 +25,9 @@ const EmailCapture = ({ theme }) => {
                     placeholder="name@email.com"
                     className={`placeholder:text-gray border-b-1 focus:outline-none bg-transparent ${borderTone}`}
                 ></input>
-                <div className="cta-button mt-8 font-roboto">Sign up</div>
+                <div className="cta-button mt-8 font-mono uppercase">
+                    Sign up
+                </div>
             </div>
         </div>
     );
@@ -176,7 +178,7 @@ const Footer = ({ theme = "light" }) => {
 
                 <div className=" w-full mt-16 p-4 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end">
                     {/* Left */}
-                    <div className=" text-xs font-roboto flex flex-col gap-0 w-full">
+                    <div className=" text-xs font-mono uppercase flex flex-col gap-0 w-full">
                         <span>
                             © 2025{" "}
                             <a className="hover:underline font-dince" href="">
