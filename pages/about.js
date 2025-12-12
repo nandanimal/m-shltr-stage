@@ -12,7 +12,7 @@ import AnimatedTimeline from "@/components/AnimatedTimeline";
 
 const about = () => {
     return (
-        <div>
+        <div data-nav-theme="light">
             <section>
                 {" "}
                 <MStudioStatic />

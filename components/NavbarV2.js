@@ -248,6 +248,14 @@ const Navbar = () => {
                         Home
                     </Link>
                     <Link
+                        className="menu-item  text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
+                        href="/cbn"
+                        onClick={closeMenu}
+                    >
+                        {" "}
+                        CBN
+                    </Link>
+                    <Link
                         className="menu-item text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
                         href="/about"
                         onClick={closeMenu}
@@ -262,14 +270,6 @@ const Navbar = () => {
                     >
                         {" "}
                         FAQ
-                    </Link>
-                    <Link
-                        className="menu-item  text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
-                        href="/cbn"
-                        onClick={closeMenu}
-                    >
-                        {" "}
-                        CBN
                     </Link>
 
                     <div className="m-2">

@@ -19,7 +19,16 @@ import ExteriorTrims from "@/components/ExteriorTrims";
 const CBN = () => {
     const [loading, setLoading] = useState(true);
 
-    setTimeout(() => setLoading(false), 3000);
+    useEffect(() => {
+        // Let the full introducing animation play before fading out the loader
+        const INTRO_MS = 2600; // last item finishes ~2.0s; add padding
+        const EXIT_BUFFER_MS = 300;
+        const timer = setTimeout(
+            () => setLoading(false),
+            INTRO_MS + EXIT_BUFFER_MS
+        );
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <div>

@@ -30,7 +30,11 @@ const AnimatedTimeline = () => {
     });
 
     return (
-        <div ref={containerRef} className="relative w-full bg-[#f2f2ee]">
+        <div
+            ref={containerRef}
+            className="relative w-full bg-[#f2f2ee]"
+            data-nav-theme="dark"
+        >
             <div className="max-w-6xl m-auto px-4 sm:px-6">
                 <div
                     className="relative"
