@@ -62,15 +62,15 @@ const UnlistedSection = () => {
                     <span className="font-mono text-sm uppercase ">
                         launching 2026
                     </span>
-                    <span className="text-3xl font-dince">
+                    <span className="text-3xl font-dince header-text">
                         Module lineup for your house or hotel
                     </span>
                 </div>
 
                 {/*  */}
-                <div className="p-2">
+                <div className="modern-padding">
                     {/* <img src="/images/tent.png" className="rounded-sm" /> */}
-                    <div className="grid grid-cols-5 mt-2">
+                    <div className="grid grid-cols-5 gap-8 mt-2">
                         {/* Image first on mobile; details first on lg */}
                         <div className="col-span-5 lg:col-span-3 order-1 lg:order-2">
                             <img
@@ -78,9 +78,9 @@ const UnlistedSection = () => {
                                 className="rounded-sm"
                             />
                         </div>
-                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center lg:px-4 py-4 order-2 lg:order-1">
+                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center order-2 lg:order-1">
                             <div className="">
-                                <h2 className="text-xl text-regular text-white mb-4 font-dince">
+                                <h2 className="text-xl text-regular text-white mb-4 font-dince header-text">
                                     Studio Malek Alqadi
                                 </h2>
                                 <div className="font-roboto text-base leading-[105%] text-white">

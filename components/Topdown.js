@@ -108,7 +108,7 @@ export default function Topdown() {
                 <div className="font-mono uppercase text-gray text-xs">
                     Interiors
                 </div>
-                <h2 className="text-6xl text-center mt-4 mb-8 max-w-[90%]">
+                <h2 className="text-6xl text-center mt-4 mb-8 max-w-[90%] header-text">
                     Thoughtfully considered interiors{" "}
                     <strong>
                         from premium finishes to integrated millwork

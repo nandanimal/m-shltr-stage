@@ -9,7 +9,7 @@ const ProcessOverview = () => {
                 className="w-full min-h-screen items-center justify-center flex flex-col"
                 data-nav-theme="dark"
             >
-                <div className="header-container w-full mb-8  px-2 sm:px-4">
+                <div className="header-container w-full mb-8  modern-padding header-text">
                     <div className="text-2xl md:text-3xl font-dince text-gray mb-2 md:mb-4 text-pretty">
                         Process overview
                     </div>
@@ -27,10 +27,10 @@ const ProcessOverview = () => {
                                 alt="Integrated design icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="text-3xl font-bold mb-2 font-dince">
+                            <div className="text-3xl font-bold mb-2 font-dince header-text">
                                 Integrated design
                             </div>
-                            <div className="text-gray text-base">
+                            <div className="text-gray text-base ">
                                 We begin with a simple conversation to
                                 understand your site, goals, and timeline. From
                                 there, we review feasibility, visit your
@@ -55,7 +55,7 @@ const ProcessOverview = () => {
                                 alt="Modular Build icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="text-3xl font-bold mb-2 font-dince">
+                            <div className="text-3xl font-bold mb-2 font-dince header-text">
                                 Modular Build
                             </div>
                             <div className="text-gray text-base">
@@ -74,7 +74,7 @@ const ProcessOverview = () => {
                                 alt="Turn-Key icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="text-3xl font-bold mb-2 font-dince">
+                            <div className="text-3xl font-bold mb-2 font-dince header-text">
                                 Turn-Key
                             </div>
                             <div className="text-gray text-base">

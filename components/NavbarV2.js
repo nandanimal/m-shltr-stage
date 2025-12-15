@@ -140,7 +140,7 @@ const Navbar = () => {
                 damping: "10",
             }}
             layout
-            className={`nav-container w-full p-2  justify-center flex fixed z-[999] ${
+            className={`nav-container w-full modern-padding  justify-center flex fixed z-[999] ${
                 menuOpen
                     ? "h-screen overflow-y-scroll bg-gray/80 backdrop-blur-xl"
                     : "h-auto"
@@ -167,11 +167,11 @@ const Navbar = () => {
                         type="button"
                         aria-pressed={menuOpen}
                         // style={{ height: "-webkit-fill-available" }}
-                        className={`hamburger-menu h-full flex items-center gap-2 leading-none  sm:ml-0 sm:px-2 h-full rounded-sm overflow-hidden cursor-pointer transition-colors duration-300 ${navTextClass}`}
+                        className={`hamburger-menu h-full flex items-center gap-2 leading-none  sm:ml-0  h-full rounded-sm overflow-hidden cursor-pointer transition-colors duration-300 ${navTextClass} -ml-[8px] sm:ml-0`}
                         onMouseEnter={handleMenuHoverStart}
                         onMouseLeave={handleMenuHoverEnd}
                     >
-                        <div className="h-full w-8 flex items-center">
+                        <div className="h-full w-10 flex items-center">
                             <Lottie
                                 lottieRef={menuLottieRef}
                                 animationData={menuAnimation}
@@ -235,12 +235,12 @@ const Navbar = () => {
                         damping: "10",
                     }}
                     layout
-                    className={`menu-contents mt-2 flex flex-col pl-2 gap-0  ${
+                    className={`menu-contents mt-8 flex flex-col gap-4  ${
                         menuOpen ? "pointer-events-auto" : "pointer-events-none"
                     }`}
                 >
                     <Link
-                        className="menu-item text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
+                        className="menu-item text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition "
                         href="/"
                         onClick={closeMenu}
                     >
@@ -248,7 +248,7 @@ const Navbar = () => {
                         Home
                     </Link>
                     <Link
-                        className="menu-item  text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
+                        className="menu-item  text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition "
                         href="/cbn"
                         onClick={closeMenu}
                     >
@@ -256,7 +256,7 @@ const Navbar = () => {
                         CBN
                     </Link>
                     <Link
-                        className="menu-item text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
+                        className="menu-item text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition "
                         href="/about"
                         onClick={closeMenu}
                     >
@@ -264,17 +264,27 @@ const Navbar = () => {
                         About
                     </Link>
                     <Link
-                        className="menu-item text-2xl hover:opacity-60 transition rounded-sm p-1 transition mx-1"
+                        className="menu-item text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition "
                         href="/faq"
                         onClick={closeMenu}
                     >
                         {" "}
                         FAQ
                     </Link>
-
-                    <div className="m-2">
-                        <CTAMinimal width={"w-fit"} iconStyle={arrowStyle} />
-                    </div>
+                    <Link
+                        className="menu-item text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition  flex flex-row  gap-2"
+                        href="/faq"
+                        onClick={closeMenu}
+                    >
+                        {" "}
+                        Pre-order{" "}
+                        <img
+                            className="h-full w-[16px]"
+                            src="/icons/arrow-up-right.svg"
+                            style={arrowStyle}
+                            alt=""
+                        />
+                    </Link>
                 </motion.div>
             </motion.div>
         </motion.div>

@@ -76,16 +76,55 @@ export default function Home() {
                     <div className="">
                         <FadeIn>
                             <div
-                                className="max-w-6xl m-auto mb-16 p-2 "
+                                className="max-w-6xl m-auto mb-16 sm:mb-0 sm:px-12 px-6 header-text"
                                 data-nav-theme="light"
                             >
-                                <h1 className="text-2xl md:text-3xl text-regular text-gray mb-2 md:mb-4 text-pretty">
-                                    Introducing SHLTR, designed by Malek Alqadi
-                                </h1>
+                                <div className="span flex flex-col gap-2">
+                                    <h1 className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] font-dince">
+                                        Introducing SHLTR,
+                                    </h1>
+                                </div>
                                 <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] font-dince">
                                     A precision-built home for any setting,
                                     shaped with intention, sustainably crafted,
                                     and delivered turnkey to your land.
+                                </div>
+                                <div className="span flex flex-col gap-2 mt-16">
+                                    <h2 className="text-xl md:text-3xl text-regular text-gray  text-pretty">
+                                        Designed by Malek Alqadi
+                                    </h2>
+                                    <div className="featured-banner flex flex-col gap-0">
+                                        <div className="font-mono uppercase text-gray mb-2 text-xs">
+                                            FEATURED IN
+                                        </div>
+                                        <div className="press-row gap-4 flex-row flex flex-wrap">
+                                            <img
+                                                src="/images/press-logos/cn.svg"
+                                                alt="Conde Nast"
+                                                className="h-[16px] w-auto object-contain"
+                                            />
+                                            <img
+                                                src="/images/press-logos/ad.svg"
+                                                alt="Architectural Digest"
+                                                className="h-[16px] w-auto object-contain"
+                                            />
+                                            <img
+                                                src="/images/press-logos/dez.svg"
+                                                alt="Dezeen"
+                                                className="h-[16px] w-auto object-contain"
+                                            />
+                                            <img
+                                                src="/images/press-logos/gq.svg"
+                                                alt="GQ"
+                                                className="h-[16px] w-auto object-contain"
+                                            />
+                                            <img
+                                                src="/images/press-logos/wallpaper.svg"
+                                                alt="wallpaper"
+                                                className="h-[16px] w-auto object-contain"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </FadeIn>
@@ -105,14 +144,11 @@ export default function Home() {
                     className="min-h-[100svh] flex items-center justify-center flex-col"
                     data-nav-theme="light"
                 >
-                    <div className="text-xl text-gray text-pretty font-dince ">
-                        Introducing CBN
-                    </div>
                     <ProductBanner is3d={true} />
                 </div>
             </section>
 
-            <section className="mb-32" data-nav-theme="dark">
+            <section className="mb-32 modern-padding" data-nav-theme="dark">
                 <AttrCardLg />
                 <div className="p-2">
                     <img src="/images/kitchen1.webp" className="rounded-sm" />
@@ -123,7 +159,7 @@ export default function Home() {
                                 className="rounded-sm"
                             />
                         </div>
-                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-between lg:px-2 py-2">
+                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-between modern-padding">
                             <div className="">
                                 <h2 className="text-sm font-mono text-regular text-gray mb-4 uppercase">
                                     The M-SHLTR Ecosystem

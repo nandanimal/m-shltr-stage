@@ -26,16 +26,19 @@ export default function BigCTA({ theme }) {
     const bgY = useTransform(scrollYProgress, [0, 1], [50, -50]); // px
 
     return (
-        <section ref={ref} className="w-full grid place-items-center p-2">
+        <section
+            ref={ref}
+            className="w-full grid place-items-center modern-padding"
+        >
             <div
                 className={`max-w-[1440px] rounded-sm bg-${bg} shadow-sm grid grid-cols-8 overflow-hidden`}
             >
-                <div className="md:col-span-4 col-span-8 p-16 flex flex-col ">
-                    <span className="md:text-5xl text-4xl text-gray font-dince">
+                <div className="md:col-span-4 col-span-8 p-4 sm:p-16 flex flex-col ">
+                    <span className="md:text-5xl text-4xl text-gray font-dince header-text">
                         Lorem ipsum.
                     </span>
                     <span
-                        className={`md:text-5xl text-4xl  text-pretty text-${fg} font-dince`}
+                        className={`md:text-5xl text-4xl  text-pretty text-${fg} font-dince header-text`}
                     >
                         Dolor seek amit sapien quis.
                     </span>

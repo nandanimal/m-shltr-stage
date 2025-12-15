@@ -106,7 +106,7 @@ export default function TopdownMobile() {
             <FadeIn>
                 <div className="flex items-center flex-col">
                     <div className="font-roboto text-xs">Interiors</div>
-                    <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%]">
+                    <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%] header-text">
                         Thoughtfully considered interiors{" "}
                         <strong>
                             from premium finishes to integrated millwork

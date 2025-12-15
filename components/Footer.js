@@ -15,7 +15,9 @@ const EmailCapture = ({ theme }) => {
                 className="rounded-sm"
                 alt="interior living space"
             />
-            <div className="text-xl leading-none mt-4">Newsletter</div>
+            <div className="text-xl leading-none mt-4 header-text">
+                Newsletter
+            </div>
             <div className="font-roboto text-base">
                 Stay up to date with the latest from M-SHLTR
             </div>
@@ -45,8 +47,8 @@ const Footer = ({ theme = "light" }) => {
 
     return (
         <footer className={`w-full text-${fg}`}>
-            <div className="relative max-w-[1440px] m-auto pt-8">
-                <div className="flex flex-col gap-y-12 px-3">
+            <div className="relative max-w-[1440px] m-auto modern-padding">
+                <div className="flex flex-col gap-y-12">
                     <div className="logo-row">
                         <img
                             src="images/logo_black.svg"
@@ -57,7 +59,7 @@ const Footer = ({ theme = "light" }) => {
                     </div>
                     <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2 gap-y-12">
                         {/* M SHLTR */}
-                        <div className="flex flex-col gap-4 ">
+                        <div className="flex flex-col gap-4 header-text">
                             <Link
                                 href="/"
                                 className="text-gray text-xl hover:opacity-70 transition"
@@ -98,7 +100,7 @@ const Footer = ({ theme = "light" }) => {
                         </div>
 
                         {/* M STUDIO */}
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4 header-text">
                             <div className="text-gray text-xl font-dince">
                                 M-STUDIO
                             </div>
@@ -137,8 +139,8 @@ const Footer = ({ theme = "light" }) => {
                         </div>
 
                         {/* Socials */}
-                        <div className="flex flex-col gap-4">
-                            <div className="text-gray text-xl font-dince">
+                        <div className="flex flex-col gap-4 header-text">
+                            <div className="text-gray text-xl font-dince header-text">
                                 Socials
                             </div>
                             <div className="footer-menu-links flex flex-col gap-3 text-2xl">
@@ -176,7 +178,7 @@ const Footer = ({ theme = "light" }) => {
                     </div>
                 </div>
 
-                <div className=" w-full mt-16 p-4 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end">
+                <div className=" w-full mt-16 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end">
                     {/* Left */}
                     <div className=" text-xs font-mono uppercase flex flex-col gap-0 w-full">
                         <span>

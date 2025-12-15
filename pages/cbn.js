@@ -55,7 +55,7 @@ const CBN = () => {
                     <h1 className="text-3xl text-regular text-gray mb-4">
                         CBN - MODULE NO. 1172{" "}
                     </h1>
-                    <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty font-dince">
+                    <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty font-dince header-text">
                         Introducing the CBN-MODULE, an integrated approach to
                         your house or hotel.
                     </div>
@@ -102,14 +102,14 @@ const CBN = () => {
             </section>
 
             <section>
-                <div className="img-container px-2 mb-1">
+                <div className="img-container modern-padding mb-1">
                     <img
                         src="images/Bedroom1.webp"
                         alt="bedroom view"
                         className="rounded-sm"
                     />
                 </div>
-                <div className="grid grid-rows-1 px-2 my-24">
+                <div className="grid grid-rows-1 modern-padding my-24">
                     <div className="grid grid-cols-3 gap-1">
                         <div className="img-container aspect-[4/3]">
                             <img
@@ -154,7 +154,7 @@ const CBN = () => {
                     </div>
                 </div>
                 <InteriorTrims />
-                <div className="img-container px-2 ">
+                <div className="img-container modern-padding">
                     <img
                         src="images/Living4K.webp"
                         alt="Living room"
@@ -165,7 +165,7 @@ const CBN = () => {
 
             {/* Exterior trims section */}
             <section>
-                <div className="grid grid-rows-1 px-2 my-24">
+                <div className="grid grid-rows-1 modern-padding my-24">
                     <div className="grid grid-cols-3 gap-1">
                         <div className="img-container aspect-[4/3]">
                             <img
@@ -199,7 +199,7 @@ const CBN = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative w-full lg:h-[50svh] h-[30svh] overflow-hidden p-2">
+                <div className="relative w-full lg:h-[50svh] h-[30svh] overflow-hidden modern-padding">
                     <img
                         src="/images/CBN3D/CBN25.webp"
                         alt="CBN"

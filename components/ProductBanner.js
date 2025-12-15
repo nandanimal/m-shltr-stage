@@ -8,7 +8,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
 
     return (
         <div className="w-full flex items-center justify-center">
-            <div className="contentmax-w-7xl flex flex-col sm:flex-row p-0 items-center justify-center">
+            <div className="contentmax-w-7xl flex flex-col sm:flex-row p-2 md:p-6 items-center justify-center">
                 {is3d ? (
                     <Object3DViewer initial={74} />
                 ) : (
@@ -33,11 +33,11 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
                             <img
                                 src="/images/cbn_outline.png"
                                 alt="cbn schematic"
-                                className="max-w-[120px]"
+                                className="max-w-[196px] sm:max-w-[144px]"
                             />
                         </div>
                     </div>
-                    <div className="mt-4 text-base font-roboto">
+                    <div className="mt-4 text-sm font-roboto">
                         CBN brings warmth and precision to modular living.
                         Inside, custom wood cabinetry, integrated Pitt cooktops,
                         and a central skylight define a bright, crafted

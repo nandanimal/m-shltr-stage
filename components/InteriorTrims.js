@@ -18,7 +18,7 @@ const Card = ({ title, desc, url }) => {
 
 const InteriorTrims = () => {
     return (
-        <div className="p-2">
+        <div className="modern-padding">
             <h2 className="sm:text-4xl lg:text-6xl text-3xl sm:mt-24 mb-8 text-pretty ">
                 Interior trims and finishes
             </h2>
