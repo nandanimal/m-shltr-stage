@@ -77,7 +77,8 @@ const HeroMain = () => {
                 </motion.div>{" "} */}
                 <div className="absolute bottom-20 z-100 text-white text-center">
                     {/* <div className="mb-4 text-xl">
-                        Precision built designer homes, <br />
+                        Precision built designer homes
+                        <br />
                         <span className="font-bold">
                             installed in less than a week.
                         </span>
@@ -151,7 +152,7 @@ const HeroMain = () => {
                                     className="w-full"
                                 /> */}
                             </motion.div>
-                            <h1 className="text-pretty text-2xl md:text-4xl leading-[103%] max-w-[80%] lg:text-5xl text-center text-white md:max-w-[55%] lg:mb-16 mx-auto px-2">
+                            <h1 className="text-pretty text-2xl md:text-4xl leading-[103%] max-w-[80%] lg:text-2xl text-center text-white md:max-w-[55%] lg:mb-16 mx-auto px-2">
                                 Considered. Crafted.{" "}
                                 <span className="font-bold">Complete.</span>
                             </h1>
