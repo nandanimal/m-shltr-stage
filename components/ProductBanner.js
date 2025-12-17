@@ -8,7 +8,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
 
     return (
         <div className="w-full flex items-center justify-center">
-            <div className="contentmax-w-7xl flex flex-col sm:flex-row p-2 md:p-6 items-center justify-center">
+            <div className="contentmax-w-7xl flex flex-col md:flex-row p-2 md:p-6 items-center justify-center">
                 {is3d ? (
                     <Object3DViewer initial={74} />
                 ) : (
@@ -19,13 +19,15 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
                     />
                 )}
 
-                <div className="col-right flex flex-col gap-1 w-full xl:w-1/2 sm:w-4/10 p-2">
+                <div className="col-right flex flex-col gap-1 w-full xl:w-1/2 md:w-4/10 p-2">
                     {/* Top level header */}
                     <div className="flex flex-row justify-between">
                         <div className="col-left flex flex-col gap-1 ">
-                            <h2 className="text-xl font-bold">CBN NO. 1172</h2>
+                            <h2 className="type-subtitle font-bold">
+                                CBN NO. 1172
+                            </h2>
                             <span className="font-dince">2 BED / 2.5 BATH</span>
-                            <div className="text-sm">
+                            <div className="type-body-sm">
                                 1,172 ft<sup>2</sup>
                             </div>
                         </div>
@@ -37,7 +39,7 @@ const ProductBanner = ({ is3d = false, explore = true }) => {
                             />
                         </div>
                     </div>
-                    <div className="mt-4 text-sm font-roboto">
+                    <div className="mt-4 type-body font-roboto">
                         CBN brings warmth and precision to modular living.
                         Inside, custom wood cabinetry, integrated Pitt cooktops,
                         and a central skylight define a bright, crafted

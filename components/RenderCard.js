@@ -12,7 +12,7 @@ const RenderCard = ({ src, desc }) => {
                     alt={desc}
                 />
             </div>
-            <div className="text-sm text-mono mono">{desc}</div>
+            <div className="type-mono-sm text-mono mono">{desc}</div>
         </div>
     );
 };

@@ -8,7 +8,7 @@ const GetStartedCTA = () => {
 
     return (
         <a
-            className="sm:aspect-square aspect-[16/9] leading-none text-3xl text-white font-dince cursor-pointer rounded-md flex flex-col justify-end bg-cover bg-center relative overflow-hidden"
+            className="sm:aspect-square aspect-[16/9] type-h2 text-white font-dince cursor-pointer rounded-md flex flex-col justify-end bg-cover bg-center relative overflow-hidden"
             style={{
                 backgroundImage: 'url("/images/4.jpeg")',
             }}

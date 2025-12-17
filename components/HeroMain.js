@@ -152,7 +152,7 @@ const HeroMain = () => {
                                     className="w-full"
                                 /> */}
                             </motion.div>
-                            <h1 className="text-pretty text-2xl md:text-4xl leading-[103%] max-w-[80%] lg:text-2xl text-center text-white md:max-w-[55%] lg:mb-16 mx-auto px-2 header-text">
+                            <h1 className="type-h1 text-pretty max-w-[80%] text-center text-white md:max-w-[55%] lg:mb-16 mx-auto px-2 header-text">
                                 Considered. Crafted.{" "}
                                 <span className="font-bold">Complete.</span>
                             </h1>

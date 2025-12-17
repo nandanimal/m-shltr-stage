@@ -61,13 +61,13 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute z-30 left-10 text-white flex flex-col gap-1 text-sm leading-none bottom-40"
+                        className="absolute z-30 left-10 text-white flex flex-col gap-1 type-body-sm leading-none bottom-40"
                     >
                         <span>
                             <strong>M-SHLTR</strong> /\\ CBN
                         </span>
                         <span>2 BED/2.5 BATH</span>
-                        <span className="text-xs">
+                        <span className="type-caption">
                             1172 ft<sup>2</sup>
                         </span>
                     </motion.div>{" "}

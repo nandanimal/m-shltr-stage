@@ -105,8 +105,8 @@ export default function TopdownMobile() {
             {/* sticky viewport */}
             <FadeIn>
                 <div className="flex items-center flex-col">
-                    <div className="font-roboto text-xs">Interiors</div>
-                    <h2 className="text-3xl text-center mt-2 mb-8 max-w-[90%] header-text">
+                    <div className="type-eyebrow text-gray">Interiors</div>
+                    <h2 className="type-display text-center mt-2 mb-8 max-w-[90%] header-text">
                         Thoughtfully considered interiors{" "}
                         <strong>
                             from premium finishes to integrated millwork
@@ -134,19 +134,19 @@ export default function TopdownMobile() {
 
                     {/* MOBILE VERSION */}
                     <motion.div
-                        className=" bg-img-container absolute w-full rounded-md p-2 flex items-center"
+                        className=" bg-img-container flex justify-center absolute w-full rounded-md p-2 flex items-center"
                         style={{ height }}
                     >
-                        <div className="p-2 imageContainer relative">
+                        <div className="p-2 imageContainer relative h-full">
                             <img
                                 ref={imageRef}
                                 src="/images/floorplan_updated_rotated.webp"
                                 alt="Interior"
-                                className="w-full h-auto object-cover rounded-md overflow-hidden transition opacity"
+                                className="w-full h-full mx-auto centered object-cover rounded-md overflow-hidden transition opacity"
                             />
                             <motion.div
                                 style={{ opacity: labelOpacity }}
-                                className="absolute w-full top-0 h-full text-white flex flex-col gap-1 text-sm leading-none z-[120] transition"
+                                className="absolute w-full top-0 h-full text-white flex flex-col gap-1 type-body-sm leading-none z-[120] transition"
                             >
                                 <Tooltip
                                     textBody={"Custom king bed and headboard"}

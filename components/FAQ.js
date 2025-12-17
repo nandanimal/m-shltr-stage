@@ -78,7 +78,7 @@ const FAQ = () => {
     return (
         <div className="max-w-6xl rounded-md p-4 bg-[#E4E4E4] w-full">
             <div className="content flex flex-col sm:flex-row gap-2">
-                <div className="w-1/6 h-full text-3xl">FAQ</div>
+                <div className="w-1/6 h-full type-h2">FAQ</div>
                 <div className="w-full flex flex-col gap-2">
                     {questions.map((item, index) => (
                         <Question

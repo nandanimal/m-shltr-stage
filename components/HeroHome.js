@@ -33,7 +33,7 @@ const HeroHome = () => {
         <div ref={ref}>
             <FadeIn>
                 <div className="heroContainer p-2 pt-[40svh] pb-32">
-                    <h1 className="text-4xl text-center">
+                    <h1 className="type-h1 text-center">
                         Award-winning architecture. Built in weeks, not years.
                     </h1>
                     <div className="cta-row flex mt-6 flex-row gap-2 items-center justify-center">

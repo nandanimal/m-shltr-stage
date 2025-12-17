@@ -34,7 +34,9 @@ export default function StepCalendly() {
             transition={{ duration: 0.4 }}
         >
             {" "}
-            <h2 className="text-xl font-semibold mb-1">Schedule your call</h2>
+            <h2 className="type-subtitle font-semibold mb-1">
+                Schedule your call
+            </h2>
             <p className="text-gray-600 mb-4">
                 We prefilled your info — this should be quick.
             </p>

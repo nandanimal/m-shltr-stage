@@ -21,7 +21,7 @@ const ModelDetail = ({
                     style={{ background: "rgba(216, 216, 216, 0.90)" }}
                 >
                     <div
-                        className="header-row w-full h-4 p-1 flex flex-row items-center leading-none text-xs justify-between
+                        className="header-row w-full h-4 p-1 flex flex-row items-center leading-none type-mono-xs justify-between
             "
                     >
                         <div
@@ -40,12 +40,12 @@ const ModelDetail = ({
                     {/* Details row */}
                     <div className="modal-details-row p-1 flex w-full items-start md:gap-4 gap-1 md:flex-row flex-col min-h-[30%] justify-between">
                         {/* LEFT — don't shrink */}
-                        <div className="flex-none shrink-0 z-30 whitespace-nowrap text-black flex flex-col gap-1 text-sm leading-none">
+                        <div className="flex-none shrink-0 z-30 whitespace-nowrap text-black flex flex-col gap-1 type-body-sm leading-none">
                             <span>
                                 <strong>{model}</strong>
                             </span>
                             <span>{bb}</span>
-                            <span className="text-xs">
+                            <span className="type-caption">
                                 {sqFt}
                                 <sup>2</sup> ft
                             </span>

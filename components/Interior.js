@@ -28,7 +28,7 @@ export default function Interior() {
                     style={{ scale }}
                     className="flex items-center justify-center w-full h-screen relative max-w-5xl"
                 >
-                    <motion.div className="text-xl absolute z-20 opacity-1">
+                    <motion.div className="type-subtitle absolute z-20 opacity-1">
                         Some info about the home
                     </motion.div>
 
@@ -59,13 +59,13 @@ export default function Interior() {
                     </motion.div>
                     <motion.div
                         style={{ opacity: labelOpacity }}
-                        className="absolute z-30 left-10 text-white flex flex-col gap-1 text-sm leading-none"
+                        className="absolute z-30 left-10 text-white flex flex-col gap-1 type-body-sm leading-none"
                     >
                         <span>
                             <strong>M-SHLTR</strong> /\\ CBN
                         </span>
                         <span>1 BED/1 BATH</span>
-                        <span className="text-xs">
+                        <span className="type-caption">
                             960<sup>2</sup> ft
                         </span>
                     </motion.div>

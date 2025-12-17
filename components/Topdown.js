@@ -105,10 +105,8 @@ export default function Topdown() {
             {/* sticky viewport */}
 
             <div className="flex items-center flex-col">
-                <div className="font-mono uppercase text-gray text-xs">
-                    Interiors
-                </div>
-                <h2 className="text-6xl text-center mt-4 mb-8 max-w-[90%] header-text">
+                <div className="type-eyebrow text-gray">Interiors</div>
+                <h2 className="type-display text-center mt-4 mb-8 max-w-[90%] header-text">
                     Thoughtfully considered interiors{" "}
                     <strong>
                         from premium finishes to integrated millwork
@@ -150,7 +148,7 @@ export default function Topdown() {
                             />
                             <motion.div
                                 style={{ opacity: labelOpacity }}
-                                className="absolute w-full top-0 h-full text-white flex flex-col gap-1 text-sm leading-none z-[120] transition"
+                                className="absolute w-full top-0 h-full text-white flex flex-col gap-1 type-body-sm leading-none z-[120] transition"
                             >
                                 <Tooltip
                                     textBody={"Custom king bed and headboard"}

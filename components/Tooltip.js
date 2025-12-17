@@ -51,8 +51,8 @@ export default function Tooltip({
             <AnimatePresence>
                 {visible && (
                     <motion.div
-                        className="absolute z-50 max-w-xs p-2 text-sm bg-white/80 text-black leading-none
-                        backdrop-blur-md rounded-sm shadow-lg pointer-events-auto font-roboto
+                        className="absolute z-50 max-w-xs p-2 type-body-sm bg-white/80 text-black leading-none
+                        backdrop-blur-md rounded-sm shadow-lg pointer-events-auto
                         hover:shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)] transition"
                         style={{
                             left: leftPx,

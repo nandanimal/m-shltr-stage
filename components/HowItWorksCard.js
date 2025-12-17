@@ -11,16 +11,14 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay, chips }) => {
                 opacity: 1,
                 transition: { duration: 1, delay: delay || 0 },
             }}
-            className="sm:aspect-square bg-[#DADAD6] hover:bg-[#deded8] transition text-sm text-black rounded-md p-4 flex flex-col justify-between"
+            className="sm:aspect-square bg-[#DADAD6] hover:bg-[#deded8] transition type-body-sm text-black rounded-md p-4 flex flex-col justify-between"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <div className="top-label font-mono">STEP {step}</div>
+            <div className="top-label type-eyebrow">STEP {step}</div>
             <div className="info flex flex-col gap-3 mt-8 sm:mt-0">
                 <img src={iconSrc} className="w-[24px]" />
-                <div className=" xl:text-2xl md:text-xl text-xl leading-none">
-                    {title}
-                </div>
+                <div className="type-subtitle leading-none">{title}</div>
                 <AnimatePresence>
                     {hovered && (
                         <motion.div
@@ -29,7 +27,7 @@ const HowItWorksCard = ({ step, title, desc, iconSrc, delay, chips }) => {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="font-mono xl:text-sm text-xs sm:text-xs leading-none overflow-hidden"
+                            className="type-mono-xs leading-none overflow-hidden"
                         >
                             {desc}
                             {chips && Array.isArray(chips) ? (

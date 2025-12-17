@@ -30,6 +30,16 @@ const Navbar = () => {
             : { filter: "brightness(0) invert(1)" };
     const { scrollY } = useScroll();
 
+    const updateNavThemeForY = useCallback((y) => {
+        if (!sectionsRef.current.length) return;
+        const focusY = y + 1; // near the top edge
+        const active = sectionsRef.current.find(
+            (section) => focusY < section.bottom
+        );
+        if (!active) return;
+        setNavTheme((prev) => (active.theme !== prev ? active.theme : prev));
+    }, []);
+
     const toggleMenu = () => {
         if (!menuLottieRef.current) return;
 
@@ -88,9 +98,21 @@ const Navbar = () => {
 
     useEffect(() => {
         measureSections();
+        // Ensure theme is correct on initial render (without requiring a scroll event)
+        requestAnimationFrame(() => updateNavThemeForY(scrollY.get()));
+
         window.addEventListener("resize", measureSections);
-        return () => window.removeEventListener("resize", measureSections);
-    }, [measureSections]);
+        // Some layout shifts (fonts/images) can occur after window load.
+        const handleLoad = () => {
+            measureSections();
+            updateNavThemeForY(scrollY.get());
+        };
+        window.addEventListener("load", handleLoad);
+        return () => {
+            window.removeEventListener("resize", measureSections);
+            window.removeEventListener("load", handleLoad);
+        };
+    }, [measureSections, scrollY, updateNavThemeForY]);
 
     useEffect(() => {
         const body = document.body;
@@ -119,14 +141,7 @@ const Navbar = () => {
     };
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        if (!sectionsRef.current.length) return;
-        const focusY = latest + 1; // near the top edge
-        const active = sectionsRef.current.find(
-            (section) => focusY < section.bottom
-        );
-        if (active && active.theme !== navTheme) {
-            setNavTheme(active.theme);
-        }
+        updateNavThemeForY(latest);
     });
 
     return (
@@ -240,7 +255,7 @@ const Navbar = () => {
                     }`}
                 >
                     <Link
-                        className="menu-item text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition "
+                        className="menu-item type-menu hover:opacity-60 transition rounded-sm transition"
                         href="/"
                         onClick={closeMenu}
                     >
@@ -248,7 +263,7 @@ const Navbar = () => {
                         Home
                     </Link>
                     <Link
-                        className="menu-item  text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition "
+                        className="menu-item type-menu hover:opacity-60 transition rounded-sm transition"
                         href="/cbn"
                         onClick={closeMenu}
                     >
@@ -256,7 +271,7 @@ const Navbar = () => {
                         CBN
                     </Link>
                     <Link
-                        className="menu-item text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition "
+                        className="menu-item type-menu hover:opacity-60 transition rounded-sm transition"
                         href="/about"
                         onClick={closeMenu}
                     >
@@ -264,7 +279,7 @@ const Navbar = () => {
                         About
                     </Link>
                     <Link
-                        className="menu-item text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition "
+                        className="menu-item type-menu hover:opacity-60 transition rounded-sm transition"
                         href="/faq"
                         onClick={closeMenu}
                     >
@@ -272,7 +287,7 @@ const Navbar = () => {
                         FAQ
                     </Link>
                     <Link
-                        className="menu-item text-6xl sm:text-8xl hover:opacity-60 transition rounded-sm transition  flex flex-row  gap-2"
+                        className="menu-item type-menu hover:opacity-60 transition rounded-sm transition flex flex-row gap-2"
                         href="/faq"
                         onClick={closeMenu}
                     >

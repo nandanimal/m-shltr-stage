@@ -20,7 +20,7 @@ const ModalCTA = ({ toggleHandler }) => {
                     style={{ background: "rgba(216, 216, 216, 0.90)" }}
                 >
                     {/* Header row */}
-                    <div className="header-row w-full h-4 p-1 flex flex-row items-center leading-none text-xs justify-between">
+                    <div className="header-row w-full h-4 p-1 flex flex-row items-center leading-none type-mono-xs justify-between">
                         <div
                             onClick={toggleHandler}
                             className="bg-orange-600 hover:bg-red-500 cursor-pointer transition rounded-xs w-[36px] h-full"
@@ -36,7 +36,7 @@ const ModalCTA = ({ toggleHandler }) => {
                             {formIndex == 0 && (
                                 <div
                                     exit={{ opacity: 0 }}
-                                    className="flex flex-col gap-1 text-2xl"
+                                    className="flex flex-col gap-1 type-subtitle"
                                 >
                                     <input
                                         type="text"
@@ -50,7 +50,7 @@ const ModalCTA = ({ toggleHandler }) => {
                             {formIndex == 1 && (
                                 <div
                                     exit={{ opacity: 0 }}
-                                    className="flex flex-col gap-1 text-2xl"
+                                    className="flex flex-col gap-1 type-subtitle"
                                 >
                                     <input
                                         type="email"

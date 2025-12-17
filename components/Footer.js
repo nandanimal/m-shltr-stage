@@ -8,17 +8,15 @@ const EmailCapture = ({ theme }) => {
 
     return (
         <div
-            className={`rounded-sm bg-blur-sm p-1 w-full gap-y-4 flex flex-col ${cardText}`}
+            className={`rounded-sm bg-blur-sm w-full gap-y-4 flex flex-col ${cardText}`}
         >
             <img
-                src="/images/living.jpg"
+                src="/images/cbn_gallery/cbn_25.webp"
                 className="rounded-sm"
                 alt="interior living space"
             />
-            <div className="text-xl leading-none mt-4 header-text">
-                Newsletter
-            </div>
-            <div className="font-roboto text-base">
+            <div className="type-subtitle mt-4 header-text">Newsletter</div>
+            <div className="type-body font-roboto">
                 Stay up to date with the latest from M-SHLTR
             </div>
             <div className="contents flex flex-col gap-1">
@@ -46,8 +44,8 @@ const Footer = ({ theme = "light" }) => {
     }
 
     return (
-        <footer className={`w-full text-${fg}`}>
-            <div className="relative max-w-[1440px] m-auto modern-padding">
+        <footer data-nav-theme="light" className={`w-full text-${fg}`}>
+            <div className="relative m-auto modern-padding">
                 <div className="flex flex-col gap-y-12">
                     <div className="logo-row">
                         <img
@@ -62,11 +60,11 @@ const Footer = ({ theme = "light" }) => {
                         <div className="flex flex-col gap-4 header-text">
                             <Link
                                 href="/"
-                                className="text-gray text-xl hover:opacity-70 transition"
+                                className="type-subtitle text-gray hover:opacity-70 transition"
                             >
                                 M-SHLTR
                             </Link>
-                            <div className="footer-menu-links flex flex-col gap-3 text-2xl">
+                            <div className="footer-menu-links flex flex-col gap-3 type-subtitle">
                                 <Link
                                     href="/about"
                                     className=" hover:opacity-70 transition"
@@ -101,10 +99,10 @@ const Footer = ({ theme = "light" }) => {
 
                         {/* M STUDIO */}
                         <div className="flex flex-col gap-4 header-text">
-                            <div className="text-gray text-xl font-dince">
+                            <div className="type-subtitle text-gray font-dince">
                                 M-STUDIO
                             </div>
-                            <div className="footer-menu-links flex flex-col gap-3 text-2xl">
+                            <div className="footer-menu-links flex flex-col gap-3 type-subtitle">
                                 <a
                                     href="https://www.malekalqadi.com/journal"
                                     className=" hover:opacity-70 transition"
@@ -140,10 +138,10 @@ const Footer = ({ theme = "light" }) => {
 
                         {/* Socials */}
                         <div className="flex flex-col gap-4 header-text">
-                            <div className="text-gray text-xl font-dince header-text">
+                            <div className="type-subtitle text-gray font-dince header-text">
                                 Socials
                             </div>
-                            <div className="footer-menu-links flex flex-col gap-3 text-2xl">
+                            <div className="footer-menu-links flex flex-col gap-3 type-subtitle">
                                 <a
                                     href="https://www.instagram.com/m_shltr/?hl=en"
                                     className=" hover:opacity-70 transition"
@@ -180,7 +178,7 @@ const Footer = ({ theme = "light" }) => {
 
                 <div className=" w-full mt-16 flex sm:flex-row flex-col-reverse sm:flex-col gap-4 justify-between sm:items-end">
                     {/* Left */}
-                    <div className=" text-xs font-mono uppercase flex flex-col gap-0 w-full">
+                    <div className="type-mono-xs uppercase flex flex-col gap-0 w-full">
                         <span>
                             © 2025{" "}
                             <a className="hover:underline font-dince" href="">

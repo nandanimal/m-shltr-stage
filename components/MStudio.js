@@ -40,12 +40,12 @@ const MStudio = () => {
                             alt="tent"
                             className="rounded-md w-full max-w-xl"
                         />
-                        <h2 className="text-3xl text-center leading-none mt-8 max-w-[95%]">
+                        <h2 className="type-h2 text-center mt-8 max-w-[95%]">
                             Award winning design made easy.
                         </h2>
                     </div>
                     <div className="featured-banner flex flex-col gap-4  0 p-4 sm:p-16 items-center justify-center absolute bottom-0">
-                        <div className="font-mono w-full uppercase text-gray text-center mb-1 text-xs">
+                        <div className="type-eyebrow text-gray text-center mb-1 w-full">
                             FEATURED IN
                         </div>
                         <div className="press-row w-full gap-8 flex-row flex items-center justify-center">

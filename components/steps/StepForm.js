@@ -40,8 +40,8 @@ export default function StepForm() {
             exit={{ height: 0 }}
             transition={{ duration: 0.4 }}
         >
-            <div className="text-sm font-mono">{data.zip}</div>
-            <h2 className="mt-2 text-3xl leading-none">
+            <div className="type-mono-sm">{data.zip}</div>
+            <h2 className="mt-2 type-h2 leading-none">
                 Great news! We service your area.
             </h2>
             <p className="mt-2">Tell us a bit more about your project.</p>
@@ -129,7 +129,7 @@ export default function StepForm() {
 function Field({ label, name, type = "text", value, onChange, required }) {
     return (
         <div className="mt-6">
-            <label className="block text-xs" htmlFor={name}>
+            <label className="block type-caption" htmlFor={name}>
                 {label}
             </label>
             <input

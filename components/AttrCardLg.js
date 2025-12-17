@@ -37,7 +37,7 @@ export default function AttrCardLg({ items, initialKey }) {
                                             ? "#ffffff"
                                             : "transparent",
                                     }}
-                                    className="relative cursor-pointer select-none text-sm font-medium text-neutral-800 flex-1 text-center"
+                                    className="relative cursor-pointer select-none type-body-sm font-medium text-neutral-800 flex-1 text-center"
                                 >
                                     <span className="truncate">{k}</span>
                                     {isActive && (

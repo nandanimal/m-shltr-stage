@@ -49,7 +49,7 @@ export default function SpecSection() {
 
     return (
         <section className="flex items-center justify-center mt-48 mb-48 flex-col">
-            <div className="font-mono uppercase w-full text-gray mb-4 px-2">
+            <div className="type-eyebrow w-full text-gray mb-4 px-2">
                 Additional specifications
             </div>
             <div className="w-full  divide-y divide-neutral-300 text-black">
@@ -62,10 +62,10 @@ export default function SpecSection() {
                                 onClick={() => setOpenIndex(isOpen ? -1 : i)}
                                 className="w-full flex py-1 px-2 items-center gap-3  text-left cursor-pointer hover:bg-black/2"
                             >
-                                <span className="text-3xl md:text-5xl  leading-none font-light tracking-wide flex-1">
+                                <span className="type-row-heading leading-none font-light tracking-wide flex-1">
                                     {item.title}
                                 </span>
-                                <span className="text-xl w-6 text-right">
+                                <span className="type-subtitle w-6 text-right">
                                     {isOpen ? "–" : "+"}
                                 </span>
                             </button>
@@ -85,7 +85,7 @@ export default function SpecSection() {
                                         className="overflow-hidden"
                                     >
                                         <div className="">
-                                            <ul className="space-y-1 pt-1 pb-2 px-2 font-mono text-sm tracking-wider text-neutral-800">
+                                            <ul className="space-y-1 pt-1 pb-2 px-2 type-mono-sm tracking-wider text-neutral-800">
                                                 {item.lines.map((line) => (
                                                     <li key={line}>{line}</li>
                                                 ))}

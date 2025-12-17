@@ -80,23 +80,23 @@ export default function Home() {
                                 data-nav-theme="light"
                             >
                                 <div className="span flex flex-col gap-2">
-                                    <h1 className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] font-dince">
+                                    <h1 className="type-display text-pretty font-dince">
                                         Introducing SHLTR,
                                     </h1>
                                 </div>
-                                <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] font-dince">
+                                <div className="type-display text-pretty font-dince">
                                     A precision-built home for any setting,
                                     shaped with intention, sustainably crafted,
                                     and delivered turnkey to your land.
                                 </div>
-                                <div className="span flex flex-col gap-2 mt-16">
-                                    <h2 className="text-xl md:text-3xl text-regular text-gray  text-pretty">
+                                <div className="span flex flex-col gap-4 mt-16">
+                                    <h2 className="type-title text-regular text-gray text-pretty">
                                         Designed by Malek Alqadi
                                     </h2>
                                     <div className="featured-banner flex flex-col gap-0">
-                                        <div className="font-mono uppercase text-gray mb-2 text-xs">
+                                        {/* <div className="type-eyebrow text-gray mb-2">
                                             FEATURED IN
-                                        </div>
+                                        </div> */}
                                         <div className="press-row gap-4 flex-row flex flex-wrap">
                                             <img
                                                 src="/images/press-logos/cn.svg"
@@ -161,10 +161,10 @@ export default function Home() {
                         </div>
                         <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-between modern-padding">
                             <div className="">
-                                <h2 className="text-sm font-mono text-regular text-gray mb-4 uppercase">
+                                <h2 className="type-eyebrow-lg text-regular text-gray mb-4">
                                     The M-SHLTR Ecosystem
                                 </h2>
-                                <div className="font-roboto text-lg sm:text-xl leading-[105%]">
+                                <div className="type-body-lg">
                                     Each M-SHLTR home begins with the site: its
                                     orientation, natural light, and views. Using
                                     a modular framework, we organize spaces and
@@ -176,10 +176,10 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="pricing-container flex flex-col gap-0">
-                                <span className="text-gray font-mono uppercase text-sm">
+                                <span className="type-eyebrow-lg text-gray">
                                     Starting at
                                 </span>
-                                <span className="text-3xl text-gray mb-8 mt-2">
+                                <span className="type-h2 text-gray mb-8 mt-2">
                                     $289,000
                                 </span>
                                 <div

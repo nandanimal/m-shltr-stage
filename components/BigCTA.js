@@ -34,15 +34,15 @@ export default function BigCTA({ theme }) {
                 className={`max-w-[1440px] rounded-sm bg-${bg} shadow-sm grid grid-cols-8 overflow-hidden`}
             >
                 <div className="md:col-span-4 col-span-8 p-4 sm:p-16 flex flex-col ">
-                    <span className="md:text-5xl text-4xl text-gray font-dince header-text">
+                    <span className="type-display-sm text-gray font-dince header-text">
                         Lorem ipsum.
                     </span>
                     <span
-                        className={`md:text-5xl text-4xl  text-pretty text-${fg} font-dince header-text`}
+                        className={`type-display-sm text-pretty text-${fg} font-dince header-text`}
                     >
                         Dolor seek amit sapien quis.
                     </span>
-                    <span className={`font-roboto text-lg mt-4 text-${fg} `}>
+                    <span className={`type-body-lg mt-4 text-${fg} `}>
                         Sed eleifend sapien eget velit elementum.
                     </span>
                     <div className="mt-8">

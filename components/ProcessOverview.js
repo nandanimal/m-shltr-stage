@@ -10,10 +10,10 @@ const ProcessOverview = () => {
                 data-nav-theme="dark"
             >
                 <div className="header-container w-full mb-8  modern-padding header-text">
-                    <div className="text-2xl md:text-3xl font-dince text-gray mb-2 md:mb-4 text-pretty">
+                    <div className="type-title font-dince text-gray mb-2 md:mb-4 text-pretty">
                         Process overview
                     </div>
-                    <h2 className="sm:text-4xl lg:text-6xl text-3xl  text-pretty leading-[1.1] font-dince">
+                    <h2 className="type-display text-pretty font-dince">
                         Building made{" "}
                         <span className="font-bold">clear and simple.</span>
                     </h2>
@@ -27,10 +27,10 @@ const ProcessOverview = () => {
                                 alt="Integrated design icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="text-3xl font-bold mb-2 font-dince header-text">
+                            <div className="type-h2 font-bold mb-2 font-dince header-text">
                                 Integrated design
                             </div>
-                            <div className="text-gray text-base ">
+                            <div className="type-body text-gray">
                                 We begin with a simple conversation to
                                 understand your site, goals, and timeline. From
                                 there, we review feasibility, visit your
@@ -55,10 +55,10 @@ const ProcessOverview = () => {
                                 alt="Modular Build icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="text-3xl font-bold mb-2 font-dince header-text">
+                            <div className="type-h2 font-bold mb-2 font-dince header-text">
                                 Modular Build
                             </div>
-                            <div className="text-gray text-base">
+                            <div className="type-body text-gray">
                                 Once your design is finalized, we handle the
                                 details—permits, site preparation, coordination
                                 with local officials, and factory construction.
@@ -74,10 +74,10 @@ const ProcessOverview = () => {
                                 alt="Turn-Key icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="text-3xl font-bold mb-2 font-dince header-text">
+                            <div className="type-h2 font-bold mb-2 font-dince header-text">
                                 Turn-Key
                             </div>
-                            <div className="text-gray text-base">
+                            <div className="type-body text-gray">
                                 When fabrication is complete, we manage shipping
                                 and on-site installation. Most homes are placed
                                 and finished in a matter of days. You receive

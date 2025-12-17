@@ -79,7 +79,7 @@ const CBN = () => {
                     {/* Right column text */}
                     <div
                         ref={textRef}
-                        className="karaoke-text col-right sm:w-1/2 w-full max-w-2xl lg:text-3xl text-2xl leading-[1.2] h-auto"
+                        className="karaoke-text type-lede col-right sm:w-1/2 w-full max-w-2xl leading-[1.2] h-auto"
                     >
                         <span>
                             <img

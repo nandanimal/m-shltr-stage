@@ -46,7 +46,7 @@ export default function StepZip() {
         <div>
             {mode === "zip" ? (
                 <form onSubmit={handleZipSubmit}>
-                    <div className="text-3xl">
+                    <div className="type-h2">
                         Where are you planning to build?
                     </div>
                     <h2 className="m-0 mt-8">Enter your ZIP code</h2>
@@ -62,7 +62,7 @@ export default function StepZip() {
                             setZip(normalizeZip(e.target.value));
                         }}
                         placeholder="e.g. 94607"
-                        className="w-full mt-2 p-1  border-b border-black  focus:outline-none text-3xl font-mono"
+                        className="w-full mt-2 p-1  border-b border-black  focus:outline-none type-mono-display"
                         required
                     />
                     {error ? (
@@ -95,7 +95,7 @@ export default function StepZip() {
                             value={waitlistEmail}
                             onChange={(e) => setWaitlistEmail(e.target.value)}
                             placeholder="you@example.com"
-                            className="w-full mt-2 p-1  border-b border-black  focus:outline-none text-3xl font-mono"
+                            className="w-full mt-2 p-1  border-b border-black  focus:outline-none type-mono-display"
                             required
                         />
                         <button type="submit" className="cta-button mt-4">

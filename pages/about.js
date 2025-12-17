@@ -38,12 +38,12 @@ const about = () => {
 
             <FadeIn>
                 <section className="p-2">
-                    <div className="text-3xl leading-none">
+                    <div>
                         <div className="max-w-6xl m-auto">
-                            <h1 className="text-3xl text-regular text-gray mb-4">
+                            <h1 className="type-h2 text-regular text-gray mb-4">
                                 Our Process
                             </h1>
-                            <div className="sm:text-6xl text-3xl mb-32 text-pretty ">
+                            <div className="type-display mb-32 text-pretty">
                                 From first call to move-in, here’s what to
                                 expect when working with SHLTR.
                             </div>

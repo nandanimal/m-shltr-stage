@@ -15,6 +15,7 @@ import TopdownMobile from "@/components/TopdownMobile";
 import SizeToggleCard from "@/components/SizeToggleCard";
 import InteriorTrims from "@/components/InteriorTrims";
 import ExteriorTrims from "@/components/ExteriorTrims";
+import GalleryHeader from "@/components/GalleryHeader";
 
 const CBN = () => {
     const [loading, setLoading] = useState(true);
@@ -48,27 +49,30 @@ const CBN = () => {
                 <Hero />
             </section>
             <section
-                data-theme="light"
-                className="w-full flex  flex-col justify-center mt-32"
+                data-nav-theme="light"
+                className="w-full flex  flex-col justify-center mt-32 modern-padding"
             >
-                <div className="max-w-6xl m-auto mb-16 p-2">
-                    <h1 className="text-3xl text-regular text-gray mb-4">
+                <div className="max-w-6xl m-auto mb-16">
+                    <h1 className="type-h2 text-regular text-gray mb-4">
                         CBN - MODULE NO. 1172{" "}
                     </h1>
-                    <div className="sm:text-4xl lg:text-6xl text-3xl  text-pretty font-dince header-text">
+                    <div className="type-display text-pretty font-dince header-text">
                         Introducing the CBN-MODULE, an integrated approach to
                         your house or hotel.
                     </div>
-                    <div className="text-xs font-mono uppercase mt-4">
+                    {/* <div className="text-body mt-8">
+                        This cabin module comes in two sizes 640 sqft and 1172
+                        sqft structures that offer an architecturally designed 2
+                        bed 2 bath modules that can support your vision for
+                        starter home, a guest house, or a standalone short term
+                        rental for sustainable living.
+                    </div> */}
+                    <div className="type-eyebrow mt-8">
                         Designed by Studio Malek Alqadi
                     </div>
                 </div>
             </section>
-            <section className="w-full flex items-center flex-col justify-center">
-                {/* <h1 className="text-3xl text-center mb-32">
-                    Hero text + accessories laoreet at enim sed and malesuada,
-                    laoreet.
-                </h1> */}
+            <section className="w-full flex items-center flex-col justify-center overflow-hidden">
                 <ProductBanner is3d={true} />
             </section>
 
@@ -91,7 +95,10 @@ const CBN = () => {
                 />
             </section> */}
 
-            <section className="flex items-center flex-col min-h-screen justify-center pt-48">
+            <section
+                className="flex items-center flex-col min-h-screen justify-center pt-48"
+                data-nav-theme="light"
+            >
                 {/* Show Topdown only on desktop, TopdownMobile only on mobile */}
                 <div className="hidden sm:block w-full">
                     <Topdown />
@@ -101,60 +108,401 @@ const CBN = () => {
                 </div>
             </section>
 
+            <GalleryHeader
+                title={"THE M-SHLTR EXPERIENCE"}
+                body={
+                    "The M-Shelter experience is a sanctuary of quiet luxury, grounded in a symmetry-based wabi-sabi aesthetic that balances architectural order with organic warmth. Defined by rigorous clean lines and expansive openings, the structure dissolves the boundaries between shelter and landscape, allowing light and nature to become primary materials. The interior is a seamless composition of integrated millwork and tactile finishes, curated in a subtle, monochromatic palette that evokes the meditative serenity of a wellness retreat. It is a space where precision meets peace—a grounded environment designed not just to be looked at, but to be deeply felt."
+                }
+            />
+
             <section>
-                <div className="img-container modern-padding mb-1">
+                <div
+                    data-nav-theme="dark"
+                    className="img-container modern-padding flex flex-col gap-2"
+                >
                     <img
-                        src="images/Bedroom1.webp"
-                        alt="bedroom view"
+                        src="images/cbn_alt.webp"
+                        alt="CBN with conversation pit"
                         className="rounded-sm"
                     />
+                    <div className="flex flex-row gap-2 w-full max-w-full overflow-x-auto">
+                        <div className="flex-1 min-w-0">
+                            <img
+                                src="images/cbn_detail.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <img
+                                src="images/cbn_gallery/cbn_3.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover aspect-square h-full max-w-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="text-xs mt-4 sm:max-w-1/2 text-gray">
+                        The CBN modules open living areas dissolve boundaries
+                        through expansive floor-to-ceiling windows and glass
+                        sliding doors, inviting seamless connection with the
+                        surrounding landscape.
+                    </div>
                 </div>
-                <div className="grid grid-rows-1 modern-padding my-24">
-                    <div className="grid grid-cols-3 gap-1">
-                        <div className="img-container aspect-[4/3]">
+            </section>
+
+            <GalleryHeader
+                title={"ADAPTIVE LIVING"}
+                body={
+                    "The CBN Module embodies an architectural design between the shelters interiors and its surrounding environment. Offered in an expansive 1,172 sq ft configuration or a more intimate 640 sq ft layout. Whether shared with  companions or embraced in solitary reflection, this architecturally refined modules inspires a gentle pause—to breathe deeply and immerse fully in a starter home, a guest house or even as a hotel suite for personal or business use."
+                }
+            />
+
+            <section>
+                <div
+                    data-nav-theme="dark"
+                    className="img-container modern-padding flex flex-col gap-2"
+                >
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-2 h-full">
                             <img
-                                src="/images/Kitchen24K.webp"
-                                alt="kitchen"
-                                className="rounded-sm aspect-[4/3] object-cover"
+                                src="images/cbn_gallery/cbn_26.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
                             />
-                            <div className="p-4 text-center">
-                                A full kitchen loaded with built-in appliances
-                                and pantry wall.
-                            </div>
                         </div>
-                        <div className="img-container aspect-[4/3]">
+                        <div className="min-w-0 col-span-3 h-full">
                             <img
-                                src="/images/Bedroom2V2.webp"
-                                alt="Bedroom"
-                                className="rounded-sm aspect-[4/3] object-cover"
+                                src="images/Living4K.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
                             />
-                            <div className="p-4 text-center">
-                                Each suite comes with an exterior view for
-                                natural light, access and privacy.
-                            </div>
                         </div>
-                        <div className="img-container aspect-[4/3]">
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-3 h-full">
                             <img
-                                src="/images/Bath.webp"
-                                alt="Bathroom"
-                                className="rounded-sm aspect-[4/3] object-cover"
+                                src="images/Kitchen24K.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
                             />
-                            <div className="p-4 text-center">
-                                A wet room shower with bathtub, shower head and
-                                rain head fixtures.
+                        </div>
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_14.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_16.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_17.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="text-xs mt-4 sm:max-w-1/2 text-gray">
+                        A seamless open-plan design unites kitchen, dining, and
+                        living spaces in a seamless flow. Expansive
+                        floor-to-ceiling glazing quietly frames the
+                        ever-changing landscape, while carefully chosen natural
+                        materials—warm wood, soft stone, subtle
+                        textures—cultivate an atmosphere of profound calm and
+                        understated harmony.
+                    </div>
+                </div>
+            </section>
+
+            <GalleryHeader
+                title={"GATHERING RITUALS"}
+                body={
+                    "The kitchen experience of this space is framed by expansive openings for optimal views. The full kitchen, with its retracting doors, and equipped island allow for shared meals to become moments of connection. A floating, wall-to-wall counter, distinguished by a deeply appointed sink. Every element, from the built-in furnishings to the thoughtful placement of the living area within the bedroom suite, is curated to enhance the sense of effortless dwelling."
+                }
+            />
+
+            <section>
+                <div
+                    data-nav-theme="dark"
+                    className="img-container modern-padding flex flex-col gap-2"
+                >
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_20.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/kitchen1.webp"
+                                alt="CBN kitchen shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_27.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_6.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/Pantry.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/kitchen_detail.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="text-xs mt-4 sm:max-w-1/2 text-gray">
+                        Left – A counter-level appliance garage, strategically
+                        placed power, deep drawer storage, and accessible open
+                        shelving serve every culinary need; Right – Designed for
+                        effortless use, the all-encompassing kitchen island
+                        thoughtfully conceals essential functions: a hidden
+                        hood, integrated cooktop, and discreet surface outlets,
+                        complemented by a concealed dishwasher, oven, dedicated
+                        utensil drawers, and concealed waste bins. Every element
+                        serves its purpose, yet remains out of sight.
+                    </div>
+                </div>
+            </section>
+
+            <GalleryHeader
+                title={"PRIVATE SANCTUARIES"}
+                body={
+                    "The bedroom suites are located either on either end of the CBN Module, offering views of the surrounding environment. Paying homage to the traditional wabi sabi aesthetic, the suites feature natural woods, floor-to-ceiling doors, built in floor to ceiling cabinetry. A serene bedroom and seating space experience. The  suites can be outfitted as dual master suites or one can be a home office."
+                }
+            />
+
+            <section>
+                <div
+                    data-nav-theme="dark"
+                    className="img-container modern-padding flex flex-col gap-2"
+                >
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_10.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/Bedroom.webp"
+                                alt="CBN kitchen shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_15.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_22.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_8.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/Bedroom2V2.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="text-xs mt-4 sm:max-w-1/2 text-gray">
+                        Left – Each Suite with an exterior view for natural
+                        light, access and privacy. Right – Every detail is
+                        considered—from the placement of furniture and the
+                        discreet pivot TV mount to the dedicated closet space
+                        within each private suite.
+                    </div>
+                </div>
+            </section>
+
+            <GalleryHeader
+                title={"A SPACE FOR RENEWAL"}
+                body={
+                    "A dedicated wet room envelops the senses, featuring a rain shower alongside a deep soaking tub—spaces crafted for  restorative calm. Discreetly separated, a private water closet ensures utmost privacy, while a natural stone and warm woods vanity, invites mindful daily rituals in a serene atmosphere."
+                }
+            />
+
+            <section>
+                <div
+                    data-nav-theme="dark"
+                    className="img-container modern-padding flex flex-col gap-2"
+                >
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_7.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/cbn_gallery/Restroom.webp"
+                                alt="CBN kitchen shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_15.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_13.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 w-full max-w-full">
+                        <div className="min-w-0 col-span-2 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_24.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover h-full max-w-full"
+                            />
+                        </div>
+                        <div className="min-w-0 col-span-3 h-full">
+                            <img
+                                src="images/cbn_gallery/cbn_2.webp"
+                                alt="CBN detail shot"
+                                className="rounded-sm w-full object-cover w-full h-full"
+                            />
+                        </div>
+                    </div>
+                    <div className="text-xs mt-4 sm:max-w-1/2 text-gray">
+                        Left – Each Suite with an exterior view for natural
+                        light, access and privacy. Right – Every detail is
+                        considered—from the placement of furniture and the
+                        discreet pivot TV mount to the dedicated closet space
+                        within each private suite.
+                    </div>
+                </div>
+            </section>
+
+            {/* Architect */}
+            <section className="mt-8" data-nav-theme="light">
+                <div className="min-h-[40svh] flex items-center justify-center modern-padding">
+                    <div className="flex flex-row rounded-md bg-[#FFF]/30 p-2 md:gap-4">
+                        <div className="img-container max-w-[30%] md:max-w-1/2">
+                            <img
+                                src="/images/malek.webp"
+                                alt="malek alqadi"
+                                className="rounded-sm md:block hidden"
+                            />
+                        </div>
+                        <div className="text-container md:p-4 space-y-2 md:max-w-1/2">
+                            <div className="img-container max-w-[30%] ">
+                                <img
+                                    src="/images/malek.webp"
+                                    alt="malek alqadi"
+                                    className="rounded-sm mb-8 md:hidden block"
+                                />
+                            </div>
+                            <div className="font-mono uppercase text-xs">
+                                pre-fab modular design
+                            </div>
+                            <h2 className="font-bold uppercase text-xl">
+                                The architect's perspective
+                            </h2>
+                            <div className="text-body text-xs md:text-sm mb-4 ">
+                                My design roots lie in the world of high-end
+                                residences and experience-based hospitality.
+                                With M-Shelter, I have distilled the energy,
+                                detail, and rigorous thought process of that
+                                world into a high-performance modular system.
+                                <br />
+                                <br />
+                                We are moving beyond the concept of the 'static
+                                home.' M-Shelter is a premium architectural
+                                product defined by spatial efficiency, curated
+                                design moments, and flexible open plans. It is
+                                universally adaptive: whether deployed as a
+                                scalable suite for a boutique hotel, a luxury
+                                guest house (ADU), or a primary residence that
+                                grows from a bachelor pad to a family home, the
+                                quality remains constant.
+                                <br />
+                                <br />
+                                This is a system of 'living' assets. It allows
+                                owners—from developers to first-time buyers—to
+                                invest in architecturally significant structures
+                                that build equity and adapt over time. We aren't
+                                just building boxes; we are providing access to
+                                a considered way of living—stripped of the
+                                inefficiencies of traditional construction, yet
+                                retaining factory precision and architectural
+                                integrity.
                             </div>
                         </div>
                     </div>
-                    <div className="img-container my-24">
-                        <img
-                            src="images/kitchen1.webp"
-                            alt="Kitchen"
-                            className="rounded-sm w-full"
-                        />
-                    </div>
                 </div>
-                <InteriorTrims />
-                <div className="img-container modern-padding">
+            </section>
+
+            <section className="my-24">
+                <div className="" data-nav-theme="light">
+                    <InteriorTrims />
+                </div>
+                <div
+                    className="img-container modern-padding"
+                    data-nav-theme="dark"
+                >
                     <img
                         src="images/Living4K.webp"
                         alt="Living room"
@@ -165,7 +513,10 @@ const CBN = () => {
 
             {/* Exterior trims section */}
             <section>
-                <div className="grid grid-rows-1 modern-padding my-24">
+                <div
+                    className="grid grid-rows-1 modern-padding my-24"
+                    data-nav-theme="light"
+                >
                     <div className="grid grid-cols-3 gap-1">
                         <div className="img-container aspect-[4/3]">
                             <img
@@ -199,7 +550,10 @@ const CBN = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative w-full lg:h-[50svh] h-[30svh] overflow-hidden modern-padding">
+                <div
+                    className="relative w-full lg:h-[50svh] h-[30svh] overflow-hidden modern-padding"
+                    data-nav-theme="light"
+                >
                     <img
                         src="/images/CBN3D/CBN25.webp"
                         alt="CBN"

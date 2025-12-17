@@ -59,10 +59,10 @@ const UnlistedSection = () => {
                     className=""
                 />
                 <div className="w-full p-2 text-white text-center flex flex-col gap-2">
-                    <span className="font-mono text-sm uppercase ">
+                    <span className="type-eyebrow-lg">
                         launching 2026
                     </span>
-                    <span className="text-3xl font-dince header-text">
+                    <span className="type-h2 font-dince header-text">
                         Module lineup for your house or hotel
                     </span>
                 </div>
@@ -80,10 +80,10 @@ const UnlistedSection = () => {
                         </div>
                         <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center order-2 lg:order-1">
                             <div className="">
-                                <h2 className="text-xl text-regular text-white mb-4 font-dince header-text">
+                                <h2 className="type-title text-regular text-white mb-4 font-dince header-text">
                                     Studio Malek Alqadi
                                 </h2>
-                                <div className="font-roboto text-base leading-[105%] text-white">
+                                <div className="type-body text-white">
                                     M-SHLTR designed by Studio Malek Alqadi has
                                     a variety of modules, floor plans,
                                     assemblies and options available. Reach out
@@ -113,7 +113,7 @@ const UnlistedSection = () => {
                     {/* Press row */}
 
                     <div className="featured-banner flex flex-col gap-4 p-4 sm:p-16 items-center justify-center w-full my-24">
-                        <div className="font-mono w-full uppercase text-gray text-center mb-1 text-xs">
+                        <div className="type-eyebrow text-gray text-center mb-1 w-full">
                             FEATURED IN
                         </div>
                         <div className="press-row w-full gap-8 flex-row flex items-center justify-center flex-wrap">

@@ -4,8 +4,8 @@ const Card = ({ title, desc, url }) => {
     return (
         <div className="flex flex-col gap-4  h-full">
             <div className="flex flex-col gap-2">
-                <div className="title text-xl">{title}</div>
-                <div className="font-mono text-xs uppercase">{desc}</div>
+                <div className="title type-subtitle">{title}</div>
+                <div className="type-mono-xs uppercase">{desc}</div>
             </div>
             <img
                 src={url}
@@ -19,7 +19,7 @@ const Card = ({ title, desc, url }) => {
 const InteriorTrims = () => {
     return (
         <div className="modern-padding">
-            <h2 className="sm:text-4xl lg:text-6xl text-3xl sm:mt-24 mb-8 text-pretty ">
+            <h2 className="type-display sm:mt-24 mb-8 text-pretty">
                 Interior trims and finishes
             </h2>
             <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-4 auto-rows-fr ">

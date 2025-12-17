@@ -298,7 +298,7 @@ export default function Object3DViewer({ initial = 34 }) {
                             exit={{ opacity: 0 }}
                             className="absolute inset-0 bg-[#e4e4e4] animate-pulse"
                         >
-                            <p className="p-4 text-center text-xs">
+                            <p className="p-4 text-center type-caption">
                                 Loading 3D frames...
                             </p>
                         </motion.div>
@@ -320,7 +320,7 @@ export default function Object3DViewer({ initial = 34 }) {
                 <div className="absolute bottom-0 w-full flex items-center justify-center mb-8 md:mb-16 lg:mb-32">
                     <div className="flex flex-row gap-4 justify-center items-center">
                         <img src="icons/rotate-gray.svg" />
-                        <div className="font-mono text-xs text-gray uppercase">
+                        <div className="type-mono-xs text-gray uppercase">
                             drag to rotate
                         </div>
                     </div>

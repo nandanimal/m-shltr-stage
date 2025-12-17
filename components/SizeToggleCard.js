@@ -40,7 +40,7 @@ export default function SizeToggleCard({ views }) {
     return (
         <div className="w-full max-w-5xl mx-auto flex flex-col gap-4 my-48">
             <div className="text-center">
-                <h2 className=" text-3xl tracking-wide mb-8">
+                <h2 className="type-h2 tracking-wide mb-8">
                     Available in 2 sizes
                 </h2>
             </div>
@@ -69,7 +69,7 @@ export default function SizeToggleCard({ views }) {
                                     <button
                                         key={v.key}
                                         onClick={() => setActiveKey(v.key)}
-                                        className={`px-3 py-1 rounded-sm text-xs font-medium transition ${
+                                        className={`px-3 py-1 rounded-sm type-caption font-medium transition ${
                                             isActive
                                                 ? "bg-white text-black"
                                                 : "bg-white/10 text-gray hover:bg-white/60 hover:text-black/80 cursor-pointer"
