@@ -459,7 +459,7 @@ const CBN = () => {
                                 pre-fab modular design
                             </div>
                             <h2 className="font-bold uppercase text-xl">
-                                The architect's perspective
+                                The architect&apos;s perspective
                             </h2>
                             <div className="text-body text-xs md:text-sm mb-4 ">
                                 My design roots lie in the world of high-end
@@ -469,8 +469,9 @@ const CBN = () => {
                                 world into a high-performance modular system.
                                 <br />
                                 <br />
-                                We are moving beyond the concept of the 'static
-                                home.' M-Shelter is a premium architectural
+                                We are moving beyond the concept of the
+                                &apos;static home.&apos; M-Shelter is a premium
+                                architectural
                                 product defined by spatial efficiency, curated
                                 design moments, and flexible open plans. It is
                                 universally adaptive: whether deployed as a
@@ -480,10 +481,12 @@ const CBN = () => {
                                 quality remains constant.
                                 <br />
                                 <br />
-                                This is a system of 'living' assets. It allows
-                                owners—from developers to first-time buyers—to
+                                This is a system of &apos;living&apos; assets.
+                                It allows owners—from developers to first-time
+                                buyers—to
                                 invest in architecturally significant structures
-                                that build equity and adapt over time. We aren't
+                                that build equity and adapt over time. We
+                                aren&apos;t
                                 just building boxes; we are providing access to
                                 a considered way of living—stripped of the
                                 inefficiencies of traditional construction, yet
