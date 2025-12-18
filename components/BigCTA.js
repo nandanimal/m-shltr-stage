@@ -28,25 +28,27 @@ export default function BigCTA({ theme }) {
     return (
         <section
             ref={ref}
-            className="w-full grid place-items-center modern-padding"
+            className="w-full grid place-items-center modern-padding mb-8 md:mb-0"
         >
             <div
                 className={`max-w-[1440px] rounded-sm bg-${bg} shadow-sm grid grid-cols-8 overflow-hidden`}
             >
                 <div className="md:col-span-4 col-span-8 p-4 sm:p-16 flex flex-col ">
                     <span className="type-display-sm text-gray font-dince header-text">
-                        Lorem ipsum.
+                        Architectural calm,
                     </span>
                     <span
                         className={`type-display-sm text-pretty text-${fg} font-dince header-text`}
                     >
-                        Dolor seek amit sapien quis.
+                        delivered.
                     </span>
                     <span className={`type-body-lg mt-4 text-${fg} `}>
-                        Sed eleifend sapien eget velit elementum.
+                        A modular home with the restraint of a custom build:
+                        honest materials, integrated millwork, and light that
+                        moves through the day.
                     </span>
                     <div className="mt-8">
-                        <CTAButton />
+                        <CTAButton text="reserve a build slot" />
                     </div>
                 </div>
                 <div className="md:col-span-4 col-span-8 mt-8 sm:mt-0">

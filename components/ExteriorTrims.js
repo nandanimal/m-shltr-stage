@@ -19,9 +19,15 @@ const Card = ({ title, desc, url }) => {
 const ExteriorTrims = () => {
     return (
         <div className="modern-padding">
-            <h2 className="type-display mb-8 text-pretty">
-                Exterior trims and finishes
-            </h2>
+            <div className="mb-8 space-y-4">
+                <h2 className="type-display  text-pretty">
+                    Exterior trims and finishes
+                </h2>
+                <div className="text-body">
+                    Exterior finishes are selected for longevity, low
+                    maintenance, and wildfire‑aware detailing.
+                </div>
+            </div>
             <div
                 className="w-full grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-4 auto-rows-fr"
                 data-nav-theme="dark"
@@ -54,6 +60,17 @@ const ExteriorTrims = () => {
                     }
                     url={"/images/plaster.avif"}
                 />
+            </div>
+            <div className="my-8 space-y-4">
+                <h2 className="type-display  text-pretty">
+                    Fire resilient by design
+                </h2>
+                <div className="text-body">
+                    Light‑gauge steel framing, integrated interior and exterior
+                    sprinklers, pre‑burned cladding options, ember‑resistant
+                    venting, and carefully detailed exterior assemblies designed
+                    for wildfire regions.
+                </div>
             </div>
         </div>
     );

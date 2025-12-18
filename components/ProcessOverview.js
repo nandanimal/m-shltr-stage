@@ -14,8 +14,8 @@ const ProcessOverview = () => {
                         Process overview
                     </div>
                     <h2 className="type-display text-pretty font-dince">
-                        Building made{" "}
-                        <span className="font-bold">clear and simple.</span>
+                        From land to keys,{" "}
+                        <span className="font-bold">simplified</span>
                     </h2>
                 </div>
                 <FadeIn>
@@ -28,14 +28,12 @@ const ProcessOverview = () => {
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
                             <div className="type-h2 font-bold mb-2 font-dince header-text">
-                                Integrated design
+                                Site review and design
                             </div>
                             <div className="type-body text-gray">
-                                We begin with a simple conversation to
-                                understand your site, goals, and timeline. From
-                                there, we review feasibility, visit your
-                                property when needed, and map out the clearest
-                                path from vision to build-ready design.
+                                We start with your land, goals, and timeline,
+                                then map the clearest path to a build-ready
+                                plan.
                             </div>
                             <Link
                                 className={`cta-button uppercase z-20 font-mono flex flex-row gap-2 mt-8`}
@@ -56,15 +54,12 @@ const ProcessOverview = () => {
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
                             <div className="type-h2 font-bold mb-2 font-dince header-text">
-                                Modular Build
+                                Factory build
                             </div>
                             <div className="type-body text-gray">
-                                Once your design is finalized, we handle the
-                                details—permits, site preparation, coordination
-                                with local officials, and factory construction.
-                                Your home is built in a controlled environment
-                                for accuracy, efficiency, and consistent quality
-                                from start to finish.
+                                We coordinate engineering, permits, and
+                                production so your home is built in a controlled
+                                environment for accuracy and consistent quality.
                             </div>
                         </div>
                         {/* Card 3 */}
@@ -75,14 +70,11 @@ const ProcessOverview = () => {
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
                             <div className="type-h2 font-bold mb-2 font-dince header-text">
-                                Turn-Key
+                                Delivery and set
                             </div>
                             <div className="type-body text-gray">
-                                When fabrication is complete, we manage shipping
-                                and on-site installation. Most homes are placed
-                                and finished in a matter of days. You receive
-                                your keys and step into a fully completed space,
-                                ready to enjoy.
+                                We manage shipping, set, and finishing so you
+                                step into a complete home, ready to live in.
                             </div>
                         </div>
                     </div>

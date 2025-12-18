@@ -35,7 +35,7 @@ const AnimatedTimeline = () => {
             className="relative w-full bg-[#f2f2ee]"
             data-nav-theme="dark"
         >
-            <div className="max-w-6xl m-auto px-4 sm:px-6">
+            <div className="max-w-6xl m-auto modern-padding">
                 <div
                     className="relative"
                     style={{ height: `${totalHeightVh}vh` }}
@@ -60,7 +60,8 @@ const AnimatedTimeline = () => {
                             return (
                                 <motion.div
                                     key={step.id}
-                                    className={`absolute inset-0 flex flex-col justify-center lg:flex-row items-center gap-10 sm:gap-0 ${
+                                    data-nav-theme="dark"
+                                    className={`absolute inset-0 flex flex-col justify-center lg:flex-row items-center gap-10 md:gap-8 lg:gap-0 ${
                                         isLeft ? "" : "lg:flex-row-reverse"
                                     }`}
                                     initial={{ opacity: 0, y: 32 }}
@@ -80,8 +81,8 @@ const AnimatedTimeline = () => {
                                 >
                                     <div className="w-full lg:w-1/2 flex justify-center">
                                         <div
-                                            className={`overflow-hidden bg-white  w-full max-w-[560px] aspect-[4/3] ${
-                                                isLeft ? "sm:pr-8" : "sm:pl-8"
+                                            className={`overflow-hidden bg-white  w-full max-w-full md:max-w-[560px] aspect-[4/3] ${
+                                                isLeft ? "lg:pr-8" : "lg:pl-8"
                                             }`}
                                         >
                                             <Image
@@ -95,7 +96,7 @@ const AnimatedTimeline = () => {
                                         </div>
                                     </div>
 
-                                    <div className="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6 max-w-xl">
+                                    <div className="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6 md:max-w-xl">
                                         <div
                                             className={`flex items-center gap-3 w-full ${
                                                 isLeft
@@ -120,7 +121,7 @@ const AnimatedTimeline = () => {
 
                                         <div
                                             className={`flex flex-col gap-2 ${
-                                                isLeft ? "p-8" : "p-8"
+                                                isLeft ? "lg:p-8" : "lg:p-8"
                                             }`}
                                         >
                                             <div className="w-8 h-8 border border-[#d8d3cf] rounded-sm flex items-center justify-center type-mono-xs text-gray">

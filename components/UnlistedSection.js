@@ -59,11 +59,10 @@ const UnlistedSection = () => {
                     className=""
                 />
                 <div className="w-full p-2 text-white text-center flex flex-col gap-2">
-                    <span className="type-eyebrow-lg">
-                        launching 2026
-                    </span>
+                    <span className="type-eyebrow-lg">launching 2026</span>
                     <span className="type-h2 font-dince header-text">
-                        Module lineup for your house or hotel
+                        A module lineup for home, hospitality, and retreat
+                        destinations.
                     </span>
                 </div>
 
@@ -78,7 +77,7 @@ const UnlistedSection = () => {
                                 className="rounded-sm"
                             />
                         </div>
-                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center order-2 lg:order-1">
+                        <div className="lg:flex-col flex p-4 sm:p-0 lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-center order-2 lg:order-1">
                             <div className="">
                                 <h2 className="type-title text-regular text-white mb-4 font-dince header-text">
                                     Studio Malek Alqadi
@@ -102,10 +101,10 @@ const UnlistedSection = () => {
                                 </div>
                             </div>
                             <div className="pricing-container text-white flex flex-col gap-0 mt-8">
-                                <CTAMinimal
-                                    text={"inquire"}
+                                <CTAButton
+                                    text={"inquire about a custom project"}
                                     className=""
-                                    width={"w-fit"}
+                                    width={"w-full"}
                                 />
                             </div>
                         </div>

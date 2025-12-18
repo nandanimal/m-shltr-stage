@@ -80,18 +80,22 @@ export default function Home() {
                                 data-nav-theme="light"
                             >
                                 <div className="span flex flex-col gap-2">
+                                    <div className="font-mono text-xs uppercase">
+                                        launching 2026
+                                    </div>
                                     <h1 className="type-display text-pretty font-dince">
-                                        Introducing SHLTR,
+                                        Introducing M-SHLTR,
                                     </h1>
                                 </div>
                                 <div className="type-display text-pretty font-dince">
-                                    A precision-built home for any setting,
-                                    shaped with intention, sustainably crafted,
-                                    and delivered turnkey to your land.
+                                    a fire‑resilient, precision‑built home for
+                                    any setting. Designed with intention, built
+                                    with factory accuracy, delivered turnkey to
+                                    your land.
                                 </div>
                                 <div className="span flex flex-col gap-4 mt-16">
                                     <h2 className="type-title text-regular text-gray text-pretty">
-                                        Designed by Malek Alqadi
+                                        Designed by Malek Alqadi, as seen in
                                     </h2>
                                     <div className="featured-banner flex flex-col gap-0">
                                         {/* <div className="type-eyebrow text-gray mb-2">
@@ -160,19 +164,17 @@ export default function Home() {
                             />
                         </div>
                         <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-between modern-padding">
-                            <div className="">
+                            <div className="mt-8 md:mt-0">
                                 <h2 className="type-eyebrow-lg text-regular text-gray mb-4">
                                     The M-SHLTR Ecosystem
                                 </h2>
                                 <div className="type-body-lg">
-                                    Each M-SHLTR home begins with the site: its
-                                    orientation, natural light, and views. Using
-                                    a modular framework, we organize spaces and
-                                    circulation to maximize efficiency and
-                                    comfort. Technology and building systems are
-                                    integrated from the start, creating a
-                                    cohesive, high-performance living
-                                    environment.
+                                    Every M-SHLTR begins with the site: sun,
+                                    wind, views, access, and fire exposure. Our
+                                    modular framework lets you start simple and
+                                    expand over time, while systems are
+                                    integrated from day one for performance,
+                                    comfort, and resilience.
                                 </div>
                             </div>
                             <div className="pricing-container flex flex-col gap-0">
@@ -186,7 +188,7 @@ export default function Home() {
                                     onClick={openCta}
                                     className="w-[fit-content] order-now flex flex-row gap-2 cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition font-mono"
                                 >
-                                    PRE-ORDER
+                                    RESERVE A BUILD SLOT
                                     <img
                                         className=""
                                         src="/icons/arrow-up-right.svg"

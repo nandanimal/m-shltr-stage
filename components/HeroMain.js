@@ -83,7 +83,7 @@ const HeroMain = () => {
                             installed in less than a week.
                         </span>
                     </div> */}
-                    <CTAButton />
+                    <CTAButton text="Reserve a build spot" />
                 </div>
                 <div className="image-container w-full h-full relative flex items-center justify-center overflow-hidden rounded-md">
                     <motion.div

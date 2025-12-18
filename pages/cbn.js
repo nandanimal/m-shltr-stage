@@ -54,11 +54,11 @@ const CBN = () => {
             >
                 <div className="max-w-6xl m-auto mb-16">
                     <h1 className="type-h2 text-regular text-gray mb-4">
-                        CBN - MODULE NO. 1172{" "}
+                        CBN NO. 1172{" "}
                     </h1>
                     <div className="type-display text-pretty font-dince header-text">
-                        Introducing the CBN-MODULE, an integrated approach to
-                        your house or hotel.
+                        A two‑bed flagship module designed to expand from a
+                        quiet retreat to a full-time home or boutique suite.
                     </div>
                     {/* <div className="text-body mt-8">
                         This cabin module comes in two sizes 640 sqft and 1172
@@ -73,7 +73,7 @@ const CBN = () => {
                 </div>
             </section>
             <section className="w-full flex items-center flex-col justify-center overflow-hidden">
-                <ProductBanner is3d={true} />
+                <ProductBanner is3d={true} explore={false} />
             </section>
 
             {/* <section>
@@ -109,9 +109,9 @@ const CBN = () => {
             </section>
 
             <GalleryHeader
-                title={"THE M-SHLTR EXPERIENCE"}
+                title={"THE CBN EXPERIENCE"}
                 body={
-                    "The M-Shelter experience is a sanctuary of quiet luxury, grounded in a symmetry-based wabi-sabi aesthetic that balances architectural order with organic warmth. Defined by rigorous clean lines and expansive openings, the structure dissolves the boundaries between shelter and landscape, allowing light and nature to become primary materials. The interior is a seamless composition of integrated millwork and tactile finishes, curated in a subtle, monochromatic palette that evokes the meditative serenity of a wellness retreat. It is a space where precision meets peace—a grounded environment designed not just to be looked at, but to be deeply felt."
+                    "The M-SHLTR experience is a sanctuary of quiet luxury, grounded in a symmetry-based wabi-sabi aesthetic that balances architectural order with organic warmth. Defined by rigorous clean lines and expansive openings, the structure dissolves the boundaries between SHLTR and landscape, allowing light and nature to become primary materials. The interior is a seamless composition of integrated millwork and tactile finishes, curated in a subtle, monochromatic palette that evokes the meditative serenity of a wellness retreat. It is a space where precision meets peace—a grounded environment designed not just to be looked at, but to be deeply felt."
                 }
             />
 
@@ -151,9 +151,9 @@ const CBN = () => {
             </section>
 
             <GalleryHeader
-                title={"ADAPTIVE LIVING"}
+                title={"A PLAN THAT ADAPTS"}
                 body={
-                    "The CBN Module embodies an architectural design between the shelters interiors and its surrounding environment. Offered in an expansive 1,172 sq ft configuration or a more intimate 640 sq ft layout. Whether shared with  companions or embraced in solitary reflection, this architecturally refined modules inspires a gentle pause—to breathe deeply and immerse fully in a starter home, a guest house or even as a hotel suite for personal or business use."
+                    "The CBN Module embodies an architectural design between the SHLTRs interiors and its surrounding environment. Offered in an expansive 1,172 sq ft configuration or a more intimate 640 sq ft layout. Whether shared with  companions or embraced in solitary reflection, this architecturally refined modules inspires a gentle pause—to breathe deeply and immerse fully in a starter home, a guest house or even as a hotel suite for personal or business use."
                 }
             />
 
@@ -253,7 +253,7 @@ const CBN = () => {
                     <div className="grid grid-cols-5 gap-2 w-full max-w-full">
                         <div className="min-w-0 col-span-3 h-full">
                             <img
-                                src="images/cbn_gallery/cbn_27.webp"
+                                src="images/cbn_gallery/Closet.webp"
                                 alt="CBN detail shot"
                                 className="rounded-sm w-full object-cover h-full max-w-full"
                             />
@@ -464,34 +464,31 @@ const CBN = () => {
                             <div className="text-body text-xs md:text-sm mb-4 ">
                                 My design roots lie in the world of high-end
                                 residences and experience-based hospitality.
-                                With M-Shelter, I have distilled the energy,
+                                With M-SHLTR, I have distilled the energy,
                                 detail, and rigorous thought process of that
                                 world into a high-performance modular system.
                                 <br />
                                 <br />
                                 We are moving beyond the concept of the
-                                &apos;static home.&apos; M-Shelter is a premium
-                                architectural
-                                product defined by spatial efficiency, curated
-                                design moments, and flexible open plans. It is
-                                universally adaptive: whether deployed as a
-                                scalable suite for a boutique hotel, a luxury
-                                guest house (ADU), or a primary residence that
-                                grows from a bachelor pad to a family home, the
-                                quality remains constant.
+                                &apos;static home.&apos; M-SHLTR is a premium
+                                architectural product defined by spatial
+                                efficiency, curated design moments, and flexible
+                                open plans. It is universally adaptive: whether
+                                deployed as a scalable suite for a boutique
+                                hotel, a luxury guest house (ADU), or a primary
+                                residence that grows from a bachelor pad to a
+                                family home, the quality remains constant.
                                 <br />
                                 <br />
                                 This is a system of &apos;living&apos; assets.
                                 It allows owners—from developers to first-time
-                                buyers—to
-                                invest in architecturally significant structures
-                                that build equity and adapt over time. We
-                                aren&apos;t
-                                just building boxes; we are providing access to
-                                a considered way of living—stripped of the
-                                inefficiencies of traditional construction, yet
-                                retaining factory precision and architectural
-                                integrity.
+                                buyers—to invest in architecturally significant
+                                structures that build equity and adapt over
+                                time. We aren&apos;t just building boxes; we are
+                                providing access to a considered way of
+                                living—stripped of the inefficiencies of
+                                traditional construction, yet retaining factory
+                                precision and architectural integrity.
                             </div>
                         </div>
                     </div>
