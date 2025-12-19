@@ -99,16 +99,19 @@ const Footer = ({ theme = "light" }) => {
 
                         {/* M STUDIO */}
                         <div className="flex flex-col gap-4 header-text">
-                            <div className="type-subtitle text-gray font-dince">
+                            <a
+                                href="https://www.malekalqadi.com/"
+                                className="type-subtitle text-gray font-dince"
+                            >
                                 M-STUDIO
-                            </div>
+                            </a>
                             <div className="footer-menu-links flex flex-col gap-3 type-subtitle">
-                                <a
+                                {/* <a
                                     href="https://www.malekalqadi.com/"
                                     className=" hover:opacity-70 transition"
                                 >
                                     Malek Alqadi
-                                </a>
+                                </a> */}
                                 {/* <a
                                     href="https://www.malekalqadi.com/journal"
                                     className=" hover:opacity-70 transition"
