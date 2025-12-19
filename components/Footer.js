@@ -55,9 +55,9 @@ const Footer = ({ theme = "light" }) => {
                             }`}
                         />
                     </div>
-                    <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2 gap-y-12">
+                    <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-2 gap-y-12">
                         {/* M SHLTR */}
-                        <div className="flex flex-col gap-4 header-text">
+                        <div className="flex flex-col gap-4 header-text col-span-1">
                             <Link
                                 href="/"
                                 className="type-subtitle text-gray hover:opacity-70 transition"
@@ -84,6 +84,13 @@ const Footer = ({ theme = "light" }) => {
                                 >
                                     FAQ
                                 </Link>
+                                <a
+                                    href="https://www.malekalqadi.com/"
+                                    target="_blank"
+                                    className=" hover:opacity-70 transition"
+                                >
+                                    Studio Malek Alqadi
+                                </a>
                                 <Link
                                     href="https://www.malekalqadi.com/"
                                     className=" hover:opacity-70 transition flex flex-row items-center gap-2"
@@ -97,22 +104,22 @@ const Footer = ({ theme = "light" }) => {
                             </div>
                         </div>
 
-                        {/* M STUDIO */}
+                        {/* M STUDIO
                         <div className="flex flex-col gap-4 header-text">
                             <a
                                 href="https://www.malekalqadi.com/"
                                 className="type-subtitle text-gray font-dince"
                             >
-                                M-STUDIO
+                                Studio Malek Alqadi
                             </a>
                             <div className="footer-menu-links flex flex-col gap-3 type-subtitle">
-                                {/* <a
+                                <a
                                     href="https://www.malekalqadi.com/"
                                     className=" hover:opacity-70 transition"
                                 >
                                     Malek Alqadi
-                                </a> */}
-                                {/* <a
+                                </a>
+                                <a
                                     href="https://www.malekalqadi.com/journal"
                                     className=" hover:opacity-70 transition"
                                 >
@@ -141,9 +148,9 @@ const Footer = ({ theme = "light" }) => {
                                     className=" hover:opacity-70 transition"
                                 >
                                     Process
-                                </a> */}
+                                </a>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Socials */}
                         <div className="flex flex-col gap-4 header-text">
