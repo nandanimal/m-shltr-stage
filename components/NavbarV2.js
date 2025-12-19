@@ -286,20 +286,21 @@ const Navbar = () => {
                         {" "}
                         FAQ
                     </Link>
-                    <Link
-                        className="menu-item type-menu hover:opacity-60 transition rounded-sm transition flex flex-row gap-2"
-                        href="/faq"
-                        onClick={closeMenu}
+                    <div
+                        className="menu-item type-menu hover:opacity-60 transition rounded-sm transition flex flex-row gap-2 cursor-pointer"
+                        onClick={() => {
+                            closeMenu();
+                            if (typeof openCta === "function") openCta();
+                        }}
                     >
-                        {" "}
-                        Pre-order{" "}
+                        Pre-order
                         <img
                             className="h-full w-[16px]"
                             src="/icons/arrow-up-right.svg"
                             style={arrowStyle}
                             alt=""
                         />
-                    </Link>
+                    </div>
                 </motion.div>
             </motion.div>
         </motion.div>

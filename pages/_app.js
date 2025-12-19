@@ -3,6 +3,7 @@ import { ScrollProvider } from "@/context/ScrollContext";
 import { CtaFlowProvider } from "@/context/CtaFlowProvider";
 import "@/styles/globals.css";
 
+import Head from "next/head";
 import localFont from "next/font/local";
 import { IBM_Plex_Mono } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
@@ -43,6 +44,9 @@ export default function App({ Component, pageProps }) {
 
     return (
         <main className={`${ibmPlexMono.variable} ${dince.variable}`}>
+            <Head>
+                <title>M-SHLTR</title>
+            </Head>
             <CtaFlowProvider>
                 <ScrollProvider>
                     <NavbarV2 />
