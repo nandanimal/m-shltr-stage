@@ -112,6 +112,10 @@ html {
     cursor: grabbing;
 }
 
+.text-white .cta-minimal-arrow {
+    filter: brightness(0) invert(1);
+}
+
 /* Navbar */
 
 .menu-item {

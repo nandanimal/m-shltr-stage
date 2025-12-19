@@ -168,7 +168,7 @@ export default function Home() {
                                 <h2 className="type-eyebrow-lg text-regular text-gray mb-4">
                                     The M-SHLTR Ecosystem
                                 </h2>
-                                <div className="type-body-lg">
+                                <div className="type-body">
                                     Every M-SHLTR begins with the site: sun,
                                     wind, views, access, and fire exposure. Our
                                     modular framework lets you start simple and

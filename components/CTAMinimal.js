@@ -15,7 +15,7 @@ const CTAMinimal = ({ text, source, width, iconStyle }) => {
             >
                 {text || "PRE-ORDER"}
                 <img
-                    className=""
+                    className="cta-minimal-arrow"
                     src="/icons/arrow-up-right.svg"
                     style={iconStyle}
                     alt=""

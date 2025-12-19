@@ -439,22 +439,15 @@ const CBN = () => {
             {/* Architect */}
             <section className="mt-8" data-nav-theme="light">
                 <div className="min-h-[40svh] flex items-center justify-center modern-padding">
-                    <div className="flex flex-row rounded-md bg-[#FFF]/30 p-2 md:gap-4">
-                        <div className="img-container max-w-[30%] md:max-w-1/2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 rounded-md bg-[#FFF]/30 p-2 md:gap-4 gap-4 items-stretch max-w-6xl">
+                        <div className="img-container w-full sm:relative sm:h-full sm:min-h-0">
                             <img
                                 src="/images/malek.webp"
                                 alt="malek alqadi"
-                                className="rounded-sm md:block hidden"
+                                className="rounded-sm w-full h-auto object-contain object-bottom sm:absolute sm:inset-0 sm:h-full"
                             />
                         </div>
-                        <div className="text-container md:p-4 space-y-2 md:max-w-1/2">
-                            <div className="img-container max-w-[30%] ">
-                                <img
-                                    src="/images/malek.webp"
-                                    alt="malek alqadi"
-                                    className="rounded-sm mb-8 md:hidden block"
-                                />
-                            </div>
+                        <div className="text-container md:p-4 space-y-2 flex-2">
                             <div className="font-mono uppercase text-xs">
                                 pre-fab modular design
                             </div>

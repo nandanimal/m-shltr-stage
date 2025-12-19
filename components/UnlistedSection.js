@@ -101,10 +101,10 @@ const UnlistedSection = () => {
                                 </div>
                             </div>
                             <div className="pricing-container text-white flex flex-col gap-0 mt-8">
-                                <CTAButton
-                                    text={"inquire about a custom project"}
+                                <CTAMinimal
+                                    text={"inquire"}
                                     className=""
-                                    width={"w-full"}
+                                    width={"w-fit"}
                                 />
                             </div>
                         </div>

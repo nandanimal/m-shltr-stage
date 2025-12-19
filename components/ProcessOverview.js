@@ -27,7 +27,7 @@ const ProcessOverview = () => {
                                 alt="Integrated design icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="type-h2 font-bold mb-2 font-dince header-text">
+                            <div className="type-h2 text-pretty mb-2 font-dince header-text">
                                 Site review and design
                             </div>
                             <div className="type-body text-gray">
@@ -35,16 +35,6 @@ const ProcessOverview = () => {
                                 then map the clearest path to a build-ready
                                 plan.
                             </div>
-                            <Link
-                                className={`cta-button uppercase z-20 font-mono flex flex-row gap-2 mt-8`}
-                                href="/about"
-                            >
-                                Our process
-                                <img
-                                    className="w-[12px]"
-                                    src="/icons/arrow-up-right-white.svg"
-                                />
-                            </Link>
                         </div>
                         {/* Card 2 */}
                         <div className="flex flex-col sm:p-6 sm:border-l border-[#bcb5af]">
@@ -53,13 +43,25 @@ const ProcessOverview = () => {
                                 alt="Modular Build icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="type-h2 font-bold mb-2 font-dince header-text">
+                            <div className="type-h2 mb-2 font-dince header-text">
                                 Factory build
                             </div>
                             <div className="type-body text-gray">
                                 We coordinate engineering, permits, and
                                 production so your home is built in a controlled
                                 environment for accuracy and consistent quality.
+                            </div>
+                            <div className="hidden sm:block">
+                                <Link
+                                    className="cta-button uppercase z-20 font-mono flex flex-row gap-2 mt-8"
+                                    href="/about"
+                                >
+                                    Our process
+                                    <img
+                                        className="w-[12px]"
+                                        src="/icons/arrow-up-right-white.svg"
+                                    />
+                                </Link>
                             </div>
                         </div>
                         {/* Card 3 */}
@@ -69,12 +71,24 @@ const ProcessOverview = () => {
                                 alt="Turn-Key icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
-                            <div className="type-h2 font-bold mb-2 font-dince header-text">
+                            <div className="type-h2  mb-2 font-dince header-text">
                                 Delivery and set
                             </div>
                             <div className="type-body text-gray">
                                 We manage shipping, set, and finishing so you
                                 step into a complete home, ready to live in.
+                            </div>
+                            <div className="block sm:hidden">
+                                <Link
+                                    className={`cta-button uppercase z-20 font-mono flex flex-row gap-2 mt-8 sm:hidden block`}
+                                    href="/about"
+                                >
+                                    Our process
+                                    <img
+                                        className="w-[12px]"
+                                        src="/icons/arrow-up-right-white.svg"
+                                    />
+                                </Link>
                             </div>
                         </div>
                     </div>
