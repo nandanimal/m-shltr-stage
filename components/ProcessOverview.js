@@ -15,7 +15,7 @@ const ProcessOverview = () => {
                     </div>
                     <h2 className="type-display text-pretty font-dince">
                         From land to keys,{" "}
-                        <span className="font-bold">simplified</span>
+                        <span className="font-bold">simplified.</span>
                     </h2>
                 </div>
                 <FadeIn>

@@ -163,7 +163,7 @@ export default function Home() {
                                 className="rounded-sm"
                             />
                         </div>
-                        <div className="lg:flex-col flex lg:gap-0 gap-24 sm:flex-row flex-col col-span-5 lg:col-span-2 justify-between modern-padding">
+                        <div className="lg:flex-col flex lg:gap-0 gap-24 flex-col col-span-5 lg:col-span-2 justify-between modern-padding">
                             <div className="mt-8 md:mt-0">
                                 <h2 className="type-eyebrow-lg text-regular text-gray mb-4">
                                     The M-SHLTR Ecosystem

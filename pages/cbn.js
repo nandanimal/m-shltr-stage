@@ -444,7 +444,7 @@ const CBN = () => {
                             <img
                                 src="/images/malek.webp"
                                 alt="malek alqadi"
-                                className="rounded-sm w-full h-auto object-contain object-bottom sm:absolute sm:inset-0 sm:h-full"
+                                className="rounded-sm w-full h-auto object-cover object-bottom sm:absolute sm:inset-0 sm:h-full"
                             />
                         </div>
                         <div className="text-container md:p-4 space-y-2 flex-2">

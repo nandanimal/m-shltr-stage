@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import CTAButton from "./CTAButton";
+import CTAMinimal from "./CTAMinimal";
 
 export default function BigCTA({ theme }) {
     const ref = useRef(null);
@@ -47,8 +48,8 @@ export default function BigCTA({ theme }) {
                         honest materials, integrated millwork, and light that
                         moves through the day.
                     </span>
-                    <div className="mt-8">
-                        <CTAButton text="reserve a build slot" />
+                    <div className={`mt-8 text-{fg}`}>
+                        <CTAMinimal text="reserve a build slot" />
                     </div>
                 </div>
                 <div className="md:col-span-4 col-span-8 mt-8 sm:mt-0">

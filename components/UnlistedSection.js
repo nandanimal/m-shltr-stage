@@ -58,7 +58,7 @@ const UnlistedSection = () => {
                     alt="m-shltr catalog"
                     className=""
                 />
-                <div className="w-full p-2 text-white text-center flex flex-col gap-2">
+                <div className="w-full p-2 text-white text-center flex flex-col gap-2 -mt-8">
                     <span className="type-eyebrow-lg">launching 2026</span>
                     <span className="type-h2 font-dince header-text">
                         A module lineup for home, hospitality, and retreat
