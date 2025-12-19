@@ -8,7 +8,7 @@ const Livingroom = () => {
                 style={{ backgroundImage: 'url("/images/living.jpg")' }}
             >
                 <div className="p-4 text-pretty">
-                    <div className="type-display-soft text-white lg:max-w-[50%] font-dince header-text text-pretty">
+                    <div className="text-3xl opacity-80 text-white lg:max-w-[50%] font-dince header-text text-pretty">
                         Designed to expand with you.
                     </div>
                 </div>
