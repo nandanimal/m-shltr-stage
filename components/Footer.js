@@ -104,6 +104,12 @@ const Footer = ({ theme = "light" }) => {
                             </div>
                             <div className="footer-menu-links flex flex-col gap-3 type-subtitle">
                                 <a
+                                    href="https://www.malekalqadi.com/"
+                                    className=" hover:opacity-70 transition"
+                                >
+                                    Malek Alqadi
+                                </a>
+                                {/* <a
                                     href="https://www.malekalqadi.com/journal"
                                     className=" hover:opacity-70 transition"
                                 >
@@ -132,7 +138,7 @@ const Footer = ({ theme = "light" }) => {
                                     className=" hover:opacity-70 transition"
                                 >
                                     Process
-                                </a>
+                                </a> */}
                             </div>
                         </div>
 
