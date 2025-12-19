@@ -48,8 +48,8 @@ export default function BigCTA({ theme }) {
                         honest materials, integrated millwork, and light that
                         moves through the day.
                     </span>
-                    <div className={`mt-8 text-{fg}`}>
-                        <CTAMinimal text="reserve a build slot" />
+                    <div className={`mt-8 text-${fg}`}>
+                        <CTAMinimal text="reserve a build slot" width="w-fit" />
                     </div>
                 </div>
                 <div className="md:col-span-4 col-span-8 mt-8 sm:mt-0">
