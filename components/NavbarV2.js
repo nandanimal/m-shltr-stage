@@ -222,13 +222,13 @@ const Navbar = () => {
                     {/* desktop contents */}
                     <div className="desktop-link flex flex-row gap-1 items-center justify-center  flex font-roboto justify-end">
                         <div className="">
-                            <div className="block sm:hidden">
-                                <CTAMinimal iconStyle={arrowStyle} />
-                            </div>
+                            {/* <div className="block sm:hidden"> */}
+                            <CTAMinimal iconStyle={arrowStyle} />
+                            {/* </div> */}
 
-                            <div className="hidden sm:block">
+                            {/* <div className="hidden sm:block">
                                 <CTAButton />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
