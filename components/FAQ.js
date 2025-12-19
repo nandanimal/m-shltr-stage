@@ -96,7 +96,10 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(-1);
 
     return (
-        <div className="max-w-6xl rounded-md p-4 bg-[#E4E4E4] w-full">
+        <div
+            className="max-w-6xl rounded-md p-4 bg-gray/10 w-full"
+            data-nav-theme="dark"
+        >
             <div className="content flex flex-col sm:flex-row gap-2">
                 <div className="w-1/6 h-full type-h2">FAQ</div>
                 <div className="w-full flex flex-col gap-6">

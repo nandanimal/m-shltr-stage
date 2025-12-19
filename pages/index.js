@@ -154,7 +154,7 @@ export default function Home() {
 
             <section className="mb-32 modern-padding" data-nav-theme="dark">
                 <AttrCardLg />
-                <div className="p-2">
+                <div className="">
                     <img src="/images/kitchen1.webp" className="rounded-sm" />
                     <div className="grid grid-cols-5 mt-2">
                         <div className="col-span-5 lg:col-span-3">
