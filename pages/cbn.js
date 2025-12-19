@@ -592,7 +592,7 @@ const CBN = () => {
                     </div>
                 </FadeIn>
             </section> */}
-            <SpecSection />
+            {/* <SpecSection /> */}
 
             <BigCTA />
 
