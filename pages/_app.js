@@ -8,6 +8,7 @@ import localFont from "next/font/local";
 import { IBM_Plex_Mono } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const dince = localFont({
     src: [
@@ -64,6 +65,7 @@ export default function App({ Component, pageProps }) {
                     </AnimatePresence>
                 </ScrollProvider>
             </CtaFlowProvider>
+            <SpeedInsights />
         </main>
     );
 }
