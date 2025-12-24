@@ -16,6 +16,7 @@ import SizeToggleCard from "@/components/SizeToggleCard";
 import InteriorTrims from "@/components/InteriorTrims";
 import ExteriorTrims from "@/components/ExteriorTrims";
 import GalleryHeader from "@/components/GalleryHeader";
+import Head from "next/head";
 
 const CBN = () => {
     const [loading, setLoading] = useState(true);
@@ -33,6 +34,13 @@ const CBN = () => {
 
     return (
         <div>
+            <Head>
+                <title>CBN No. 1172 | Luxury Prefab ADU &amp; Modular Home | M‑SHLTR</title>
+                <meta
+                    name="description"
+                    content="Explore CBN No. 1172: a 2 bed / 2.5 bath luxury modular home designed to expand. Premium interiors and fire‑resilient detailing for California living."
+                />
+            </Head>
             <section>
                 <AnimatePresence mode="wait">
                     {loading && (
@@ -341,14 +349,14 @@ const CBN = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-5 gap-2 w-full max-w-full">
-                        <div className="min-w-0 col-span-2 h-full">
+                        <div className="min-w-0 col-span-1 h-full">
                             <img
                                 src="images/cbn_gallery/cbn_8.webp"
                                 alt="CBN detail shot"
                                 className="rounded-sm w-full object-cover h-full max-w-full"
                             />
                         </div>
-                        <div className="min-w-0 col-span-3 h-full">
+                        <div className="min-w-0 col-span-4 h-full">
                             <img
                                 src="images/Bedroom2V2.webp"
                                 alt="CBN detail shot"
@@ -357,7 +365,7 @@ const CBN = () => {
                         </div>
                     </div>
                     <div className="text-xs mt-4 sm:max-w-1/2 text-gray">
-                        Left – Each Suite with an exterior view for natural
+                        Left – Each suite with an exterior view for natural
                         light, access and privacy. Right – Every detail is
                         considered—from the placement of furniture and the
                         discreet pivot TV mount to the dedicated closet space

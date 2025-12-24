@@ -59,6 +59,18 @@ h6 {
     font-family: var(--font-dince), "Roboto", Helvetica, sans-serif;
 }
 
+.type-display,
+.type-display-soft,
+.type-display-sm,
+.type-h1,
+.type-h2,
+.type-title,
+.type-subtitle,
+.type-menu,
+.type-row-heading {
+    font-family: var(--font-dince), "Roboto", Helvetica, sans-serif !important;
+}
+
 .font-roboto {
     font-family: "Roboto", var(--font-dince), Helvetica, sans-serif;
 }

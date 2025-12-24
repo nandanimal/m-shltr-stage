@@ -33,16 +33,15 @@ export default function StepCalendly() {
             exit={{ height: 0 }}
             transition={{ duration: 0.4 }}
         >
-            {" "}
-            <h2 className="type-subtitle font-semibold mb-1">
+            <h2 className="type-h2 font-dince">
                 Schedule your call
             </h2>
-            <p className="text-gray-600 mb-4">
-                We prefilled your info — this should be quick.
+            <p className="text-gray-600 mb-6">
+                Pick a time that works for you.
             </p>
             <div
                 ref={containerRef}
-                className="calendly-inline-widget w-full h-[400px] border border-gray-200 rounded-lg overflow-hidden"
+                className="calendly-inline-widget w-full h-[520px] border border-gray-200 rounded-lg overflow-hidden bg-white"
                 data-url={calendlyUrl}
             />
             <div className="flex gap-2 mt-4">

@@ -1,7 +1,10 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
 import StepZip from "../components/steps/StepZip";
-import StepForm from "../components/steps/StepForm";
+import StepProjectType from "../components/steps/StepProjectType";
+import StepProjectTimeline from "../components/steps/StepProjectTimeline";
+import StepLandOwnership from "../components/steps/StepLandOwnership";
+import StepAdditionalDetails from "../components/steps/StepAdditionalDetails";
 import StepCalendly from "../components/steps/StepCalendly";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,14 +19,15 @@ export function CtaFlowProvider({ children }) {
     const [data, setData] = useState({
         launchSource: null,
         zip: "",
-        eligibility: null, // 'allowed' | 'waitlist'
         name: "",
         email: "",
         phone: "",
         address: "",
-        projectType: "ADU",
+        projectType: "",
         timeline: "",
-        notes: "",
+        landOwnership: "",
+        landAddress: "",
+        additionalDetails: "",
         calendlyScheduled: false,
     });
 
@@ -40,8 +44,11 @@ export function CtaFlowProvider({ children }) {
 
     const steps = useMemo(
         () => [
-            { id: "zip", Component: StepZip },
-            { id: "form", Component: StepForm },
+            { id: "location", Component: StepZip },
+            { id: "type", Component: StepProjectType },
+            { id: "timeline", Component: StepProjectTimeline },
+            { id: "land", Component: StepLandOwnership },
+            { id: "details", Component: StepAdditionalDetails },
             { id: "calendly", Component: StepCalendly },
         ],
         []
@@ -109,25 +116,29 @@ function CtaFlowModal() {
                 >
                     <motion.div
                         style={styles.modal}
-                        className="text-black rounded-sm backdrop-blur-md shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)] transition"
+                        className="text-black backdrop-blur-md shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)] transition dince font-dince text-dince"
                     >
                         <button
-                            className="bg-orange-600  h-auto hover:bg-red-500 cursor-pointer transition rounded-xs w-[36px] h-full"
+                            className="absolute top-4 right-4 bg-black text-white hover:bg-black/80 cursor-pointer transition rounded-xs w-[36px] h-[36px]"
                             onClick={closeCta}
                             aria-label="Close"
-                            style={{ color: "rgba(255, 196, 157, 0.8)" }}
                         >
                             ×
                         </button>
 
-                        <div style={{ padding: 24 }}>
-                            <motion.div
-                                initial={{ height: 0 }}
-                                animate={{ height: "auto" }}
-                                exit={{ height: 0 }}
-                            >
-                                <Step />
-                            </motion.div>
+                        <div className="w-full h-full flex items-center justify-center p-8">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={steps[step].id}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.25 }}
+                                    className="w-full max-w-3xl"
+                                >
+                                    <Step />
+                                </motion.div>
+                            </AnimatePresence>
                         </div>
                     </motion.div>
                 </motion.div>
@@ -146,28 +157,16 @@ const styles = {
         alignItems: "center",
         justifyContent: "center",
         zIndex: 1000,
-        padding: 12,
+        padding: 0,
     },
     modal: {
-        width: "min(720px, 92vw)",
-        maxHeight: "90vh",
+        width: "100vw",
+        height: "100vh",
+        maxHeight: "100vh",
         overflow: "auto",
-        border: "1px solid #F2F2EE",
+        border: "none",
         background: "rgba(242, 242, 238, 0.8)",
         // boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
         position: "relative",
-    },
-    closeBtn: {
-        position: "absolute",
-        top: 8,
-        right: 10,
-        width: 36,
-        height: 36,
-        borderRadius: 8,
-        border: "1px solid #ddd",
-        //
-        cursor: "pointer",
-        fontSize: 20,
-        lineHeight: "20px",
     },
 };
