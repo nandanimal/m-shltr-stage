@@ -24,7 +24,7 @@ export default function StepCalendly() {
     }).toString();
 
     // Your real scheduling link with prefill + hidden details
-    const calendlyUrl = `https://calendly.com/fernando-finetooth/30min?hide_event_type_details=1&hide_gdpr_banner=1&${prefillParams}`;
+    const calendlyUrl = `https://calendly.com/gordy-mshltr/30min?hide_event_type_details=1&hide_gdpr_banner=1&${prefillParams}`;
 
     return (
         <motion.div
@@ -33,9 +33,7 @@ export default function StepCalendly() {
             exit={{ height: 0 }}
             transition={{ duration: 0.4 }}
         >
-            <h2 className="type-h2 font-dince">
-                Schedule your call
-            </h2>
+            <h2 className="type-h2 font-dince">Schedule your call</h2>
             <p className="text-gray-600 mb-6">
                 Pick a time that works for you.
             </p>
