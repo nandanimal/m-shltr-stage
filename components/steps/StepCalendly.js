@@ -24,31 +24,20 @@ export default function StepCalendly() {
     }).toString();
 
     // Your real scheduling link with prefill + hidden details
-    const calendlyUrl = `https://calendly.com/fernando-finetooth/30min?hide_event_type_details=1&hide_gdpr_banner=1&${prefillParams}`;
+    const calendlyUrl = `https://calendly.com/gordy-mshltr/30min?hide_event_type_details=1&hide_gdpr_banner=1&${prefillParams}`;
 
     return (
-        <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            exit={{ height: 0 }}
-            transition={{ duration: 0.4 }}
-        >
-            {" "}
-            <h2 className="type-subtitle font-semibold mb-1">
-                Schedule your call
-            </h2>
-            <p className="text-gray-600 mb-4">
-                We prefilled your info — this should be quick.
-            </p>
+        <motion.div className="w-full h-full min-h-0 flex flex-col">
             <div
                 ref={containerRef}
-                className="calendly-inline-widget w-full h-[400px] border border-gray-200 rounded-lg overflow-hidden"
+                className="calendly-inline-widget w-full flex-1 min-h-0 rounded-lg overflow-hidden mt-6 sm:mt-0"
                 data-url={calendlyUrl}
+                style={{ height: "100%" }}
             />
             <div className="flex gap-2 mt-4">
                 <button
                     onClick={prev}
-                    className="px-4 py-2 rounded border border-gray-300 bg-gray text-white cursor-pointer"
+                    className="back-button font-mono uppercase h-full"
                 >
                     Back
                 </button>

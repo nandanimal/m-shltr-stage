@@ -57,7 +57,7 @@ const Hero = () => {
                     }
                     className="h-screen w-full flex items-center justify-center p-2 overflow-hidden relative z-10"
                 >
-                    <motion.div
+                    {/* <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.2 }}
@@ -70,7 +70,7 @@ const Hero = () => {
                         <span className="type-caption">
                             1172 ft<sup>2</sup>
                         </span>
-                    </motion.div>{" "}
+                    </motion.div>{" "} */}
                     <div className="absolute bottom-20 z-80">
                         <CTAButton />
                     </div>

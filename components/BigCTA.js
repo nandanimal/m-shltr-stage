@@ -35,14 +35,19 @@ export default function BigCTA({ theme }) {
                 className={`max-w-[1440px] rounded-sm bg-${bg} shadow-sm grid grid-cols-8 overflow-hidden`}
             >
                 <div className="md:col-span-4 col-span-8 p-4 sm:p-16 flex flex-col ">
-                    <span className="type-display-sm text-gray font-dince header-text">
-                        Architectural calm,
-                    </span>
-                    <span
-                        className={`type-display-sm text-pretty text-${fg} font-dince header-text`}
-                    >
-                        delivered.
-                    </span>
+                    <div className="flex flex-wrap gap-x-1">
+                        <span className="type-display-sm text-gray font-dince header-text">
+                            Architectural
+                        </span>
+                        <span className="type-display-sm text-gray font-dince header-text">
+                            calm,
+                        </span>
+                        <span
+                            className={`type-display-sm text-pretty text-${fg} font-dince header-text`}
+                        >
+                            delivered.
+                        </span>
+                    </div>
                     <span className={`type-body-lg mt-4 text-${fg} `}>
                         A modular home with the restraint of a custom build:
                         honest materials, integrated millwork, and light that

@@ -9,10 +9,20 @@ import MStudio from "@/components/MStudio";
 import MStudioStatic from "@/components/MStudioStatic";
 import FadeIn from "@/components/FadeIn";
 import AnimatedTimeline from "@/components/AnimatedTimeline";
+import Head from "next/head";
 
 const about = () => {
     return (
         <div data-nav-theme="light">
+            <Head>
+                <title>
+                    Our Process for Luxury Prefab Homes in California | M‑SHLTR
+                </title>
+                <meta
+                    name="description"
+                    content="From site review to move‑in: design package, permitting, factory build, shipping and installation. A streamlined path to M‑SHLTR modular homes and ADUs."
+                />
+            </Head>
             <section>
                 {" "}
                 <MStudioStatic />

@@ -28,6 +28,7 @@ import Livingroom from "@/components/Livingroom";
 import UnlistedSection from "@/components/UnlistedSection";
 import AnimatedTimeline from "@/components/AnimatedTimeline";
 import ProcessOverview from "@/components/ProcessOverview";
+import Head from "next/head";
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -44,6 +45,15 @@ export default function Home() {
 
     return (
         <>
+            <Head>
+                <title>
+                    Luxury Prefab Modular Homes &amp; ADUs in California | M‑SHLTR
+                </title>
+                <meta
+                    name="description"
+                    content="Designed by Malek Alqadi. Luxury prefab modular homes, ADUs and hospitality builds in California. Fire‑resilient, precision‑built, turnkey delivery."
+                />
+            </Head>
             <FadeIn>
                 <section data-nav-theme="dark">
                     <HeroMain />

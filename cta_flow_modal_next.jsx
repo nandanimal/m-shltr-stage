@@ -453,7 +453,7 @@ export default function StepCalendly() {
         ref={containerRef}
         className="calendly-inline-widget"
         data-url={calendlyUrl}
-        style={{ minWidth: 320, height: 640, border: "1px solid #eee", borderRadius: 8, overflow: "hidden" }}
+        // style={{ minWidth: 320, height: 900, border: "1px solid #eee", borderRadius: 8, overflow: "hidden" }}
       />
 
       <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
