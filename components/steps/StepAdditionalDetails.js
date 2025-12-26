@@ -53,6 +53,7 @@ export default function StepAdditionalDetails() {
             />
 
             <input type="hidden" name="zip" value={data.zip} />
+            <input type="hidden" name="email" value={data.email} />
             <input type="hidden" name="projectType" value={data.projectType} />
             <input type="hidden" name="timeline" value={data.timeline} />
             <input
