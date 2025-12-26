@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useCtaFlow } from "@/context/CtaFlowProvider";
+import OptionCard from "@/components/OptionCard";
 
 const OPTIONS = ["1-3 months", "3-6 months", "6-12 months", "1 year +"];
 
 export default function StepProjectTimeline() {
     const { data, update, next, prev } = useCtaFlow();
     const [timeline, setTimeline] = useState(data.timeline || "");
+    const [hovered, setHovered] = useState(null);
 
     useEffect(() => {
         setTimeline(data.timeline || "");
@@ -26,30 +28,28 @@ export default function StepProjectTimeline() {
 
             <div className="mt-8 grid gap-3">
                 {OPTIONS.map((option) => (
-                    <label
+                    <OptionCard
                         key={option}
-                        className={`flex items-center gap-3 border-b border-black/40 pb-3 cursor-pointer transition ${
-                            timeline === option ? "text-black" : "text-gray"
-                        }`}
+                        name="timeline"
+                        value={option}
+                        checked={timeline === option}
+                        onChange={setTimeline}
+                        onHover={setHovered}
+                        dimmed={
+                            (hovered && hovered !== option) ||
+                            (!hovered && timeline && timeline !== option)
+                        }
                     >
-                        <input
-                            type="radio"
-                            name="timeline"
-                            value={option}
-                            checked={timeline === option}
-                            onChange={() => setTimeline(option)}
-                            className="accent-black"
-                        />
-                        <span className="type-subtitle">{option}</span>
-                    </label>
+                        {option}
+                    </OptionCard>
                 ))}
             </div>
 
-            <div className="flex gap-2 mt-8 w-full items-end justify-between">
+            <div className="flex gap-2 mt-8 w-full items-center justify-between">
                 <button
                     type="button"
                     onClick={prev}
-                    className="px-4 py-2 rounded-xs border border-black/40 text-black cursor-pointer"
+                    className="back-button font-mono uppercase h-full"
                 >
                     Back
                 </button>

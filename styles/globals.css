@@ -6,19 +6,63 @@
     --foreground: #272727;
 
     /* Typography scale (semantic tokens) */
-    --type-display: clamp(1.875rem, 3.6vw + 0.8rem, 3.75rem); /* ~text-3xl → text-6xl */
-    --type-display-soft: clamp(1.5rem, 3.6vw + 0.8rem, 3.75rem); /* ~text-2xl → text-6xl */
-    --type-display-sm: clamp(2.25rem, 1.8vw + 1.8rem, 3rem); /* ~text-4xl → text-5xl */
-    --type-h1: clamp(1.75rem, 2.2vw + 0.9rem, 2.25rem); /* ~text-3xl → text-4xl */
-    --type-h2: clamp(1.5rem, 1.6vw + 1.05rem, 1.875rem); /* ~text-2xl → text-3xl */
-    --type-title: clamp(1.25rem, 1.1vw + 1rem, 1.875rem); /* ~text-xl → text-3xl */
-    --type-subtitle: clamp(1.25rem, 0.6vw + 1.1rem, 1.5rem); /* ~text-xl → text-2xl */
-    --type-lede: clamp(1.5rem, 1.25vw + 1.2rem, 1.875rem); /* ~text-2xl → text-3xl */
+    --type-display: clamp(
+        1.875rem,
+        3.6vw + 0.8rem,
+        3.75rem
+    ); /* ~text-3xl → text-6xl */
+    --type-display-soft: clamp(
+        1.5rem,
+        3.6vw + 0.8rem,
+        3.75rem
+    ); /* ~text-2xl → text-6xl */
+    --type-display-sm: clamp(
+        2.25rem,
+        1.8vw + 1.8rem,
+        3rem
+    ); /* ~text-4xl → text-5xl */
+    --type-h1: clamp(
+        1.75rem,
+        2.2vw + 0.9rem,
+        2.25rem
+    ); /* ~text-3xl → text-4xl */
+    --type-h2: clamp(
+        1.5rem,
+        1.6vw + 1.05rem,
+        1.875rem
+    ); /* ~text-2xl → text-3xl */
+    --type-title: clamp(
+        1.25rem,
+        1.1vw + 1rem,
+        1.875rem
+    ); /* ~text-xl → text-3xl */
+    --type-subtitle: clamp(
+        1.25rem,
+        0.6vw + 1.1rem,
+        1.5rem
+    ); /* ~text-xl → text-2xl */
+    --type-lede: clamp(
+        1.5rem,
+        1.25vw + 1.2rem,
+        1.875rem
+    ); /* ~text-2xl → text-3xl */
     --type-menu: clamp(3.75rem, 5vw + 2.2rem, 6rem); /* ~text-6xl → text-8xl */
-    --type-row-heading: clamp(1.875rem, 1.6vw + 1.45rem, 3rem); /* ~text-3xl → text-5xl */
+    --type-row-heading: clamp(
+        1.875rem,
+        1.6vw + 1.45rem,
+        3rem
+    ); /* ~text-3xl → text-5xl */
 
-    --type-body-lg: clamp(1.125rem, 0.4vw + 1.025rem, 1.25rem); /* ~text-lg → text-xl */
-    --type-body: clamp(0.875rem, 0.35vw + 0.8rem, 1rem); /* ~text-sm → text-base */
+    --type-body-lg: clamp(
+        1.125rem,
+        0.4vw + 1.025rem,
+        1.25rem
+    ); /* ~text-lg → text-xl */
+    --type-body: clamp(
+        0.875rem,
+        0.35vw + 0.8rem,
+        1rem
+    ); /* ~text-sm → text-base */
     --type-body-sm: 0.875rem; /* text-sm */
     --type-caption: 0.75rem; /* text-xs */
     --type-mono-display: 1.875rem; /* ~text-3xl */
@@ -104,7 +148,6 @@ html {
         0 4px 10px 0 rgba(0, 0, 0, 0.04);
     cursor: pointer;
 }
-
 .karaoke-text .word {
     color: #bcb5af;
     transition: color 0.25s ease;
@@ -148,6 +191,10 @@ html {
 
 .modern-padding {
     padding: 1.5rem;
+}
+
+._cUP1np9gMvFQrcPftuf.xahN8AEzyAvQtVj17TPv {
+    margin: 0 !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -243,29 +290,29 @@ html {
     }
 
     .type-mono-sm {
-        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular, Menlo,
-            Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular,
+            Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         font-size: var(--type-body-sm);
         line-height: 1.2;
     }
 
     .type-mono-xs {
-        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular, Menlo,
-            Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular,
+            Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         font-size: var(--type-caption);
         line-height: 1.1;
     }
 
     .type-mono-display {
-        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular, Menlo,
-            Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular,
+            Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         font-size: var(--type-mono-display);
         line-height: 1;
     }
 
     .type-eyebrow {
-        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular, Menlo,
-            Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular,
+            Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         font-size: var(--type-caption);
         line-height: 1;
         letter-spacing: 0.12em;
@@ -273,8 +320,8 @@ html {
     }
 
     .type-eyebrow-lg {
-        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular, Menlo,
-            Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-family: var(--font-ibmPlexMono), ui-monospace, SFMono-Regular,
+            Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         font-size: var(--type-body-sm);
         line-height: 1;
         letter-spacing: 0.12em;

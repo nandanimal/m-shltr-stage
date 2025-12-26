@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useCtaFlow } from "@/context/CtaFlowProvider";
+import zipList from "../../data/serviceableZips.json";
 
 export default function StepZip() {
-    const { data, update, next } = useCtaFlow();
+    const { data, update, goTo } = useCtaFlow();
     const [zip, setZip] = useState(data.zip || "");
     const [error, setError] = useState("");
 
@@ -21,8 +22,9 @@ export default function StepZip() {
             setError("Please enter a 5-digit ZIP code.");
             return;
         }
-        update({ zip: z });
-        next();
+        const allowed = zipList.includes(z);
+        update({ zip: z, eligibility: allowed ? "allowed" : "waitlist" });
+        goTo(allowed ? "email" : "waitlist");
     }
 
     return (
@@ -42,7 +44,7 @@ export default function StepZip() {
                     setZip(normalizeZip(e.target.value));
                 }}
                 placeholder="e.g. 94607"
-                className="w-full mt-8 p-1 border-b border-black focus:outline-none type-mono-display bg-transparent"
+                className="w-full mt-8 p-1 border-b border-black focus:outline-none  bg-transparent type-display"
                 required
             />
             {error ? <div className="text-red-600 mt-2">{error}</div> : null}

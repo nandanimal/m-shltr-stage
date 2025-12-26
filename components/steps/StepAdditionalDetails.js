@@ -60,11 +60,11 @@ export default function StepAdditionalDetails() {
                 value={data.launchSource || ""}
             />
 
-            <div className="flex gap-2 mt-8 w-full items-end justify-between">
+            <div className="flex gap-2 mt-8 w-full items-center justify-between">
                 <button
                     type="button"
                     onClick={prev}
-                    className="px-4 py-2 rounded-xs border border-black/40 text-black cursor-pointer"
+                    className="back-button font-mono uppercase h-full"
                 >
                     Back
                 </button>

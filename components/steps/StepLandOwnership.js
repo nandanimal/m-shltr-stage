@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useCtaFlow } from "@/context/CtaFlowProvider";
+import OptionCard from "@/components/OptionCard";
 
 export default function StepLandOwnership() {
     const { data, update, next, prev } = useCtaFlow();
@@ -7,6 +9,7 @@ export default function StepLandOwnership() {
         data.landOwnership || ""
     );
     const [landAddress, setLandAddress] = useState(data.landAddress || "");
+    const [hovered, setHovered] = useState(null);
 
     useEffect(() => {
         setLandOwnership(data.landOwnership || "");
@@ -31,47 +34,60 @@ export default function StepLandOwnership() {
 
             <div className="mt-8 grid gap-3">
                 {["Yes", "No"].map((option) => (
-                    <label
+                    <OptionCard
                         key={option}
-                        className={`flex items-center gap-3 border-b border-black/40 pb-3 cursor-pointer transition ${
-                            landOwnership === option ? "text-black" : "text-gray"
-                        }`}
+                        name="landOwnership"
+                        value={option}
+                        checked={landOwnership === option}
+                        onChange={setLandOwnership}
+                        onHover={setHovered}
+                        dimmed={
+                            (hovered && hovered !== option) ||
+                            (!hovered &&
+                                landOwnership &&
+                                landOwnership !== option)
+                        }
                     >
-                        <input
-                            type="radio"
-                            name="landOwnership"
-                            value={option}
-                            checked={landOwnership === option}
-                            onChange={() => setLandOwnership(option)}
-                            className="accent-black"
-                        />
-                        <span className="type-subtitle">{option}</span>
-                    </label>
+                        {option}
+                    </OptionCard>
                 ))}
             </div>
 
-            {landOwnership === "Yes" ? (
-                <div className="mt-6">
-                    <label className="block type-caption" htmlFor="landAddress">
-                        If yes, please provide the address
-                    </label>
-                    <input
-                        id="landAddress"
-                        name="landAddress"
-                        type="text"
-                        value={landAddress}
-                        onChange={(e) => setLandAddress(e.target.value)}
-                        className="w-full mt-2 p-2 border-b border-black focus:outline-none bg-transparent"
-                        required
-                    />
-                </div>
-            ) : null}
+            <AnimatePresence>
+                {landOwnership === "Yes" ? (
+                    <motion.div
+                        className="mt-6"
+                        layout
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.25 }}
+                        style={{ overflow: "hidden" }}
+                    >
+                        <label
+                            className="block type-caption"
+                            htmlFor="landAddress"
+                        >
+                            If yes, please provide the address
+                        </label>
+                        <input
+                            id="landAddress"
+                            name="landAddress"
+                            type="text"
+                            value={landAddress}
+                            onChange={(e) => setLandAddress(e.target.value)}
+                            className="w-full mt-2 p-2 border-b border-black focus:outline-none bg-transparent"
+                            required
+                        />
+                    </motion.div>
+                ) : null}
+            </AnimatePresence>
 
-            <div className="flex gap-2 mt-8 w-full items-end justify-between">
+            <div className="flex gap-2 mt-8 w-full items-center justify-between">
                 <button
                     type="button"
                     onClick={prev}
-                    className="px-4 py-2 rounded-xs border border-black/40 text-black cursor-pointer"
+                    className="back-button font-mono uppercase h-full"
                 >
                     Back
                 </button>

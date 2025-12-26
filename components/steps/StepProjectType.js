@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCtaFlow } from "@/context/CtaFlowProvider";
+import OptionCard from "@/components/OptionCard";
 
 const OPTIONS = [
     "Accessory Dwelling Unit (ADU)",
@@ -11,6 +12,7 @@ const OPTIONS = [
 export default function StepProjectType() {
     const { data, update, next, prev } = useCtaFlow();
     const [projectType, setProjectType] = useState(data.projectType || "");
+    const [hovered, setHovered] = useState(null);
 
     useEffect(() => {
         setProjectType(data.projectType || "");
@@ -31,30 +33,28 @@ export default function StepProjectType() {
 
             <div className="mt-8 grid gap-3">
                 {OPTIONS.map((option) => (
-                    <label
+                    <OptionCard
                         key={option}
-                        className={`flex items-center gap-3 border-b border-black/40 pb-3 cursor-pointer transition ${
-                            projectType === option ? "text-black" : "text-gray"
-                        }`}
+                        name="projectType"
+                        value={option}
+                        checked={projectType === option}
+                        onChange={setProjectType}
+                        onHover={setHovered}
+                        dimmed={
+                            (hovered && hovered !== option) ||
+                            (!hovered && projectType && projectType !== option)
+                        }
                     >
-                        <input
-                            type="radio"
-                            name="projectType"
-                            value={option}
-                            checked={projectType === option}
-                            onChange={() => setProjectType(option)}
-                            className="accent-black"
-                        />
-                        <span className="type-subtitle">{option}</span>
-                    </label>
+                        {option}
+                    </OptionCard>
                 ))}
             </div>
 
-            <div className="flex gap-2 mt-8 w-full items-end justify-between">
+            <div className="flex gap-2 mt-8 w-full items-center justify-between">
                 <button
                     type="button"
                     onClick={prev}
-                    className="px-4 py-2 rounded-xs border border-black/40 text-black cursor-pointer"
+                    className="back-button font-mono uppercase h-full"
                 >
                     Back
                 </button>

@@ -8,6 +8,7 @@ import localFont from "next/font/local";
 import { IBM_Plex_Mono } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const dince = localFont({
     src: [
@@ -41,6 +42,14 @@ const pageVariants = {
 
 export default function App({ Component, pageProps }) {
     const router = useRouter();
+
+    useEffect(() => {
+        const classNames = [ibmPlexMono.variable, dince.variable];
+        document.body.classList.add(...classNames);
+        return () => {
+            document.body.classList.remove(...classNames);
+        };
+    }, []);
 
     return (
         <main className={`${ibmPlexMono.variable} ${dince.variable}`}>
