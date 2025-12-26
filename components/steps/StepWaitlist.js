@@ -41,6 +41,13 @@ export default function StepWaitlist() {
 
     return (
         <form onSubmit={onSubmit} className="w-full">
+            <input
+                type="text"
+                name="_gotcha"
+                className="hidden"
+                tabIndex="-1"
+                autoComplete="off"
+            />
             <div className="type-h2 font-dince">
                 Get notified when your area becomes available.
             </div>

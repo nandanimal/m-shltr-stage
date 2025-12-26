@@ -31,6 +31,13 @@ export default function NewsletterForm({ theme = "light" }) {
             onSubmit={handleSubmit}
             className={`rounded-sm bg-blur-sm w-full gap-y-4 flex flex-col ${cardText}`}
         >
+            <input
+                type="text"
+                name="_gotcha"
+                className="hidden"
+                tabIndex="-1"
+                autoComplete="off"
+            />
             <img
                 src="/images/cbn_gallery/cbn_25.webp"
                 className="rounded-sm"

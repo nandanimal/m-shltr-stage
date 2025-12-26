@@ -25,6 +25,13 @@ export default function StepAdditionalDetails() {
 
     return (
         <form onSubmit={onSubmit} className="w-full">
+            <input
+                type="text"
+                name="_gotcha"
+                className="hidden"
+                tabIndex="-1"
+                autoComplete="off"
+            />
             <div className="type-h2 font-dince">
                 Is there anything else you&apos;d like to share about your
                 project?
