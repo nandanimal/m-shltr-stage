@@ -47,7 +47,8 @@ export default function Home() {
         <>
             <Head>
                 <title>
-                    Luxury Prefab Modular Homes &amp; ADUs in California | M‑SHLTR
+                    Luxury Prefab Modular Homes &amp; ADUs in California |
+                    M‑SHLTR
                 </title>
                 <meta
                     name="description"
@@ -192,7 +193,7 @@ export default function Home() {
                                     Starting at
                                 </span>
                                 <span className="type-h2 text-gray mb-8 mt-2">
-                                    $289,000
+                                    $289,000<sup>1</sup>
                                 </span>
                                 <div
                                     onClick={openCta}
@@ -204,6 +205,10 @@ export default function Home() {
                                         src="/icons/arrow-up-right.svg"
                                     />
                                 </div>{" "}
+                                <div className="text-xs text-gray mt-4">
+                                    <sup>1</sup>Site work, permits, and delivery
+                                    not included.
+                                </div>
                             </div>
                         </div>
                     </div>

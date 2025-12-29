@@ -39,9 +39,9 @@ const ProcessOverview = () => {
                         {/* Card 2 */}
                         <div className="flex flex-col sm:p-6 sm:border-l border-[#bcb5af]">
                             <img
-                                src="/images/crane.webp"
+                                src="/images/manufacturing.webp"
                                 alt="Modular Build icon"
-                                className="w-full mb-8 aspect-[16/9] rounded-sm"
+                                className="w-full mb-8 aspect-[16/9] rounded-sm object-cover"
                             />
                             <div className="type-h2 mb-2 font-dince header-text">
                                 Factory build
@@ -67,7 +67,7 @@ const ProcessOverview = () => {
                         {/* Card 3 */}
                         <div className="flex flex-col sm:p-6 sm:border-l border-[#bcb5af]">
                             <img
-                                src="/images/plant.webp"
+                                src="/images/crane.webp"
                                 alt="Turn-Key icon"
                                 className="w-full mb-8 aspect-[16/9] rounded-sm"
                             />
