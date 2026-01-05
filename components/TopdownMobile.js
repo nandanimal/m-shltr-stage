@@ -156,23 +156,25 @@ export default function TopdownMobile() {
                                     imgHeight={imgDims.height}
                                 />
                                 <Tooltip
-                                    textBody={"White oak couch"}
+                                    textBody={
+                                        "Living and dining areas with built-in seating and twin xl beds"
+                                    }
                                     leftPct={58} //
                                     bottomPct={25}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />
                                 <Tooltip
-                                    textBody={"Barnstyle doors"}
+                                    textBody={
+                                        "Sliding glass doors and covered terrace"
+                                    }
                                     leftPct={20} //
                                     bottomPct={85}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />
                                 <Tooltip
-                                    textBody={
-                                        '3-burner Pitt stove top;  Fisher & Paykel 30" electric stove'
-                                    }
+                                    textBody={"Built-in appliance island"}
                                     leftPct={44} //
                                     bottomPct={50}
                                     imgWidth={imgDims.width}
@@ -198,10 +200,26 @@ export default function TopdownMobile() {
                                 />
                                 <Tooltip
                                     textBody={
-                                        "Built-in wardrobe with 11' × 8' × 2' of total space"
+                                        "Optimized wardrobe and 11' storage wall"
                                     }
                                     leftPct={55} //
                                     bottomPct={86}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        "Separate en-suite toilets / W.C."
+                                    }
+                                    leftPct={80} //
+                                    bottomPct={10}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={"Laundry"}
+                                    leftPct={18} //
+                                    bottomPct={34}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />

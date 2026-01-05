@@ -151,7 +151,7 @@ export default function Topdown() {
                                 className="absolute w-full top-0 h-full text-white flex flex-col gap-1 type-body-sm leading-none z-[120] transition"
                             >
                                 <Tooltip
-                                    textBody={"Custom king bed and headboard"}
+                                    textBody={"Integrated bed and sofa"}
                                     leftPct={22} //
                                     bottomPct={25}
                                     imgWidth={imgDims.width}
@@ -167,23 +167,25 @@ export default function Topdown() {
                                     imgHeight={imgDims.height}
                                 />
                                 <Tooltip
-                                    textBody={"White oak couch"}
+                                    textBody={
+                                        "Living and dining areas with built-in seating and twin xl beds"
+                                    }
                                     leftPct={38} //
                                     bottomPct={20}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />
                                 <Tooltip
-                                    textBody={"Barnstyle doors"}
+                                    textBody={
+                                        "Sliding glass doors and covered terrace"
+                                    }
                                     leftPct={20} //
                                     bottomPct={75}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />
                                 <Tooltip
-                                    textBody={
-                                        '3-burner Pitt stove top;  Fisher & Paykel 30" electric stove'
-                                    }
+                                    textBody={"Built-in appliance island"}
                                     leftPct={52} //
                                     bottomPct={55}
                                     imgWidth={imgDims.width}
@@ -209,10 +211,26 @@ export default function Topdown() {
                                 />
                                 <Tooltip
                                     textBody={
-                                        "Built-in wardrobe with 11' × 8' × 2' of total space"
+                                        "Optimized wardrobe and 11' storage wall"
                                     }
                                     leftPct={87} //
                                     bottomPct={45}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={
+                                        "Separate en-suite toilets / W.C."
+                                    }
+                                    leftPct={8} //
+                                    bottomPct={18}
+                                    imgWidth={imgDims.width}
+                                    imgHeight={imgDims.height}
+                                />
+                                <Tooltip
+                                    textBody={"Laundry"}
+                                    leftPct={34} //
+                                    bottomPct={80}
                                     imgWidth={imgDims.width}
                                     imgHeight={imgDims.height}
                                 />
