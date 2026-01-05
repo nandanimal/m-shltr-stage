@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useCallback } from "react";
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
@@ -12,10 +13,11 @@ import menuAnimation from "@/public/icons/menu.json";
 const Navbar = () => {
     const { openCta } = useCtaFlow();
     const [isAnimating, setIsAnimating] = useState(false);
+    const router = useRouter();
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [hovered, setHovered] = useState(false);
-    const [navTheme, setNavTheme] = useState("light");
+    const [navTheme, setNavTheme] = useState("dark");
 
     const menuLottieRef = useRef(null);
     const sectionsRef = useRef([]);
@@ -96,23 +98,40 @@ const Navbar = () => {
             .sort((a, b) => a.top - b.top);
     }, []);
 
-    useEffect(() => {
+    const syncNavTheme = useCallback(() => {
         measureSections();
-        // Ensure theme is correct on initial render (without requiring a scroll event)
-        requestAnimationFrame(() => updateNavThemeForY(scrollY.get()));
+        updateNavThemeForY(scrollY.get());
+    }, [measureSections, scrollY, updateNavThemeForY]);
+
+    useEffect(() => {
+        // Ensure theme is correct on initial render (without requiring a scroll event).
+        requestAnimationFrame(syncNavTheme);
 
         window.addEventListener("resize", measureSections);
         // Some layout shifts (fonts/images) can occur after window load.
         const handleLoad = () => {
-            measureSections();
-            updateNavThemeForY(scrollY.get());
+            syncNavTheme();
         };
         window.addEventListener("load", handleLoad);
         return () => {
             window.removeEventListener("resize", measureSections);
             window.removeEventListener("load", handleLoad);
         };
-    }, [measureSections, scrollY, updateNavThemeForY]);
+    }, [measureSections, scrollY, syncNavTheme]);
+
+    useEffect(() => {
+        const handleRouteChange = () => {
+            // Route changes can complete before layout settles; run a few syncs.
+            requestAnimationFrame(syncNavTheme);
+            setTimeout(syncNavTheme, 80);
+            setTimeout(syncNavTheme, 220);
+        };
+
+        router.events.on("routeChangeComplete", handleRouteChange);
+        return () => {
+            router.events.off("routeChangeComplete", handleRouteChange);
+        };
+    }, [router.events, syncNavTheme]);
 
     useEffect(() => {
         const body = document.body;

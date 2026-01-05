@@ -137,7 +137,7 @@ const UnlistedSection = () => {
                                 className="h-[32px] w-auto object-contain"
                             />
                             <img
-                                src="/images/press-logos/wallpaper.svg"
+                                src="/images/press-logos/wallpaper_400.png"
                                 alt="wallpaper"
                                 className="h-[32px] w-auto object-contain"
                             />

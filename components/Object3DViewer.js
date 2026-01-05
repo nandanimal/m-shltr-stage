@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 const TOTAL_FRAMES = 100;
 const BASE_PATH = "/images/CBN3D/";
@@ -31,6 +31,7 @@ export default function Object3DViewer({ initial = 34 }) {
     const resizeObserverRef = useRef(null);
     const rafRef = useRef(null);
     const loadedRef = useRef(false);
+    const lastScrollProgressRef = useRef(null);
 
     const [loaded, setLoaded] = useState(false);
 
@@ -176,6 +177,27 @@ export default function Object3DViewer({ initial = 34 }) {
             isCancelled = true;
         };
     }, [scheduleDraw]);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"],
+    });
+
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        if (!loadedRef.current || isDraggingRef.current) {
+            lastScrollProgressRef.current = latest;
+            return;
+        }
+        if (lastScrollProgressRef.current == null) {
+            lastScrollProgressRef.current = latest;
+            return;
+        }
+        const delta = latest - lastScrollProgressRef.current;
+        lastScrollProgressRef.current = latest;
+        if (delta === 0) return;
+        // Subtle scroll-driven rotation to suggest interactivity.
+        applyFrameDelta(delta * TOTAL_FRAMES * 0.25);
+    });
 
     useEffect(() => {
         if (!containerRef.current) return;

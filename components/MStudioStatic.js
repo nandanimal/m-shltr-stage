@@ -18,7 +18,7 @@ const MStudioStatic = () => {
     const opacity = useTransform(
         scrollYProgress,
         [0, 0.1, 0.6, 0.7],
-        [1, 1, 1, 0]
+        [1, 1, 0, 0]
     );
     const galleryOpacity = useTransform(scrollYProgress, [0.7, 0.8], [0, 1]);
 
@@ -67,6 +67,11 @@ const MStudioStatic = () => {
                             <img
                                 src="/images/press-logos/gq.svg"
                                 alt="GQ"
+                                className="h-[32px] w-auto object-contain"
+                            />
+                            <img
+                                src="/images/press-logos/wallpaper_400.png"
+                                alt="Wallpaper"
                                 className="h-[32px] w-auto object-contain"
                             />
                         </div>
