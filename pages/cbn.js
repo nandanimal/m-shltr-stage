@@ -20,6 +20,175 @@ import Head from "next/head";
 
 const CBN = () => {
     const [loading, setLoading] = useState(true);
+    const modelOptions = [
+        {
+            key: "CBN 1172",
+            label: "1172 ft²",
+            floorplan: "/images/floorplan_updated.webp",
+            floorplanMobile: "/images/floorplan_updated_rotated.webp",
+            tooltips: [
+                {
+                    textBody: "Integrated bed and sofa",
+                    leftPct: 22,
+                    bottomPct: 25,
+                },
+                {
+                    textBody: "Utility cabinet + tankless water heater",
+                    leftPct: 32,
+                    bottomPct: 64,
+                },
+                {
+                    textBody:
+                        "Living and dining areas with built-in seating and twin xl beds",
+                    leftPct: 38,
+                    bottomPct: 20,
+                },
+                {
+                    textBody: "Sliding glass doors and covered terrace",
+                    leftPct: 20,
+                    bottomPct: 75,
+                },
+                {
+                    textBody: "Built-in appliance island",
+                    leftPct: 52,
+                    bottomPct: 55,
+                },
+                {
+                    textBody: 'Standard 24" dishwasher with white oak facade',
+                    leftPct: 40,
+                    bottomPct: 68,
+                },
+                {
+                    textBody:
+                        'Spa ensuite with a 63" × 56" shower and soaking tub. Optional steam shower upgrade.',
+                    leftPct: 85,
+                    bottomPct: 68,
+                },
+                {
+                    textBody: "Optimized wardrobe and 11' storage wall",
+                    leftPct: 87,
+                    bottomPct: 45,
+                },
+                {
+                    textBody: "Separate en-suite toilets / W.C.",
+                    leftPct: 8,
+                    bottomPct: 18,
+                },
+                { textBody: "Laundry", leftPct: 34, bottomPct: 80 },
+            ],
+            tooltipsMobile: [
+                {
+                    textBody: "Custom king bed and headboard",
+                    leftPct: 80,
+                    bottomPct: 80,
+                },
+                {
+                    textBody:
+                        "Living and dining areas with built-in seating and twin xl beds",
+                    leftPct: 58,
+                    bottomPct: 25,
+                },
+                {
+                    textBody: "Sliding glass doors and covered terrace",
+                    leftPct: 20,
+                    bottomPct: 85,
+                },
+                {
+                    textBody: "Built-in appliance island",
+                    leftPct: 44,
+                    bottomPct: 50,
+                },
+                {
+                    textBody: 'Standard 24" dishwasher with white oak facade',
+                    leftPct: 34,
+                    bottomPct: 62,
+                },
+                {
+                    textBody:
+                        'Spa ensuite with a 63" × 56" shower and soaking tub. Optional steam shower upgrade.',
+                    leftPct: 25,
+                    bottomPct: 5,
+                },
+                {
+                    textBody: "Optimized wardrobe and 11' storage wall",
+                    leftPct: 55,
+                    bottomPct: 86,
+                },
+                {
+                    textBody: "Separate en-suite toilets / W.C.",
+                    leftPct: 80,
+                    bottomPct: 10,
+                },
+                { textBody: "Laundry", leftPct: 18, bottomPct: 34 },
+            ],
+        },
+        {
+            key: "CBN 640",
+            label: "640 ft²",
+            floorplan: "/images/640_treated.webp",
+            floorplanMobile: "/images/640_treated_rotated.webp",
+            tooltips: [
+                {
+                    textBody: "Open living lounge with convertible seating",
+                    leftPct: 28,
+                    bottomPct: 28,
+                },
+                {
+                    textBody: "Compact galley kitchen + storage wall",
+                    leftPct: 46,
+                    bottomPct: 58,
+                },
+                {
+                    textBody: "Sliding glass entry to outdoor terrace",
+                    leftPct: 14,
+                    bottomPct: 72,
+                },
+                {
+                    textBody: "Full bath with soaking tub",
+                    leftPct: 82,
+                    bottomPct: 62,
+                },
+                {
+                    textBody: "Integrated wardrobe and utility closet",
+                    leftPct: 78,
+                    bottomPct: 42,
+                },
+                { textBody: "Laundry alcove", leftPct: 34, bottomPct: 78 },
+            ],
+            tooltipsMobile: [
+                {
+                    textBody: "Lounge with convertible seating",
+                    leftPct: 60,
+                    bottomPct: 28,
+                },
+                {
+                    textBody: "Compact galley kitchen + storage wall",
+                    leftPct: 40,
+                    bottomPct: 52,
+                },
+                {
+                    textBody: "Sliding glass entry to outdoor terrace",
+                    leftPct: 18,
+                    bottomPct: 80,
+                },
+                {
+                    textBody: "Full bath with soaking tub",
+                    leftPct: 28,
+                    bottomPct: 6,
+                },
+                {
+                    textBody: "Integrated wardrobe and utility closet",
+                    leftPct: 64,
+                    bottomPct: 78,
+                },
+                { textBody: "Laundry alcove", leftPct: 20, bottomPct: 38 },
+            ],
+        },
+    ];
+    const [activeModelKey, setActiveModelKey] = useState(modelOptions[0].key);
+    const activeModel =
+        modelOptions.find((model) => model.key === activeModelKey) ||
+        modelOptions[0];
 
     useEffect(() => {
         // Let the full introducing animation play before fading out the loader
@@ -32,10 +201,38 @@ const CBN = () => {
         return () => clearTimeout(timer);
     }, []);
 
+    const modelToggle = (
+        <>
+            <div className="type-eyebrow text-gray">Available in 2 sizes</div>
+            <div className="flex items-center gap-2 bg-white/70 border border-white/20 rounded-full p-1 backdrop-blur-sm">
+                {modelOptions.map((model) => {
+                    const isActive = model.key === activeModelKey;
+                    return (
+                        <button
+                            key={model.key}
+                            type="button"
+                            onClick={() => setActiveModelKey(model.key)}
+                            className={`px-4 py-1 rounded-full type-caption font-medium transition ${
+                                isActive
+                                    ? "bg-black text-white"
+                                    : "bg-transparent text-black/70 hover:text-black cursor-pointer"
+                            }`}
+                        >
+                            {model.label}
+                        </button>
+                    );
+                })}
+            </div>
+        </>
+    );
+
     return (
         <div>
             <Head>
-                <title>CBN No. 1172 | Luxury Prefab ADU &amp; Modular Home | M‑SHLTR</title>
+                <title>
+                    CBN No. 1172 | Luxury Prefab ADU &amp; Modular Home |
+                    M‑SHLTR
+                </title>
                 <meta
                     name="description"
                     content="Explore CBN No. 1172: a 2 bed / 2.5 bath luxury modular home designed to expand. Premium interiors and fire‑resilient detailing for California living."
@@ -109,10 +306,20 @@ const CBN = () => {
             >
                 {/* Show Topdown only on desktop, TopdownMobile only on mobile */}
                 <div className="hidden sm:block w-full">
-                    <Topdown />
+                    <Topdown
+                        modelName={activeModel.key}
+                        floorplan={activeModel.floorplan}
+                        tooltips={activeModel.tooltips}
+                        controls={modelToggle}
+                    />
                 </div>
                 <div className="block sm:hidden w-full">
-                    <TopdownMobile />
+                    <TopdownMobile
+                        modelName={activeModel.key}
+                        floorplan={activeModel.floorplanMobile}
+                        tooltips={activeModel.tooltipsMobile}
+                        controls={modelToggle}
+                    />
                 </div>
             </section>
 

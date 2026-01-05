@@ -1,11 +1,53 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
 import Tooltip from "./Tooltip";
-import FadeIn from "./FadeIn";
 
-export default function Topdown() {
+const defaultTooltips = [
+    { textBody: "Integrated bed and sofa", leftPct: 22, bottomPct: 25 },
+    {
+        textBody: "Utility cabinet + tankless water heater",
+        leftPct: 32,
+        bottomPct: 64,
+    },
+    {
+        textBody:
+            "Living and dining areas with built-in seating and twin xl beds",
+        leftPct: 38,
+        bottomPct: 20,
+    },
+    {
+        textBody: "Sliding glass doors and covered terrace",
+        leftPct: 20,
+        bottomPct: 75,
+    },
+    { textBody: "Built-in appliance island", leftPct: 52, bottomPct: 55 },
+    {
+        textBody: 'Standard 24" dishwasher with white oak facade',
+        leftPct: 40,
+        bottomPct: 68,
+    },
+    {
+        textBody:
+            'Spa ensuite with a 63" × 56" shower and soaking tub. Optional steam shower upgrade.',
+        leftPct: 85,
+        bottomPct: 68,
+    },
+    {
+        textBody: "Optimized wardrobe and 11' storage wall",
+        leftPct: 87,
+        bottomPct: 45,
+    },
+    { textBody: "Separate en-suite toilets / W.C.", leftPct: 8, bottomPct: 18 },
+    { textBody: "Laundry", leftPct: 34, bottomPct: 80 },
+];
+
+export default function Topdown({
+    modelName = "CBN 1172",
+    floorplan = "/images/floorplan_updated.webp",
+    tooltips = defaultTooltips,
+    controls = null,
+}) {
     const containerRef = useRef(null);
     const imageRef = useRef(null);
 
@@ -84,7 +126,7 @@ export default function Topdown() {
             }
         };
         // Note: if you expect the image to ever change, you could include src as a dependency
-    }, []);
+    }, [floorplan]);
 
     // track scroll progress relative to container
     const { scrollYProgress } = useScroll({
@@ -100,12 +142,17 @@ export default function Topdown() {
     // Determine label visibility based on scroll progress
     const labelOpacity = useTransform(scrollYProgress, [0.5, 0.65], [0, 1]);
 
+    const tooltipItems = Array.isArray(tooltips)
+        ? tooltips
+        : tooltips?.items || [];
+    const eyebrowText = modelName ? `Interiors — ${modelName}` : "Interiors";
+
     return (
         <section ref={containerRef} className="relative h-[200vh] w-full">
             {/* sticky viewport */}
 
             <div className="flex items-center flex-col">
-                <div className="type-eyebrow text-gray">Interiors</div>
+                <div className="type-eyebrow text-gray">{eyebrowText}</div>
                 <h2 className="type-display text-center mt-4 mb-8 max-w-[90%] header-text">
                     Thoughtfully considered interiors{" "}
                     <strong>
@@ -139,102 +186,44 @@ export default function Topdown() {
                         className="bg-img-container absolute w-full rounded-md p-2 flex items-center"
                         style={{ height }}
                     >
-                        <div className="p-2 imageContainer relative">
-                            <img
-                                ref={imageRef}
-                                src="/images/floorplan_updated.webp"
-                                alt="Interior"
-                                className="w-full h-auto object-cover rounded-md overflow-hidden transition opacity"
-                            />
-                            <motion.div
-                                style={{ opacity: labelOpacity }}
-                                className="absolute w-full top-0 h-full text-white flex flex-col gap-1 type-body-sm leading-none z-[120] transition"
-                            >
-                                <Tooltip
-                                    textBody={"Integrated bed and sofa"}
-                                    leftPct={22} //
-                                    bottomPct={25}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={
-                                        "Utility cabinet + tankless water heater"
-                                    }
-                                    leftPct={32} //
-                                    bottomPct={64}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={
-                                        "Living and dining areas with built-in seating and twin xl beds"
-                                    }
-                                    leftPct={38} //
-                                    bottomPct={20}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={
-                                        "Sliding glass doors and covered terrace"
-                                    }
-                                    leftPct={20} //
-                                    bottomPct={75}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={"Built-in appliance island"}
-                                    leftPct={52} //
-                                    bottomPct={55}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={
-                                        'Standard 24" dishwasher with white oak facade'
-                                    }
-                                    leftPct={40} //
-                                    bottomPct={68}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={
-                                        'Spa ensuite with a 63" × 56" shower and soaking tub. Optional steam shower upgrade.'
-                                    }
-                                    leftPct={85} //
-                                    bottomPct={68}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={
-                                        "Optimized wardrobe and 11' storage wall"
-                                    }
-                                    leftPct={87} //
-                                    bottomPct={45}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={
-                                        "Separate en-suite toilets / W.C."
-                                    }
-                                    leftPct={8} //
-                                    bottomPct={18}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                                <Tooltip
-                                    textBody={"Laundry"}
-                                    leftPct={34} //
-                                    bottomPct={80}
-                                    imgWidth={imgDims.width}
-                                    imgHeight={imgDims.height}
-                                />
-                            </motion.div>
+                        <div className="p-2 flex flex-col items-center gap-6">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={floorplan}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="imageContainer relative"
+                                >
+                                    <img
+                                        ref={imageRef}
+                                        src={floorplan}
+                                        alt={`${modelName} floorplan`}
+                                        className="w-full h-auto object-cover rounded-md overflow-hidden transition opacity"
+                                    />
+                                    <motion.div
+                                        style={{ opacity: labelOpacity }}
+                                        className="absolute w-full top-0 h-full text-white flex flex-col gap-1 type-body-sm leading-none z-[120] transition"
+                                    >
+                                        {tooltipItems.map((tip, index) => (
+                                            <Tooltip
+                                                key={`${tip.textBody || tip.text}-${index}`}
+                                                textBody={tip.textBody || tip.text || ""}
+                                                leftPct={tip.leftPct}
+                                                bottomPct={tip.bottomPct}
+                                                imgWidth={imgDims.width}
+                                                imgHeight={imgDims.height}
+                                            />
+                                        ))}
+                                    </motion.div>
+                                </motion.div>
+                            </AnimatePresence>
+                            {controls ? (
+                                <div className="flex flex-col items-center gap-3">
+                                    {controls}
+                                </div>
+                            ) : null}
                         </div>
                     </motion.div>
                 </motion.div>

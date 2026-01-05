@@ -32,9 +32,8 @@ export default function Tooltip({
     return (
         <>
             <div
-                role="button"
                 aria-label="Tooltip trigger"
-                className="absolute w-12 bg-white/80 border border-white backdrop-blur-sm rounded-sm shadow cursor-pointer p-1 flex items-center justify-center"
+                className="absolute p-2 flex rounded pl-0 items-center justify-center cursor-default text-mono"
                 style={{
                     left: leftPx,
                     bottom: bottomPx,
@@ -45,13 +44,14 @@ export default function Tooltip({
                 onBlur={handleLeave}
                 tabIndex={0}
             >
-                <img src="icons/arrow-up-right.svg" alt="" />
+                <div className="w-4 h-4 bg-white/80 border border-white backdrop-blur-sm rounded-xl"></div>
+                {/* <img src="icons/arrow-up-right.svg" alt="" /> */}
             </div>
 
             <AnimatePresence>
                 {visible && (
                     <motion.div
-                        className="absolute z-50 max-w-xs p-2 type-body-sm bg-white/80 text-black leading-none
+                        className="absolute z-50 max-w-xs p-2 type-body-sm bg-white/80 text-black font-mono leading-none
                         backdrop-blur-md rounded-sm shadow-lg pointer-events-auto
                         hover:shadow-[0_0_8px_0_rgb(255,255,255)_inset,0_4px_10px_0_rgba(0,0,0,0.04)] transition"
                         style={{
