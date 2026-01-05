@@ -1,5 +1,10 @@
 "use client";
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import {
+    AnimatePresence,
+    motion,
+    useScroll,
+    useTransform,
+} from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Tooltip from "./Tooltip";
 
@@ -194,7 +199,7 @@ export default function Topdown({
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="imageContainer relative"
+                                    className="imageContainer relative pt-24"
                                 >
                                     <img
                                         ref={imageRef}
@@ -208,8 +213,14 @@ export default function Topdown({
                                     >
                                         {tooltipItems.map((tip, index) => (
                                             <Tooltip
-                                                key={`${tip.textBody || tip.text}-${index}`}
-                                                textBody={tip.textBody || tip.text || ""}
+                                                key={`${
+                                                    tip.textBody || tip.text
+                                                }-${index}`}
+                                                textBody={
+                                                    tip.textBody ||
+                                                    tip.text ||
+                                                    ""
+                                                }
                                                 leftPct={tip.leftPct}
                                                 bottomPct={tip.bottomPct}
                                                 imgWidth={imgDims.width}

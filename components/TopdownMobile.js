@@ -1,5 +1,10 @@
 "use client";
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import {
+    AnimatePresence,
+    motion,
+    useScroll,
+    useTransform,
+} from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Tooltip from "./Tooltip";
 import FadeIn from "./FadeIn";
@@ -34,7 +39,11 @@ const defaultTooltips = [
         leftPct: 55,
         bottomPct: 86,
     },
-    { textBody: "Separate en-suite toilets / W.C.", leftPct: 80, bottomPct: 10 },
+    {
+        textBody: "Separate en-suite toilets / W.C.",
+        leftPct: 80,
+        bottomPct: 10,
+    },
     { textBody: "Laundry", leftPct: 18, bottomPct: 34 },
 ];
 
@@ -202,8 +211,14 @@ export default function TopdownMobile({
                                     >
                                         {tooltipItems.map((tip, index) => (
                                             <Tooltip
-                                                key={`${tip.textBody || tip.text}-${index}`}
-                                                textBody={tip.textBody || tip.text || ""}
+                                                key={`${
+                                                    tip.textBody || tip.text
+                                                }-${index}`}
+                                                textBody={
+                                                    tip.textBody ||
+                                                    tip.text ||
+                                                    ""
+                                                }
                                                 leftPct={tip.leftPct}
                                                 bottomPct={tip.bottomPct}
                                                 imgWidth={imgDims.width}

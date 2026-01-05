@@ -76,7 +76,7 @@ const Hero = () => {
                     </div>
                     <div
                         className="image-container w-full h-full relative flex items-center justify-center overflow-hidden rounded-md"
-                        data-nav-theme="dark"
+                        data-nav-theme="light"
                     >
                         <motion.div
                             className="absolute w-full -z-10 h-[110vh] object-cover overflow-hidden"
@@ -93,7 +93,7 @@ const Hero = () => {
                             style={{ y: fgY }}
                         >
                             <img
-                                src="/images/cbn_alt.webp"
+                                src="/images/640.webp"
                                 className="object-cover h-[110vh] w-full rounded-md scale-[1.05]"
                                 priority
                                 fill

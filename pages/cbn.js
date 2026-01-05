@@ -9,7 +9,7 @@ import BigCTA from "@/components/BigCTA";
 import Footer from "@/components/Footer";
 import Topdown from "@/components/Topdown";
 import { AnimatePresence, motion } from "framer-motion";
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useRef, useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import TopdownMobile from "@/components/TopdownMobile";
 import SizeToggleCard from "@/components/SizeToggleCard";
@@ -20,6 +20,8 @@ import Head from "next/head";
 
 const CBN = () => {
     const [loading, setLoading] = useState(true);
+    const bodyOverflowRef = useRef(null);
+    const htmlOverflowRef = useRef(null);
     const modelOptions = [
         {
             key: "CBN 1172",
@@ -192,7 +194,7 @@ const CBN = () => {
 
     useEffect(() => {
         // Let the full introducing animation play before fading out the loader
-        const INTRO_MS = 2600; // last item finishes ~2.0s; add padding
+        const INTRO_MS = 4000; // last item finishes ~2.0s; add padding
         const EXIT_BUFFER_MS = 300;
         const timer = setTimeout(
             () => setLoading(false),
@@ -200,6 +202,39 @@ const CBN = () => {
         );
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        const body = document.body;
+        const html = document.documentElement;
+        if (!body || !html) return;
+
+        if (loading) {
+            if (bodyOverflowRef.current === null) {
+                bodyOverflowRef.current = body.style.overflow;
+            }
+            if (htmlOverflowRef.current === null) {
+                htmlOverflowRef.current = html.style.overflow;
+            }
+            body.style.overflow = "hidden";
+            html.style.overflow = "hidden";
+        } else {
+            if (bodyOverflowRef.current !== null) {
+                body.style.overflow = bodyOverflowRef.current;
+            }
+            if (htmlOverflowRef.current !== null) {
+                html.style.overflow = htmlOverflowRef.current;
+            }
+        }
+
+        return () => {
+            if (bodyOverflowRef.current !== null) {
+                body.style.overflow = bodyOverflowRef.current;
+            }
+            if (htmlOverflowRef.current !== null) {
+                html.style.overflow = htmlOverflowRef.current;
+            }
+        };
+    }, [loading]);
 
     const modelToggle = (
         <>
@@ -242,7 +277,7 @@ const CBN = () => {
                 <AnimatePresence mode="wait">
                     {loading && (
                         <motion.div
-                            className="absolute z-10 w-full h-screen bg-white"
+                            className="absolute z-20 w-full h-screen bg-white"
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
