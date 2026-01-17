@@ -44,7 +44,23 @@ export default function Tooltip({
                 onBlur={handleLeave}
                 tabIndex={0}
             >
-                <div className="w-4 h-4 bg-white/80 border border-white backdrop-blur-sm rounded-xl"></div>
+                <div className="relative flex items-center justify-center">
+                    {/* Pulse ring */}
+                    <motion.div
+                        className="absolute w-4 h-4 bg-white/40 rounded-full"
+                        animate={{
+                            scale: [1, 1.8, 1.8],
+                            opacity: [0.6, 0, 0],
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeOut",
+                        }}
+                    />
+                    {/* Core circle */}
+                    <div className="w-4 h-4 bg-white/80 border border-white backdrop-blur-sm rounded-full"></div>
+                </div>
                 {/* <img src="icons/arrow-up-right.svg" alt="" /> */}
             </div>
 

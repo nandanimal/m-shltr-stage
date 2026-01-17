@@ -131,59 +131,75 @@ const CBN = () => {
             floorplanMobile: "/images/640_treated_rotated.webp",
             tooltips: [
                 {
-                    textBody: "Open living lounge with convertible seating",
-                    leftPct: 28,
-                    bottomPct: 28,
+                    textBody: "Panel Ready 24\" dishwasher",
+                    
+                    leftPct: 49,
+                    bottomPct: 66,
                 },
                 {
-                    textBody: "Compact galley kitchen + storage wall",
-                    leftPct: 46,
-                    bottomPct: 58,
+                    textBody: "Built-in cooktop",
+                    leftPct: 53,
+                    bottomPct: 68,
                 },
                 {
-                    textBody: "Sliding glass entry to outdoor terrace",
+                    textBody: "Laundry",
+                    leftPct: 65,
+                    bottomPct: 65,
+                },
+                {
+                    textBody: "Sliding glass doors",
                     leftPct: 14,
                     bottomPct: 72,
                 },
                 {
-                    textBody: "Full bath with soaking tub",
-                    leftPct: 82,
-                    bottomPct: 62,
+                    textBody: "Living and dining areas with built-in seating and twin xl beds",
+                    leftPct: 55,
+                    bottomPct: 39,
                 },
                 {
-                    textBody: "Integrated wardrobe and utility closet",
+                    textBody: "Integrated queen bed",
                     leftPct: 78,
                     bottomPct: 42,
                 },
-                { textBody: "Laundry alcove", leftPct: 34, bottomPct: 78 },
+                { textBody: "Utility cabinet + tankless water heater", leftPct: 34, bottomPct: 72 },
+                { textBody: "Separe en-suite water closet", leftPct: 27, bottomPct: 29 },
+                { textBody: "Home/work office option", leftPct: 23, bottomPct: 45 },
             ],
             tooltipsMobile: [
                 {
-                    textBody: "Lounge with convertible seating",
-                    leftPct: 60,
-                    bottomPct: 28,
+                    textBody: "Panel Ready 24\" dishwasher",
+                    
+                    leftPct: 28,
+                    bottomPct: 48,
                 },
                 {
-                    textBody: "Compact galley kitchen + storage wall",
-                    leftPct: 40,
+                    textBody: "Built-in cooktop",
+                    leftPct: 26,
                     bottomPct: 52,
                 },
                 {
-                    textBody: "Sliding glass entry to outdoor terrace",
-                    leftPct: 18,
-                    bottomPct: 80,
+                    textBody: "Laundry",
+                    leftPct: 30,
+                    bottomPct: 62,
                 },
                 {
-                    textBody: "Full bath with soaking tub",
-                    leftPct: 28,
-                    bottomPct: 6,
+                    textBody: "Sliding glass doors",
+                    leftPct: 23,
+                    bottomPct: 15,
                 },
                 {
-                    textBody: "Integrated wardrobe and utility closet",
-                    leftPct: 64,
-                    bottomPct: 78,
+                    textBody: "Living and dining areas with built-in seating and twin xl beds",
+                    leftPct: 55,
+                    bottomPct: 55,
                 },
-                { textBody: "Laundry alcove", leftPct: 20, bottomPct: 38 },
+                {
+                    textBody: "Integrated queen bed",
+                    leftPct: 50,
+                    bottomPct: 75,
+                },
+                { textBody: "Utility cabinet + tankless water heater", leftPct: 25, bottomPct: 34 },
+                { textBody: "Separe en-suite water closet", leftPct: 70, bottomPct: 29 },
+                { textBody: "Home/work office option", leftPct: 50, bottomPct: 20 },
             ],
         },
     ];
@@ -193,13 +209,20 @@ const CBN = () => {
         modelOptions[0];
 
     useEffect(() => {
+        // Skip loading animation if already played this session or scrolled down
+        const hasPlayed = sessionStorage.getItem("cbn-intro-played");
+        if (hasPlayed || window.scrollY > 100) {
+            setLoading(false);
+            return;
+        }
+
         // Let the full introducing animation play before fading out the loader
         const INTRO_MS = 4000; // last item finishes ~2.0s; add padding
         const EXIT_BUFFER_MS = 300;
-        const timer = setTimeout(
-            () => setLoading(false),
-            INTRO_MS + EXIT_BUFFER_MS
-        );
+        const timer = setTimeout(() => {
+            setLoading(false);
+            sessionStorage.setItem("cbn-intro-played", "true");
+        }, INTRO_MS + EXIT_BUFFER_MS);
         return () => clearTimeout(timer);
     }, []);
 
