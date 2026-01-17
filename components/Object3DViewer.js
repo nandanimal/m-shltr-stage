@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import {
+    AnimatePresence,
+    motion,
+    useMotionValueEvent,
+    useScroll,
+} from "framer-motion";
 
 const TOTAL_FRAMES = 100;
 const BASE_PATH = "/images/CBN3D/";
@@ -36,11 +41,7 @@ export default function Object3DViewer({ initial = 34 }) {
     const [loaded, setLoaded] = useState(false);
 
     const drawFrame = useCallback(() => {
-        console.log("loadedRef.current >>>", loadedRef.current);
-
         if (!loadedRef.current) return;
-
-        console.log("drawing frame");
 
         const canvas = canvasRef.current;
         const img = imagesRef.current[frameIndexRef.current];
@@ -80,7 +81,6 @@ export default function Object3DViewer({ initial = 34 }) {
     }, []);
 
     const scheduleDraw = useCallback(() => {
-        console.log("drawRequestedRef >>>", drawRequestedRef.current);
         // if (drawRequestedRef.current) return;
         drawRequestedRef.current = true;
         rafRef.current = requestAnimationFrame(() => {

@@ -260,7 +260,6 @@ export default function StepZip() {
   function handleWaitlistSubmit(e) {
     e.preventDefault();
     // Client-only demo: simply log and close. Replace with your API later.
-    console.log("Waitlist submitted:", { zip, email: waitlistEmail });
     alert("Thanks! We'll let you know when we launch in your area.");
     closeCta();
   }

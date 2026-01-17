@@ -66,10 +66,10 @@ const Footer = ({ theme = "light" }) => {
                             </Link>
                             <div className="footer-menu-links flex flex-col gap-3 type-subtitle">
                                 <Link
-                                    href="/about"
+                                    href="/process"
                                     className=" hover:opacity-70 transition"
                                 >
-                                    About
+                                    Process
                                 </Link>
                                 <Link
                                     href="/cbn"

@@ -54,7 +54,7 @@ const ProcessOverview = () => {
                             <div className="hidden sm:block">
                                 <Link
                                     className="cta-button uppercase z-20 font-mono flex flex-row gap-2 mt-8"
-                                    href="/about"
+                                    href="/process"
                                 >
                                     Our process
                                     <img
@@ -81,7 +81,7 @@ const ProcessOverview = () => {
                             <div className="block sm:hidden">
                                 <Link
                                     className={`cta-button uppercase z-20 font-mono flex flex-row gap-2 mt-8 sm:hidden block`}
-                                    href="/about"
+                                    href="/process"
                                 >
                                     Our process
                                     <img

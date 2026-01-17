@@ -226,7 +226,7 @@ export default function Home() {
                         Built fast meets <strong>built to last.</strong>
                     </h2>
                     <Link
-                        href="about"
+                        href="/process"
                         className="mt-8 order-now flex font-mono flex-row gap-2 text-black cursor-pointer leading-none items-center justify-center whitespace-nowrap hover:opacity-80 transition"
                     >
                         OUR PROCESS

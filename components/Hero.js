@@ -94,7 +94,14 @@ const Hero = () => {
                         >
                             <img
                                 src="/images/640.webp"
-                                className="object-cover h-[110vh] w-full rounded-md scale-[1.05]"
+                                className="hidden sm:block object-cover h-[110vh] w-full rounded-md scale-[1.05]"
+                                priority
+                                fill
+                                quality={100}
+                            />
+                            <img
+                                src="/images/640_mobile.webp"
+                                className="block sm:hidden object-cover h-[110vh] w-full rounded-md scale-[1.05]"
                                 priority
                                 fill
                                 quality={100}

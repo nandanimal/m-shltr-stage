@@ -29,18 +29,6 @@ function CameraLogger({ controlsRef }) {
         const az = c ? THREE.MathUtils.radToDeg(c.getAzimuthalAngle()) : 0; // yaw
         const pol = c ? THREE.MathUtils.radToDeg(c.getPolarAngle()) : 0; // pitch
         const t = c?.target ?? new THREE.Vector3();
-
-        console.log(
-            `cam pos [${camera.position.x.toFixed(
-                2
-            )}, ${camera.position.y.toFixed(2)}, ${camera.position.z.toFixed(
-                2
-            )}] | ` +
-                `target [${t.x.toFixed(2)}, ${t.y.toFixed(2)}, ${t.z.toFixed(
-                    2
-                )}] | ` +
-                `az ${az.toFixed(1)}° | pol ${pol.toFixed(1)}°`
-        );
     });
     return null;
 }

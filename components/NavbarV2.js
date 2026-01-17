@@ -291,11 +291,11 @@ const Navbar = () => {
                     </Link>
                     <Link
                         className="menu-item type-menu hover:opacity-60 transition rounded-sm transition"
-                        href="/about"
+                        href="/process"
                         onClick={closeMenu}
                     >
                         {" "}
-                        About
+                        Process
                     </Link>
                     <Link
                         className="menu-item type-menu hover:opacity-60 transition rounded-sm transition"
