@@ -196,7 +196,7 @@ const Footer = ({ theme = "light" }) => {
                     {/* Left */}
                     <div className="type-mono-xs uppercase flex flex-col gap-0 w-full">
                         <span>
-                            © 2025{" "}
+                            © {new Date().getFullYear()}{" "}
                             <a className="hover:underline font-dince" href="">
                                 M-SHLTR
                             </a>{" "}

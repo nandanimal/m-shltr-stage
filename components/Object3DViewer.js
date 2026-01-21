@@ -7,27 +7,24 @@ import {
     useMotionValueEvent,
     useScroll,
 } from "framer-motion";
+import { useObject3DViewer } from "@/context/Object3DViewerContext";
 
 const TOTAL_FRAMES = 100;
-const BASE_PATH = "/images/CBN3D/";
-const BASE_NAME = "CBN";
-const EXT = ".webp";
-const INITIAL_FRAME_NUMBER = 34;
 const ASPECT_RATIO = 16 / 9;
 const FRAME_SENSITIVITY = -0.18;
 const ZOOM_MULTIPLIER = 0.5;
-const LOG_PREFIX = "[Object3DViewer]";
+const BASE_PATH = "/images/CBN3D/";
+const BASE_NAME = "CBN";
+const EXT = ".webp";
 
 export default function Object3DViewer({ initial = 34 }) {
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
-    const imagesRef = useRef([]);
     const frameCountRef = useRef(TOTAL_FRAMES);
     const frameIndexRef = useRef(
         Math.max(0, Math.min(TOTAL_FRAMES - 1, initial - 1))
     );
     const frameRemainderRef = useRef(0);
-    const drawRequestedRef = useRef(false);
     const isDraggingRef = useRef(false);
     const lastXRef = useRef(0);
     const lastTimeRef = useRef(0);
@@ -35,16 +32,16 @@ export default function Object3DViewer({ initial = 34 }) {
     const momentumRafRef = useRef(null);
     const resizeObserverRef = useRef(null);
     const rafRef = useRef(null);
-    const loadedRef = useRef(false);
     const lastScrollProgressRef = useRef(null);
 
-    const [loaded, setLoaded] = useState(false);
+    const { images, loaded, frameCount } = useObject3DViewer();
+    const [coverLoaded, setCoverLoaded] = useState(false);
 
-    const drawFrame = useCallback(() => {
-        if (!loadedRef.current) return;
+    // Cover image URL for static display while loading
+    const coverSrc = `${BASE_PATH}${BASE_NAME}${initial}${EXT}`;
 
+    const drawImage = useCallback((img) => {
         const canvas = canvasRef.current;
-        const img = imagesRef.current[frameIndexRef.current];
         if (!canvas || !img) return;
 
         const ctx = canvas.getContext("2d");
@@ -61,32 +58,18 @@ export default function Object3DViewer({ initial = 34 }) {
         const drawX = (width - drawWidth) / 2;
         const drawY = (height - drawHeight) / 2;
 
-        ctx.drawImage(
-            img,
-            0,
-            0,
-            img.width,
-            img.height,
-            drawX,
-            drawY,
-            drawWidth,
-            drawHeight
-        );
-
-        if (process.env.NODE_ENV !== "production") {
-            if (canvas.__lastLoggedIndex !== frameIndexRef.current) {
-                canvas.__lastLoggedIndex = frameIndexRef.current;
-            }
-        }
+        ctx.drawImage(img, 0, 0, img.width, img.height, drawX, drawY, drawWidth, drawHeight);
     }, []);
 
+    const drawFrame = useCallback(() => {
+        if (!loaded || images.length === 0) return;
+        const img = images[frameIndexRef.current];
+        if (img) drawImage(img);
+    }, [loaded, images, drawImage]);
+
     const scheduleDraw = useCallback(() => {
-        // if (drawRequestedRef.current) return;
-        drawRequestedRef.current = true;
-        rafRef.current = requestAnimationFrame(() => {
-            drawRequestedRef.current = false;
-            drawFrame();
-        });
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+        rafRef.current = requestAnimationFrame(drawFrame);
     }, [drawFrame]);
 
     const resizeCanvas = useCallback(() => {
@@ -103,80 +86,36 @@ export default function Object3DViewer({ initial = 34 }) {
         canvas.width = width * dpr;
         canvas.height = height * dpr;
 
-        scheduleDraw();
-    }, [scheduleDraw]);
+        if (loaded) scheduleDraw();
+    }, [loaded, scheduleDraw]);
 
-    /**
-     * 🔥 FIXED PRELOAD FUNCTION
-     * Always forces decode, even when cached.
-     * Does NOT filter out missing frames (keeps index alignment).
-     */
-    async function loadFrame(src) {
-        const img = new Image();
-        img.src = src;
-
-        await new Promise((resolve) => {
-            const done = () => resolve();
-
-            if (img.complete) {
-                if (img.decode) img.decode().then(done).catch(done);
-                else done();
-            } else {
-                img.onload = () => {
-                    if (img.decode) img.decode().then(done).catch(done);
-                    else done();
-                };
-                img.onerror = done;
-            }
-        });
-
-        return img;
-    }
-
+    // Setup resize observer once
     useEffect(() => {
-        let isCancelled = false;
+        if (!containerRef.current) return;
 
-        // Reset state on mount to avoid stale refs after client-side navigation.
-        imagesRef.current = [];
-        frameCountRef.current = TOTAL_FRAMES;
-        frameIndexRef.current = Math.max(
-            0,
-            Math.min(TOTAL_FRAMES - 1, initial - 1)
-        );
-        frameRemainderRef.current = 0;
-        setLoaded(false);
-        loadedRef.current = false;
+        const observer = new ResizeObserver(resizeCanvas);
+        observer.observe(containerRef.current);
+        resizeObserverRef.current = observer;
 
-        (async () => {
-            const cacheBust = Date.now();
+        return () => observer.disconnect();
+    }, [resizeCanvas]);
 
-            const frames = await Promise.all(
-                Array.from({ length: TOTAL_FRAMES }, (_, idx) =>
-                    loadFrame(
-                        `${BASE_PATH}${BASE_NAME}${
-                            idx + 1
-                        }${EXT}?reload=${performance.now()}`
-                    )
-                )
-            );
+    // Initial draw when loaded
+    useEffect(() => {
+        if (loaded && images.length > 0) {
+            frameCountRef.current = frameCount;
+            frameIndexRef.current = Math.max(0, Math.min(frameCount - 1, initial - 1));
+            resizeCanvas();
+        }
+    }, [loaded, images, frameCount, initial, resizeCanvas]);
 
-            if (isCancelled) return;
-
-            imagesRef.current = frames;
-            frameCountRef.current = frames.length;
-
-            // Force a redraw once frames decode
-            requestAnimationFrame(() => {
-                loadedRef.current = true;
-                setLoaded(true);
-                scheduleDraw();
-            });
-        })();
-
+    // Cleanup
+    useEffect(() => {
         return () => {
-            isCancelled = true;
+            if (rafRef.current) cancelAnimationFrame(rafRef.current);
+            if (momentumRafRef.current) cancelAnimationFrame(momentumRafRef.current);
         };
-    }, [scheduleDraw]);
+    }, []);
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -184,7 +123,7 @@ export default function Object3DViewer({ initial = 34 }) {
     });
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        if (!loadedRef.current || isDraggingRef.current) {
+        if (!loaded || isDraggingRef.current) {
             lastScrollProgressRef.current = latest;
             return;
         }
@@ -195,27 +134,8 @@ export default function Object3DViewer({ initial = 34 }) {
         const delta = latest - lastScrollProgressRef.current;
         lastScrollProgressRef.current = latest;
         if (delta === 0) return;
-        // Subtle scroll-driven rotation to suggest interactivity.
         applyFrameDelta(delta * TOTAL_FRAMES * 0.25);
     });
-
-    useEffect(() => {
-        if (!containerRef.current) return;
-        resizeCanvas();
-
-        resizeObserverRef.current = new ResizeObserver(resizeCanvas);
-        resizeObserverRef.current.observe(containerRef.current);
-
-        return () => resizeObserverRef.current?.disconnect();
-    }, [resizeCanvas]);
-
-    useEffect(() => {
-        return () => {
-            if (rafRef.current) cancelAnimationFrame(rafRef.current);
-            if (momentumRafRef.current)
-                cancelAnimationFrame(momentumRafRef.current);
-        };
-    }, []);
 
     const applyFrameDelta = useCallback(
         (deltaFrames) => {
@@ -258,7 +178,6 @@ export default function Object3DViewer({ initial = 34 }) {
                     momentumRafRef.current = null;
                     return;
                 }
-
                 momentumRafRef.current = requestAnimationFrame(tick);
             };
 
@@ -312,38 +231,52 @@ export default function Object3DViewer({ initial = 34 }) {
                 ref={containerRef}
                 className="relative w-full aspect-[16/9] overflow-hidden rounded-md"
             >
+                {/* Static cover image shown while loading */}
+                {!loaded && (
+                    <img
+                        src={coverSrc}
+                        alt="3D view loading"
+                        className="absolute inset-0 w-full h-full object-cover overflow-visible"
+                        style={{ transform: `scale(${ZOOM_MULTIPLIER})`, overflow: 'visible' }}
+                        onLoad={() => setCoverLoaded(true)}
+                    />
+                )}
+
+                {/* Loading placeholder before cover loads */}
                 <AnimatePresence>
-                    {!loaded && (
+                    {!loaded && !coverLoaded && (
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="absolute inset-0 bg-[#e4e4e4] animate-pulse"
+                            className="absolute inset-0 bg-white/40 animate-pulse"
                         >
-                            <p className="p-4 text-center type-caption">
-                                Loading 3D frames...
-                            </p>
+                         
                         </motion.div>
                     )}
                 </AnimatePresence>
 
-                <canvas
-                    ref={canvasRef}
-                    className="absolute inset-0 h-full w-full cursor-grab"
-                    role="img"
-                    aria-label="3D view, drag to rotate"
-                    onPointerDown={handlePointerDown}
-                    onPointerMove={handlePointerMove}
-                    onPointerUp={handlePointerUp}
-                    onPointerCancel={handlePointerUp}
-                    onPointerLeave={handlePointerLeave}
-                    style={{ touchAction: "none" }}
-                />
+                {/* Interactive canvas shown when loaded */}
+                {loaded && (
+                    <canvas
+                        ref={canvasRef}
+                        className="absolute inset-0 h-full w-full cursor-grab"
+                        style={{ touchAction: "none" }}
+                        role="img"
+                        aria-label="3D view, drag to rotate"
+                        onPointerDown={handlePointerDown}
+                        onPointerMove={handlePointerMove}
+                        onPointerUp={handlePointerUp}
+                        onPointerCancel={handlePointerUp}
+                        onPointerLeave={handlePointerLeave}
+                    />
+                )}
+
                 <div className="absolute bottom-0 w-full flex items-center justify-center mb-8 md:mb-16 lg:mb-32">
                     <div className="flex flex-row gap-4 justify-center items-center">
                         <img src="icons/rotate-gray.svg" />
                         <div className="type-mono-xs text-gray uppercase">
-                            drag to rotate
+                            {loaded ? 'drag to rotate' : 'loading...'}
                         </div>
                     </div>
                 </div>

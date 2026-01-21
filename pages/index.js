@@ -91,22 +91,20 @@ export default function Home() {
                                 data-nav-theme="light"
                             >
                                 <div className="span flex flex-col gap-2">
-                                    <div className="font-mono text-xs uppercase">
-                                        launching 2026
+                                    <div className="font-mono text-lg uppercase">
+                                        Introducing M-SHLTR
                                     </div>
-                                    <h1 className="type-display text-pretty font-dince">
-                                        Introducing M-SHLTR,
-                                    </h1>
+                                    
                                 </div>
-                                <div className="type-display text-pretty font-dince">
-                                    a fire‑resilient, precision‑built home for
+                                <h1 className="type-display text-pretty font-dince mt-8">
+                                    A fire‑resilient, precision‑built home for
                                     any setting. Designed with intention, built
                                     with factory accuracy, delivered turnkey to
                                     your land.
-                                </div>
+                                </h1>
                                 <div className="span flex flex-col gap-4 mt-16">
-                                    <h2 className="type-title text-regular text-gray text-pretty">
-                                        Designed by Malek Alqadi, as seen in
+                                    <h2 className=" text-sm text-gray text-pretty">
+                                        From Studio Malek Alqadi, as seen in
                                     </h2>
                                     <div className="featured-banner flex flex-col gap-0">
                                         {/* <div className="type-eyebrow text-gray mb-2">
