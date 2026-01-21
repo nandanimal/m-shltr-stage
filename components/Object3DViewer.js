@@ -231,16 +231,23 @@ export default function Object3DViewer({ initial = 34 }) {
                 ref={containerRef}
                 className="relative w-full aspect-[16/9] overflow-hidden rounded-md"
             >
-                {/* Static cover image shown while loading */}
-                {!loaded && (
-                    <img
-                        src={coverSrc}
-                        alt="3D view loading"
-                        className="absolute inset-0 w-full h-full object-cover overflow-visible"
-                        style={{ transform: `scale(${ZOOM_MULTIPLIER})`, overflow: 'visible' }}
-                        onLoad={() => setCoverLoaded(true)}
-                    />
-                )}
+                {/* Static cover image shown while loading, faded in/out */}
+                <AnimatePresence>
+                    {!loaded && (
+                        <motion.img
+                            key="cover-img"
+                            src={coverSrc}
+                            alt="3D view loading"
+                            className="absolute inset-0 w-full h-full object-contain overflow-visible"
+                            style={{ transform: `scale(${ZOOM_MULTIPLIER})`, overflow: 'visible' }}
+                            onLoad={() => setCoverLoaded(true)}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.4 }}
+                        />
+                    )}
+                </AnimatePresence>
 
                 {/* Loading placeholder before cover loads */}
                 <AnimatePresence>
@@ -257,20 +264,26 @@ export default function Object3DViewer({ initial = 34 }) {
                 </AnimatePresence>
 
                 {/* Interactive canvas shown when loaded */}
-                {loaded && (
-                    <canvas
-                        ref={canvasRef}
-                        className="absolute inset-0 h-full w-full cursor-grab"
-                        style={{ touchAction: "none" }}
-                        role="img"
-                        aria-label="3D view, drag to rotate"
-                        onPointerDown={handlePointerDown}
-                        onPointerMove={handlePointerMove}
-                        onPointerUp={handlePointerUp}
-                        onPointerCancel={handlePointerUp}
-                        onPointerLeave={handlePointerLeave}
-                    />
-                )}
+                <AnimatePresence>
+                    {loaded && (
+                        <motion.canvas
+                            ref={canvasRef}
+                            className="absolute inset-0 h-full w-full cursor-grab"
+                            style={{ touchAction: "none" }}
+                            role="img"
+                            aria-label="3D view, drag to rotate"
+                            onPointerDown={handlePointerDown}
+                            onPointerMove={handlePointerMove}
+                            onPointerUp={handlePointerUp}
+                            onPointerCancel={handlePointerUp}
+                            onPointerLeave={handlePointerLeave}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5 }}
+                        />
+                    )}
+                </AnimatePresence>
 
                 <div className="absolute bottom-0 w-full flex items-center justify-center mb-8 md:mb-16 lg:mb-32">
                     <div className="flex flex-row gap-4 justify-center items-center">
