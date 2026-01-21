@@ -237,7 +237,7 @@ export default function Object3DViewer({ initial = 34 }) {
                         src={coverSrc}
                         alt="3D view loading"
                         className="absolute inset-0 w-full h-full object-cover overflow-visible"
-                        style={{ transform: `scale(${ZOOM_MULTIPLIER})` }}
+                        style={{ transform: `scale(${ZOOM_MULTIPLIER})`, overflow: 'visible' }}
                         onLoad={() => setCoverLoaded(true)}
                     />
                 )}

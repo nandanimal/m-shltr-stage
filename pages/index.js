@@ -91,7 +91,7 @@ export default function Home() {
                                 data-nav-theme="light"
                             >
                                 <div className="span flex flex-col gap-2">
-                                    <div className="font-mono text-xs uppercase">
+                                    <div className="font-mono text-lg uppercase">
                                         Introducing M-SHLTR
                                     </div>
                                     
@@ -103,8 +103,8 @@ export default function Home() {
                                     your land.
                                 </h1>
                                 <div className="span flex flex-col gap-4 mt-16">
-                                    <h2 className="type-title text-regular text-gray text-pretty">
-                                        Designed by Malek Alqadi, as seen in
+                                    <h2 className=" text-sm text-gray text-pretty">
+                                        From Studio Malek Alqadi, as seen in
                                     </h2>
                                     <div className="featured-banner flex flex-col gap-0">
                                         {/* <div className="type-eyebrow text-gray mb-2">
