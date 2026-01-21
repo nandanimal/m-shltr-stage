@@ -249,7 +249,7 @@ export default function Object3DViewer({ initial = 34 }) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="absolute inset-0 bg-[#e4e4e4] animate-pulse"
+                            className="absolute inset-0 bg-white/40 animate-pulse"
                         >
                          
                         </motion.div>
