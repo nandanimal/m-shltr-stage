@@ -92,18 +92,16 @@ export default function Home() {
                             >
                                 <div className="span flex flex-col gap-2">
                                     <div className="font-mono text-xs uppercase">
-                                        launching 2026
+                                        Introducing M-SHLTR
                                     </div>
-                                    <h1 className="type-display text-pretty font-dince">
-                                        Introducing M-SHLTR,
-                                    </h1>
+                                    
                                 </div>
-                                <div className="type-display text-pretty font-dince">
-                                    a fire‑resilient, precision‑built home for
+                                <h1 className="type-display text-pretty font-dince mt-8">
+                                    A fire‑resilient, precision‑built home for
                                     any setting. Designed with intention, built
                                     with factory accuracy, delivered turnkey to
                                     your land.
-                                </div>
+                                </h1>
                                 <div className="span flex flex-col gap-4 mt-16">
                                     <h2 className="type-title text-regular text-gray text-pretty">
                                         Designed by Malek Alqadi, as seen in

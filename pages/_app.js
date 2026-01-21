@@ -1,6 +1,7 @@
 import NavbarV2 from "@/components/NavbarV2";
 import { ScrollProvider } from "@/context/ScrollContext";
 import { CtaFlowProvider } from "@/context/CtaFlowProvider";
+import { Object3DViewerProvider } from "@/context/Object3DViewerContext";
 import "@/styles/globals.css";
 
 import Head from "next/head";
@@ -57,21 +58,23 @@ export default function App({ Component, pageProps }) {
                 <title>M-SHLTR</title>
             </Head>
             <CtaFlowProvider>
-                <ScrollProvider>
-                    <NavbarV2 />
-                    <AnimatePresence mode="wait" initial={false}>
-                        <motion.div
-                            key={router.asPath}
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            variants={pageVariants}
-                            style={{ minHeight: "100vh" }}
-                        >
-                            <Component {...pageProps} />
-                        </motion.div>
-                    </AnimatePresence>
-                </ScrollProvider>
+                <Object3DViewerProvider>
+                    <ScrollProvider>
+                        <NavbarV2 />
+                        <AnimatePresence mode="wait" initial={false}>
+                            <motion.div
+                                key={router.asPath}
+                                initial="initial"
+                                animate="animate"
+                                exit="exit"
+                                variants={pageVariants}
+                                style={{ minHeight: "100vh" }}
+                            >
+                                <Component {...pageProps} />
+                            </motion.div>
+                        </AnimatePresence>
+                    </ScrollProvider>
+                </Object3DViewerProvider>
             </CtaFlowProvider>
         </main>
     );
