@@ -12,6 +12,12 @@ export default function StepWaitlist() {
         setEmail(data.waitlistEmail || "");
     }, [data.waitlistEmail]);
 
+    useEffect(() => {
+        if (state.succeeded && typeof window.fbq === "function") {
+            window.fbq("track", "Lead");
+        }
+    }, [state.succeeded]);
+
     function onSubmit(e) {
         update({ waitlistEmail: email });
         handleSubmit(e);

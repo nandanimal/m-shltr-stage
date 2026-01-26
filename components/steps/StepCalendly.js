@@ -18,6 +18,19 @@ export default function StepCalendly() {
         }
     }, []);
 
+    useEffect(() => {
+        function handleCalendlyEvent(e) {
+            if (
+                e.data?.event === "calendly.event_scheduled" &&
+                typeof window.fbq === "function"
+            ) {
+                window.fbq("track", "Schedule");
+            }
+        }
+        window.addEventListener("message", handleCalendlyEvent);
+        return () => window.removeEventListener("message", handleCalendlyEvent);
+    }, []);
+
     const prefillParams = new URLSearchParams({
         name: data?.name || "",
         email: data?.email || "",

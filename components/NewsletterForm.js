@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function NewsletterForm({ theme = "light" }) {
@@ -7,6 +8,12 @@ export default function NewsletterForm({ theme = "light" }) {
     );
     const cardText = theme === "dark" ? "text-white" : "text-black";
     const borderTone = theme === "dark" ? "border-white/50" : "border-gray";
+
+    useEffect(() => {
+        if (state.succeeded && typeof window.fbq === "function") {
+            window.fbq("track", "Lead");
+        }
+    }, [state.succeeded]);
 
     if (state.succeeded) {
         return (

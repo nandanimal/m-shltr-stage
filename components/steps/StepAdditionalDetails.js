@@ -14,6 +14,9 @@ export default function StepAdditionalDetails() {
 
     useEffect(() => {
         if (state.succeeded) {
+            if (typeof window.fbq === "function") {
+                window.fbq("track", "Lead");
+            }
             next();
         }
     }, [state.succeeded, next]);

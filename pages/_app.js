@@ -1,4 +1,5 @@
 import NavbarV2 from "@/components/NavbarV2";
+import CookieBanner from "@/components/CookieBanner";
 import { ScrollProvider } from "@/context/ScrollContext";
 import { CtaFlowProvider } from "@/context/CtaFlowProvider";
 import { Object3DViewerProvider } from "@/context/Object3DViewerContext";
@@ -10,6 +11,28 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+
+function loadFbPixel() {
+    if (typeof window.fbq === "function") return;
+    (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", "1414150426869623");
+    window.fbq("track", "PageView");
+}
 
 const dince = localFont({
     src: [
@@ -52,6 +75,26 @@ export default function App({ Component, pageProps }) {
         };
     }, []);
 
+    // Load Facebook Pixel if consent was previously given
+    useEffect(() => {
+        if (document.cookie.match(/(^| )cookie_consent=accepted(;|$)/)) {
+            loadFbPixel();
+        }
+    }, []);
+
+    // Track Facebook Pixel PageView on client-side route changes
+    useEffect(() => {
+        const handleRouteChange = () => {
+            if (typeof window.fbq === "function") {
+                window.fbq("track", "PageView");
+            }
+        };
+        router.events.on("routeChangeComplete", handleRouteChange);
+        return () => {
+            router.events.off("routeChangeComplete", handleRouteChange);
+        };
+    }, [router.events]);
+
     return (
         <main className={`${ibmPlexMono.variable} ${dince.variable}`}>
             <Head>
@@ -76,6 +119,7 @@ export default function App({ Component, pageProps }) {
                     </ScrollProvider>
                 </Object3DViewerProvider>
             </CtaFlowProvider>
+            <CookieBanner onAccept={loadFbPixel} />
         </main>
     );
 }
