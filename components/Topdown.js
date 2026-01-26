@@ -192,7 +192,8 @@ export default function Topdown({
                         style={{ height }}
                     >
                         <div className="p-2 flex flex-col items-center gap-6">
-                            <AnimatePresence mode="wait">
+                            <div className="w-full" style={{ display: "grid" }}>
+                            <AnimatePresence>
                                 <motion.div
                                     key={floorplan}
                                     initial={{ opacity: 0 }}
@@ -200,6 +201,7 @@ export default function Topdown({
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.3 }}
                                     className="imageContainer relative pt-24"
+                                    style={{ gridArea: "1 / 1" }}
                                 >
                                     <img
                                         ref={imageRef}
@@ -230,6 +232,7 @@ export default function Topdown({
                                     </motion.div>
                                 </motion.div>
                             </AnimatePresence>
+                            </div>
                             {controls ? (
                                 <div className="flex flex-col items-center gap-3">
                                     {controls}

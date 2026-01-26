@@ -36,7 +36,7 @@ const CBN = () => {
                 },
                 {
                     textBody: "Utility cabinet + tankless water heater",
-                    leftPct: 32,
+                    leftPct: 36,
                     bottomPct: 64,
                 },
                 {
@@ -57,13 +57,13 @@ const CBN = () => {
                 },
                 {
                     textBody: 'Standard 24" dishwasher with white oak facade',
-                    leftPct: 40,
-                    bottomPct: 68,
+                    leftPct: 45,
+                    bottomPct: 64,
                 },
                 {
                     textBody:
                         'Spa ensuite with a 63" × 56" shower and soaking tub. Optional steam shower upgrade.',
-                    leftPct: 85,
+                    leftPct: 88,
                     bottomPct: 68,
                 },
                 {
@@ -102,8 +102,8 @@ const CBN = () => {
                 },
                 {
                     textBody: 'Standard 24" dishwasher with white oak facade',
-                    leftPct: 34,
-                    bottomPct: 62,
+                    leftPct: 33,
+                    bottomPct: 44,
                 },
                 {
                     textBody:
@@ -133,8 +133,8 @@ const CBN = () => {
                 {
                     textBody: "Panel Ready 24\" dishwasher",
                     
-                    leftPct: 49,
-                    bottomPct: 66,
+                    leftPct: 35,
+                    bottomPct: 60,
                 },
                 {
                     textBody: "Built-in cooktop",
@@ -169,8 +169,8 @@ const CBN = () => {
                 {
                     textBody: "Panel Ready 24\" dishwasher",
                     
-                    leftPct: 28,
-                    bottomPct: 48,
+                    leftPct: 36,
+                    bottomPct: 31,
                 },
                 {
                     textBody: "Built-in cooktop",
