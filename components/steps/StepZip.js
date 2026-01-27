@@ -1,6 +1,21 @@
 import { useState, useEffect } from "react";
 import { useCtaFlow } from "@/context/CtaFlowProvider";
-import zipList from "../../data/serviceableZips.json";
+// Serviceable states by USPS 3-digit ZIP prefix:
+// CA: 900-908, 910-928, 930-961
+// AZ: 850-853, 855-857, 859-860, 863-865
+// NV: 889-898
+// UT: 840-847
+const SERVICE_PREFIXES = [
+    [840, 847], // UT
+    [850, 853], [855, 857], [859, 860], [863, 865], // AZ
+    [889, 898], // NV
+    [900, 908], [910, 928], [930, 961], // CA
+];
+
+function isServiceableZip(zip) {
+    const prefix = parseInt(zip.slice(0, 3), 10);
+    return SERVICE_PREFIXES.some(([lo, hi]) => prefix >= lo && prefix <= hi);
+}
 
 export default function StepZip() {
     const { data, update, goTo } = useCtaFlow();
@@ -22,7 +37,7 @@ export default function StepZip() {
             setError("Please enter a 5-digit ZIP code.");
             return;
         }
-        const allowed = zipList.includes(z);
+        const allowed = isServiceableZip(z);
         update({ zip: z, eligibility: allowed ? "allowed" : "waitlist" });
         goTo(allowed ? "email" : "waitlist");
     }
