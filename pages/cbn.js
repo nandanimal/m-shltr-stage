@@ -712,22 +712,22 @@ const CBN = () => {
             {/* Architect */}
             <section className="mt-8" data-nav-theme="light">
                 <div className="min-h-[40svh] flex items-center justify-center modern-padding">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 rounded-md bg-[#FFF]/30 p-2 md:gap-4 gap-4 items-stretch max-w-6xl">
-                        <div className="img-container w-full sm:relative sm:h-full sm:min-h-0">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 rounded-md bg-[#FFF]/30 p-2 md:gap-4 gap-4 items-stretch max-w-6xl">
+                        <div className="img-container w-full sm:relative sm:h-full sm:min-h-0 cols-span-1">
                             <img
                                 src="/images/malek.webp"
                                 alt="malek alqadi"
-                                className="rounded-sm w-full h-auto object-cover object-bottom sm:absolute sm:inset-0 sm:h-full"
+                                className="rounded-sm w-full h-auto object-cover md:object-top object-top sm:absolute sm:inset-0 sm:h-full"
                             />
                         </div>
-                        <div className="text-container md:p-4 space-y-2 flex-2">
+                        <div className="text-container md:p-4 space-y-2 flex-2 col-span-2">
                             <div className="font-mono uppercase text-xs">
                                 pre-fab modular design
                             </div>
                             <h2 className="font-bold uppercase text-xl">
                                 The architect&apos;s perspective
                             </h2>
-                            <div className="text-body text-xs md:text-sm mb-4 ">
+                            <div className="text-body text-sm md:text-sm mb-4 ">
                                 My design roots lie in the world of high-end
                                 residences and experience-based hospitality.
                                 With M-SHLTR, I have distilled the energy,
@@ -790,8 +790,8 @@ const CBN = () => {
                                 alt="Smart lock"
                                 className="rounded-sm aspect-[4/3] object-cover"
                             />
-                            <div className="p-4 text-center">
-                                Smart lock entry system & camera
+                            <div className="sm:p-4 pt-2 sm:text-center text-sm">
+                            Smart lock entry system & camera
                             </div>
                         </div>
                         <div className="img-container aspect-[4/3]">
@@ -800,8 +800,8 @@ const CBN = () => {
                                 alt="Hot rolled steel edge"
                                 className="rounded-sm aspect-[4/3] object-cover"
                             />
-                            <div className="p-4 text-center">
-                                Hot rolled black steel edge trim details
+                            <div className="sm:p-4 pt-2 sm:text-center text-sm">
+                            Hot rolled black steel edge trim details
                             </div>
                         </div>
                         <div className="img-container aspect-[4/3]">
@@ -810,17 +810,17 @@ const CBN = () => {
                                 alt="Entry lighting"
                                 className="rounded-sm aspect-[4/3] object-cover "
                             />
-                            <div className="p-4 text-center">
-                                Thoughtfully integrated entry lighting
+                            <div className="sm:p-4 pt-2 sm:text-center text-sm">
+                            Thoughtfully integrated entry lighting
                             </div>
                         </div>
                     </div>
                 </div>
                 <div
-                    className="relative w-full lg:h-[50svh] h-[30svh] overflow-hidden modern-padding"
+                    className="relative w-full overflow-hidden modern-padding"
                     data-nav-theme="light"
                 >
-                    <img
+                    {/* <img
                         src="/images/CBN3D/CBN25.webp"
                         alt="CBN"
                         className="
@@ -829,7 +829,8 @@ const CBN = () => {
       -translate-x-1/2 -translate-y-1/2
       h-auto block
     "
-                    />
+                    /> */}
+                    <img src="/images/640.webp" className="rounded-sm" alt="640 cbn"/>
                 </div>
 
                 <ExteriorTrims />

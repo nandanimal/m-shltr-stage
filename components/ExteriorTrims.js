@@ -62,9 +62,9 @@ const ExteriorTrims = () => {
                 />
             </div>
             <div className="my-8 space-y-4">
-                <h2 className="type-display  text-pretty">
+                <div className="font-mono text-sm uppercase">
                     Fire resilient by design
-                </h2>
+                </div>
                 <div className="text-body">
                     Light‑gauge steel framing, integrated interior and exterior
                     sprinklers, pre‑burned cladding options, ember‑resistant
