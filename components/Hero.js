@@ -93,15 +93,15 @@ const Hero = () => {
                             style={{ y: fgY }}
                         >
                             <img
-                                src="/images/640.webp"
-                                className="hidden sm:block object-cover h-[110vh] w-full rounded-md scale-[1.05]"
+                                src="/images/640_hero.webp"
+                                className="hidden sm:block object-cover object-bottom h-[110vh] w-full rounded-md scale-[1.05]"
                                 priority
                                 fill
                                 quality={100}
                             />
                             <img
-                                src="/images/640_mobile.webp"
-                                className="block sm:hidden object-cover h-[110vh] w-full rounded-md scale-[1.05]"
+                                src="/images/640_hero.webp"
+                                className="block sm:hidden object-cover object-bottom h-[110vh] w-full rounded-md scale-[1.05]"
                                 priority
                                 fill
                                 quality={100}
