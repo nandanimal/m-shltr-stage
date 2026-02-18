@@ -10,7 +10,8 @@ import localFont from "next/font/local";
 import { IBM_Plex_Mono } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import Lenis from "lenis";
 
 function loadFbPixel() {
     if (typeof window.fbq === "function") return;
@@ -66,6 +67,38 @@ const pageVariants = {
 
 export default function App({ Component, pageProps }) {
     const router = useRouter();
+    const lenisRef = useRef(null);
+
+    // Lenis smooth scroll
+    useEffect(() => {
+        const lenis = new Lenis({
+            lerp: 0.1,
+            smoothWheel: true,
+        });
+        lenisRef.current = lenis;
+
+        let rafId;
+        function raf(time) {
+            lenis.raf(time);
+            rafId = requestAnimationFrame(raf);
+        }
+        rafId = requestAnimationFrame(raf);
+
+        return () => {
+            cancelAnimationFrame(rafId);
+            lenis.destroy();
+            lenisRef.current = null;
+        };
+    }, []);
+
+    // Scroll to top immediately on route change
+    useEffect(() => {
+        const handleRouteStart = () => {
+            lenisRef.current?.scrollTo(0, { immediate: true });
+        };
+        router.events.on("routeChangeStart", handleRouteStart);
+        return () => router.events.off("routeChangeStart", handleRouteStart);
+    }, [router.events]);
 
     useEffect(() => {
         const classNames = [ibmPlexMono.variable, dince.variable];
